@@ -28,12 +28,7 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { AudioContextModule } from 'angular-audio-context';
 import { environment } from '@env/environment';
-
 import * as Sentry from '@sentry/browser';
-
-Sentry.init({
-  dsn: 'https://e0e35bbbc12a4eb8a6d6f04aa2481a1d@sentry.io/1724269'
-});
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
@@ -48,10 +43,26 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 
 @Injectable()
 export class SentryErrorHandler implements ErrorHandler {
-  constructor() {}
-  handleError({ error }: { error: any }) {
-    const eventId = Sentry.captureException(error.originalError || error);
-    Sentry.showReportDialog({ eventId });
+  constructor() {
+    Sentry.init({
+      dsn: 'https://e0e35bbbc12a4eb8a6d6f04aa2481a1d@sentry.io/1724269',
+      environment: environment.environment,
+      release: environment.version,
+      enabled: true,
+      /* blacklistUrls: ['http://localhost:8080'],
+      whitelistUrls: ['http://localhost:4200'], */
+      beforeSend(event: any, hint: any) {
+        // Check if it is an exception, and if so, show the report dialog
+        if (event.exception) {
+          Sentry.showReportDialog({ eventId: event.event_id });
+        }
+        return event;
+      }
+    });
+  }
+
+  handleError(error: any) {
+    Sentry.captureException(error.originalError || error);
   }
 }
 
