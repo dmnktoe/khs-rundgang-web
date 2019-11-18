@@ -5,7 +5,7 @@
 
 # Radio Rasclat
 
-<img src="https://api.travis-ci.org/dmnktoe/radio-rasclat-web.svg?branch=master"> <img src="https://codecov.io/gh/dmnktoe/radio-rasclat-web/branch/master/graph/badge.svg"> <img alt="undefined" src="https://img.shields.io/github/package-json/v/dmnktoe/radio-rasclat-web.svg?style=flat">
+<img src="https://api.travis-ci.org/dmnktoe/radio-rasclat-web.svg?branch=master"> <img src="https://codecov.io/gh/dmnktoe/radio-rasclat-web/branch/master/graph/badge.svg"> <img src="https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/badge"> <img alt="undefined" src="https://img.shields.io/github/package-json/v/dmnktoe/radio-rasclat-web.svg?style=flat">
 
 Radio Rasclat was originally a project for the tour of the Kunsthochschule Kassel under the name "Radio Rundgang". During the opening hours we streamed live music from the basement of the basic class Visual Communication.
 
