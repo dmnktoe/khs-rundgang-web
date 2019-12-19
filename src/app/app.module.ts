@@ -45,7 +45,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 export class SentryErrorHandler implements ErrorHandler {
   constructor() {
     Sentry.init({
-      dsn: 'https://493ca8135c0c43719f7605e14a5d3c63@sentry.io/1862721',
+      dsn: 'https://e0e35bbbc12a4eb8a6d6f04aa2481a1d@sentry.io/1724269',
       environment: environment.environment,
       release: environment.version,
       enabled: true,
