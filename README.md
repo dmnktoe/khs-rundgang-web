@@ -1,4 +1,4 @@
-<div align="center"><img src="https://assets.dmnktoe.de/radio-rasclat/logo.png" width="120"></div>
+<div align="center"><img src="https://assets.dmnktoe.de/radio-rasclat/logo/logo.svg" width="140"></div>
 <br>
 
 <hr>
