@@ -1,25 +1,19 @@
-<div align="center"><img src="https://assets.dmnktoe.de/radio-rasclat/logo.png" width="120"></div>
+<div align="center"><img src="https://assets.dmnktoe.de/radio-rasclat/logo/logo.svg" width="140"></div>
 <br>
-
-<p align="center"><img alt="undefined" src="https://img.shields.io/github/issues-pr/dmnktoe/radio-rasclat-web?style=flat"/> <img alt="undefined" src="https://img.shields.io/github/issues-raw/dmnktoe/radio-rasclat-web.svg?style=flat"> <img alt="undefined" src="https://img.shields.io/github/issues-closed-raw/dmnktoe/radio-rasclat-web.svg?style=flat"> <img alt="Website" src="https://img.shields.io/website/https/radio-rasclat.com.svg"> <img alt="undefined" src="https://img.shields.io/uptimerobot/ratio/m783021589-5ec7e860f3ccd05fabd26fd1.svg?label=api-uptime&style=flat"> <img src="https://opencollective.com/radio-rasclat/tiers/backer/badge.svg?label=backer&color=brightgreen" /></p>
-
-<p align="center"><img src="https://api.travis-ci.org/dmnktoe/radio-rasclat-web.svg?branch=master"> <img alt="undefined" src="https://img.shields.io/github/languages/top/dmnktoe/radio-rasclat-web.svg?style=flat"> <img alt="undefined" src="https://img.shields.io/github/languages/code-size/dmnktoe/radio-rasclat-web.svg?style=flat"> <img alt="undefined" src="https://img.shields.io/github/package-json/v/dmnktoe/radio-rasclat-web.svg?style=flat"> <img alt="undefined" src="https://img.shields.io/github/release/dmnktoe/radio-rasclat-web.svg?style=flat"></p>
 
 <hr>
 
 # Radio Rasclat
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdmnktoe%2Fradio-rasclat-web.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdmnktoe%2Fradio-rasclat-web?ref=badge_shield)
 
+<img src="https://api.travis-ci.org/dmnktoe/radio-rasclat-web.svg?branch=master"> <img src="https://codecov.io/gh/dmnktoe/radio-rasclat-web/branch/master/graph/badge.svg"> <img src="https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/badge"> <img alt="undefined" src="https://img.shields.io/github/package-json/v/dmnktoe/radio-rasclat-web.svg?style=flat">
 
-Radio Rasclat was originally a project by Domenik Töfflinger for the tour of the Kunsthochschule Kassel under the name "Radio Rundgang". During the opening hours we streamed live music from the basement of the basic class Visual Communication.
+Radio Rasclat is a non-commercial internet radio station which is going to stream your music to the web, again! It offers you a platform to play & try out. It serves as a place for the exchange, dialogue and cooperation of music. Founded and curated in 2019, the radio returns to the new venue at KMMN 3.
 
-This radio gives our pre-selected local artists/DJs a platform to try out and play.
-
-Listen live at [Radio Rasclat](https://radio-rasclat.com/).
+Submit your music via e-mail ([office@radio-rasclat.com](mailto:office@radio-rasclat.com)) to get your own show slot or listen live at [Radio Rasclat](https://radio-rasclat.com/).
 
 ## Open Source
 
-Radio Rasclat is an open source product by [Domenik Toefflinger](https://dmnktoe.de/).
+Radio Rasclat is an open source product.
 
 ### Become a backer
 
@@ -178,6 +172,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdmnktoe%2Fradio-rasclat-web.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdmnktoe%2Fradio-rasclat-web?ref=badge_large)

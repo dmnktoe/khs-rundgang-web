@@ -1,6 +1,6 @@
 {
   "name": "radio-rasclat",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,7 @@
     "start": "npm run env -s && ng serve --aot --proxy-config proxy.conf.js",
     "serve:sw": "npm run build -s && npx http-server ./dist -p 4200",
     "lint": "ng lint && stylelint \"src/**/*.scss\" --syntax scss && htmlhint \"src\" --config .htmlhintrc",
-    "test": "npm run env -s && ng test",
+    "test": "npm run env -s && ng test --code-coverage --watch=false",
     "test:ci": "npm run env -s && npm run lint -s && ng test --code-coverage --watch=false",
     "e2e": "npm run env -s && ng e2e",
     "translations:extract": "ngx-translate-extract --input ./src --output ./src/translations/template.json --format=json --clean --sort --marker extract",
@@ -41,6 +41,7 @@
     "angular-feather": "^6.0.2",
     "angular-instantsearch": "^3.0.0-beta.4",
     "bootstrap": "^4.1.1",
+    "codecov": "^3.6.1",
     "core-js": "^2.6.3",
     "decode-html-entities": "^1.1.10",
     "instantsearch.css": "^7.3.1",
@@ -71,7 +72,7 @@
     "codelyzer": "^5.0.0",
     "hads": "^2.0.1",
     "htmlhint": "^0.11.0",
-    "https-proxy-agent": "^2.2.2",
+    "https-proxy-agent": "^2.2.4",
     "husky": "^3.0.5",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",

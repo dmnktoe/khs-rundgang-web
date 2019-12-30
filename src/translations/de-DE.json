@@ -12,7 +12,7 @@
   "DIRECT_LINK": "Direkt-Links",
   "DONATE": "Spenden",
   "DONATE_DESC": "DONATE_DESC",
-  "PROJECT_DESCRIPTION": "Radio Rasclat wurde ursprünglich für den Rundgang der Kunsthochschule Kassel unter dem Namen Radio Rundgang als Projekt von Domenik Töfflinger initiiert. Während der Öffnungszeiten haben wir Live-Musik aus dem Keller der Basisklasse Visuelle Kommunikation gestreamt. Dieses Radio bietet unseren KünstlerInnen/DJs eine Plattform zum Ausprobieren und Spielen.",
+  "PROJECT_DESCRIPTION": "Radio Rasclat wurde ursprünglich für den Rundgang der Kunsthochschule Kassel unter dem Namen Radio Rundgang als Projekt initiiert. Während der Öffnungszeiten haben wir Live-Musik aus dem Keller der Basisklasse Visuelle Kommunikation gestreamt. Dieses Radio bietet unseren KünstlerInnen/DJs eine Plattform zum Ausprobieren und Spielen.",
   "OPEN_SOURCE": "Open Source",
   "OPEN_SOURCE_DESC": "Diese Radio-Web-App ist Open Source und basiert auf Angular, NodeJS, Express und MongoDB. Der vollständige Source Code befindet sich auf",
   "SHOW_NOW": "Jetzt",

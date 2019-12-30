@@ -30,9 +30,6 @@ module.exports = function(config) {
       dir: path.join(__dirname, '../reports/coverage'),
       fixWebpackSourcePaths: true
     },
-    angularCli: {
-      environment: 'dev'
-    },
     reporters: ['progress', 'junit'],
     port: 9876,
     colors: true,
@@ -40,6 +37,7 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['ChromeHeadless'],
-    singleRun: false
+    singleRun: true,
+    restartOnFileChange: true
   });
 };
