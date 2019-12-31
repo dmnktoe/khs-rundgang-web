@@ -21,7 +21,6 @@ import { NgAisModule } from 'angular-instantsearch';
 import { NgxAnalyticsModule } from 'ngx-analytics';
 import { NgxAnalyticsGoogleAnalytics } from 'ngx-analytics/ga';
 import { SwiperModule } from 'ngx-swiper-wrapper';
-import { DataService } from '@app/shared/listen.service';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -29,10 +28,6 @@ import { AudioContextModule } from 'angular-audio-context';
 import { environment } from '@env/environment';
 
 import * as Sentry from '@sentry/browser';
-
-Sentry.init({
-  dsn: 'https://e0e35bbbc12a4eb8a6d6f04aa2481a1d@sentry.io/1724269'
-});
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
@@ -45,12 +40,17 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal'
 };
 
-@Injectable()
 export class SentryErrorHandler implements ErrorHandler {
-  constructor() {}
-  handleError({ error }: { error: any }) {
-    const eventId = Sentry.captureException(error.originalError || error);
-    Sentry.showReportDialog({ eventId });
+  constructor() {
+    Sentry.init({
+      dsn: 'https://e0e35bbbc12a4eb8a6d6f04aa2481a1d@sentry.io/1724269',
+      environment: environment.environment,
+      release: environment.version,
+      enabled: true
+    });
+  }
+  handleError(error: any) {
+    Sentry.captureException(error.originalError || error);
   }
 }
 
