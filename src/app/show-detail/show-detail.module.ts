@@ -6,7 +6,7 @@ import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { ShowDetailRoutingModule } from './show-detail-routing.module';
 import { ShowDetailComponent } from '@app/show-detail/show-detail.component';
-import { QuoteService } from './../shows/quote.service';
+import { ApiService } from '../core/api.service';
 
 @NgModule({
   imports: [
@@ -18,6 +18,6 @@ import { QuoteService } from './../shows/quote.service';
     NgxSkeletonLoaderModule
   ],
   declarations: [ShowDetailComponent],
-  providers: [QuoteService]
+  providers: [ApiService]
 })
 export class ShowDetailModule {}
