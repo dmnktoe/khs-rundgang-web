@@ -7,7 +7,7 @@ import {
   CredentialsService,
   I18nService
 } from '@app/core';
-import { RadioDataService } from '@app/shared/radiodata.service';
+import { ApiService } from '@app/core/api.service';
 
 @Component({
   selector: 'app-header',
@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private credentialsService: CredentialsService,
     private i18nService: I18nService,
-    private radioDataService: RadioDataService
+    private apiService: ApiService
   ) {}
 
   ngOnInit() {
@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
       });
     }
     this.isLoading = true;
-    this.radioDataService.getCurrentShowLive().subscribe((currentShow: any) => {
+    this.apiService.getCurrentShowLive().subscribe((currentShow: any) => {
       this.currentShow = currentShow;
       this.isLoading = false;
     });
