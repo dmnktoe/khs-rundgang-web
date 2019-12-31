@@ -4,7 +4,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { ShowsComponent } from './shows.component';
-import { QuoteService } from './quote.service';
+import { ApiService } from '../core/api.service';
 
 describe('ShowsComponent', () => {
   let component: ShowsComponent;
@@ -14,7 +14,7 @@ describe('ShowsComponent', () => {
     TestBed.configureTestingModule({
       imports: [CoreModule, SharedModule, HttpClientTestingModule],
       declarations: [ShowsComponent],
-      providers: [QuoteService]
+      providers: [ApiService]
     }).compileComponents();
   }));
 
