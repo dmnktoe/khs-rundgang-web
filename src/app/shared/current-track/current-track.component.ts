@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import 'rxjs/add/operator/map';
-
-import { RadioDataService } from '@app/shared/radiodata.service';
+import { ApiService } from '@app/core/api.service';
 
 @Component({
   selector: 'app-current-track',
@@ -15,7 +14,7 @@ export class CurrentTrackComponent implements OnInit {
 
   @ViewChild('audioOption') audioPlayerRef: ElementRef;
 
-  constructor(private radioDataService: RadioDataService) {}
+  constructor(private apiService: ApiService) {}
 
   onAudioPlay() {
     if (this.audioPlayerRef.nativeElement.paused) {
@@ -30,7 +29,7 @@ export class CurrentTrackComponent implements OnInit {
   ngOnInit() {
     this.isLoading = true;
     this.value = 'play-circle';
-    this.radioDataService.getCurrentTrackLive().subscribe((current: any) => {
+    this.apiService.getCurrentTrackLive().subscribe((current: any) => {
       this.current = current;
       this.isLoading = false;
     });
