@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { environment } from '@env/environment';
+import { Socket } from 'ngx-socket-io';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, public socket: Socket) {}
 
   getArtists() {
     return this.httpClient.get(environment.serverUrl + 'artists').pipe(
@@ -92,5 +93,13 @@ export class ApiService {
           )
         )
       );
+  }
+
+  getCurrentTrackLive() {
+    return this.socket.fromEvent<any>('currentTrack').map(data => data);
+  }
+
+  getCurrentShowLive() {
+    return this.socket.fromEvent<any>('currentShow').map(data => data);
   }
 }
