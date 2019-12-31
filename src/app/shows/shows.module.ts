@@ -7,7 +7,7 @@ import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { ShowsRoutingModule } from './shows-routing.module';
 import { ShowsComponent } from './shows.component';
-import { QuoteService } from './quote.service';
+import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
@@ -22,6 +22,6 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     NgxSkeletonLoaderModule
   ],
   declarations: [ShowsComponent],
-  providers: [QuoteService, Title]
+  providers: [ApiService, Title]
 })
 export class ShowsModule {}
