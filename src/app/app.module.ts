@@ -13,7 +13,6 @@ import { ShellModule } from './shell/shell.module';
 import { AboutModule } from './about/about.module';
 import { SearchModule } from './search/search.module';
 import { ScheduleModule } from '@app/schedule/schedule.module';
-import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IconsModule } from '@app/shared/icons/icons.module';
@@ -74,7 +73,6 @@ export class SentryErrorHandler implements ErrorHandler {
     AboutModule,
     SearchModule,
     ScheduleModule,
-    LoginModule,
     SocketIoModule.forRoot(config),
     NgxAnalyticsModule.forRoot([NgxAnalyticsGoogleAnalytics]),
     SwiperModule,
