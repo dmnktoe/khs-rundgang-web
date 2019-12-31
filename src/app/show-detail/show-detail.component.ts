@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
-import { QuoteService } from './../shows/quote.service';
+import { ApiService } from '../core/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { DataService } from '@app/shared/listen.service';
-
 import Vibrant from 'node-vibrant';
 import { Palette } from 'node-vibrant/lib/color';
 
@@ -24,11 +22,10 @@ export class ShowDetailComponent implements OnInit {
   private sub: any;
 
   constructor(
-    private quoteService: QuoteService,
+    private apiService: ApiService,
     private route: ActivatedRoute,
     private router: Router,
-    private titleService: Title,
-    private data: DataService
+    private titleService: Title
   ) {}
 
   public setTitle({ title }: { title: any }) {
@@ -36,35 +33,25 @@ export class ShowDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.isLoading = true;
     this.sub = this.route.params.subscribe(params => {
-      this.id = params['id']; // (+) converts string 'id' to a number
-    });
-    this.getData = this.getDataFunction;
-    this.getData();
-    this.data.currentMessage.subscribe(message => (this.message = message));
-  }
-
-  newMessage() {
-    this.data.changeMessage('Hello from Sibling');
-  }
-
-  getDataFunction() {
-    this.isLoading = true;
-    this.quoteService
-      .getSingleShowDB({ id: this.id })
-      .pipe(finalize(() => {}))
-      .subscribe(show => {
-        this.show = show;
-        this.title = show.show.title;
-        Vibrant.from(show.show.img)
-          .getPalette()
-          .then(palette => {
-            this.hex = palette.Vibrant.hex;
-            console.log(palette);
+      this.isLoading = true;
+      this.id = params.id;
+      this.apiService
+        .getShow({ showId: this.id })
+        .pipe(
+          finalize(() => {
             this.isLoading = false;
-          });
-        this.setTitle({ title: this.title });
-      });
+          })
+        )
+        .subscribe((show: any) => {
+          Vibrant.from(show.image)
+            .getPalette()
+            .then(palette => {
+              this.hex = palette.Vibrant.hex;
+              this.isLoading = false;
+            });
+          this.setTitle({ title: this.title });
+        });
+    });
   }
 }
