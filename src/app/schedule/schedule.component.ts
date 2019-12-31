@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { RadioDataService } from './../shared/radiodata.service';
 import { finalize } from 'rxjs/operators';
+import { ApiService } from '@app/core/api.service';
 
 @Component({
   selector: 'app-schedule',
@@ -12,11 +11,11 @@ export class ScheduleComponent implements OnInit {
   schedule: any;
   isLoading = false;
 
-  constructor(private radioDataService: RadioDataService) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
     this.isLoading = true;
-    this.radioDataService
+    this.apiService
       .getSchedule()
       .pipe(
         finalize(() => {
