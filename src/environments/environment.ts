@@ -12,8 +12,9 @@ import env from './.env';
 
 export const environment = {
   production: false,
+  environment: 'development',
   version: env.npm_package_version + '-dev',
-  serverUrl: '/v1',
+  serverUrl: 'http://localhost:8080',
   socketio: 'http://localhost:52001',
   defaultLanguage: 'US',
   supportedLanguages: ['DE', 'US', 'FR'],

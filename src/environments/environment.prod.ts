@@ -8,8 +8,9 @@ import env from './.env';
 
 export const environment = {
   production: true,
+  environment: 'production',
   version: env.npm_package_version,
-  serverUrl: 'https://api.radio-rasclat.com/v1',
+  serverUrl: 'https://api.radio-rasclat.com',
   socketio: 'https://api-live.radio-rasclat.com',
   defaultLanguage: 'US',
   supportedLanguages: ['DE', 'US', 'FR'],
