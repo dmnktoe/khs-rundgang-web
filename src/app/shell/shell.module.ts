@@ -20,7 +20,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SharedModule,
     IconsModule
   ],
-  declarations: [HeaderComponent, ShellComponent, FooterComponent],
-  providers: [DataService]
+  declarations: [HeaderComponent, ShellComponent, FooterComponent]
 })
 export class ShellModule {}
