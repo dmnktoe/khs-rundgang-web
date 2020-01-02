@@ -11,6 +11,8 @@
 import env from './.env';
 
 export const environment = {
+  algoliaRecordingsIndex: 'dev_recordings',
+  algoliaShowsIndex: 'dev_shows',
   production: false,
   environment: 'development',
   version: env.npm_package_version + '-dev',

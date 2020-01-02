@@ -7,6 +7,8 @@
 import env from './.env';
 
 export const environment = {
+  algoliaRecordingsIndex: 'prod_recordings',
+  algoliaShowsIndex: 'prod_shows',
   production: true,
   environment: 'production',
   version: env.npm_package_version,
