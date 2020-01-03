@@ -6,7 +6,8 @@ import { Title } from '@angular/platform-browser';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { ShowsRoutingModule } from './shows-routing.module';
-import { ShowsComponent } from './shows.component';
+import { ShowsListComponent } from './shows-list/shows-list.component';
+import { ShowsSingleComponent } from './shows-single/shows-single.component';
 import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -21,7 +22,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     SwiperModule,
     NgxSkeletonLoaderModule
   ],
-  declarations: [ShowsComponent],
+  declarations: [ShowsListComponent, ShowsSingleComponent],
   providers: [ApiService, Title]
 })
 export class ShowsModule {}

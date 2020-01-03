@@ -13,16 +13,17 @@
               class="swiper-slide"
               *ngFor="let show of shows | slice: 0:6; let i = index"
             >
-              <a class="show__link" routerLink="/show/{{ show._id }}">
+              <a class="show__link" routerLink="/shows/{{ show.slug }}">
                 <div
                   class="swiper__show slider__img__container"
                   [ngStyle]="{
                     background:
                       'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%), no-repeat center center url(' +
-                      show.img +
+                      show.image +
                       ')'
                   }"
                 >
+                  <h6>Current show:</h6>
                   <h4 class="align-bottom">{{ show.title }}</h4>
                 </div>
               </a>
@@ -42,28 +43,11 @@
         [hidden]="isLoading"
         *ngFor="let show of shows"
       >
-        <a class="show__link" routerLink="/show/{{ show._id }}">
+        <a class="show__link" routerLink="/shows/{{ show.slug }}">
           <div class="single__show__list">
-            <div class="row row-eq-height">
-              <div class="col-4">
-                <div class="single__show__list__img-container">
-                  <img src="{{ show.img }}" />
-                </div>
-              </div>
-              <div class="col-8">
-                <div class="single__show__list__text-container">
-                  <div class="single__show__list__tags">
-                    <span
-                      class="single__show__list__tag"
-                      *ngFor="let tag of show.class"
-                    >
-                      <a routerLink="/shows">{{ tag }}</a>
-                    </span>
-                  </div>
-                  <h5>{{ show.title }}</h5>
-                  <p>{{ show.caption }}</p>
-                </div>
-              </div>
+            <div class="single__show__list__text-container">
+              <h5>{{ show.title }}</h5>
+              <p>{{ show.description }}</p>
             </div>
           </div>
         </a>

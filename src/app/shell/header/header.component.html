@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" routerLink="/shows" translate>
+    <a class="navbar-brand" routerLink="/start" translate>
       <img class="logo d-none d-md-block" src="../../../assets/svg/logo.svg" />
       <span translate>APP_NAME</span>
     </a>
@@ -38,20 +38,19 @@
         </a>
         <a
           class="nav-item nav-link text-uppercase"
+          routerLink="/recordings"
+          routerLinkActive="active"
+          (click)="closeMenu()"
+        >
+          <span translate>RECORDINGS</span>
+        </a>
+        <a
+          class="nav-item nav-link text-uppercase"
           routerLink="/shows"
           routerLinkActive="active"
           (click)="closeMenu()"
         >
           <span translate>SHOWS</span>
-        </a>
-        <a
-          class="nav-item nav-link text-uppercase"
-          routerLink="/archive"
-          routerLinkActive="active"
-          (click)="closeMenu()"
-        >
-          <!-- <i class="fas fa-home"></i> -->
-          <span translate>ARCHIVE</span>
         </a>
         <a
           class="nav-item nav-link text-uppercase"
@@ -83,7 +82,9 @@
       <div class="navbar-nav ml-auto">
         <span class="nav-item nav-link text-uppercase current__show">
           <!-- <i class="fas fa-question-circle"></i> -->
-          <span translate>SHOW_NOW</span>: {{ currentShow | safeHtml }}
+          <span *ngIf="currentShow !== undefined">
+            <span translate>SHOW_NOW</span>: {{ currentShow | safeHtml }}
+          </span>
         </span>
         <div class="nav-item" ngbDropdown placement="bottom-right">
           <a id="language-dropdown" class="nav-link" ngbDropdownToggle>{{

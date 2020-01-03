@@ -7,12 +7,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
-import { ShowsModule } from './shows/shows.module';
-import { ShowDetailModule } from './show-detail/show-detail.module';
-import { ShellModule } from './shell/shell.module';
+/* VIEWS */
 import { AboutModule } from './about/about.module';
-import { SearchModule } from './search/search.module';
+import { HomeModule } from './home/home.module';
+import { RecordingsModule } from './recordings/recordings.module';
 import { ScheduleModule } from '@app/schedule/schedule.module';
+import { SearchModule } from './search/search.module';
+import { ShellModule } from './shell/shell.module';
+import { ShowsModule } from './shows/shows.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IconsModule } from '@app/shared/icons/icons.module';
@@ -26,9 +28,7 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { AudioContextModule } from 'angular-audio-context';
 import { environment } from '@env/environment';
-
 import * as Sentry from '@sentry/browser';
-
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 const config: SocketIoConfig = {
@@ -68,9 +68,10 @@ export class SentryErrorHandler implements ErrorHandler {
     CoreModule,
     SharedModule,
     ShellModule,
+    HomeModule,
     ShowsModule,
-    ShowDetailModule,
     AboutModule,
+    RecordingsModule,
     SearchModule,
     ScheduleModule,
     SocketIoModule.forRoot(config),

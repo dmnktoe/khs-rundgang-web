@@ -1,11 +1,18 @@
 <div class="page-wrapper">
   <div *ngIf="isLoading == false" class="container-fluid">
     <div class="row">
-      <div class="col-12">
+      <div class="col-9">
         <h1 [style.color]="hex">
-          <span>{{ show?.show.title }}</span>
+          <span>{{ show?.title }}</span>
         </h1>
-        <h4>{{ show?.show.caption }}</h4>
+        <p>{{ show?.description }}</p>
+      </div>
+      <div class="col-3">
+        <img
+          src="{{ show?.image }}"
+          alt="{{ show?.title }}"
+          style="width: 100%"
+        />
       </div>
     </div>
     <div class="row">
@@ -13,37 +20,45 @@
         <hr />
       </div>
     </div>
-    <div class="row">
-      <div class="col-12 col-md-9">
-        <div>
-          <p>
-            {{ show?.show.description }}
-          </p>
-          <p>
-            {{ show?.show.date }}<br />
-            {{ show?.show.time }}
-          </p>
-          <div class="single__show__list__tags">
-            <span
-              class="single__show__list__tag"
-              *ngFor="let tag of show?.show.class"
-            >
-              {{ tag }}
-            </span>
+    <div class="row row-eq-height">
+      <div
+        class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3"
+        [hidden]="isLoading"
+        *ngFor="let recording of recordings"
+      >
+        <a
+          class="recording__link"
+          routerLink="/recording/{{ recording?.slug }}"
+        >
+          <div class="single__recording__list">
+            <div class="row row-eq-height">
+              <div class="col-4">
+                <div class="single__recording__list__img-container">
+                  <img src="{{ recording?.image }}" />
+                </div>
+              </div>
+              <div class="col-8">
+                <div class="single__recording__list__text-container">
+                  <div class="single__recording__list__tags">
+                    <span
+                      class="single__recording__list__tag"
+                      *ngFor="let genre of recording.genre"
+                    >
+                      <a routerLink="/genre/">{{ genre }}</a>
+                    </span>
+                  </div>
+                  <h5>{{ recording?.title }}</h5>
+                  <p>{{ recording?.description }}</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <hr />
-          <p>
-            <audio
-              id="audio_with_controls"
-              controls
-              src="{{ show?.show.audioUrl }}"
-              type="audio/mp3"
-            ></audio>
-          </p>
-        </div>
+        </a>
       </div>
-      <div class="col-12 col-md-3">
-        <img class="set-img" src="{{ show?.show.img }}" />
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr />
       </div>
     </div>
     <div class="row">

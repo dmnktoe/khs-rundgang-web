@@ -311,7 +311,6 @@ $duration: 30s;
 .single__recording__list__img-container img {
   width: 100%;
   border-radius: 100%;
-  border: 1px solid #000000;
 }
 
 .single__recording__list__tags {
@@ -339,13 +338,21 @@ $duration: 30s;
 .single__show__list {
   position: relative;
   background: #000;
-  padding: 30px 15px;
+  padding: 40px 15px;
   border-radius: 10px;
   transition: all 0.1s;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   background-size: cover;
   background-position: center;
+  margin: 0 0 30px;
+  min-height: 200px;
+  display: flex;
+}
+
+.single__show__list:hover {
+  background: #ff823f;
+  color: #000;
 }
 
 .single__show__list p {
@@ -356,29 +363,38 @@ $duration: 30s;
 .single__show__list__img-container img {
   width: 100%;
   border-radius: 100%;
-  border: 1px solid #000000;
 }
 
-.single__show__list__tags {
-  margin-bottom: 7px;
-  margin-top: -9px;
+.single__show__list__text-container {
+  display: block;
+  position: relative;
+  margin: auto;
 }
 
-.single__show__list__tag {
-  border: 0;
+.single__artist__list {
+  position: relative;
+  background: #000;
+  padding: 40px 15px;
+  border-radius: 10px;
+  transition: all 0.1s;
+  color: #fff;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  margin: 0 0 30px;
+  min-height: 200px;
+  display: flex;
+}
+
+.single__artist__list:hover {
+  background: #ff823f;
   color: #000;
-  font-size: 12px;
-  padding: 0px 4px 0 0;
-  display: inline-block;
-  font-weight: 300;
 }
 
-.single__show__list__tag::after {
-  content: " •";
-}
-
-.single__show__list__tag:last-child::after {
-  content: "";
+.single__artist__list__text-container {
+  display: block;
+  position: relative;
+  margin: auto;
 }
 
 img.logo {
@@ -480,8 +496,20 @@ button.ais-SearchBox-reset {
   stroke-width: 1px !important;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-  color: #808080;
+.nav-link {
+  color: #808080 !important;
+}
+
+.nav-link.active {
+  color: #fff !important;
+}
+
+.nav-link:hover {
+  color: #bfbfbf !important;
+}
+
+.nav-link:focus {
+  color: #fff !important;
 }
 
 mark,

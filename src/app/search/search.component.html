@@ -5,6 +5,7 @@
         <input
           type="text"
           class="ais-SearchBox-input"
+          autofocus
           [placeholder]="'SEARCH' | translate"
           (keyup)="onQuery({ $event: $event })"
         />
@@ -16,7 +17,7 @@
             <ng-template let-hits="hits" let-results="results">
               <div class="row row-eq-height">
                 <div class="col-12" *ngIf="hits.length === 0">
-                  No results were found for {{ results.query }}.
+                  <span translate>NO_RESULTS</span> {{ results.query }}
                 </div>
                 <div class="col-12">
                   <div class="row">
@@ -78,7 +79,7 @@
             <ng-template let-hits="hits" let-results="results">
               <div class="row row-eq-height">
                 <div class="col-12" *ngIf="hits.length === 0">
-                  No results were found for {{ results.query }}.
+                  <span translate>NO_RESULTS</span> {{ results.query }}
                 </div>
                 <div class="col-12">
                   <div class="row">
@@ -86,25 +87,44 @@
                       class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3"
                       *ngFor="let show of hits"
                     >
+                      <a class="show__link" routerLink="/shows/{{ show.slug }}">
+                        <div class="single__show__list">
+                          <div class="single__show__list__text-container">
+                            <h3>{{ show.title }}</h3>
+                            <p>{{ show.description }}</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ais-hits>
+        </ais-instantsearch>
+        <hr />
+        <ais-instantsearch [config]="artistsConfig">
+          <h3 translate>ARTISTS</h3>
+          <ais-configure [searchParameters]="searchParameters"></ais-configure>
+          <ais-hits>
+            <ng-template let-hits="hits" let-results="results">
+              <div class="row row-eq-height">
+                <div class="col-12" *ngIf="hits.length === 0">
+                  <span translate>NO_RESULTS</span> {{ results.query }}
+                </div>
+                <div class="col-12">
+                  <div class="row">
+                    <div
+                      class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3"
+                      *ngFor="let artist of hits"
+                    >
                       <a
                         class="show__link"
-                        routerLink="/recording/{{ show.slug }}"
+                        routerLink="/artists/{{ artist.slug }}"
                       >
-                        <div
-                          class="single__show__list"
-                          [ngStyle]="{
-                            'background-image': 'url(' + show.image + ')'
-                          }"
-                        >
-                          <div class="row row-eq-height">
-                            <div class="col-12">
-                              <div class="single__show__list__text-container">
-                                <h5>
-                                  {{ show.title }}
-                                </h5>
-                                <p>{{ show.description }}</p>
-                              </div>
-                            </div>
+                        <div class="single__artist__list">
+                          <div class="single__artist__list__text-container">
+                            <h3>{{ artist.title }}</h3>
                           </div>
                         </div>
                       </a>

@@ -8,10 +8,10 @@
 <hr>
 
 # Radio Rasclat
+
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdmnktoe%2Fradio-rasclat-web.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdmnktoe%2Fradio-rasclat-web?ref=badge_shield)
 
-
-Radio Rasclat was originally a project by Domenik Töfflinger for the tour of the Kunsthochschule Kassel under the name "Radio Rundgang". During the opening hours we streamed live music from the basement of the basic class Visual Communication.
+Radio Rasclat was originally a project for the tour of the Kunsthochschule Kassel under the name "Radio Rundgang". During the opening hours we streamed live music from the basement of the basic class Visual Communication.
 
 This radio gives our pre-selected local artists/DJs a platform to try out and play.
 
@@ -19,7 +19,7 @@ Listen live at [Radio Rasclat](https://radio-rasclat.com/).
 
 ## Open Source
 
-Radio Rasclat is an open source product by [Domenik Toefflinger](https://dmnktoe.de/).
+Radio Rasclat is an open source product.
 
 ### Become a backer
 
@@ -178,6 +178,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdmnktoe%2Fradio-rasclat-web.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdmnktoe%2Fradio-rasclat-web?ref=badge_large)

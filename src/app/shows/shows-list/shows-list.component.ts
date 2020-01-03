@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
-import { ApiService } from '../core/api.service';
+import { ApiService } from '@app/core/api.service';
 
 import {
   SwiperComponent,
@@ -12,10 +12,10 @@ import {
 
 @Component({
   selector: 'app-home',
-  templateUrl: './shows.component.html',
-  styleUrls: ['./shows.component.scss']
+  templateUrl: './shows-list.component.html',
+  styleUrls: ['./shows-list.component.scss']
 })
-export class ShowsComponent implements OnInit {
+export class ShowsListComponent implements OnInit {
   shows = '';
   isLoading = false;
 

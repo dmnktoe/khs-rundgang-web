@@ -15,7 +15,8 @@ const searchClient = algoliasearch(
 export class SearchComponent implements OnInit {
   get searchParameters() {
     return {
-      query: this.query
+      query: this.query,
+      hitsPerPage: 8
     };
   }
 
@@ -27,6 +28,12 @@ export class SearchComponent implements OnInit {
 
   public showsConfig = {
     indexName: environment.algoliaShowsIndex,
+    routing: true,
+    searchClient
+  };
+
+  public artistsConfig = {
+    indexName: environment.algoliaArtistsIndex,
     routing: true,
     searchClient
   };

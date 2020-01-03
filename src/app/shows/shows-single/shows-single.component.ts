@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
-import { ApiService } from '../core/api.service';
+import { ApiService } from '../../core/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import Vibrant from 'node-vibrant';
 import { Palette } from 'node-vibrant/lib/color';
 
 @Component({
-  selector: 'app-show-detail',
-  templateUrl: './show-detail.component.html',
-  styleUrls: ['./show-detail.component.scss']
+  selector: 'app-shows-single',
+  templateUrl: './shows-single.component.html',
+  styleUrls: ['./shows-single.component.scss']
 })
-export class ShowDetailComponent implements OnInit {
+export class ShowsSingleComponent implements OnInit {
   show: any;
+  recordings: any;
   title: any;
   hex: any;
   isLoading = false;
@@ -43,14 +44,17 @@ export class ShowDetailComponent implements OnInit {
             this.isLoading = false;
           })
         )
-        .subscribe((show: any) => {
-          Vibrant.from(show.image)
+        .subscribe(show => {
+          this.show = show[0];
+          this.recordings = show[0].recordings;
+          Vibrant.from(this.show.image)
             .getPalette()
             .then(palette => {
               this.hex = palette.Vibrant.hex;
+              console.log(this.hex);
               this.isLoading = false;
             });
-          this.setTitle({ title: this.title });
+          this.setTitle({ title: this.show.title });
         });
     });
   }
