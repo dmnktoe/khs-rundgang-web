@@ -6,7 +6,9 @@ import { Title } from '@angular/platform-browser';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { RecordingsRoutingModule } from './recordings-routing.module';
-import { RecordingsComponent } from './recordings.component';
+import { RecordingsComponent } from '@app/recordings/recordings.component';
+import { RecordingsListComponent } from './recordings-list/recordings-list.component';
+import { RecordingsSingleComponent } from './recordings-single/recordings-single.component';
 import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -21,7 +23,12 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     SwiperModule,
     NgxSkeletonLoaderModule
   ],
-  declarations: [RecordingsComponent],
+  declarations: [
+    RecordingsComponent,
+    RecordingsListComponent,
+    RecordingsSingleComponent
+  ],
+  exports: [RecordingsListComponent],
   providers: [ApiService, Title]
 })
 export class RecordingsModule {}

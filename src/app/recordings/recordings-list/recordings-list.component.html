@@ -1,18 +1,35 @@
-<div *ngIf="isLoading == false && shows.length <= 0">
-  <span translate>NO_SHOWS_FOUND</span>
+<div *ngIf="isLoading == false && recordings.length <= 0">
+  <span translate>NO_RECORDINGS_FOUND</span>
 </div>
 <div *ngIf="isLoading == false">
   <div class="row row-eq-height">
     <div
       class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3"
       [hidden]="isLoading"
-      *ngFor="let show of shows"
+      *ngFor="let recording of recordings"
     >
-      <a class="show__link" routerLink="/shows/{{ show.slug }}">
-        <div class="single__show__list">
-          <div class="single__show__list__text-container">
-            <h5>{{ show.title }}</h5>
-            <p>{{ show.description }}</p>
+      <a class="show__link" routerLink="/recordings/{{ recording.slug }}">
+        <div class="single__recording__list">
+          <div class="row row-eq-height">
+            <div class="col-4">
+              <div class="single__recording__list__img-container">
+                <img src="{{ recording.image }}" />
+              </div>
+            </div>
+            <div class="col-8">
+              <div class="single__recording__list__text-container">
+                <div class="single__recording__list__tags">
+                  <span
+                    class="single__recording__list__tag"
+                    *ngFor="let genre of recording.genres"
+                  >
+                    <a routerLink="/recordings">{{ genre.title }}</a>
+                  </span>
+                </div>
+                <h5>{{ recording.title }}</h5>
+                <p>{{ recording.timeStart | date: 'dd.MM.yyyy' }}</p>
+              </div>
+            </div>
           </div>
         </div>
       </a>

@@ -7,11 +7,11 @@ import Vibrant from 'node-vibrant';
 import { Palette } from 'node-vibrant/lib/color';
 
 @Component({
-  selector: 'app-shows-single',
-  templateUrl: './shows-single.component.html',
-  styleUrls: ['./shows-single.component.scss']
+  selector: 'app-recordings-single',
+  templateUrl: './recordings-single.component.html',
+  styleUrls: ['./recordings-single.component.scss']
 })
-export class ShowsSingleComponent implements OnInit {
+export class RecordingsSingleComponent implements OnInit {
   show: any;
   recordings: any;
   title: any;
@@ -45,8 +45,8 @@ export class ShowsSingleComponent implements OnInit {
           })
         )
         .subscribe(show => {
-          this.show = show;
-          this.recordings = show.recordings;
+          this.show = show[0];
+          this.recordings = show[0].recordings;
           Vibrant.from(this.show.image)
             .getPalette()
             .then(palette => {

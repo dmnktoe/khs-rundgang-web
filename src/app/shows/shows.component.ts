@@ -11,12 +11,12 @@ import {
 } from 'ngx-swiper-wrapper';
 
 @Component({
-  selector: 'app-recordings',
-  templateUrl: './recordings.component.html',
-  styleUrls: ['./recordings.component.scss']
+  selector: 'app-shows',
+  templateUrl: './shows.component.html',
+  styleUrls: ['./shows.component.scss']
 })
-export class RecordingsComponent implements OnInit {
-  recordings = '';
+export class ShowsComponent implements OnInit {
+  shows = '';
   isLoading = false;
 
   public config: SwiperConfigInterface = {
@@ -48,14 +48,14 @@ export class RecordingsComponent implements OnInit {
   ngOnInit() {
     this.isLoading = true;
     this.apiService
-      .getRecordings()
+      .getShows()
       .pipe(
         finalize(() => {
           this.isLoading = false;
         })
       )
-      .subscribe(recordings => {
-        this.recordings = recordings;
+      .subscribe(shows => {
+        this.shows = shows;
       });
   }
 }

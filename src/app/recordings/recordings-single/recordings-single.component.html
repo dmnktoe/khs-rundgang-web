@@ -1,18 +1,18 @@
 <div class="page-wrapper">
   <div *ngIf="isLoading == false" class="container-fluid">
     <div class="row">
-      <div class="col-2">
+      <div class="col-9">
+        <h1 [style.color]="hex">
+          <span>{{ show?.title }}</span>
+        </h1>
+        <p>{{ show?.description }}</p>
+      </div>
+      <div class="col-3">
         <img
           src="{{ show?.image }}"
           alt="{{ show?.title }}"
           style="width: 100%"
         />
-      </div>
-      <div class="col-10">
-        <h1 [style.color]="hex">
-          <span>{{ show?.title }}</span>
-        </h1>
-        <p>{{ show?.description }}</p>
       </div>
     </div>
     <div class="row">
@@ -20,7 +20,42 @@
         <hr />
       </div>
     </div>
-    <app-recordings-list [recordings]="recordings"> </app-recordings-list>
+    <div class="row row-eq-height">
+      <div
+        class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3"
+        [hidden]="isLoading"
+        *ngFor="let recording of recordings"
+      >
+        <a
+          class="recording__link"
+          routerLink="/recording/{{ recording?.slug }}"
+        >
+          <div class="single__recording__list">
+            <div class="row row-eq-height">
+              <div class="col-4">
+                <div class="single__recording__list__img-container">
+                  <img src="{{ recording?.image }}" />
+                </div>
+              </div>
+              <div class="col-8">
+                <div class="single__recording__list__text-container">
+                  <div class="single__recording__list__tags">
+                    <span
+                      class="single__recording__list__tag"
+                      *ngFor="let genre of recording.genre"
+                    >
+                      <a routerLink="/genre/">{{ genre }}</a>
+                    </span>
+                  </div>
+                  <h5>{{ recording?.title }}</h5>
+                  <p>{{ recording?.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
     <div class="row">
       <div class="col-12">
         <hr />

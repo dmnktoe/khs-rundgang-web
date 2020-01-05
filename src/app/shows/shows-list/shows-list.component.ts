@@ -1,61 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { finalize } from 'rxjs/operators';
-import { ApiService } from '@app/core/api.service';
-
-import {
-  SwiperComponent,
-  SwiperDirective,
-  SwiperConfigInterface,
-  SwiperScrollbarInterface,
-  SwiperPaginationInterface
-} from 'ngx-swiper-wrapper';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-shows-list',
   templateUrl: './shows-list.component.html',
   styleUrls: ['./shows-list.component.scss']
 })
 export class ShowsListComponent implements OnInit {
-  shows = '';
-  isLoading = false;
+  @Input() shows = '';
+  @Input() isLoading = false;
 
-  public config: SwiperConfigInterface = {
-    a11y: true,
-    direction: 'horizontal',
-    pagination: true,
-    loop: true,
-    slidesPerView: 4,
-    spaceBetween: 30,
-    breakpoints: {
-      // when window width is <= 640px
-      640: {
-        slidesPerView: 1,
-        spaceBetween: 30
-      },
-      990: {
-        slidesPerView: 2,
-        spaceBetween: 30
-      },
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 30
-      }
-    }
-  };
+  constructor() {}
 
-  constructor(private apiService: ApiService) {}
-
-  ngOnInit() {
-    this.isLoading = true;
-    this.apiService
-      .getShows()
-      .pipe(
-        finalize(() => {
-          this.isLoading = false;
-        })
-      )
-      .subscribe(shows => {
-        this.shows = shows;
-      });
-  }
+  ngOnInit() {}
 }
