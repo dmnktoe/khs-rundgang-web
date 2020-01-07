@@ -7,6 +7,8 @@
 import env from './.env';
 
 export const environment = {
+  algoliaAppId: '7LOP7PA3QP',
+  algoliaSearchApiKey: 'ee94ab6f55a21150ac1ae1316dbdc467',
   algoliaRecordingsIndex: 'prod_recordings',
   algoliaShowsIndex: 'prod_shows',
   algoliaArtistsIndex: 'prod_artists',
