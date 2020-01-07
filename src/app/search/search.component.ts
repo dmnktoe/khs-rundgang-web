@@ -3,8 +3,8 @@ import { environment } from '@env/environment';
 import * as algoliasearch from 'algoliasearch/lite';
 
 const searchClient = algoliasearch(
-  '7LOP7PA3QP',
-  'ee94ab6f55a21150ac1ae1316dbdc467'
+  environment.algoliaAppId,
+  environment.algoliaSearchApiKey
 );
 
 @Component({
