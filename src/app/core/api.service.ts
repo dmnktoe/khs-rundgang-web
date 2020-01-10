@@ -57,6 +57,19 @@ export class ApiService {
     );
   }
 
+  getRecording({ recordingId }: { recordingId: any }) {
+    return this.httpClient
+      .get(environment.serverUrl + '/recordings/recording/' + recordingId)
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Aufnahme konnte nicht geladen werden.'
+          )
+        )
+      );
+  }
+
   getShows() {
     return this.httpClient.get(environment.serverUrl + '/shows').pipe(
       map((body: any) => body),

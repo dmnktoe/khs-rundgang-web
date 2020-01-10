@@ -10,7 +10,7 @@
       </div>
     </div>
     <div *ngIf="recordings.length > 0">
-      <div *ngIf="isLoading == false" class="row">
+      <!-- <div *ngIf="isLoading == false" class="row">
         <div class="col-12 my-1">
           <div class="swiper-container" [swiper]="config">
             <div class="swiper-wrapper">
@@ -92,7 +92,9 @@
           <hr />
         </div>
       </div>
+    </div>-->
+      <app-recordings-list [recordings]="recordings"> </app-recordings-list>
     </div>
-    <app-recordings-list [recordings]="recordings"> </app-recordings-list>
   </div>
+  <!-- unten weg -->
 </div>

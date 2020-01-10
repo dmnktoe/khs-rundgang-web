@@ -8,6 +8,7 @@ import { RecordingsSingleComponent } from '@app/recordings/recordings-single/rec
 
 const routes: Routes = [
   Shell.childRoutes([
+    { path: '', redirectTo: 'recordings', pathMatch: 'full' },
     {
       path: 'recordings',
       component: RecordingsComponent,
