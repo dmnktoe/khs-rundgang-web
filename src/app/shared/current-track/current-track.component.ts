@@ -29,9 +29,9 @@ export class CurrentTrackComponent implements OnInit {
   ngOnInit() {
     this.isLoading = true;
     this.value = 'play-circle';
-    this.apiService.getCurrentTrackLive().subscribe((current: any) => {
+    /* this.apiService.getCurrentTrackLive().subscribe((current: any) => {
       this.current = current;
       this.isLoading = false;
-    });
+    });*/
   }
 }
