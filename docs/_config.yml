@@ -1,7 +1,0 @@
-title: 'Radio Rasclat'
-remote_theme: pmarsceill/just-the-docs
-search_enabled: true
-aux_links:
-  'Listen live':
-    - '//radio-rasclat.com'
-footer_content: 'Copyright &copy; 2019 Radio Rasclat.'
