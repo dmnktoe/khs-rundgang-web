@@ -5,14 +5,13 @@ import { Title } from '@angular/platform-browser';
 
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
-import { ShowsRoutingModule } from './shows-routing.module';
-import { ShowsComponent } from '@app/shows/shows.component';
-import { ShowsListComponent } from './shows-list/shows-list.component';
-import { ShowsSingleComponent } from './shows-single/shows-single.component';
+import { RecordingsRoutingModule } from './recordings-routing.module';
+import { RecordingsComponent } from '@app/recordings/recordings.component';
+import { RecordingsListComponent } from './recordings-list/recordings-list.component';
+import { RecordingsSingleComponent } from './recordings-single/recordings-single.component';
 import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
-import { RecordingsModule } from '@app/recordings/recordings.module';
 
 @NgModule({
   imports: [
@@ -20,12 +19,16 @@ import { RecordingsModule } from '@app/recordings/recordings.module';
     TranslateModule,
     CoreModule,
     SharedModule,
-    ShowsRoutingModule,
+    RecordingsRoutingModule,
     SwiperModule,
-    NgxSkeletonLoaderModule,
-    RecordingsModule
+    NgxSkeletonLoaderModule
   ],
-  declarations: [ShowsComponent, ShowsListComponent, ShowsSingleComponent],
+  declarations: [
+    RecordingsComponent,
+    RecordingsListComponent,
+    RecordingsSingleComponent
+  ],
+  exports: [RecordingsListComponent],
   providers: [ApiService, Title]
 })
-export class ShowsModule {}
+export class RecordingsModule {}

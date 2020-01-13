@@ -1,0 +1,108 @@
+<div class="page-wrapper">
+  <div *ngIf="isLoading == false" class="container-fluid">
+    <div class="row">
+      <div class="col-2">
+        <img
+          src="{{ recording?.image }}"
+          alt="{{ recording?.title }}"
+          style="width: 100%"
+        />
+      </div>
+      <div class="col-10">
+        <h1 [style.color]="hex">
+          <span>{{ recording?.title }}</span>
+        </h1>
+        <h3>
+          {{ recording.timeStart | date: 'dd.MM.yyyy' }}
+        </h3>
+        <p>{{ recording?.description }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr />
+      </div>
+    </div>
+    <audio
+      id="audio_with_controls"
+      controls
+      src="{{ recording.audio }}"
+      type="audio/mp3"
+    >
+      Ihr Browser kann dieses Tondokument nicht wiedergeben.
+    </audio>
+    <div class="row">
+      <div class="col-12">
+        <hr />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <a
+          class="btn btn-secondary"
+          [style.backgroundColor]="hex"
+          routerLink="/recordings"
+          translate
+          >BACK</a
+        >
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isLoading == true" class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <ngx-skeleton-loader
+          count="1"
+          [theme]="{
+            'border-radius': '10px',
+            height: '50px',
+            width: '600px'
+          }"
+        ></ngx-skeleton-loader
+        ><br />
+        <ngx-skeleton-loader
+          count="1"
+          [theme]="{
+            'border-radius': '10px',
+            height: '27px',
+            width: '400px'
+          }"
+        ></ngx-skeleton-loader>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-9">
+        <div>
+          <p>
+            <ngx-skeleton-loader
+              count="4"
+              [theme]="{
+                'border-radius': '10',
+                height: '10px',
+                width: '100%'
+              }"
+            ></ngx-skeleton-loader>
+          </p>
+          <hr />
+        </div>
+      </div>
+      <div class="col-12 col-md-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <a
+          class="btn btn-secondary"
+          [style.backgroundColor]="hex"
+          routerLink="/recordings"
+          translate
+          >BACK</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

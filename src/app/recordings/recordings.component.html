@@ -4,32 +4,34 @@
       <div class="col-12 mb-3">
         <h1>
           <span translate>
-            SHOWS
+            RECORDINGS
           </span>
         </h1>
       </div>
     </div>
-    <div *ngIf="shows.length > 0">
+    <div *ngIf="recordings.length > 0">
       <!-- <div *ngIf="isLoading == false" class="row">
         <div class="col-12 my-1">
           <div class="swiper-container" [swiper]="config">
             <div class="swiper-wrapper">
               <div
                 class="swiper-slide"
-                *ngFor="let show of shows | slice: 0:6; let i = index"
+                *ngFor="let recording of recordings | slice: 0:6; let i = index"
               >
-                <a class="show__link" routerLink="/shows/{{ show.slug }}">
+                <a
+                  class="show__link"
+                  routerLink="/recordings/{{ recording.slug }}"
+                >
                   <div
                     class="swiper__show slider__img__container"
                     [ngStyle]="{
                       background:
                         'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%), no-repeat center center url(' +
-                        show.image +
+                        recording.image +
                         ')'
                     }"
                   >
-                    <h6 translate>CURRENT_SHOW</h6>
-                    <h4 class="align-bottom">{{ show.title }}</h4>
+                    <h4 class="align-bottom">{{ recording.title }}</h4>
                   </div>
                 </a>
               </div>
@@ -84,13 +86,15 @@
             </div>
           </div>
         </div>
-      </div>-->
+      </div>
       <div class="row">
         <div class="col-12 my-3">
           <hr />
         </div>
       </div>
+    </div>-->
+      <app-recordings-list [recordings]="recordings"> </app-recordings-list>
     </div>
-    <app-shows-list [shows]="shows"> </app-shows-list>
   </div>
+  <!-- unten weg -->
 </div>

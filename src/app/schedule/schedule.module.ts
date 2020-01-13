@@ -10,8 +10,6 @@ import { SharedModule } from '@app/shared';
 import { ScheduleRoutingModule } from './schedule-routing.module';
 import { ScheduleComponent } from './schedule.component';
 
-import { MomentPipe } from '@app/schedule/MomentPipe';
-
 @NgModule({
   imports: [
     CommonModule,
@@ -20,7 +18,7 @@ import { MomentPipe } from '@app/schedule/MomentPipe';
     CoreModule,
     SharedModule
   ],
-  declarations: [ScheduleComponent, MomentPipe],
+  declarations: [ScheduleComponent],
   providers: [Title]
 })
 export class ScheduleModule {}

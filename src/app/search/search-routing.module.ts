@@ -10,7 +10,7 @@ const routes: Routes = [
     {
       path: 'search',
       component: SearchComponent,
-      data: { title: extract('SEARCH') }
+      data: { title: extract('BROWSER_TITLE_SEARCH') }
     }
   ])
 ];

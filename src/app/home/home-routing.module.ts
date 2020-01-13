@@ -2,15 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { extract } from '@app/core';
-import { ShowDetailComponent } from './show-detail.component';
+import { HomeComponent } from './home.component';
 import { Shell } from '@app/shell/shell.service';
 
 const routes: Routes = [
   Shell.childRoutes([
+    { path: '', redirectTo: 'start', pathMatch: 'full' },
     {
-      path: 'show/:id',
-      component: ShowDetailComponent,
-      data: { title: extract('SHOW_DETAIL') }
+      path: 'start',
+      component: HomeComponent,
+      data: { title: extract('BROWSER_TITLE_START') }
     }
   ])
 ];
@@ -20,4 +21,4 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: []
 })
-export class ShowDetailRoutingModule {}
+export class HomeRoutingModule {}

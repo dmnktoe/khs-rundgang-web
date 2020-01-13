@@ -10,7 +10,7 @@ const routes: Routes = [
     {
       path: 'about',
       component: AboutComponent,
-      data: { title: extract('ABOUT') }
+      data: { title: extract('BROWSER_TITLE_ABOUT') }
     }
   ])
 ];

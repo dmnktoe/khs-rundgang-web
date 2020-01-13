@@ -3,8 +3,8 @@ import { environment } from '@env/environment';
 import * as algoliasearch from 'algoliasearch/lite';
 
 const searchClient = algoliasearch(
-  'ZWO16LPKPA',
-  '67e184cae67ef2d22f83a45059f7956e'
+  environment.algoliaAppId,
+  environment.algoliaSearchApiKey
 );
 
 @Component({
@@ -13,15 +13,39 @@ const searchClient = algoliasearch(
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  version: string = environment.version;
+  get searchParameters() {
+    return {
+      query: this.query,
+      hitsPerPage: 8
+    };
+  }
 
-  config = {
-    indexName: 'archive',
+  public recordingsConfig = {
+    indexName: environment.algoliaRecordingsIndex,
     routing: true,
     searchClient
   };
 
+  public showsConfig = {
+    indexName: environment.algoliaShowsIndex,
+    routing: true,
+    searchClient
+  };
+
+  public artistsConfig = {
+    indexName: environment.algoliaArtistsIndex,
+    routing: true,
+    searchClient
+  };
+
+  private query = '';
+
   constructor() {}
+
+  // tslint:disable-next-line:typedef
+  onQuery({ $event }: { $event: any }) {
+    this.query = $event.target.value;
+  }
 
   ngOnInit() {}
 }

@@ -7,13 +7,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
-import { ShowsModule } from './shows/shows.module';
-import { ShowDetailModule } from './show-detail/show-detail.module';
-import { ShellModule } from './shell/shell.module';
+/* VIEWS */
 import { AboutModule } from './about/about.module';
-import { SearchModule } from './search/search.module';
+import { HomeModule } from './home/home.module';
+import { RecordingsModule } from './recordings/recordings.module';
 import { ScheduleModule } from '@app/schedule/schedule.module';
-import { LoginModule } from './login/login.module';
+import { SearchModule } from './search/search.module';
+import { ShellModule } from './shell/shell.module';
+import { ShowsModule } from './shows/shows.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IconsModule } from '@app/shared/icons/icons.module';
@@ -22,7 +23,6 @@ import { NgAisModule } from 'angular-instantsearch';
 import { NgxAnalyticsModule } from 'ngx-analytics';
 import { NgxAnalyticsGoogleAnalytics } from 'ngx-analytics/ga';
 import { SwiperModule } from 'ngx-swiper-wrapper';
-import { DataService } from '@app/shared/listen.service';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -41,7 +41,6 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal'
 };
 
-@Injectable()
 export class SentryErrorHandler implements ErrorHandler {
   constructor() {
     Sentry.init({
@@ -60,7 +59,6 @@ export class SentryErrorHandler implements ErrorHandler {
       }
     });
   }
-
   handleError(error: any) {
     Sentry.captureException(error.originalError || error);
   }
@@ -80,13 +78,13 @@ export class SentryErrorHandler implements ErrorHandler {
     CoreModule,
     SharedModule,
     ShellModule,
+    /*HomeModule,*/
+    RecordingsModule,
     ShowsModule,
-    ShowDetailModule,
     AboutModule,
     SearchModule,
     ScheduleModule,
-    LoginModule,
-    SocketIoModule.forRoot(config),
+    /*SocketIoModule.forRoot(config),*/
     NgxAnalyticsModule.forRoot([NgxAnalyticsGoogleAnalytics]),
     SwiperModule,
     NgAisModule.forRoot(),

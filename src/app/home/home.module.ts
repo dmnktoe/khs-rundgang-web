@@ -5,14 +5,11 @@ import { Title } from '@angular/platform-browser';
 
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
-import { ShowsRoutingModule } from './shows-routing.module';
-import { ShowsComponent } from '@app/shows/shows.component';
-import { ShowsListComponent } from './shows-list/shows-list.component';
-import { ShowsSingleComponent } from './shows-single/shows-single.component';
+import { HomeRoutingModule } from './home-routing.module';
+import { HomeComponent } from './home.component';
 import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
-import { RecordingsModule } from '@app/recordings/recordings.module';
 
 @NgModule({
   imports: [
@@ -20,12 +17,11 @@ import { RecordingsModule } from '@app/recordings/recordings.module';
     TranslateModule,
     CoreModule,
     SharedModule,
-    ShowsRoutingModule,
+    HomeRoutingModule,
     SwiperModule,
-    NgxSkeletonLoaderModule,
-    RecordingsModule
+    NgxSkeletonLoaderModule
   ],
-  declarations: [ShowsComponent, ShowsListComponent, ShowsSingleComponent],
+  declarations: [HomeComponent],
   providers: [ApiService, Title]
 })
-export class ShowsModule {}
+export class HomeModule {}
