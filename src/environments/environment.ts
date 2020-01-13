@@ -26,7 +26,8 @@ export const environment = {
   googleAnalytics: {
     domain: 'auto',
     trackingId: 'UA-24449183-8' // replace with your Tracking Id
-  }
+  },
+  environment: 'Development'
 };
 
 /*

@@ -29,12 +29,13 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { AudioContextModule } from 'angular-audio-context';
 import { environment } from '@env/environment';
 import * as Sentry from '@sentry/browser';
-/*import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 const config: SocketIoConfig = {
   url: environment.socketio,
   options: {}
-};*/
+};
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal'
@@ -46,7 +47,16 @@ export class SentryErrorHandler implements ErrorHandler {
       dsn: 'https://e0e35bbbc12a4eb8a6d6f04aa2481a1d@sentry.io/1724269',
       environment: environment.environment,
       release: environment.version,
-      enabled: true
+      enabled: true,
+      /* blacklistUrls: ['http://localhost:8080'],
+      whitelistUrls: ['http://localhost:4200'], */
+      beforeSend(event: any, hint: any) {
+        // Check if it is an exception, and if so, show the report dialog
+        if (event.exception) {
+          Sentry.showReportDialog({ eventId: event.event_id });
+        }
+        return event;
+      }
     });
   }
   handleError(error: any) {
