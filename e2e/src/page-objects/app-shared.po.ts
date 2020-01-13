@@ -11,7 +11,7 @@ export class AppSharedPage {
   async navigateAndSetLanguage() {
     // Forces default language
     await this.navigateTo();
-    await browser.executeScript(() => localStorage.setItem('language', 'US'));
+    await browser.executeScript(() => localStorage.setItem('language', 'EN'));
   }
 
   async navigateTo() {

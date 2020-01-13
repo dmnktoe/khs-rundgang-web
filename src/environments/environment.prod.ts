@@ -7,15 +7,20 @@
 import env from './.env';
 
 export const environment = {
+  algoliaAppId: '7LOP7PA3QP',
+  algoliaSearchApiKey: 'ee94ab6f55a21150ac1ae1316dbdc467',
+  algoliaRecordingsIndex: 'prod_recordings',
+  algoliaShowsIndex: 'prod_shows',
+  algoliaArtistsIndex: 'prod_artists',
   production: true,
+  environment: 'production',
   version: env.npm_package_version,
-  serverUrl: 'https://api.radio-rasclat.com/v1',
+  serverUrl: 'https://api.radio-rasclat.com',
   socketio: 'https://api-live.radio-rasclat.com',
-  defaultLanguage: 'US',
-  supportedLanguages: ['DE', 'US', 'FR'],
+  defaultLanguage: 'EN',
+  supportedLanguages: ['DE', 'EN', 'FR'],
   googleAnalytics: {
     domain: 'auto',
     trackingId: 'UA-24449183-8' // replace with your Tracking Id
-  },
-  environment: 'Production'
+  }
 };

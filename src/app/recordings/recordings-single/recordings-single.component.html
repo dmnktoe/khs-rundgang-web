@@ -1,11 +1,21 @@
 <div class="page-wrapper">
   <div *ngIf="isLoading == false" class="container-fluid">
     <div class="row">
-      <div class="col-12">
+      <div class="col-2">
+        <img
+          src="{{ recording?.image }}"
+          alt="{{ recording?.title }}"
+          style="width: 100%"
+        />
+      </div>
+      <div class="col-10">
         <h1 [style.color]="hex">
-          <span>{{ show?.show.title }}</span>
+          <span>{{ recording?.title }}</span>
         </h1>
-        <h4>{{ show?.show.caption }}</h4>
+        <h3>
+          {{ recording.timeStart | date: 'dd.MM.yyyy' }}
+        </h3>
+        <p>{{ recording?.description }}</p>
       </div>
     </div>
     <div class="row">
@@ -13,37 +23,17 @@
         <hr />
       </div>
     </div>
+    <audio
+      id="audio_with_controls"
+      controls
+      src="{{ recording.audio }}"
+      type="audio/mp3"
+    >
+      Ihr Browser kann dieses Tondokument nicht wiedergeben.
+    </audio>
     <div class="row">
-      <div class="col-12 col-md-9">
-        <div>
-          <p>
-            {{ show?.show.description }}
-          </p>
-          <p>
-            {{ show?.show.date }}<br />
-            {{ show?.show.time }}
-          </p>
-          <div class="single__show__list__tags">
-            <span
-              class="single__show__list__tag"
-              *ngFor="let tag of show?.show.class"
-            >
-              {{ tag }}
-            </span>
-          </div>
-          <hr />
-          <p>
-            <audio
-              id="audio_with_controls"
-              controls
-              src="{{ show?.show.audioUrl }}"
-              type="audio/mp3"
-            ></audio>
-          </p>
-        </div>
-      </div>
-      <div class="col-12 col-md-3">
-        <img class="set-img" src="{{ show?.show.img }}" />
+      <div class="col-12">
+        <hr />
       </div>
     </div>
     <div class="row">
@@ -51,7 +41,7 @@
         <a
           class="btn btn-secondary"
           [style.backgroundColor]="hex"
-          routerLink="/shows"
+          routerLink="/recordings"
           translate
           >BACK</a
         >
@@ -108,7 +98,7 @@
         <a
           class="btn btn-secondary"
           [style.backgroundColor]="hex"
-          routerLink="/shows"
+          routerLink="/recordings"
           translate
           >BACK</a
         >

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
+import { ApiService } from '@app/core/api.service';
 
 import {
   SwiperComponent,
@@ -9,10 +10,8 @@ import {
   SwiperPaginationInterface
 } from 'ngx-swiper-wrapper';
 
-import { QuoteService } from './quote.service';
-
 @Component({
-  selector: 'app-home',
+  selector: 'app-shows',
   templateUrl: './shows.component.html',
   styleUrls: ['./shows.component.scss']
 })
@@ -44,12 +43,12 @@ export class ShowsComponent implements OnInit {
     }
   };
 
-  constructor(private quoteService: QuoteService) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
     this.isLoading = true;
-    this.quoteService
-      .getRandomQuote({ category: 'dev' })
+    this.apiService
+      .getShows()
       .pipe(
         finalize(() => {
           this.isLoading = false;

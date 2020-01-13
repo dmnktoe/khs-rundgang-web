@@ -10,7 +10,7 @@ const routes: Routes = [
     {
       path: 'schedule',
       component: ScheduleComponent,
-      data: { title: extract('SCHEDULE') }
+      data: { title: extract('BROWSER_TITLE_SCHEDULE') }
     }
   ])
 ];

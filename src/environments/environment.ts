@@ -11,17 +11,22 @@
 import env from './.env';
 
 export const environment = {
+  algoliaAppId: '7LOP7PA3QP',
+  algoliaSearchApiKey: 'ee94ab6f55a21150ac1ae1316dbdc467',
+  algoliaRecordingsIndex: 'dev_recordings',
+  algoliaShowsIndex: 'dev_shows',
+  algoliaArtistsIndex: 'dev_artists',
   production: false,
+  environment: 'development',
   version: env.npm_package_version + '-dev',
-  serverUrl: '/v1',
+  serverUrl: 'http://localhost:8080',
   socketio: 'http://localhost:52001',
-  defaultLanguage: 'US',
-  supportedLanguages: ['DE', 'US', 'FR'],
+  defaultLanguage: 'EN',
+  supportedLanguages: ['DE', 'EN', 'FR'],
   googleAnalytics: {
     domain: 'auto',
     trackingId: 'UA-24449183-8' // replace with your Tracking Id
-  },
-  environment: 'Development'
+  }
 };
 
 /*

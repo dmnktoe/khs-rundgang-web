@@ -257,7 +257,9 @@ The following 3rd-party software packages may be used by or distributed with **r
 #### **rxjs-compat (6.5.3)**
 
 - Licenses
+
   - Apache-2.0
+
     - Attribution:
       Apache License
       Version 2.0, January 2004
@@ -480,7 +482,9 @@ The following 3rd-party software packages may be used by or distributed with **r
 #### **rxjs (6.5.3)**
 
 - Licenses
+
   - Apache-2.0
+
     - Attribution:
       Apache License
       Version 2.0, January 2004
@@ -964,7 +968,9 @@ The following 3rd-party software packages may be used by or distributed with **r
 #### **@types/jquery (3.3.31)**
 
 - Licenses
+
   - MIT
+
     - Attribution:
       MIT License
 
@@ -997,7 +1003,9 @@ The following 3rd-party software packages may be used by or distributed with **r
 #### **@types/algoliasearch-helper (2.26.1)**
 
 - Licenses
+
   - MIT
+
     - Attribution:
       MIT License
 
@@ -1339,7 +1347,7 @@ The following 3rd-party software packages may be used by or distributed with **r
   - **Multi-license:** MIT
     - Attribution:
       Font Awesome Free License
-      -------------------------
+      ***
       Font Awesome Free is free, open source, and GPL friendly. You can use it for
       commercial projects, open source projects, or really almost whatever you want.
       Full Font Awesome Free license: https://fontawesome.com/license/free.
@@ -1374,7 +1382,7 @@ The following 3rd-party software packages may be used by or distributed with **r
   - MIT
     - Attribution:
       Font Awesome Free License
-      -------------------------
+      ***
       Font Awesome Free is free, open source, and GPL friendly. You can use it for
       commercial projects, open source projects, or really almost whatever you want.
       Full Font Awesome Free license: https://fontawesome.com/license/free.
@@ -3706,13 +3714,15 @@ The following 3rd-party software packages may be used by or distributed with **r
 #### **jpeg-js (0.3.6)**
 
 - Licenses
+
   - BSD-3-Clause
+
     - Attribution:
       Copyright (c) 2014, Eugene Ware
       All rights reserved.
-        
-       Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions are met:  
+
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are met:
 
       1\. Redistributions of source code must retain the above copyright
       notice, this list of conditions and the following disclaimer.  
@@ -3721,9 +3731,9 @@ The following 3rd-party software packages may be used by or distributed with **r
       documentation and/or other materials provided with the distribution.  
        3\. Neither the name of Eugene Ware nor the names of its contributors
       may be used to endorse or promote products derived from this software
-      without specific prior written permission.  
-         
-       THIS SOFTWARE IS PROVIDED BY EUGENE WARE ''AS IS'' AND ANY
+      without specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY EUGENE WARE ''AS IS'' AND ANY
       EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
       WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
       DISCLAIMED. IN NO EVENT SHALL EUGENE WARE BE LIABLE FOR ANY
@@ -3733,13 +3743,15 @@ The following 3rd-party software packages may be used by or distributed with **r
       ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
       SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
   - **Multi-license:** BSD-3-Clause
+
     - Attribution:
       Copyright (c) 2014, Eugene Ware
       All rights reserved.
-        
-       Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions are met:  
+
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions are met:
 
       1\. Redistributions of source code must retain the above copyright
       notice, this list of conditions and the following disclaimer.  
@@ -3748,9 +3760,9 @@ The following 3rd-party software packages may be used by or distributed with **r
       documentation and/or other materials provided with the distribution.  
        3\. Neither the name of Eugene Ware nor the names of its contributors
       may be used to endorse or promote products derived from this software
-      without specific prior written permission.  
-         
-       THIS SOFTWARE IS PROVIDED BY EUGENE WARE ''AS IS'' AND ANY
+      without specific prior written permission.
+
+      THIS SOFTWARE IS PROVIDED BY EUGENE WARE ''AS IS'' AND ANY
       EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
       WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
       DISCLAIMED. IN NO EVENT SHALL EUGENE WARE BE LIABLE FOR ANY
@@ -3761,6 +3773,7 @@ The following 3rd-party software packages may be used by or distributed with **r
       (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
       SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       _OR_ BSD-2-Clause
+
     - Attribution:
       Copyright (c) 2019, jpeg-js Contributors
       Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
@@ -3943,7 +3956,9 @@ The following 3rd-party software packages may be used by or distributed with **r
 #### **mime-db (1.40.0)**
 
 - Licenses
+
   - MIT
+
     - Attribution:
 
           The MIT License (MIT)
@@ -5761,7 +5776,9 @@ The following 3rd-party software packages may be used by or distributed with **r
 #### **@types/algoliasearch (3.30.18)**
 
 - Licenses
+
   - MIT
+
     - Attribution:
       MIT License
 
@@ -5794,7 +5811,9 @@ The following 3rd-party software packages may be used by or distributed with **r
 #### **@types/lodash (4.14.138)**
 
 - Licenses
+
   - MIT
+
     - Attribution:
       MIT License
 
@@ -5827,7 +5846,9 @@ The following 3rd-party software packages may be used by or distributed with **r
 #### **@types/node (10.14.17)**
 
 - Licenses
+
   - MIT
+
     - Attribution:
       MIT License
 
@@ -5860,7 +5881,9 @@ The following 3rd-party software packages may be used by or distributed with **r
 #### **@types/sizzle (2.3.2)**
 
 - Licenses
+
   - MIT
+
     - Attribution:
       MIT License
 

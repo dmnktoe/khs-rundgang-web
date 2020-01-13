@@ -7,13 +7,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
-import { ShowsModule } from './shows/shows.module';
-import { ShowDetailModule } from './show-detail/show-detail.module';
-import { ShellModule } from './shell/shell.module';
+/* VIEWS */
 import { AboutModule } from './about/about.module';
-import { SearchModule } from './search/search.module';
+import { HomeModule } from './home/home.module';
+import { RecordingsModule } from './recordings/recordings.module';
 import { ScheduleModule } from '@app/schedule/schedule.module';
-import { LoginModule } from './login/login.module';
+import { SearchModule } from './search/search.module';
+import { ShellModule } from './shell/shell.module';
+import { ShowsModule } from './shows/shows.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IconsModule } from '@app/shared/icons/icons.module';
@@ -22,7 +23,6 @@ import { NgAisModule } from 'angular-instantsearch';
 import { NgxAnalyticsModule } from 'ngx-analytics';
 import { NgxAnalyticsGoogleAnalytics } from 'ngx-analytics/ga';
 import { SwiperModule } from 'ngx-swiper-wrapper';
-import { DataService } from '@app/shared/listen.service';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -32,10 +32,10 @@ import * as Sentry from '@sentry/browser';
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
-const config: SocketIoConfig = {
+/*const config: SocketIoConfig = {
   url: environment.socketio,
   options: {}
-};
+};*/
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal'
@@ -48,19 +48,9 @@ export class SentryErrorHandler implements ErrorHandler {
       dsn: 'https://e0e35bbbc12a4eb8a6d6f04aa2481a1d@sentry.io/1724269',
       environment: environment.environment,
       release: environment.version,
-      enabled: true,
-      /* blacklistUrls: ['http://localhost:8080'],
-      whitelistUrls: ['http://localhost:4200'], */
-      beforeSend(event: any, hint: any) {
-        // Check if it is an exception, and if so, show the report dialog
-        if (event.exception) {
-          Sentry.showReportDialog({ eventId: event.event_id });
-        }
-        return event;
-      }
+      enabled: true
     });
   }
-
   handleError(error: any) {
     Sentry.captureException(error.originalError || error);
   }
@@ -80,13 +70,13 @@ export class SentryErrorHandler implements ErrorHandler {
     CoreModule,
     SharedModule,
     ShellModule,
+    /*HomeModule,*/
+    RecordingsModule,
     ShowsModule,
-    ShowDetailModule,
     AboutModule,
     SearchModule,
     ScheduleModule,
-    LoginModule,
-    SocketIoModule.forRoot(config),
+    /*SocketIoModule.forRoot(config),*/
     NgxAnalyticsModule.forRoot([NgxAnalyticsGoogleAnalytics]),
     SwiperModule,
     NgAisModule.forRoot(),
