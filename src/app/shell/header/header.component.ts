@@ -50,10 +50,10 @@ export class HeaderComponent implements OnInit {
       });
     }
     this.isLoading = true;
-    this.apiService.getCurrentShowLive().subscribe((currentShow: any) => {
+    /* this.apiService.getCurrentShowLive().subscribe((currentShow: any) => {
       this.currentShow = currentShow;
       this.isLoading = false;
-    });
+    }); */
   }
 
   toggleMenu() {

@@ -1,6 +1,10 @@
 <header>
   <nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" routerLink="/start" translate>
+    <!-- <a class="navbar-brand" routerLink="/start" translate>
+      <img class="logo d-none d-md-block" src="../../../assets/svg/logo.svg" />
+      <span translate>APP_NAME</span>
+    </a> -->
+    <a class="navbar-brand" routerLink="/recordings" translate>
       <img class="logo d-none d-md-block" src="../../../assets/svg/logo.svg" />
       <span translate>APP_NAME</span>
     </a>
@@ -58,7 +62,6 @@
           routerLinkActive="active"
           (click)="closeMenu()"
         >
-          <!-- <i class="fas fa-question-circle"></i> -->
           <span translate>SCHEDULE</span>
         </a>
         <a
@@ -66,18 +69,16 @@
           href="http://radiorundgang.chatango.com/"
           target="_blank"
         >
-          <!-- <i class="fas fa-question-circle"></i> -->
           <span translate>CHAT</span>
         </a>
-        <a
+        <!--  <a
           class="nav-item nav-link text-uppercase"
           routerLink="/about"
           routerLinkActive="active"
           (click)="closeMenu()"
         >
-          <!-- <i class="fas fa-question-circle"></i> -->
           <span translate>ABOUT</span>
-        </a>
+        </a>-->
       </div>
       <div class="navbar-nav ml-auto">
         <span class="nav-item nav-link text-uppercase current__show">

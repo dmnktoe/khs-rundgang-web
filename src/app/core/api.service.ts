@@ -3,13 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { environment } from '@env/environment';
-import { Socket } from 'ngx-socket-io';
+/* import { Socket } from 'ngx-socket-io'; */
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  constructor(private httpClient: HttpClient, public socket: Socket) {}
+  constructor(private httpClient: HttpClient /*, public socket: Socket*/) {}
 
   getArtists() {
     return this.httpClient.get(environment.serverUrl + 'artists').pipe(
@@ -57,6 +57,19 @@ export class ApiService {
     );
   }
 
+  getRecording({ recordingId }: { recordingId: any }) {
+    return this.httpClient
+      .get(environment.serverUrl + '/recordings/recording/' + recordingId)
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Aufnahme konnte nicht geladen werden.'
+          )
+        )
+      );
+  }
+
   getShows() {
     return this.httpClient.get(environment.serverUrl + '/shows').pipe(
       map((body: any) => body),
@@ -95,11 +108,11 @@ export class ApiService {
       );
   }
 
-  getCurrentTrackLive() {
+  /* getCurrentTrackLive() {
     return this.socket.fromEvent<any>('currentTrack').map(data => data);
   }
 
   getCurrentShowLive() {
     return this.socket.fromEvent<any>('currentShow').map(data => data);
-  }
+  } */
 }
