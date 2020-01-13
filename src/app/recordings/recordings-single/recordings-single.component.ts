@@ -45,14 +45,12 @@ export class RecordingsSingleComponent implements OnInit {
         )
         .subscribe(recording => {
           this.recording = recording;
+          this.setTitle({ title: this.recording.title });
           Vibrant.from(this.recording.image)
             .getPalette()
             .then(palette => {
               this.hex = palette.Vibrant.hex;
-              console.log(this.hex);
-              this.isLoading = false;
             });
-          this.setTitle({ title: this.recording.title });
         });
     });
   }

@@ -21,13 +21,12 @@ export const environment = {
   version: env.npm_package_version + '-dev',
   serverUrl: 'http://localhost:8080',
   socketio: 'http://localhost:52001',
-  defaultLanguage: 'US',
-  supportedLanguages: ['DE', 'US', 'FR'],
+  defaultLanguage: 'EN',
+  supportedLanguages: ['DE', 'EN', 'FR'],
   googleAnalytics: {
     domain: 'auto',
     trackingId: 'UA-24449183-8' // replace with your Tracking Id
-  },
-  environment: 'Development'
+  }
 };
 
 /*

@@ -47,14 +47,12 @@ export class ShowsSingleComponent implements OnInit {
         .subscribe(show => {
           this.show = show;
           this.recordings = show.recordings;
+          this.setTitle({ title: this.show.title });
           Vibrant.from(this.show.image)
             .getPalette()
             .then(palette => {
               this.hex = palette.Vibrant.hex;
-              console.log(this.hex);
-              this.isLoading = false;
             });
-          this.setTitle({ title: this.show.title });
         });
     });
   }
