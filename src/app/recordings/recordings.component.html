@@ -10,7 +10,7 @@
       </div>
     </div>
     <div *ngIf="recordings.length > 0">
-      <!-- <div *ngIf="isLoading == false" class="row">
+      <div *ngIf="isLoading == false" class="row">
         <div class="col-12 my-1">
           <div class="swiper-container" [swiper]="config">
             <div class="swiper-wrapper">
@@ -32,6 +32,10 @@
                     }"
                   >
                     <h4 class="align-bottom">{{ recording.title }}</h4>
+                    <h5 class="align-bottom">
+                      {{ recording.timeStart | date: 'dd.MM.yyyy' }},
+                      {{ recording.timeStart | date: 'HH:mm' }} Uhr
+                    </h5>
                   </div>
                 </a>
               </div>
@@ -92,9 +96,7 @@
           <hr />
         </div>
       </div>
-    </div>-->
-      <app-recordings-list [recordings]="recordings"> </app-recordings-list>
     </div>
+    <app-recordings-list [recordings]="recordings"> </app-recordings-list>
   </div>
-  <!-- unten weg -->
 </div>

@@ -1,20 +1,22 @@
 <div class="page-wrapper">
   <div *ngIf="isLoading == false" class="container-fluid">
     <div class="row">
-      <div class="col-2">
+      <div class="col-12 col-sm-6 col-md-2 mb-3 mb-sm-0">
         <img
           src="{{ recording?.image }}"
           alt="{{ recording?.title }}"
           style="width: 100%"
         />
       </div>
-      <div class="col-10">
+      <div class="col-12 col-sm-6 col-md-10">
         <h1 [style.color]="hex">
           <span>{{ recording?.title }}</span>
         </h1>
-        <h3>
-          {{ recording.timeStart | date: 'dd.MM.yyyy' }}
-        </h3>
+        <strong>
+          {{ recording.timeStart | date: 'dd.MM.yyyy' }} &mdash;
+          {{ recording.timeStart | date: 'HH:mm' }} bis
+          {{ recording.timeEnd | date: 'HH:mm' }} Uhr
+        </strong>
         <p>{{ recording?.description }}</p>
       </div>
     </div>
@@ -38,12 +40,15 @@
     </div>
     <div class="row">
       <div class="col-12">
+        <a class="btn btn-outline-secondary" routerLink="/recordings" translate
+          >BACK</a
+        >
         <a
           class="btn btn-secondary"
           [style.backgroundColor]="hex"
-          routerLink="/recordings"
+          href="{{ recording.audio }}"
           translate
-          >BACK</a
+          >DOWNLOAD_BROADCAST_BUTTON</a
         >
       </div>
     </div>

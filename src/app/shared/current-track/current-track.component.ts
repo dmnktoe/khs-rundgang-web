@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { ApiService } from '@app/core/api.service';
+import { finalize } from 'rxjs/operators';
+import moment from 'moment';
 
 @Component({
   selector: 'app-current-track',
@@ -8,7 +10,12 @@ import { ApiService } from '@app/core/api.service';
   styleUrls: ['./current-track.component.scss']
 })
 export class CurrentTrackComponent implements OnInit {
-  current: any;
+  currentShowName: any;
+  currentShowStart: any;
+  currentShowEnd: any;
+  nextShowName: any;
+  nextShowStart: any;
+  nextShowEnd: any;
   isLoading = false;
   value: string;
 
@@ -28,10 +35,29 @@ export class CurrentTrackComponent implements OnInit {
 
   ngOnInit() {
     this.isLoading = true;
+    moment.locale('de');
     this.value = 'play-circle';
     /* this.apiService.getCurrentTrackLive().subscribe((current: any) => {
       this.current = current;
       this.isLoading = false;
     });*/
+    this.apiService
+      .getCurrentShow()
+      .pipe(finalize(() => {}))
+      .subscribe(currentShow => {
+        if (currentShow) {
+          this.currentShowName = currentShow.name;
+          this.currentShowStart = new Date(currentShow.starts);
+          this.currentShowEnd = new Date(currentShow.ends);
+        }
+        this.apiService
+          .getNextShow()
+          .pipe(finalize(() => {}))
+          .subscribe(nextShow => {
+            this.isLoading = false;
+            this.nextShowName = nextShow[0].name;
+            this.nextShowStart = moment(new Date(nextShow[0].starts)).fromNow();
+          });
+      });
   }
 }

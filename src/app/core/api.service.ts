@@ -94,6 +94,30 @@ export class ApiService {
       );
   }
 
+  getCurrentShow() {
+    return this.httpClient
+      .get(environment.serverUrl + '/meta/shows/current')
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die aktuelle Show konnte nicht geladen werden.'
+          )
+        )
+      );
+  }
+
+  getNextShow() {
+    return this.httpClient.get(environment.serverUrl + '/meta/shows/next').pipe(
+      map((body: any) => body),
+      catchError(() =>
+        of(
+          'Es ist ein Fehler aufgetreten. Die nächste Show konnte nicht geladen werden.'
+        )
+      )
+    );
+  }
+
   getSchedule() {
     return this.httpClient
       .cache()

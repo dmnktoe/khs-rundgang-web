@@ -8,9 +8,15 @@ import { LimitPipe } from '@app/shared/pipes/LimitPipe';
 import { SafeHtmlPipe } from '@app/shared/pipes/SafeHtmlPipe';
 import { MomentPipe } from '@app/shared/pipes/MomentPipe';
 import { IconsModule } from '@app/shared/icons/icons.module';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @NgModule({
-  imports: [CommonModule, NgbDropdownModule, IconsModule],
+  imports: [
+    CommonModule,
+    NgbDropdownModule,
+    IconsModule,
+    NgxSkeletonLoaderModule
+  ],
   declarations: [
     LoaderComponent,
     CurrentTrackComponent,
