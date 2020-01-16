@@ -1,4 +1,4 @@
-<div class="main-current" style="display: table;">
+<div *ngIf="!isLoading" class="main-current" style="display: table;">
   <div
     class="current-keyvisual"
     style="display: table-cell;vertical-align: middle;"
@@ -13,31 +13,62 @@
       <source src="https://station.radio-rasclat.com/live" type="audio/mpeg" />
     </audio>
   </div>
-  <div
-    *ngIf="current?.type == 'track'"
-    class="current-info"
-    style="display: table-cell;vertical-align: middle;"
-  >
-    <app-loader [isLoading]="isLoading"></app-loader>
-    <h1 [hidden]="isLoading">{{ current.metadata.track_title | safeHtml }}</h1>
-    <p [hidden]="isLoading" *ngIf="current.metadata.artist_name">
-      {{ current.metadata.artist_name | safeHtml }}
-    </p>
+  <div class="current-info" style="display: table-cell;vertical-align: middle;">
+    <h1>
+      <span *ngIf="currentShowStart">Jetzt: </span
+      >{{ currentShowName | safeHtml }}
+    </h1>
+    <span *ngIf="currentShowStart"
+      >{{ currentShowStart | date: 'HH:mm' }} -
+      {{ currentShowEnd | date: 'HH:mm' }} Uhr
+    </span>
   </div>
+</div>
+
+<div *ngIf="isLoading" class="main-current" style="display: table;">
   <div
-    *ngIf="current?.type == 'livestream'"
-    class="current-info"
+    class="current-keyvisual"
     style="display: table-cell;vertical-align: middle;"
-  >
-    <app-loader [isLoading]="isLoading"></app-loader>
-    <h1 [hidden]="isLoading">{{ current.name | safeHtml }}</h1>
-  </div>
-  <div
-    *ngIf="current?.type == 'webstream'"
-    class="current-info"
-    style="display: table-cell;vertical-align: middle;"
-  >
-    <app-loader [isLoading]="isLoading"></app-loader>
-    <h1 [hidden]="isLoading">{{ current.name | safeHtml }}</h1>
+  ></div>
+  <div class="current-info" style="display: table-cell;vertical-align: middle;">
+    <svg
+      version="1.1"
+      id="L4"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 100 100"
+      enable-background="new 0 0 0 0"
+      xml:space="preserve"
+    >
+      <circle fill="#000" stroke="none" cx="6" cy="50" r="6">
+        <animate
+          attributeName="opacity"
+          dur="1s"
+          values="0;1;0"
+          repeatCount="indefinite"
+          begin="0.1"
+        />
+      </circle>
+      <circle fill="#000" stroke="none" cx="26" cy="50" r="6">
+        <animate
+          attributeName="opacity"
+          dur="1s"
+          values="0;1;0"
+          repeatCount="indefinite"
+          begin="0.2"
+        />
+      </circle>
+      <circle fill="#000" stroke="none" cx="46" cy="50" r="6">
+        <animate
+          attributeName="opacity"
+          dur="1s"
+          values="0;1;0"
+          repeatCount="indefinite"
+          begin="0.3"
+        />
+      </circle>
+    </svg>
   </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { ApiService } from '@app/core/api.service';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-current-track',
@@ -9,6 +10,9 @@ import { ApiService } from '@app/core/api.service';
 })
 export class CurrentTrackComponent implements OnInit {
   current: any;
+  currentShowName: any;
+  currentShowStart: any;
+  currentShowEnd: any;
   isLoading = false;
   value: string;
 
@@ -33,5 +37,21 @@ export class CurrentTrackComponent implements OnInit {
       this.current = current;
       this.isLoading = false;
     });*/
+    this.apiService
+      .getCurrentShow()
+      .pipe(
+        finalize(() => {
+          this.isLoading = false;
+        })
+      )
+      .subscribe(currentShow => {
+        if (currentShow === null) {
+          this.currentShowName = 'OFF AIR. 🤷‍♀️';
+        } else {
+          this.currentShowName = currentShow.name;
+          this.currentShowStart = new Date(currentShow.starts);
+          this.currentShowEnd = new Date(currentShow.ends);
+        }
+      });
   }
 }
