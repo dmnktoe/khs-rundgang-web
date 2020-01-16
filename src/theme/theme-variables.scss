@@ -129,6 +129,11 @@ body {
       color: #fff;
     }
 
+    .single__recording__list__tag::after {
+      content: " •";
+      color: #fff;
+    }
+
     .single__show__list {
       background: #111111;
       color: #fff;
