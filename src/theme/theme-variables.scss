@@ -67,7 +67,6 @@ body {
     }
     .footer {
       background: #000000;
-      border-top: 1px solid #3c4148;
     }
     button {
       color: #fff;
@@ -125,8 +124,18 @@ body {
       color: #fff;
     }
 
+    .single__recording__list:hover {
+      background: #1c1c1c;
+      color: #fff;
+    }
+
     .single__show__list {
       background: #111111;
+      color: #fff;
+    }
+
+    .single__show__list:hover {
+      background: #1c1c1c;
       color: #fff;
     }
   }

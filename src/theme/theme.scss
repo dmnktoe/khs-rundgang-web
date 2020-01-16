@@ -68,6 +68,13 @@ body {
   color: #000;
 }
 
+.current-info svg {
+  width: 55px;
+  height: 43px;
+  margin: 0;
+  display: inline-block;
+}
+
 .page-wrapper .container-fluid {
   margin-bottom: 100px;
 }
@@ -165,8 +172,7 @@ a:hover {
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: inherit;
-  background: #fff;
-  border-top: 1px solid #000;
+  background: rgb(255, 255, 255);
   z-index: 9999;
 }
 
