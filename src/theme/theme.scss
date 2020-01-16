@@ -298,6 +298,8 @@ $duration: 30s;
   padding: 15px;
   border-radius: 10px;
   transition: all 0.1s;
+  margin: 0 0 30px;
+  display: flex;
 }
 
 .single__recording__list p {
@@ -337,11 +339,11 @@ $duration: 30s;
 
 .single__show__list {
   position: relative;
-  background: #000;
+  background: #f0f0f0;
   padding: 40px 15px;
   border-radius: 10px;
   transition: all 0.1s;
-  color: #fff;
+  color: #000;
   text-align: center;
   background-size: cover;
   background-position: center;
@@ -415,6 +417,15 @@ hr {
   margin-bottom: 1rem;
   border: 0;
   border-top: 1px #c8c8c8 dotted;
+}
+
+a.recording__link {
+  transition: all 0.1s;
+  color: #000;
+}
+
+a.recording__link:hover {
+  text-decoration: none;
 }
 
 a.show__link {
