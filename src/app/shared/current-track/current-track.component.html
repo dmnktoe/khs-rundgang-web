@@ -13,14 +13,26 @@
       <source src="https://station.radio-rasclat.com/live" type="audio/mpeg" />
     </audio>
   </div>
-  <div class="current-info" style="display: table-cell;vertical-align: middle;">
+  <div
+    class="current-info"
+    style="display: table-cell;vertical-align: middle;"
+    *ngIf="currentShowName"
+  >
+    <h1><span translate>NOW</span>: {{ currentShowName | safeHtml }}</h1>
+    {{ currentShowStart | date: 'HH:mm' }} -
+    {{ currentShowEnd | date: 'HH:mm' }} Uhr
+  </div>
+  <div
+    class="current-info"
+    style="display: table-cell;vertical-align: middle;"
+    *ngIf="!currentShowName"
+  >
     <h1>
-      <span *ngIf="currentShowStart">Jetzt: </span
-      >{{ currentShowName | safeHtml }}
+      OFF AIR. 🤷‍♀️
     </h1>
-    <span *ngIf="currentShowStart"
-      >{{ currentShowStart | date: 'HH:mm' }} -
-      {{ currentShowEnd | date: 'HH:mm' }} Uhr
+    <span *ngIf="nextShowName">
+      <span translate>NEXT_SHOW</span>: {{ nextShowName }}
+      <span style="opacity: 0.4">&mdash; {{ nextShowStart }}</span>
     </span>
   </div>
 </div>
