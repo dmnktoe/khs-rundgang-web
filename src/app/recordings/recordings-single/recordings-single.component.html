@@ -12,10 +12,11 @@
         <h1 [style.color]="hex">
           <span>{{ recording?.title }}</span>
         </h1>
-        <h3>
-          {{ recording.timeStart | date: 'dd.MM.yyyy HH' }} Uhr -
-          {{ recording.timeEnd | date: 'HH' }} Uhr
-        </h3>
+        <strong>
+          {{ recording.timeStart | date: 'dd.MM.yyyy' }} &mdash;
+          {{ recording.timeStart | date: 'HH:mm' }} bis
+          {{ recording.timeEnd | date: 'HH:mm' }} Uhr
+        </strong>
         <p>{{ recording?.description }}</p>
       </div>
     </div>
@@ -39,12 +40,15 @@
     </div>
     <div class="row">
       <div class="col-12">
+        <a class="btn btn-outline-secondary" routerLink="/recordings" translate
+          >BACK</a
+        >
         <a
           class="btn btn-secondary"
           [style.backgroundColor]="hex"
-          routerLink="/recordings"
+          href="{{ recording.audio }}"
           translate
-          >BACK</a
+          >DOWNLOAD_BROADCAST_BUTTON</a
         >
       </div>
     </div>
