@@ -54,9 +54,13 @@ export class CurrentTrackComponent implements OnInit {
           .getNextShow()
           .pipe(finalize(() => {}))
           .subscribe(nextShow => {
+            const startDate = moment(
+              nextShow[0].starts,
+              'YYYY-MM-DD HH:mm:ss'
+            ).toDate();
             this.isLoading = false;
             this.nextShowName = nextShow[0].name;
-            this.nextShowStart = moment(new Date(nextShow[0].starts)).fromNow();
+            this.nextShowStart = moment(startDate).fromNow();
           });
       });
   }
