@@ -27,7 +27,10 @@
                   </span>
                 </div>
                 <h5>{{ recording.title }}</h5>
-                <p>{{ recording.timeStart | date: 'dd.MM.yyyy' }}</p>
+                <p>
+                  {{ recording.timeStart | date: 'dd.MM.yyyy' }},
+                  {{ recording.timeStart | date: 'HH' }} Uhr
+                </p>
               </div>
             </div>
           </div>

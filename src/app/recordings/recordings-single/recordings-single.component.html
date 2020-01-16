@@ -13,7 +13,8 @@
           <span>{{ recording?.title }}</span>
         </h1>
         <h3>
-          {{ recording.timeStart | date: 'dd.MM.yyyy' }}
+          {{ recording.timeStart | date: 'dd.MM.yyyy HH' }} Uhr -
+          {{ recording.timeEnd | date: 'HH' }} Uhr
         </h3>
         <p>{{ recording?.description }}</p>
       </div>
