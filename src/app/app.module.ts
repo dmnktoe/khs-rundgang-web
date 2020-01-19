@@ -53,6 +53,7 @@ export class SentryErrorHandler implements ErrorHandler {
   }
   handleError(error: any) {
     Sentry.captureException(error.originalError || error);
+    console.error(error);
   }
 }
 
