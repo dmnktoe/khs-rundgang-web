@@ -45,17 +45,19 @@ export class CurrentTrackComponent implements OnInit {
       .getCurrentShow()
       .pipe(finalize(() => {}))
       .subscribe(currentShow => {
-        if (currentShow) {
+        if (currentShow.name) {
           this.currentShowName = currentShow.name;
-          this.currentShowStart = new Date(currentShow.starts);
-          this.currentShowEnd = new Date(currentShow.ends);
+          if (currentShow.starts) {
+            this.currentShowStart = new Date(currentShow.starts);
+            this.currentShowEnd = new Date(currentShow.ends);
+          }
         }
         this.apiService
           .getNextShow()
           .pipe(finalize(() => {}))
           .subscribe(nextShow => {
             this.isLoading = false;
-            if (nextShow) {
+            if (nextShow[0].name) {
               const startDate = moment(
                 nextShow[0].starts,
                 'YYYY-MM-DD HH:mm:ss'
