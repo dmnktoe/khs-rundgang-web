@@ -47,8 +47,10 @@ export class CurrentTrackComponent implements OnInit {
       .subscribe(currentShow => {
         if (currentShow) {
           this.currentShowName = currentShow.name;
-          this.currentShowStart = new Date(currentShow.starts);
-          this.currentShowEnd = new Date(currentShow.ends);
+          if (currentShow.starts) {
+            this.currentShowStart = new Date(currentShow.starts);
+            this.currentShowEnd = new Date(currentShow.ends);
+          }
         }
         this.apiService
           .getNextShow()
