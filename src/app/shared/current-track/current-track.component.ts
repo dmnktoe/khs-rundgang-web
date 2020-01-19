@@ -45,18 +45,15 @@ export class CurrentTrackComponent implements OnInit {
       .getCurrentShow()
       .pipe(finalize(() => {}))
       .subscribe(currentShow => {
-        if (currentShow.name) {
+        if (currentShow !== null) {
           this.currentShowName = currentShow.name;
-          if (currentShow.starts) {
-            this.currentShowStart = new Date(currentShow.starts);
-            this.currentShowEnd = new Date(currentShow.ends);
-          }
+          this.currentShowStart = new Date(currentShow.starts);
+          this.currentShowEnd = new Date(currentShow.ends);
         }
         this.apiService
           .getNextShow()
           .pipe(finalize(() => {}))
           .subscribe(nextShow => {
-            this.isLoading = false;
             if (nextShow[0].name) {
               const startDate = moment(
                 nextShow[0].starts,
@@ -65,6 +62,7 @@ export class CurrentTrackComponent implements OnInit {
               this.nextShowName = nextShow[0].name;
               this.nextShowStart = moment(startDate).fromNow();
             }
+            this.isLoading = false;
           });
       });
   }
