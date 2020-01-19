@@ -7,6 +7,6 @@ REVISION=$(git rev-parse --short HEAD)
 sentry-cli releases new -p $SENTRY_PROJECT "$SENTRY_PROJECT@$REVISION"
 sentry-cli releases set-commits "$SENTRY_PROJECT@$REVISION" --auto
 # Upload source maps
-sentry-cli releases files "$SENTRY_PROJECT@$REVISION" upload-sourcemaps ../dist --rewrite
+sentry-cli releases files "$SENTRY_PROJECT@$REVISION" upload-sourcemaps ./../dist --rewrite
 # Finalize
 sentry-cli releases finalize "$SENTRY_PROJECT@$REVISION"
