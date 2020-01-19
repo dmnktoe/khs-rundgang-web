@@ -48,7 +48,7 @@ export class ShowsSingleComponent implements OnInit {
           this.show = show;
           this.recordings = show.recordings;
           this.setTitle({ title: this.show.title });
-          Vibrant.from(this.show.image)
+          Vibrant.from('https://cors-anywhere.herokuapp.com/' + this.show.image)
             .getPalette()
             .then(palette => {
               this.hex = palette.Vibrant.hex;
