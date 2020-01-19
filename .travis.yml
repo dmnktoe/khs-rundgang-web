@@ -17,7 +17,7 @@ install:
 script:
   #  - npm test
   - npm run build
-  - bash scripts/sentry-deploy.sh
+  - bash sentry-deploy.sh
 
 after_success:
   - codecov
