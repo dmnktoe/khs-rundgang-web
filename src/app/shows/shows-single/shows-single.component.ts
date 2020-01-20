@@ -46,7 +46,11 @@ export class ShowsSingleComponent implements OnInit {
         )
         .subscribe(show => {
           this.show = show;
-          this.recordings = show.recordings;
+          if (typeof show.recordings[0]['title'] !== 'undefined') {
+            this.recordings = show.recordings;
+          } else {
+            this.recordings = [];
+          }
           this.setTitle({ title: this.show.title });
           Vibrant.from('https://cors-anywhere.herokuapp.com/' + this.show.image)
             .getPalette()
