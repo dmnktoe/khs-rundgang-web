@@ -1,14 +1,14 @@
 <div class="page-wrapper">
   <div *ngIf="isLoading == false" class="container-fluid">
     <div class="row">
-      <div class="col-12 col-sm-6 col-md-2 mb-3 mb-sm-0">
+      <div class="col-12 col-sm-6 col-md-2 mb-3 mb-sm-0 order-2 order-sm-1">
         <img
           src="{{ recording?.image }}"
           alt="{{ recording?.title }}"
           style="width: 100%"
         />
       </div>
-      <div class="col-12 col-sm-6 col-md-10">
+      <div class="col-12 col-sm-6 col-md-10 order-sm-1 order-sm-2">
         <h1 [style.color]="hex">
           <span>{{ recording?.title }}</span>
         </h1>
@@ -17,7 +17,17 @@
           {{ recording.timeStart | date: 'HH:mm' }} bis
           {{ recording.timeEnd | date: 'HH:mm' }} Uhr
         </strong>
-        <p>{{ recording?.description }}</p>
+        <div class="single__recording__single__tags">
+          <span
+            class="single__recording__list__tag"
+            *ngFor="let genre of recording.genres"
+          >
+            <a [style.color]="hex" routerLink="/recordings">{{
+              genre.title
+            }}</a>
+          </span>
+        </div>
+        <p style="margin-top: 10px;">{{ recording?.description }}</p>
       </div>
     </div>
     <div class="row">

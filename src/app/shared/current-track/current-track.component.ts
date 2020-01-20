@@ -54,7 +54,7 @@ export class CurrentTrackComponent implements OnInit {
           .getNextShow()
           .pipe(finalize(() => {}))
           .subscribe(nextShow => {
-            if (nextShow[0].name) {
+            if (nextShow.length > 0) {
               const startDate = moment(
                 nextShow[0].starts,
                 'YYYY-MM-DD HH:mm:ss'

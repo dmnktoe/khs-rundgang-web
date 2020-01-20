@@ -1,14 +1,14 @@
 <div class="page-wrapper">
   <div *ngIf="isLoading == false" class="container-fluid">
     <div class="row">
-      <div class="col-12 col-sm-6 col-md-2 mb-3 mb-sm-0">
+      <div class="col-12 col-sm-6 col-md-2 mb-3 mb-sm-0 order-2 order-sm-1">
         <img
           src="{{ show?.image }}"
           alt="{{ show?.title }}"
           style="width: 100%"
         />
       </div>
-      <div class="col-12 col-sm-6 col-md-10">
+      <div class="col-12 col-sm-6 col-md-10 order-sm-1 order-sm-2">
         <h1 [style.color]="hex">
           <span>{{ show?.title }}</span>
         </h1>

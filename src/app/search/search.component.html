@@ -16,7 +16,7 @@
           <ais-hits>
             <ng-template let-hits="hits" let-results="results">
               <div class="row row-eq-height">
-                <div class="col-12" *ngIf="hits.length === 0">
+                <div class="col-12" *ngIf="hits?.length === 0">
                   <span translate>NO_RESULTS</span> {{ results.query }}
                 </div>
                 <div class="col-12">
@@ -75,7 +75,7 @@
           <ais-hits>
             <ng-template let-hits="hits" let-results="results">
               <div class="row row-eq-height">
-                <div class="col-12" *ngIf="hits.length === 0">
+                <div class="col-12" *ngIf="hits?.length === 0">
                   <span translate>NO_RESULTS</span> {{ results.query }}
                 </div>
                 <div class="col-12">
@@ -98,7 +98,7 @@
             </ng-template>
           </ais-hits>
         </ais-instantsearch>
-        <hr />
+        <!-- <hr />
         <ais-instantsearch [config]="artistsConfig">
           <h3 translate>ARTISTS</h3>
           <ais-configure [searchParameters]="searchParameters"></ais-configure>
@@ -130,7 +130,7 @@
               </div>
             </ng-template>
           </ais-hits>
-        </ais-instantsearch>
+        </ais-instantsearch> -->
       </div>
     </div>
   </div>
