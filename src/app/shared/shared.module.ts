@@ -6,6 +6,7 @@ import { ApiService } from '@app/core/api.service';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { LimitPipe } from '@app/shared/pipes/LimitPipe';
 import { SafeHtmlPipe } from '@app/shared/pipes/SafeHtmlPipe';
+import { DateAgoPipe } from '@app/shared/pipes/DateAgoPipe';
 import { MomentPipe } from '@app/shared/pipes/MomentPipe';
 import { IconsModule } from '@app/shared/icons/icons.module';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -22,7 +23,8 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     CurrentTrackComponent,
     SafeHtmlPipe,
     LimitPipe,
-    MomentPipe
+    MomentPipe,
+    DateAgoPipe
   ],
   exports: [
     LoaderComponent,
