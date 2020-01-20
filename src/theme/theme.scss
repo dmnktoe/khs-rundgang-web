@@ -304,7 +304,6 @@ $duration: 30s;
   padding: 15px;
   border-radius: 10px;
   transition: all 0.1s;
-  margin: 0 0 30px;
   display: flex;
 }
 
@@ -321,22 +320,27 @@ $duration: 30s;
   border-radius: 100%;
 }
 
+.single__recording__single__tags {
+  margin: 0;
+  font-size: inherit;
+}
+
 .single__recording__list__tags {
   margin-bottom: 7px;
   margin-top: -9px;
+  font-size: 12px;
 }
 
 .single__recording__list__tag {
   border: 0;
   color: #000;
-  font-size: 12px;
-  padding: 0px 4px 0 0;
   display: inline-block;
   font-weight: 300;
 }
 
 .single__recording__list__tag::after {
-  content: " •";
+  content: "•";
+  padding: 0 8px 0 5px;
 }
 
 .single__recording__list__tag:last-child::after {
