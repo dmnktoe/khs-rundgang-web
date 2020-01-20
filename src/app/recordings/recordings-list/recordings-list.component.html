@@ -1,31 +1,35 @@
-<div class="grid-auto-lg grid-gap-lg" *ngIf="isLoading == false">
+<div class="grid-auto-xl grid-gap-xl" *ngIf="isLoading == false">
   <div
     class="center ArchiveThumb broadcast"
     [hidden]="isLoading"
     *ngFor="let recording of recordings"
   >
     <div class="recording__list__image__container">
-      <a class="show__link" routerLink="/recordings/{{ recording.slug }}">
+      <a class="show__link" routerLink="/recordings/{{ recording?.slug }}">
         <figure class="circle">
-          <img [defaultImage]="defaultImage" [lazyLoad]="recording.image" />
+          <img
+            [defaultImage]="defaultImage"
+            [lazyLoad]="recording?.image"
+            alt="{{ recording?.title }}"
+          />
         </figure>
       </a>
     </div>
-    <aside data-v-95b6f8fc="">
+    <aside>
       <div class="recording__list__text__container">
         <div class="recording__list__text__container__tag__wrapper">
           <span
             class="recording__list__text__container__tags"
-            *ngFor="let genre of recording.genres"
+            *ngFor="let genre of recording?.genres"
           >
             <a routerLink="/recordings?genre=">{{ genre.title }}</a>
           </span>
         </div>
-        <a class="show__link" routerLink="/recordings/{{ recording.slug }}">
-          <h5>{{ recording.title }}</h5>
+        <a class="show__link" routerLink="/recordings/{{ recording?.slug }}">
+          <h5>{{ recording?.title }}</h5>
           <p>
-            {{ recording.timeStart | date: 'dd.MM.yyyy' }},
-            {{ recording.timeStart | date: 'HH:mm' }} Uhr
+            {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
+            {{ recording?.timeStart | date: 'HH:mm' }} Uhr
           </p>
         </a>
       </div>

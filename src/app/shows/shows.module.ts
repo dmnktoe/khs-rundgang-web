@@ -13,6 +13,7 @@ import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { RecordingsModule } from '@app/recordings/recordings.module';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { RecordingsModule } from '@app/recordings/recordings.module';
     ShowsRoutingModule,
     SwiperModule,
     NgxSkeletonLoaderModule,
-    RecordingsModule
+    RecordingsModule,
+    LazyLoadImageModule
   ],
   declarations: [ShowsComponent, ShowsListComponent, ShowsSingleComponent],
   providers: [ApiService, Title]

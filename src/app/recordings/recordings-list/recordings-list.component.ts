@@ -10,7 +10,7 @@ export class RecordingsListComponent implements OnInit {
   @Input() isLoading = false;
 
   defaultImage =
-    'https://placeholder.pics/svg/600x600/DEDEDE/555555/Radio%20Rasclat';
+    'https://placeholder.pics/svg/600x600/FFFFFF-FFFFFF/000000-FFFFFF/Radio%20Rasclat';
 
   constructor() {}
 

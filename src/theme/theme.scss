@@ -83,6 +83,7 @@ body {
   margin-right: 2rem;
   width: 100px;
   max-width: 10rem;
+  min-width: 100px;
 }
 
 figure.circle {
@@ -122,6 +123,8 @@ aside {
 
 .recording__list__text__container p {
   margin-bottom: 0;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .recording__list__text__container__tag__wrapper {

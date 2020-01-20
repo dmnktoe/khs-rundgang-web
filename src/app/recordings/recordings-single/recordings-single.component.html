@@ -1,17 +1,18 @@
-<div class="grid-auto-lg grid-gap-lg" *ngIf="isLoading == true">
-  <div class="col-12">
+<div class="grid" *ngIf="isLoading == true">
+  <div class="col-12@xs">
     <app-loader></app-loader>
   </div>
 </div>
-<div class="grid-auto-lg grid-gap-lg" *ngIf="isLoading == false">
-  <div class="col-3">
+<div class="grid" *ngIf="isLoading == false">
+  <div class="col-3@sm">
     <img
-      src="{{ recording?.image }}"
+      [defaultImage]="defaultImage"
+      [lazyLoad]="recording?.image"
       alt="{{ recording?.title }}"
       style="width: 100%"
     />
   </div>
-  <div class="col-8">
+  <div class="col-9@sm">
     <h1 [style.color]="hex">
       <span>{{ recording?.title }}</span>
     </h1>
@@ -30,16 +31,16 @@
     </div>
     <p style="margin-top: 10px;">{{ recording?.description }}</p>
   </div>
-</div>
-<audio
-  id="audio_with_controls"
-  controls
-  src="{{ recording.audio }}"
-  type="audio/mp3"
->
-  Ihr Browser kann dieses Tondokument nicht wiedergeben.
-</audio>
-<div class="row">
+  <div class="col-12">
+    <audio
+      id="audio_with_controls"
+      controls
+      src="{{ recording.audio }}"
+      type="audio/mp3"
+    >
+      Ihr Browser kann dieses Tondokument nicht wiedergeben.
+    </audio>
+  </div>
   <div class="col-12">
     <a
       class="btn btn-secondary"
@@ -47,7 +48,7 @@
       routerLink="/recordings"
       translate
       >BACK</a
-    >
+    >&nbsp;
     <a
       class="btn btn-secondary"
       [style.backgroundColor]="hex"

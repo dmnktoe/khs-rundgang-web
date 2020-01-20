@@ -23,10 +23,14 @@ export class RecordingsComponent implements OnInit {
   public config: SwiperConfigInterface = {
     a11y: true,
     direction: 'horizontal',
-    pagination: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
     loop: true,
-    slidesPerView: 4,
+    slidesPerView: 3,
     spaceBetween: 30,
+    autoplay: true,
     breakpoints: {
       // when window width is <= 640px
       640: {
