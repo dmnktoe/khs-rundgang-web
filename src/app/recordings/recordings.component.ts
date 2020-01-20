@@ -17,6 +17,7 @@ import {
 })
 export class RecordingsComponent implements OnInit {
   recordings = '';
+  hotRecording: any = [];
   isLoading = false;
 
   public config: SwiperConfigInterface = {
@@ -49,13 +50,19 @@ export class RecordingsComponent implements OnInit {
     this.isLoading = true;
     this.apiService
       .getRecordings()
-      .pipe(
-        finalize(() => {
-          this.isLoading = false;
-        })
-      )
+      .pipe(finalize(() => {}))
       .subscribe(recordings => {
         this.recordings = recordings;
+        this.apiService
+          .getHotRecording()
+          .pipe(
+            finalize(() => {
+              this.isLoading = false;
+            })
+          )
+          .subscribe(hotRecordings => {
+            this.hotRecording = hotRecordings[0];
+          });
       });
   }
 }
