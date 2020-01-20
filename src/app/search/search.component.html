@@ -27,7 +27,7 @@
                     >
                       <a
                         class="recording__link"
-                        routerLink="/recording/{{ recording.slug }}"
+                        routerLink="/recordings/{{ recording.slug }}"
                       >
                         <div class="single__recording__list">
                           <div class="row row-eq-height">
@@ -42,16 +42,6 @@
                               <div
                                 class="single__recording__list__text-container"
                               >
-                                <div class="single__recording__list__tags">
-                                  <span
-                                    class="single__recording__list__tag"
-                                    *ngFor="let genre of recording.genres"
-                                  >
-                                    <a routerLink="/recordings">{{
-                                      genre.title
-                                    }}</a>
-                                  </span>
-                                </div>
                                 <h5>{{ recording.title }}</h5>
                                 <p>
                                   {{ recording.timeStart | date: 'dd.MM.yyyy' }}
