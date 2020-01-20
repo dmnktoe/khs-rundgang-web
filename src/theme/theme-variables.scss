@@ -39,7 +39,7 @@ $teal: #20c997;
 $cyan: #17a2b8;
 
 $theme-colors: (
-  primary: $orange,
+  primary: $blue,
   secondary: $black,
   success: $green,
   info: $cyan,
@@ -64,6 +64,9 @@ body {
     body {
       background-color: #000000;
       color: #ffffff;
+    }
+    .recording__list__text__container a h5 {
+      color: #fff;
     }
     .footer {
       background: #000000;
@@ -129,7 +132,7 @@ body {
       color: #fff;
     }
 
-    .single__recording__list__tag::after {
+    .recording__list__text__container__tags::after {
       content: "•";
       color: #fff;
     }
@@ -146,6 +149,10 @@ body {
 
     .current-info circle {
       fill: #fff;
+    }
+
+    .recording__list__text__container {
+      color: #fff;
     }
   }
 }

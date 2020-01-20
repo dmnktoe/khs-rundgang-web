@@ -25,7 +25,7 @@
     >
       <div class="navbar-nav">
         <a
-          class="nav-item nav-link text-uppercase"
+          class="nav-item nav-link"
           routerLink="/search"
           routerLinkActive="active"
           (click)="closeMenu()"
@@ -41,7 +41,7 @@
           ></i-feather>
         </a>
         <a
-          class="nav-item nav-link text-uppercase"
+          class="nav-item nav-link"
           routerLink="/recordings"
           routerLinkActive="active"
           (click)="closeMenu()"
@@ -49,7 +49,7 @@
           <span translate>RECORDINGS</span>
         </a>
         <a
-          class="nav-item nav-link text-uppercase"
+          class="nav-item nav-link"
           routerLink="/shows"
           routerLinkActive="active"
           (click)="closeMenu()"
@@ -57,7 +57,7 @@
           <span translate>SHOWS</span>
         </a>
         <a
-          class="nav-item nav-link text-uppercase"
+          class="nav-item nav-link"
           routerLink="/schedule"
           routerLinkActive="active"
           (click)="closeMenu()"
@@ -65,14 +65,14 @@
           <span translate>SCHEDULE</span>
         </a>
         <a
-          class="nav-item nav-link text-uppercase"
+          class="nav-item nav-link"
           href="https://radio-rasclat.chatango.com/"
           target="_blank"
         >
           <span translate>CHAT</span>
         </a>
         <!--  <a
-          class="nav-item nav-link text-uppercase"
+          class="nav-item nav-link "
           routerLink="/about"
           routerLinkActive="active"
           (click)="closeMenu()"
@@ -81,7 +81,7 @@
         </a>-->
       </div>
       <div class="navbar-nav ml-auto">
-        <span class="nav-item nav-link text-uppercase current__show">
+        <span class="nav-item nav-link current__show">
           <!-- <i class="fas fa-question-circle"></i> -->
           <span *ngIf="currentShow !== undefined">
             <span translate>SHOW_NOW</span>: {{ currentShow | safeHtml }}

@@ -10,6 +10,7 @@ import { SharedModule } from '@app/shared';
 /* VIEWS */
 import { AboutModule } from './about/about.module';
 import { HomeModule } from './home/home.module';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { RecordingsModule } from './recordings/recordings.module';
 import { ScheduleModule } from '@app/schedule/schedule.module';
 import { SearchModule } from './search/search.module';
@@ -83,6 +84,7 @@ export class SentryErrorHandler implements ErrorHandler {
     NgAisModule.forRoot(),
     IconsModule,
     NgxSkeletonLoaderModule,
+    LazyLoadImageModule,
     AudioContextModule.forRoot('balanced'),
     AppRoutingModule // must be imported as the last module as it contains the fallback route,
   ],

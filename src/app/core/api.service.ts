@@ -36,25 +36,31 @@ export class ApiService {
   }
 
   getGenres() {
-    return this.httpClient.get(environment.serverUrl + 'genres').pipe(
-      map((body: any) => body),
-      catchError(() =>
-        of(
-          'Es ist ein Fehler aufgetreten. Die Genres konnten nicht geladen werden.'
+    return this.httpClient
+      .cache()
+      .get(environment.serverUrl + 'genres')
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Genres konnten nicht geladen werden.'
+          )
         )
-      )
-    );
+      );
   }
 
   getRecordings() {
-    return this.httpClient.get(environment.serverUrl + '/recordings').pipe(
-      map((body: any) => body),
-      catchError(() =>
-        of(
-          'Es ist ein Fehler aufgetreten. Die Recordings konnten nicht geladen werden.'
+    return this.httpClient
+      .cache()
+      .get(environment.serverUrl + '/recordings')
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Recordings konnten nicht geladen werden.'
+          )
         )
-      )
-    );
+      );
   }
 
   getRecording({ recordingId }: { recordingId: any }) {
@@ -72,6 +78,7 @@ export class ApiService {
 
   getHotRecording() {
     return this.httpClient
+      .cache()
       .get(environment.serverUrl + '/recordings/most-viewed')
       .pipe(
         map((body: any) => body),
@@ -84,14 +91,17 @@ export class ApiService {
   }
 
   getShows() {
-    return this.httpClient.get(environment.serverUrl + '/shows').pipe(
-      map((body: any) => body),
-      catchError(() =>
-        of(
-          'Es ist ein Fehler aufgetreten. Die Shows konnten nicht geladen werden.'
+    return this.httpClient
+      .cache()
+      .get(environment.serverUrl + '/shows')
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Shows konnten nicht geladen werden.'
+          )
         )
-      )
-    );
+      );
   }
 
   getShow({ showId }: { showId: any }) {
@@ -121,14 +131,17 @@ export class ApiService {
   }
 
   getNextShow() {
-    return this.httpClient.get(environment.serverUrl + '/meta/shows/next').pipe(
-      map((body: any) => body),
-      catchError(() =>
-        of(
-          'Es ist ein Fehler aufgetreten. Die nächste Show konnte nicht geladen werden.'
+    return this.httpClient
+      .cache()
+      .get(environment.serverUrl + '/meta/shows/next')
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die nächste Show konnte nicht geladen werden.'
+          )
         )
-      )
-    );
+      );
   }
 
   getSchedule() {
