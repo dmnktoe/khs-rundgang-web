@@ -30,7 +30,9 @@ export class RecordingsComponent implements OnInit {
     loop: true,
     slidesPerView: 3,
     spaceBetween: 30,
-    autoplay: true,
+    autoplay: {
+      delay: 5000
+    },
     breakpoints: {
       // when window width is <= 640px
       640: {

@@ -1,27 +1,13 @@
 <div class="grid-auto-lg grid-gap-lg" *ngIf="isLoading == false">
   <div
-    class="center ArchiveThumb broadcast"
+    class="center ShowThumb broadcast"
     [hidden]="isLoading"
     *ngFor="let show of shows"
   >
-    <div class="recording__list__image__container">
-      <a class="show__link" routerLink="/recordings/{{ show?.slug }}">
-        <figure class="circle">
-          <img
-            [defaultImage]="defaultImage"
-            [lazyLoad]="show?.image"
-            alt="{{ show?.title }}"
-          />
-        </figure>
-      </a>
-    </div>
     <aside>
       <div class="recording__list__text__container">
-        <a class="show__link" routerLink="/recordings/{{ show?.slug }}">
+        <a class="show__link" routerLink="/shows/{{ show?.slug }}">
           <h5>{{ show?.title }}</h5>
-          <p>
-            {{ show?.description }}
-          </p>
         </a>
       </div>
     </aside>
