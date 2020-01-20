@@ -70,6 +70,19 @@ export class ApiService {
       );
   }
 
+  getHotRecording() {
+    return this.httpClient
+      .get(environment.serverUrl + '/recordings/most-viewed')
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Aufnahme konnte nicht geladen werden.'
+          )
+        )
+      );
+  }
+
   getShows() {
     return this.httpClient.get(environment.serverUrl + '/shows').pipe(
       map((body: any) => body),
