@@ -40,7 +40,11 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <a class="btn btn-outline-secondary" routerLink="/recordings" translate
+        <a
+          class="btn btn-secondary"
+          [style.backgroundColor]="hex"
+          routerLink="/recordings"
+          translate
           >BACK</a
         >
         <a
@@ -95,18 +99,6 @@
           </p>
           <hr />
         </div>
-      </div>
-      <div class="col-12 col-md-3"></div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <a
-          class="btn btn-secondary"
-          [style.backgroundColor]="hex"
-          routerLink="/recordings"
-          translate
-          >BACK</a
-        >
       </div>
     </div>
   </div>
