@@ -16,7 +16,7 @@
           <ais-hits>
             <ng-template let-hits="hits" let-results="results">
               <div class="row row-eq-height">
-                <div class="col-12" *ngIf="hits.length === 0">
+                <div class="col-12" *ngIf="hits?.length === 0">
                   <span translate>NO_RESULTS</span> {{ results.query }}
                 </div>
                 <div class="col-12">
@@ -75,7 +75,7 @@
           <ais-hits>
             <ng-template let-hits="hits" let-results="results">
               <div class="row row-eq-height">
-                <div class="col-12" *ngIf="hits.length === 0">
+                <div class="col-12" *ngIf="hits?.length === 0">
                   <span translate>NO_RESULTS</span> {{ results.query }}
                 </div>
                 <div class="col-12">
