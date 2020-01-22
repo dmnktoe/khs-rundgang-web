@@ -49,7 +49,12 @@ export class SentryErrorHandler implements ErrorHandler {
       dsn: 'https://e0e35bbbc12a4eb8a6d6f04aa2481a1d@sentry.io/1724269',
       environment: environment.environment,
       release: environment.version,
-      enabled: true
+      enabled: true,
+      ignoreErrors: [
+        'ERR_CONNECTION_REFUSED',
+        'Es is',
+        'Es ist ein Fehler aufgetreten'
+      ]
     });
   }
   handleError(error: any) {
