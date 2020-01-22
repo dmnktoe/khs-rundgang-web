@@ -36,6 +36,13 @@ body {
   color: #000;
 }
 
+.grid {
+  grid-gap: 2rem;
+  padding: 1rem;
+  padding-top: 0;
+  width: 100%;
+}
+
 .col,
 .col-2,
 .col-3,
