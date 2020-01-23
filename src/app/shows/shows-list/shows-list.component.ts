@@ -9,7 +9,7 @@ export class ShowsListComponent implements OnInit {
   @Input() shows = '';
   @Input() isLoading = false;
 
-  defaultImage = './../../../assets/svg/placeholder.svg';
+  defaultImage = './../../../assets/svg/logo.svg';
 
   constructor() {}
 

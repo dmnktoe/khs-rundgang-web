@@ -9,7 +9,7 @@ export class RecordingsListComponent implements OnInit {
   @Input() recordings = '';
   @Input() isLoading = false;
 
-  defaultImage = './../../../assets/svg/placeholder.svg';
+  defaultImage = './../../../assets/svg/logo.svg';
 
   constructor() {}
 

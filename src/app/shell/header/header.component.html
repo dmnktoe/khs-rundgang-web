@@ -5,7 +5,7 @@
       <span translate>APP_NAME</span>
     </a> -->
     <a class="navbar-brand" routerLink="/recordings" translate>
-      <img class="logo d-none d-md-block" src="../../../assets/svg/logo.svg" />
+      <img class="logo" src="../../../assets/svg/logo.svg" />
       <span translate>APP_NAME</span>
     </a>
     <button
@@ -24,22 +24,6 @@
       [ngbCollapse]="menuHidden"
     >
       <div class="navbar-nav">
-        <!-- <a
-          class="nav-item nav-link"
-          routerLink="/search"
-          routerLinkActive="active"
-          (click)="closeMenu()"
-        >
-          <i-feather
-            name="search"
-            style="width: 21px;
-            height: 21px;
-            margin-right: 0;
-            margin-top: -2px;
-            position: relative;
-            display: block;"
-          ></i-feather>
-        </a> -->
         <a
           class="nav-item nav-link"
           routerLink="/recordings"
@@ -71,18 +55,17 @@
         >
           <span translate>CHAT</span>
         </a>
-        <!--  <a
-          class="nav-item nav-link "
-          routerLink="/about"
+        <!-- <a
+          class="nav-item nav-link"
+          routerLink="/search"
           routerLinkActive="active"
           (click)="closeMenu()"
         >
-          <span translate>ABOUT</span>
-        </a>-->
+          <span translate>SEARCH</span>
+        </a> -->
       </div>
       <div class="navbar-nav ml-auto">
         <span class="nav-item nav-link current__show">
-          <!-- <i class="fas fa-question-circle"></i> -->
           <span *ngIf="currentShow !== undefined">
             <span translate>SHOW_NOW</span>: {{ currentShow | safeHtml }}
           </span>

@@ -71,8 +71,11 @@ body {
     .recording__list__text__container a p {
       color: rgba(255, 255, 255, 0.6);
     }
-    .footer {
+    .currentWidget {
       background: #000000;
+    }
+    .ShowThumb {
+      background: #0a0a0a;
     }
     button {
       color: #fff;
@@ -114,12 +117,12 @@ body {
       background-color: rgba(248, 249, 250, 0.05);
       outline: none;
     }
-    .main-current .current-info h1 {
+    .main-current h1 {
       font-size: 20px;
       color: #fff !important;
     }
 
-    .main-current .current-info p {
+    .main-current p {
       font-size: 13px;
       margin-top: 0px;
       color: #fff !important;
@@ -136,7 +139,7 @@ body {
     }
 
     .recording__list__text__container__tags::after {
-      color: #fff;
+      color: #2d2d2d;
     }
 
     .single__show__list {
@@ -149,7 +152,7 @@ body {
       color: #fff;
     }
 
-    .current-info circle {
+    .load-spinner svg circle {
       fill: #fff;
     }
 

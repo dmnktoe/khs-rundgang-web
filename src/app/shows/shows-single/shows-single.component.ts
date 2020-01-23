@@ -22,6 +22,8 @@ export class ShowsSingleComponent implements OnInit {
   message: string;
   private sub: any;
 
+  defaultImage = './../../../assets/svg/logo.svg';
+
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute,

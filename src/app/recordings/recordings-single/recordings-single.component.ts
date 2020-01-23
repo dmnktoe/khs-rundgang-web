@@ -20,7 +20,7 @@ export class RecordingsSingleComponent implements OnInit {
   id: any;
   message: string;
 
-  defaultImage = './../../../assets/svg/placeholder.svg';
+  defaultImage = './../../../assets/svg/logo.svg';
   private sub: any;
 
   constructor(
