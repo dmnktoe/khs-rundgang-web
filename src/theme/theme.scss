@@ -65,14 +65,14 @@ body {
 
 /* Recording List */
 
-.ArchiveThumb {
+.ArchiveCard {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
 
-.ArchiveThumb.center {
+.ArchiveCard.center {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -150,7 +150,7 @@ aside {
 
 /* Show List */
 
-.ShowThumb {
+.ShowCard {
   display: flex;
   width: 100%;
   background: #f0f0f0;
