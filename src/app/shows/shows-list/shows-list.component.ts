@@ -9,8 +9,7 @@ export class ShowsListComponent implements OnInit {
   @Input() shows = '';
   @Input() isLoading = false;
 
-  defaultImage =
-    'https://placeholder.pics/svg/600x600/FFFFFF-FFFFFF/000000-FFFFFF/Radio%20Rasclat';
+  defaultImage = './../../../assets/svg/placeholder.svg';
 
   constructor() {}
 

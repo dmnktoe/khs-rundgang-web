@@ -20,8 +20,7 @@ export class RecordingsSingleComponent implements OnInit {
   id: any;
   message: string;
 
-  defaultImage =
-    'https://placeholder.pics/svg/600x600/FFFFFF-FFFFFF/000000-FFFFFF/Radio%20Rasclat';
+  defaultImage = './../../../assets/svg/placeholder.svg';
   private sub: any;
 
   constructor(
