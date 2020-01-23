@@ -1,49 +1,57 @@
-<div *ngIf="!isLoading" class="main-current" style="display: table;">
-  <div
-    class="current-keyvisual"
-    style="display: table-cell;vertical-align: middle;"
-  >
-    <div>
-      <button (click)="onAudioPlay()" style="padding-left: 0;">
-        <i-feather [name]="value"></i-feather>
-      </button>
+<div class="currentWidget">
+  <div *ngIf="!isLoading" class="main-current" style="display: table;">
+    <div
+      class="current-keyvisual"
+      style="display: table-cell;vertical-align: middle;"
+    >
+      <div>
+        <button (click)="onAudioPlay()" style="padding-left: 0;">
+          <i-feather [name]="value"></i-feather>
+        </button>
+      </div>
+
+      <audio #audioOption>
+        <source
+          src="https://station.radio-rasclat.com/live"
+          type="audio/mpeg"
+        />
+      </audio>
     </div>
+    <div
+      class="current-info"
+      style="display: table-cell;vertical-align: middle;"
+      *ngIf="currentShowName"
+    >
+      <h1><span translate>NOW</span>: {{ currentShowName | safeHtml }}</h1>
+      {{ currentShowStart | date: 'HH:mm' }} -
+      {{ currentShowEnd | date: 'HH:mm' }} Uhr
+    </div>
+    <div
+      class="current-info"
+      style="display: table-cell;vertical-align: middle;"
+      *ngIf="!currentShowName"
+    >
+      <h1>
+        OFF AIR. 🤷‍♀️
+      </h1>
+      <span *ngIf="nextShowName">
+        <!-- TODO: Translate bug -->
+        <span translate>Next</span>: {{ nextShowName }}
+        <span style="opacity: 0.4">&mdash; {{ nextShowStart }}</span>
+      </span>
+    </div>
+  </div>
 
-    <audio #audioOption>
-      <source src="https://station.radio-rasclat.com/live" type="audio/mpeg" />
-    </audio>
-  </div>
-  <div
-    class="current-info"
-    style="display: table-cell;vertical-align: middle;"
-    *ngIf="currentShowName"
-  >
-    <h1><span translate>NOW</span>: {{ currentShowName | safeHtml }}</h1>
-    {{ currentShowStart | date: 'HH:mm' }} -
-    {{ currentShowEnd | date: 'HH:mm' }} Uhr
-  </div>
-  <div
-    class="current-info"
-    style="display: table-cell;vertical-align: middle;"
-    *ngIf="!currentShowName"
-  >
-    <h1>
-      OFF AIR. 🤷‍♀️
-    </h1>
-    <span *ngIf="nextShowName">
-      <!-- TODO: Translate bug -->
-      <span translate>Next</span>: {{ nextShowName }}
-      <span style="opacity: 0.4">&mdash; {{ nextShowStart }}</span>
-    </span>
-  </div>
-</div>
-
-<div *ngIf="isLoading" class="main-current" style="display: table;">
-  <div
-    class="current-keyvisual"
-    style="display: table-cell;vertical-align: middle;"
-  ></div>
-  <div class="current-info" style="display: table-cell;vertical-align: middle;">
-    <app-loader></app-loader>
+  <div *ngIf="isLoading" class="main-current" style="display: table;">
+    <div
+      class="current-keyvisual"
+      style="display: table-cell;vertical-align: middle;"
+    ></div>
+    <div
+      class="current-info"
+      style="display: table-cell;vertical-align: middle;"
+    >
+      <app-loader></app-loader>
+    </div>
   </div>
 </div>

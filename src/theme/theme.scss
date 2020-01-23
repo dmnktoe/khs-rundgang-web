@@ -38,12 +38,12 @@ body {
 
 .grid {
   grid-gap: 2rem;
-  padding: 1rem;
-  padding-top: 0;
+  padding: 0 1rem 1rem;
   width: 100%;
 }
 
 .col,
+.col-1,
 .col-2,
 .col-3,
 .col-4,
@@ -179,6 +179,86 @@ aside {
   padding: 20px;
 }
 
+/* Footer */
+
+footer {
+  position: relative;
+  padding: 5rem 0 3rem 0;
+  text-align: center;
+}
+
+footer h1 {
+  font-size: 4.5rem;
+}
+
+footer img {
+  width: 60px;
+  top: -7px;
+  position: relative;
+  margin-right: -20px;
+}
+
+/* Current widget */
+
+.currentWidget {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  line-height: inherit;
+  background: rgb(255, 255, 255);
+  z-index: 9999;
+}
+
+.currentWidget i-feather svg {
+  stroke-width: 1.45px !important;
+}
+
+.main-current .current-keyvisual {
+  position: relative;
+  display: inline-block;
+}
+.main-current .current-keyvisual img {
+  position: relative;
+  z-index: 2;
+  width: 65px;
+  height: auto;
+  border-radius: 4px;
+}
+.main-current .current-info {
+  display: inline-block;
+  box-sizing: content-box;
+  vertical-align: top;
+}
+.main-current .current-info h1,
+.main-current .current-info p {
+  margin: auto;
+  padding: 0;
+}
+.main-current .current-info h1 {
+  font-size: 20px;
+  color: #000;
+}
+.main-current .current-info p {
+  font-size: 13px;
+  margin-top: 0px;
+  color: #000;
+}
+.main-current button {
+  background: transparent;
+  width: auto;
+  height: auto;
+  border: none;
+  margin: 0 8px 0 0;
+  outline: none;
+  color: $primary;
+}
+
+.main-current button i-feather {
+  width: 40px !important;
+  height: 40px !important;
+}
+
 /* Slider */
 
 .featured .viewCounter {
@@ -253,16 +333,6 @@ aside {
 .card {
   border: 3px solid #000 !important;
   border-radius: 0px !important;
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 15px;
-  line-height: inherit;
-  background: rgb(255, 255, 255);
-  z-index: 9999;
 }
 
 * {
@@ -414,10 +484,6 @@ button.ais-SearchBox-reset {
 
 .nav-item.current__show {
   color: #fff !important;
-}
-
-.footer i-feather svg {
-  stroke-width: 1px !important;
 }
 
 .nav-link {
