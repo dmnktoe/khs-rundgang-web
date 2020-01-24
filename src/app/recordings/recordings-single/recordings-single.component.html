@@ -53,6 +53,9 @@
       class="btn btn-secondary"
       [style.backgroundColor]="hex"
       href="{{ recording.audio }}"
+      ngx-analyticsOn="click"
+      angularticsAction="DownloadClick"
+      [angularticsCategory]="recording.title"
       translate
       >DOWNLOAD_BROADCAST_BUTTON</a
     >

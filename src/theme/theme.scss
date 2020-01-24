@@ -65,14 +65,14 @@ body {
 
 /* Recording List */
 
-.ArchiveCard {
+.RecordingCard {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
 
-.ArchiveCard.center {
+.RecordingCard.center {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
