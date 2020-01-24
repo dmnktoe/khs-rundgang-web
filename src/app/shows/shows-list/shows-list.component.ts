@@ -9,6 +9,8 @@ export class ShowsListComponent implements OnInit {
   @Input() shows = '';
   @Input() isLoading = false;
 
+  defaultImage = './../../../assets/svg/logo.svg';
+
   constructor() {}
 
   ngOnInit() {}

@@ -1,75 +1,67 @@
-<div class="grid grid-gap-sm">
-  <div class="child col-6">
-    <h1>
-      <span translate>
-        RECORDINGS
-      </span>
-    </h1>
+<div class="grid" *ngIf="isLoading == true">
+  <div class="col-12">
+    <app-loader></app-loader>
   </div>
-  <div class="child col-12">
-    <div *ngIf="isLoading == false" class="row">
-      <div class="col-12 my-1">
-        <div class="swiper-container" [swiper]="config">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide featured">
-              <a
-                class="show__link"
-                routerLink="/recordings/{{ hotRecording?.slug }}"
-              >
-                <div
-                  class="swiper__show slider__img__container"
-                  [ngStyle]="{
-                    background:
-                      'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%), no-repeat center center url(' +
-                      hotRecording?.image +
-                      ')'
-                  }"
-                >
-                  <h3 class="align-bottom">
-                    🔥 <span translate>MOST_VIEWED</span>:
-                  </h3>
-                  <h5 class="align-bottom">
-                    {{ hotRecording?.title }}
-                  </h5>
-                  <h5 class="align-bottom">
-                    👀{{ hotRecording?.viewCounter }}
-                  </h5>
-                </div>
-              </a>
-            </div>
+</div>
+<div class="grid" *ngIf="isLoading == false">
+  <div class="col-12">
+    <div class="swiper-container" [swiper]="config">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide featured">
+          <a
+            class="show__link"
+            routerLink="/recordings/{{ hotRecording?.slug }}"
+          >
             <div
-              class="swiper-slide"
-              *ngFor="let recording of recordings | slice: 0:5; let i = index"
+              class="swiper__show slider__img__container"
+              [ngStyle]="{
+                background:
+                  'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%), no-repeat center top url(' +
+                  hotRecording?.image +
+                  ')'
+              }"
             >
-              <a
-                class="show__link"
-                routerLink="/recordings/{{ recording.slug }}"
-              >
-                <div
-                  class="swiper__show slider__img__container"
-                  [ngStyle]="{
-                    background:
-                      'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%), no-repeat center center url(' +
-                      recording.image +
-                      ')'
-                  }"
-                >
-                  <h4 class="align-bottom">{{ recording.title }}</h4>
-                  <h5 class="align-bottom">
-                    {{ recording.timeStart | date: 'dd.MM.yyyy' }},
-                    {{ recording.timeStart | date: 'HH:mm' }} Uhr
-                  </h5>
-                </div>
-              </a>
+              <h3 class="align-bottom">
+                🔥 <span translate>MOST_VIEWED</span>:
+              </h3>
+              <h5 class="align-bottom">
+                {{ hotRecording?.title }}
+              </h5>
+              <h5 class="align-bottom" style="float: left;">
+                👀<span class="viewCounter">{{
+                  hotRecording?.viewCounter
+                }}</span>
+              </h5>
             </div>
-          </div>
+          </a>
+        </div>
+        <div
+          class="swiper-slide"
+          *ngFor="let recording of recordings | slice: 0:5; let i = index"
+        >
+          <a class="show__link" routerLink="/recordings/{{ recording.slug }}">
+            <div
+              class="swiper__show slider__img__container"
+              [ngStyle]="{
+                background:
+                  'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%), no-repeat center top url(' +
+                  recording.image +
+                  ')'
+              }"
+            >
+              <h4 class="align-bottom">{{ recording.title }}</h4>
+              <h5 class="align-bottom">
+                {{ recording.timeStart | date: 'dd.MM.yyyy' }},
+                {{ recording.timeStart | date: 'HH:mm' }} Uhr
+              </h5>
+            </div>
+          </a>
         </div>
       </div>
     </div>
-    <div *ngIf="isLoading == true" class="row">
-      <app-loader></app-loader>
-    </div>
-    <hr />
   </div>
-  <app-recordings-list [recordings]="recordings"> </app-recordings-list>
+  <div class="col-12">
+    <app-recordings-list [recordings]="recordings" [hidden]="isLoading">
+    </app-recordings-list>
+  </div>
 </div>

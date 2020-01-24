@@ -19,6 +19,8 @@ export class RecordingsSingleComponent implements OnInit {
   getData: any;
   id: any;
   message: string;
+
+  defaultImage = './../../../assets/svg/logo.svg';
   private sub: any;
 
   constructor(
