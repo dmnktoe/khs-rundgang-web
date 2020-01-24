@@ -58,6 +58,9 @@ export class RecordingsComponent implements OnInit {
       .getRecordings()
       .pipe(finalize(() => {}))
       .subscribe(recordings => {
+        recordings.timeStart = new Date(
+          recordings.timeStart
+        ).toLocaleDateString();
         this.recordings = recordings;
         this.apiService
           .getHotRecording()
