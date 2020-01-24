@@ -1,3 +1,7 @@
+<div class="col-12" *ngIf="isLoading == false && recordings?.length == 0">
+  <span translate>NO_RECORDINGS_FOUND</span>
+</div>
+
 <div class="grid-auto-xl grid-gap-lg" *ngIf="isLoading == false">
   <div
     class="center RecordingCard broadcast"
@@ -28,8 +32,8 @@
         <a class="show__link" routerLink="/recordings/{{ recording?.slug }}">
           <h5>{{ recording?.title }}</h5>
           <p>
-            {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
-            {{ recording?.timeStart | date: 'HH:mm' }} Uhr
+            {{ recording?.timeStart | date: 'dd.MM.yyyy' }} •
+            {{ recording?.timeStart | date: 'HH:mm' }}
           </p>
         </a>
       </div>
