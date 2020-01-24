@@ -20,9 +20,9 @@ export class ShowsSingleComponent implements OnInit {
   getData: any;
   id: any;
   message: string;
-  private sub: any;
 
   defaultImage = './../../../assets/svg/logo.svg';
+  private sub: any;
 
   constructor(
     private apiService: ApiService,
