@@ -42,7 +42,7 @@ export class ApiService {
   getGenres() {
     return this.httpClient
       .cache()
-      .get(environment.serverUrl + 'genres')
+      .get(environment.serverUrl + '/genres')
       .pipe(
         map((body: any) => body),
         catchError(() =>
