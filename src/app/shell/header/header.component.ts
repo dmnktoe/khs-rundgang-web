@@ -17,7 +17,6 @@ import { ApiService } from '@app/core/api.service';
 export class HeaderComponent implements OnInit {
   menuHidden = true;
   currentShow: any;
-  isLoading = false;
 
   constructor(
     private router: Router,
@@ -49,11 +48,6 @@ export class HeaderComponent implements OnInit {
         });
       });
     }
-    this.isLoading = true;
-    /* this.apiService.getCurrentShowLive().subscribe((currentShow: any) => {
-      this.currentShow = currentShow;
-      this.isLoading = false;
-    }); */
   }
 
   toggleMenu() {
