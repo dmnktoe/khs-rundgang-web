@@ -39,21 +39,24 @@
           class="swiper-slide"
           *ngFor="let recording of recordings | slice: 0:5; let i = index"
         >
-          <a class="show__link" routerLink="/recordings/{{ recording.slug }}">
+          <a class="show__link" routerLink="/recordings/{{ recording?.slug }}">
             <div
               class="swiper__show slider__img__container"
               [ngStyle]="{
                 background:
                   'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%), no-repeat center top url(' +
-                  recording.image +
+                  recording?.image +
                   ')'
               }"
             >
-              <h4 class="align-bottom">{{ recording.title }}</h4>
+              <h4 class="align-bottom">{{ recording?.title }}</h4>
               <h5 class="align-bottom">
-                {{ recording.timeStart | date: 'dd.MM.yyyy' }},
-                {{ recording.timeStart | date: 'HH:mm' }} Uhr
+                {{ recording?.timeStart | date: 'dd.MM.yyyy' }} •
+                {{ recording?.timeStart | date: 'HH:mm' }}
               </h5>
+              <h6 class="align-bottom">
+                {{ recording?.timeStart | timeago: live }}
+              </h6>
             </div>
           </a>
         </div>
