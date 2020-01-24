@@ -21,7 +21,7 @@ export class ShowsSingleComponent implements OnInit {
   id: any;
   message: string;
 
-  defaultImage = './../../../assets/svg/logo.svg';
+  defaultImage = './../../../assets/svg/placeholder.svg';
   private sub: any;
 
   constructor(
