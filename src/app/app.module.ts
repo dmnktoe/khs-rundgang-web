@@ -6,6 +6,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from '@app/core';
+import { TimeagoModule } from 'ngx-timeago';
 import { SharedModule } from '@app/shared';
 /* VIEWS */
 import { AboutModule } from './about/about.module';
@@ -87,6 +88,7 @@ export class SentryErrorHandler implements ErrorHandler {
     NgxAnalyticsModule.forRoot([NgxAnalyticsGoogleAnalytics]),
     SwiperModule,
     NgAisModule.forRoot(),
+    TimeagoModule.forRoot(),
     IconsModule,
     NgxSkeletonLoaderModule,
     LazyLoadImageModule,
