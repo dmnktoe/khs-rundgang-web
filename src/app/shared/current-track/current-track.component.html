@@ -22,7 +22,7 @@
       style="display: table-cell;vertical-align: middle;"
       *ngIf="currentShowName"
     >
-      <h1><span translate>NOW</span>: {{ currentShowName | safeHtml }}</h1>
+      <h1>Live: {{ currentShowName | safeHtml }}</h1>
       {{ currentShowStart | date: 'HH:mm' }} -
       {{ currentShowEnd | date: 'HH:mm' }} Uhr
     </div>
