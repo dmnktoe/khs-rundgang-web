@@ -11,7 +11,6 @@ import { ShowsListComponent } from './shows-list/shows-list.component';
 import { ShowsSingleComponent } from './shows-single/shows-single.component';
 import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { RecordingsModule } from '@app/recordings/recordings.module';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 
@@ -23,7 +22,6 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     SharedModule,
     ShowsRoutingModule,
     SwiperModule,
-    NgxSkeletonLoaderModule,
     RecordingsModule,
     LazyLoadImageModule
   ],

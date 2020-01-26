@@ -9,7 +9,6 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @NgModule({
   imports: [
@@ -18,8 +17,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     CoreModule,
     SharedModule,
     HomeRoutingModule,
-    SwiperModule,
-    NgxSkeletonLoaderModule
+    SwiperModule
   ],
   declarations: [HomeComponent],
   providers: [ApiService, Title]
