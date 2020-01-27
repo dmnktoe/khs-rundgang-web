@@ -18,17 +18,23 @@
     <h1 [style.color]="hex">
       <span>{{ recording?.title }}</span>
     </h1>
-    <h6>
-      <a [style.color]="hex" routerLink="/shows/{{ recording?.show.slug }}">{{
-        recording?.show.title
-      }}</a>
+    <h6 style="padding-top: 4px;">
+      <strong>
+        <a [style.color]="hex" routerLink="/shows/{{ recording?.show.slug }}">{{
+          recording?.show.title
+        }}</a></strong
+      >
     </h6>
-    <h6>
-      {{ recording.timeStart | date: 'dd.MM.yyyy' }} •
+    <h6 style="color:rgba(112,122,122,0.99)">
+      {{ recording.timeStart | date: 'dd.MM.yyyy' }},
       {{ recording.timeStart | date: 'HH:mm' }} -
       {{ recording.timeEnd | date: 'HH:mm' }}
     </h6>
-    <div class="recording__list__text__container__tag__wrapper">
+    <div
+      class="recording__list__text__container__tag__wrapper"
+      style="
+      padding-bottom: 9px;"
+    >
       <span
         class="recording__list__text__container__tags"
         *ngFor="let genre of recording.genres"

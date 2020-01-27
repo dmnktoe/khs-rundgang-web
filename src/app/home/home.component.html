@@ -27,11 +27,9 @@
               <h5 class="align-bottom">
                 {{ hotRecording?.title }}
               </h5>
-              <h5 class="align-bottom" style="float: left;">
-                👀<span class="viewCounter">{{
-                  hotRecording?.viewCounter
-                }}</span>
-              </h5>
+              <h6 class="align-bottom" style="float: left;">
+                &mdash; {{ hotRecording?.viewCounter }} views
+              </h6>
             </div>
           </a>
         </div>
@@ -77,8 +75,10 @@
     </div>
   </div>
   <div class="col-4@lg">
-    <div class="col-12" style="margin-bottom: 15px;">
-      <h3>Hot broadcasts</h3>
+    <div class="col-12">
+      <div class="col-12" style="margin-bottom: 15px;">
+        <h3>Hot broadcasts</h3>
+      </div>
       <app-recordings-list
         [recordings]="recordings"
         [hidden]="isLoading"
@@ -117,7 +117,7 @@
     </div>
     <div *ngIf="schedule?.length == 0" class="ScheduleCard">
       <p>
-        No program scheduled for today, sorry!
+        No program scheduled for today, sorry! Come back tomorrow.
       </p>
     </div>
   </div>
