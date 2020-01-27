@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { environment } from '@env/environment';
+import { finalize } from 'rxjs/operators';
+import { ApiService } from '@app/core/api.service';
 
 @Component({
   selector: 'app-about',
@@ -9,8 +11,22 @@ import { environment } from '@env/environment';
 })
 export class AboutComponent implements OnInit {
   version: string = environment.version;
+  artists = '';
+  isLoading = false;
 
-  constructor() {}
+  constructor(private apiService: ApiService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.isLoading = true;
+    this.apiService
+      .getArtists()
+      .pipe(
+        finalize(() => {
+          this.isLoading = false;
+        })
+      )
+      .subscribe(artists => {
+        this.artists = artists;
+      });
+  }
 }

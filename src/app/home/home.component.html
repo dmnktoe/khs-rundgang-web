@@ -1,3 +1,125 @@
-<p>
-  home works!
-</p>
+<div class="grid" *ngIf="isLoading == true">
+  <div class="col-12">
+    <app-loader></app-loader>
+  </div>
+</div>
+<div class="grid" *ngIf="isLoading == false">
+  <div class="col-12">
+    <div class="swiper-container" [swiper]="config">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide featured">
+          <a
+            class="show__link"
+            routerLink="/broadcasts/{{ hotRecording?.slug }}"
+          >
+            <div
+              class="swiper__show slider__img__container"
+              [ngStyle]="{
+                background:
+                  'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 75%), no-repeat center top url(' +
+                  hotRecording?.image +
+                  ')'
+              }"
+            >
+              <h4 class="align-bottom">
+                🔥 Hot this month:
+              </h4>
+              <h5 class="align-bottom">
+                {{ hotRecording?.title }}
+              </h5>
+              <h6 class="align-bottom" style="float: left;">
+                &mdash; {{ hotRecording?.viewCounter }} views
+              </h6>
+            </div>
+          </a>
+        </div>
+        <div
+          class="swiper-slide"
+          *ngFor="let recording of recordings | slice: 0:5; let i = index"
+        >
+          <a class="show__link" routerLink="/broadcasts/{{ recording?.slug }}">
+            <div
+              class="swiper__show slider__img__container"
+              [ngStyle]="{
+                background:
+                  'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 75%), no-repeat center top url(' +
+                  recording?.image +
+                  ')'
+              }"
+            >
+              <h4 class="align-bottom">{{ recording?.title }}</h4>
+              <h5 class="align-bottom">
+                {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
+                {{ recording?.timeStart | date: 'HH:mm' }}
+              </h5>
+              <h6 class="align-bottom">
+                &mdash; {{ recording?.timeStart | timeago: live }}
+              </h6>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-8@lg">
+    <div class="col-12">
+      <div class="col-12" style="margin-bottom: 15px;">
+        <h3>⏱️ Latest broadcasts</h3>
+      </div>
+      <app-recordings-list
+        [recordings]="recordings"
+        [hidden]="isLoading"
+        [limit]="6"
+      >
+      </app-recordings-list>
+    </div>
+  </div>
+  <div class="col-4@lg">
+    <div class="col-12">
+      <div class="col-12" style="margin-bottom: 15px;">
+        <h3>🔥 Hot broadcasts</h3>
+      </div>
+      <app-recordings-list
+        [recordings]="hotRecordings"
+        [hidden]="isLoading"
+        [limit]="3"
+      >
+      </app-recordings-list>
+    </div>
+  </div>
+  <div class="col-12 text-center">
+    <a class="btn btn-secondary" routerLink="/broadcasts"
+      >View all recordings</a
+    >
+  </div>
+  <div class="col-8@lg">
+    <div class="col-12">
+      <div class="col-12" style="margin-bottom: 15px;">
+        <h3>🌍 Recent shows</h3>
+      </div>
+      <app-shows-list [shows]="showsRecentlyUpdated" [limit]="4">
+      </app-shows-list>
+      <div class="col-12 text-center" style="margin-top: 30px;">
+        <a class="btn btn-secondary" routerLink="/shows">
+          View all shows
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4@lg">
+    <div class="col-12" style="margin-bottom: 15px;">
+      <h3>{{ today }} schedule</h3>
+    </div>
+    <div *ngIf="schedule?.length >= 1" class="ScheduleCard">
+      <p *ngFor="let show of schedule">
+        {{ show?.starts | dateFormat: 'HH:mm' }} -
+        {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
+      </p>
+    </div>
+    <div *ngIf="schedule?.length == 0" class="ScheduleCard">
+      <p>
+        No program scheduled for today, sorry! Come back tomorrow.
+      </p>
+    </div>
+  </div>
+</div>

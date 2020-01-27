@@ -1,96 +1,11 @@
-<div class="page-wrapper">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12 mb-3">
-        <h1>
-          <span translate>
-            SHOWS
-          </span>
-        </h1>
-      </div>
-    </div>
-    <div *ngIf="shows?.length > 0">
-      <!-- <div *ngIf="isLoading == false" class="row">
-        <div class="col-12 my-1">
-          <div class="swiper-container" [swiper]="config">
-            <div class="swiper-wrapper">
-              <div
-                class="swiper-slide"
-                *ngFor="let show of shows | slice: 0:6; let i = index"
-              >
-                <a class="show__link" routerLink="/shows/{{ show.slug }}">
-                  <div
-                    class="swiper__show slider__img__container"
-                    [ngStyle]="{
-                      background:
-                        'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%), no-repeat center center url(' +
-                        show.image +
-                        ')'
-                    }"
-                  >
-                    <h6 translate>CURRENT_SHOW</h6>
-                    <h4 class="align-bottom">{{ show.title }}</h4>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div *ngIf="isLoading == true" class="row">
-        <div class="col-12 my-1">
-          <div class="swiper-container" [swiper]="config">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <ngx-skeleton-loader
-                  count="1"
-                  [theme]="{
-                    'border-radius': '10px',
-                    height: '275px',
-                    width: '100%'
-                  }"
-                ></ngx-skeleton-loader>
-              </div>
-              <div class="swiper-slide">
-                <ngx-skeleton-loader
-                  count="1"
-                  [theme]="{
-                    'border-radius': '10px',
-                    height: '275px',
-                    width: '100%'
-                  }"
-                ></ngx-skeleton-loader>
-              </div>
-              <div class="swiper-slide">
-                <ngx-skeleton-loader
-                  count="1"
-                  [theme]="{
-                    'border-radius': '10px',
-                    height: '275px',
-                    width: '100%'
-                  }"
-                ></ngx-skeleton-loader>
-              </div>
-              <div class="swiper-slide">
-                <ngx-skeleton-loader
-                  count="1"
-                  [theme]="{
-                    'border-radius': '10px',
-                    height: '275px',
-                    width: '100%'
-                  }"
-                ></ngx-skeleton-loader>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 my-3">
-          <hr />
-        </div>
-      </div>-->
-    </div>
+<div class="grid">
+  <div class="col-12">
+    <h1>Shows</h1>
+  </div>
+  <div class="col-12" *ngIf="isLoading == true">
+    <app-loader></app-loader>
+  </div>
+  <div class="col-12" *ngIf="isLoading == false">
     <app-shows-list [shows]="shows"> </app-shows-list>
   </div>
 </div>

@@ -27,7 +27,7 @@ $gray-800: #343a40;
 $gray-900: #212529;
 $black: #000;
 
-$blue: #0073dd;
+$blue: #0000ff;
 $indigo: #6610f2;
 $purple: #6f42c1;
 $pink: #e83e8c;
@@ -36,18 +36,17 @@ $orange: #ff813f;
 $yellow: #ffc107;
 $green: #28a745;
 $teal: #20c997;
-$cyan: #17a2b8;
+$cyan: #04beaf;
 
-$theme-colors: (
-  primary: $orange,
-  secondary: $black,
-  success: $green,
-  info: $cyan,
-  warning: $yellow,
-  danger: $red,
-  light: $gray-400,
-  dark: $black
-);
+$primary: $blue;
+$secondary: $black;
+$bgTint: rgba(112, 112, 112, 0.1);
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-400;
+$dark: $black;
 
 :root {
   color-scheme: light dark;
@@ -62,30 +61,41 @@ body {
 @media (prefers-color-scheme: dark) {
   :root {
     body {
-      background-color: #000000;
-      color: #ffffff;
+      background-color: $black;
+      color: $white;
     }
-    .footer {
-      background: #000000;
+    .recording__list__text__container a h5 {
+      color: $white;
+    }
+    .recording__list__text__container a h6 {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .currentWidget {
+      background: $black;
     }
     button {
-      color: #fff;
+      color: $white;
+    }
+    .btn-secondary {
+      border: 2px dashed $white;
+      background: transparent;
+      color: $white;
     }
     hr {
       border-top: 1px #3c4148 dotted;
     }
     ::placeholder {
       /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: #ffffff;
+      color: $white;
       opacity: 1; /* Firefox */
     }
     :-ms-input-placeholder {
       /* Internet Explorer 10-11 */
-      color: #ffffff;
+      color: $white;
     }
     ::-ms-input-placeholder {
       /* Microsoft Edge */
-      color: #ffffff;
+      color: $white;
     }
     input {
       caret-color: white;
@@ -103,17 +113,17 @@ body {
     }
     .dropdown-item:hover,
     .dropdown-item:focus {
-      color: #ffffff;
+      color: $white;
       text-decoration: none;
       background-color: rgba(248, 249, 250, 0.05);
       outline: none;
     }
-    .main-current .current-info h1 {
+    .main-current h1 {
       font-size: 20px;
       color: #fff !important;
     }
 
-    .main-current .current-info p {
+    .main-current p {
       font-size: 13px;
       margin-top: 0px;
       color: #fff !important;
@@ -121,31 +131,37 @@ body {
 
     .single__recording__list {
       background: #111111;
-      color: #fff;
+      color: $white;
     }
 
     .single__recording__list:hover {
       background: #1c1c1c;
-      color: #fff;
+      color: $white;
     }
 
-    .single__recording__list__tag::after {
-      content: "•";
-      color: #fff;
+    .recording__list__text__container__tags::after {
+      color: rgba(112, 122, 122, 0.99);
     }
 
     .single__show__list {
       background: #111111;
-      color: #fff;
+      color: $white;
     }
 
     .single__show__list:hover {
       background: #1c1c1c;
-      color: #fff;
+      color: $white;
     }
 
-    .current-info circle {
-      fill: #fff;
+    .load-spinner svg circle {
+      fill: $white;
+    }
+
+    .recording__list__text__container {
+      color: $white;
+    }
+    .ais-RefinementList-count {
+      background-color: rgba(0, 0, 255, 0.2);
     }
   }
 }

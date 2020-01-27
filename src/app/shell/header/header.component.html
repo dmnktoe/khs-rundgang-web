@@ -1,11 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top">
-    <!-- <a class="navbar-brand" routerLink="/start" translate>
-      <img class="logo d-none d-md-block" src="../../../assets/svg/logo.svg" />
-      <span translate>APP_NAME</span>
-    </a> -->
-    <a class="navbar-brand" routerLink="/recordings" translate>
-      <img class="logo d-none d-md-block" src="../../../assets/svg/logo.svg" />
+    <a class="navbar-brand" routerLink="/" translate>
+      <img class="logo" src="../../../assets/svg/logo.svg" />
       <span translate>APP_NAME</span>
     </a>
     <button
@@ -25,31 +21,23 @@
     >
       <div class="navbar-nav">
         <a
-          class="nav-item nav-link text-uppercase"
+          class="nav-item nav-link"
           routerLink="/search"
           routerLinkActive="active"
           (click)="closeMenu()"
         >
-          <i-feather
-            name="search"
-            style="width: 21px;
-            height: 21px;
-            margin-right: 0;
-            margin-top: -2px;
-            position: relative;
-            display: block;"
-          ></i-feather>
+          <i class="fa fa-search search-icon"></i>
         </a>
         <a
-          class="nav-item nav-link text-uppercase"
-          routerLink="/recordings"
+          class="nav-item nav-link"
+          routerLink="/broadcasts"
           routerLinkActive="active"
           (click)="closeMenu()"
         >
           <span translate>RECORDINGS</span>
         </a>
         <a
-          class="nav-item nav-link text-uppercase"
+          class="nav-item nav-link"
           routerLink="/shows"
           routerLinkActive="active"
           (click)="closeMenu()"
@@ -57,7 +45,7 @@
           <span translate>SHOWS</span>
         </a>
         <a
-          class="nav-item nav-link text-uppercase"
+          class="nav-item nav-link"
           routerLink="/schedule"
           routerLinkActive="active"
           (click)="closeMenu()"
@@ -65,24 +53,23 @@
           <span translate>SCHEDULE</span>
         </a>
         <a
-          class="nav-item nav-link text-uppercase"
+          class="nav-item nav-link"
           href="https://radio-rasclat.chatango.com/"
           target="_blank"
         >
           <span translate>CHAT</span>
         </a>
-        <!--  <a
-          class="nav-item nav-link text-uppercase"
-          routerLink="/about"
+        <!-- <a
+          class="nav-item nav-link"
+          routerLink="/search"
           routerLinkActive="active"
           (click)="closeMenu()"
         >
-          <span translate>ABOUT</span>
-        </a>-->
+          <span translate>SEARCH</span>
+        </a> -->
       </div>
       <div class="navbar-nav ml-auto">
-        <span class="nav-item nav-link text-uppercase current__show">
-          <!-- <i class="fas fa-question-circle"></i> -->
+        <span class="nav-item nav-link current__show">
           <span *ngIf="currentShow !== undefined">
             <span translate>SHOW_NOW</span>: {{ currentShow | safeHtml }}
           </span>

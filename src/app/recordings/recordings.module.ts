@@ -11,7 +11,8 @@ import { RecordingsListComponent } from './recordings-list/recordings-list.compo
 import { RecordingsSingleComponent } from './recordings-single/recordings-single.component';
 import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { NgxAnalyticsModule } from 'ngx-analytics';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     SharedModule,
     RecordingsRoutingModule,
     SwiperModule,
-    NgxSkeletonLoaderModule
+    LazyLoadImageModule,
+    NgxAnalyticsModule
   ],
   declarations: [
     RecordingsComponent,

@@ -8,15 +8,10 @@ import { LimitPipe } from '@app/shared/pipes/LimitPipe';
 import { SafeHtmlPipe } from '@app/shared/pipes/SafeHtmlPipe';
 import { MomentPipe } from '@app/shared/pipes/MomentPipe';
 import { IconsModule } from '@app/shared/icons/icons.module';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { TimeagoModule } from 'ngx-timeago';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    NgbDropdownModule,
-    IconsModule,
-    NgxSkeletonLoaderModule
-  ],
+  imports: [CommonModule, NgbDropdownModule, IconsModule],
   declarations: [
     LoaderComponent,
     CurrentTrackComponent,
@@ -29,7 +24,8 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     CurrentTrackComponent,
     SafeHtmlPipe,
     LimitPipe,
-    MomentPipe
+    MomentPipe,
+    TimeagoModule
   ],
   providers: [ApiService]
 })

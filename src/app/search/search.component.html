@@ -1,137 +1,64 @@
-<div class="page-wrapper">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <input
-          type="text"
-          class="ais-SearchBox-input"
-          autofocus
-          [placeholder]="'SEARCH' | translate"
-          (keyup)="onQuery({ $event: $event })"
-        />
-        <hr />
-        <ais-instantsearch [config]="recordingsConfig">
-          <h3 translate>RECORDINGS</h3>
-          <ais-configure [searchParameters]="searchParameters"></ais-configure>
-          <ais-hits>
-            <ng-template let-hits="hits" let-results="results">
-              <div class="row row-eq-height">
-                <div class="col-12" *ngIf="hits?.length === 0">
-                  <span translate>NO_RESULTS</span> {{ results.query }}
-                </div>
-                <div class="col-12">
-                  <div class="row">
-                    <div
-                      class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3"
-                      *ngFor="let recording of hits"
-                    >
-                      <a
-                        class="recording__link"
-                        routerLink="/recording/{{ recording.slug }}"
-                      >
-                        <div class="single__recording__list">
-                          <div class="row row-eq-height">
-                            <div class="col-4">
-                              <div
-                                class="single__recording__list__img-container"
-                              >
-                                <img src="{{ recording.image }}" />
-                              </div>
-                            </div>
-                            <div class="col-8">
-                              <div
-                                class="single__recording__list__text-container"
-                              >
-                                <div class="single__recording__list__tags">
-                                  <span
-                                    class="single__recording__list__tag"
-                                    *ngFor="let genre of recording.genres"
-                                  >
-                                    <a routerLink="/recordings">{{
-                                      genre.title
-                                    }}</a>
-                                  </span>
-                                </div>
-                                <h5>{{ recording.title }}</h5>
-                                <p>
-                                  {{ recording.timeStart | date: 'dd.MM.yyyy' }}
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ng-template>
-          </ais-hits>
-        </ais-instantsearch>
-        <hr />
-        <ais-instantsearch [config]="showsConfig">
-          <h3 translate>SHOWS</h3>
-          <ais-configure [searchParameters]="searchParameters"></ais-configure>
-          <ais-hits>
-            <ng-template let-hits="hits" let-results="results">
-              <div class="row row-eq-height">
-                <div class="col-12" *ngIf="hits?.length === 0">
-                  <span translate>NO_RESULTS</span> {{ results.query }}
-                </div>
-                <div class="col-12">
-                  <div class="row">
-                    <div
-                      class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3"
-                      *ngFor="let show of hits"
-                    >
-                      <a class="show__link" routerLink="/shows/{{ show.slug }}">
-                        <div class="single__show__list">
-                          <div class="single__show__list__text-container">
-                            <h4>{{ show.title }}</h4>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ng-template>
-          </ais-hits>
-        </ais-instantsearch>
-        <!-- <hr />
-        <ais-instantsearch [config]="artistsConfig">
-          <h3 translate>ARTISTS</h3>
-          <ais-configure [searchParameters]="searchParameters"></ais-configure>
-          <ais-hits>
-            <ng-template let-hits="hits" let-results="results">
-              <div class="row row-eq-height">
-                <div class="col-12" *ngIf="hits.length === 0">
-                  <span translate>NO_RESULTS</span> {{ results.query }}
-                </div>
-                <div class="col-12">
-                  <div class="row">
-                    <div
-                      class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3"
-                      *ngFor="let artist of hits"
-                    >
-                      <a
-                        class="show__link"
-                        routerLink="/artists/{{ artist.slug }}"
-                      >
-                        <div class="single__artist__list">
-                          <div class="single__artist__list__text-container">
-                            <h4>{{ artist.title }}</h4>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ng-template>
-          </ais-hits>
-        </ais-instantsearch> -->
-      </div>
+<div class="grid" style="padding-bottom: 0">
+  <div class="col-12">
+    <input
+      type="text"
+      class="ais-SearchBox-input"
+      autofocus
+      [placeholder]="'Search...'"
+      (keyup)="onQuery({ $event: $event })"
+    />
+  </div>
+  <div class="col-12">
+    <h3>Search Broadcasts</h3>
+  </div>
+</div>
+<div class="grid">
+  <ais-instantsearch [config]="recordingsConfig">
+    <div class="col-12@xs" style="margin-bottom: 15px;">
+      <ais-refinement-list attribute="genres.title"></ais-refinement-list>
+      <ais-current-refinements></ais-current-refinements>
+      <ais-configure [searchParameters]="searchParameters"></ais-configure>
     </div>
+    <div class="col-12@xs">
+      <ais-hits>
+        <ng-template let-hits="hits" let-results="results">
+          <div class="col-12">
+            <app-recordings-list [recordings]="hits"> </app-recordings-list>
+          </div>
+        </ng-template>
+      </ais-hits>
+    </div>
+    <div class="col-12@xs">
+      <ais-pagination
+        [showFirst]="true"
+        [showLast]="true"
+        [showPrevious]="true"
+        [showNext]="true"
+      ></ais-pagination>
+    </div>
+  </ais-instantsearch>
+</div>
+<div class="grid">
+  <div class="col-12">
+    <hr />
+  </div>
+</div>
+<div class="grid">
+  <div class="col-12">
+    <ais-instantsearch [config]="showsConfig">
+      <h3>Search Shows</h3>
+      <h6><ais-stats></ais-stats></h6>
+      <ais-configure [searchParameters]="searchParameters"></ais-configure>
+      <ais-hits>
+        <ng-template let-hits="hits" let-results="results">
+          <div class="col-12" *ngIf="hits?.length === 0">
+            <span translate>NO_RESULTS</span> {{ results.query }}
+          </div>
+          <div class="col-12">
+            <app-shows-list [shows]="hits"> </app-shows-list>
+          </div>
+        </ng-template>
+      </ais-hits>
+    </ais-instantsearch>
   </div>
 </div>

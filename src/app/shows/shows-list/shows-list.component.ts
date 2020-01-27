@@ -7,7 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ShowsListComponent implements OnInit {
   @Input() shows = '';
+  @Input() limit: number;
   @Input() isLoading = false;
+
+  defaultImage = './../../../assets/svg/placeholder.svg';
 
   constructor() {}
 

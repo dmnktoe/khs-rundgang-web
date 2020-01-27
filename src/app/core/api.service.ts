@@ -12,18 +12,22 @@ export class ApiService {
   constructor(private httpClient: HttpClient /*, public socket: Socket*/) {}
 
   getArtists() {
-    return this.httpClient.get(environment.serverUrl + 'artists').pipe(
-      map((body: any) => body),
-      catchError(() =>
-        of(
-          'Es ist ein Fehler aufgetreten. Die Artists konnten nicht geladen werden.'
+    return this.httpClient
+      .cache()
+      .get(environment.serverUrl + '/artists')
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Artists konnten nicht geladen werden.'
+          )
         )
-      )
-    );
+      );
   }
 
   getArtist({ artistId }: { artistId: any }) {
     return this.httpClient
+      .cache()
       .get(environment.serverUrl + '/artists/artist/' + artistId)
       .pipe(
         map((body: any) => body),
@@ -36,29 +40,36 @@ export class ApiService {
   }
 
   getGenres() {
-    return this.httpClient.get(environment.serverUrl + 'genres').pipe(
-      map((body: any) => body),
-      catchError(() =>
-        of(
-          'Es ist ein Fehler aufgetreten. Die Genres konnten nicht geladen werden.'
+    return this.httpClient
+      .cache()
+      .get(environment.serverUrl + '/genres')
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Genres konnten nicht geladen werden.'
+          )
         )
-      )
-    );
+      );
   }
 
   getRecordings() {
-    return this.httpClient.get(environment.serverUrl + '/recordings').pipe(
-      map((body: any) => body),
-      catchError(() =>
-        of(
-          'Es ist ein Fehler aufgetreten. Die Recordings konnten nicht geladen werden.'
+    return this.httpClient
+      .cache()
+      .get(environment.serverUrl + '/recordings')
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Recordings konnten nicht geladen werden.'
+          )
         )
-      )
-    );
+      );
   }
 
   getRecording({ recordingId }: { recordingId: any }) {
     return this.httpClient
+      .cache()
       .get(environment.serverUrl + '/recordings/recording/' + recordingId)
       .pipe(
         map((body: any) => body),
@@ -70,19 +81,65 @@ export class ApiService {
       );
   }
 
-  getShows() {
-    return this.httpClient.get(environment.serverUrl + '/shows').pipe(
-      map((body: any) => body),
-      catchError(() =>
-        of(
-          'Es ist ein Fehler aufgetreten. Die Shows konnten nicht geladen werden.'
+  getHotRecording() {
+    return this.httpClient
+      .cache()
+      .get(environment.serverUrl + '/recordings/most-viewed')
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Aufnahme konnte nicht geladen werden.'
+          )
         )
-      )
-    );
+      );
+  }
+
+  getHotRecordings() {
+    return this.httpClient
+      .cache()
+      .get(environment.serverUrl + '/recordings/top-3-viewed')
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Aufnahme konnte nicht geladen werden.'
+          )
+        )
+      );
+  }
+
+  getShows() {
+    return this.httpClient
+      .cache()
+      .get(environment.serverUrl + '/shows')
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Shows konnten nicht geladen werden.'
+          )
+        )
+      );
+  }
+
+  getShowsRecentlyUpdated() {
+    return this.httpClient
+      .cache()
+      .get(environment.serverUrl + '/shows/recently-updated')
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Shows konnten nicht geladen werden.'
+          )
+        )
+      );
   }
 
   getShow({ showId }: { showId: any }) {
     return this.httpClient
+      .cache()
       .get(environment.serverUrl + '/shows/show/' + showId)
       .pipe(
         map((body: any) => body),

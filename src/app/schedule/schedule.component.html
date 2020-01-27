@@ -1,130 +1,133 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 mb-3">
-      <h1><span translate>SCHEDULE</span></h1>
-    </div>
+<div class="grid" *ngIf="isLoading == true">
+  <div class="col-12">
+    <h1>Schedule</h1>
   </div>
-  <app-loader [isLoading]="isLoading"></app-loader>
-  <div [hidden]="isLoading" class="row">
-    <div class="col-12 col-md-6">
-      <h2><span translate>THIS_WEEK</span></h2>
+  <div class="col-12">
+    <app-loader></app-loader>
+  </div>
+</div>
+<div class="grid" *ngIf="isLoading == false">
+  <div class="col-12">
+    <h1>Schedule</h1>
+  </div>
+  <div class="col-6@xs">
+    <h2><span translate>THIS_WEEK</span></h2>
+    <hr />
+    <div>
+      <div>
+        <h4 translate>MONDAY</h4>
+        <div *ngFor="let show of schedule?.monday">
+          {{ show?.starts | dateFormat: 'HH:mm' }} -
+          {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
+        </div>
+      </div>
       <hr />
-      <div style="margin-bottom: 100px;">
-        <div>
-          <h4 translate>MONDAY</h4>
-          <div *ngFor="let show of schedule?.monday">
-            {{ show?.starts | dateFormat: 'HH:mm' }} -
-            {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
-          </div>
+      <div>
+        <h4 translate>TUESDAY</h4>
+        <div *ngFor="let show of schedule?.tuesday">
+          {{ show?.starts | dateFormat: 'HH:mm' }} -
+          {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
         </div>
-        <hr />
-        <div>
-          <h4 translate>TUESDAY</h4>
-          <div *ngFor="let show of schedule?.tuesday">
-            {{ show?.starts | dateFormat: 'HH:mm' }} -
-            {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
-          </div>
+      </div>
+      <hr />
+      <div>
+        <h4 translate>WEDNESDAY</h4>
+        <div *ngFor="let show of schedule?.wednesday">
+          {{ show?.starts | dateFormat: 'HH:mm' }} -
+          {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
         </div>
-        <hr />
-        <div>
-          <h4 translate>WEDNESDAY</h4>
-          <div *ngFor="let show of schedule?.wednesday">
-            {{ show?.starts | dateFormat: 'HH:mm' }} -
-            {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
-          </div>
+      </div>
+      <hr />
+      <div>
+        <h4 translate>THURSDAY</h4>
+        <div *ngFor="let show of schedule?.thursday">
+          {{ show?.starts | dateFormat: 'HH:mm' }} -
+          {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
         </div>
-        <hr />
-        <div>
-          <h4 translate>THURSDAY</h4>
-          <div *ngFor="let show of schedule?.thursday">
-            {{ show?.starts | dateFormat: 'HH:mm' }} -
-            {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
-          </div>
+      </div>
+      <hr />
+      <div>
+        <h4 translate>FRIDAY</h4>
+        <div *ngFor="let show of schedule?.friday">
+          {{ show?.starts | dateFormat: 'HH:mm' }} -
+          {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
         </div>
-        <hr />
-        <div>
-          <h4 translate>FRIDAY</h4>
-          <div *ngFor="let show of schedule?.friday">
-            {{ show?.starts | dateFormat: 'HH:mm' }} -
-            {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
-          </div>
+      </div>
+      <hr />
+      <div>
+        <h4 translate>SATURDAY</h4>
+        <div *ngFor="let show of schedule?.saturday">
+          {{ show?.starts | dateFormat: 'HH:mm' }} -
+          {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
         </div>
-        <hr />
-        <div>
-          <h4 translate>SATURDAY</h4>
-          <div *ngFor="let show of schedule?.saturday">
-            {{ show?.starts | dateFormat: 'HH:mm' }} -
-            {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
-          </div>
-        </div>
-        <hr />
-        <div>
-          <h4 translate>SUNDAY</h4>
-          <div *ngFor="let show of schedule?.sunday">
-            {{ show?.starts | dateFormat: 'HH:mm' }} -
-            {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
-          </div>
+      </div>
+      <hr />
+      <div>
+        <h4 translate>SUNDAY</h4>
+        <div *ngFor="let show of schedule?.sunday">
+          {{ show?.starts | dateFormat: 'HH:mm' }} -
+          {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6">
-      <h2><span translate>NEXT_WEEK</span></h2>
+  </div>
+  <div class="col-6@xs">
+    <h2><span translate>NEXT_WEEK</span></h2>
+    <hr />
+    <div>
+      <div>
+        <h4 translate>MONDAY</h4>
+        <div *ngFor="let show of schedule?.nextmonday">
+          {{ show?.starts | dateFormat: 'HH:mm' }} -
+          {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
+        </div>
+      </div>
       <hr />
-      <div style="margin-bottom: 100px;">
-        <div>
-          <h4 translate>MONDAY</h4>
-          <div *ngFor="let show of schedule?.nextmonday">
-            {{ show?.starts | dateFormat: 'HH:mm' }} -
-            {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
-          </div>
+      <div>
+        <h4 translate>TUESDAY</h4>
+        <div *ngFor="let show of schedule?.nexttuesday">
+          {{ show?.starts | dateFormat: 'HH:mm' }} -
+          {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
         </div>
-        <hr />
-        <div>
-          <h4 translate>TUESDAY</h4>
-          <div *ngFor="let show of schedule?.nexttuesday">
-            {{ show?.starts | dateFormat: 'HH:mm' }} -
-            {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
-          </div>
+      </div>
+      <hr />
+      <div>
+        <h4 translate>WEDNESDAY</h4>
+        <div *ngFor="let show of schedule?.nextwednesday">
+          {{ show?.starts | dateFormat: 'HH:mm' }} -
+          {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
         </div>
-        <hr />
-        <div>
-          <h4 translate>WEDNESDAY</h4>
-          <div *ngFor="let show of schedule?.nextwednesday">
-            {{ show?.starts | dateFormat: 'HH:mm' }} -
-            {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
-          </div>
+      </div>
+      <hr />
+      <div>
+        <h4 translate>THURSDAY</h4>
+        <div *ngFor="let show of schedule?.nextthursday">
+          {{ show?.starts | dateFormat: 'HH:mm' }} -
+          {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
         </div>
-        <hr />
-        <div>
-          <h4 translate>THURSDAY</h4>
-          <div *ngFor="let show of schedule?.nextthursday">
-            {{ show?.starts | dateFormat: 'HH:mm' }} -
-            {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
-          </div>
+      </div>
+      <hr />
+      <div>
+        <h4 translate>FRIDAY</h4>
+        <div *ngFor="let show of schedule?.nextfriday">
+          {{ show?.starts | dateFormat: 'HH:mm' }} -
+          {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
         </div>
-        <hr />
-        <div>
-          <h4 translate>FRIDAY</h4>
-          <div *ngFor="let show of schedule?.nextfriday">
-            {{ show?.starts | dateFormat: 'HH:mm' }} -
-            {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
-          </div>
+      </div>
+      <hr />
+      <div>
+        <h4 translate>SATURDAY</h4>
+        <div *ngFor="let show of schedule?.nextsaturday">
+          {{ show?.starts | dateFormat: 'HH:mm' }} -
+          {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
         </div>
-        <hr />
-        <div>
-          <h4 translate>SATURDAY</h4>
-          <div *ngFor="let show of schedule?.nextsaturday">
-            {{ show?.starts | dateFormat: 'HH:mm' }} -
-            {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
-          </div>
-        </div>
-        <hr />
-        <div>
-          <h4 translate>SUNDAY</h4>
-          <div *ngFor="let show of schedule?.nextsunday">
-            {{ show?.starts | dateFormat: 'HH:mm' }} -
-            {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
-          </div>
+      </div>
+      <hr />
+      <div>
+        <h4 translate>SUNDAY</h4>
+        <div *ngFor="let show of schedule?.nextsunday">
+          {{ show?.starts | dateFormat: 'HH:mm' }} -
+          {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
         </div>
       </div>
     </div>

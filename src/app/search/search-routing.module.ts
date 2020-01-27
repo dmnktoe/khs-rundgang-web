@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { extract } from '@app/core';
 import { Shell } from '@app/shell/shell.service';
 import { SearchComponent } from './search.component';
 
@@ -10,7 +9,7 @@ const routes: Routes = [
     {
       path: 'search',
       component: SearchComponent,
-      data: { title: extract('BROWSER_TITLE_SEARCH') }
+      data: { title: 'Radio Rasclat • Search' }
     }
   ])
 ];

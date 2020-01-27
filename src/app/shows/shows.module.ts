@@ -11,8 +11,8 @@ import { ShowsListComponent } from './shows-list/shows-list.component';
 import { ShowsSingleComponent } from './shows-single/shows-single.component';
 import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { RecordingsModule } from '@app/recordings/recordings.module';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   imports: [
@@ -22,10 +22,11 @@ import { RecordingsModule } from '@app/recordings/recordings.module';
     SharedModule,
     ShowsRoutingModule,
     SwiperModule,
-    NgxSkeletonLoaderModule,
-    RecordingsModule
+    RecordingsModule,
+    LazyLoadImageModule
   ],
   declarations: [ShowsComponent, ShowsListComponent, ShowsSingleComponent],
+  exports: [ShowsListComponent],
   providers: [ApiService, Title]
 })
 export class ShowsModule {}

@@ -35,12 +35,7 @@ export class CurrentTrackComponent implements OnInit {
 
   ngOnInit() {
     this.isLoading = true;
-    moment.locale('de');
     this.value = 'play-circle';
-    /* this.apiService.getCurrentTrackLive().subscribe((current: any) => {
-      this.current = current;
-      this.isLoading = false;
-    });*/
     this.apiService
       .getCurrentShow()
       .pipe(finalize(() => {}))

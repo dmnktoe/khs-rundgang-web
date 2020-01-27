@@ -1,87 +1,57 @@
-<div *ngIf="!isLoading" class="main-current" style="display: table;">
-  <div
-    class="current-keyvisual"
-    style="display: table-cell;vertical-align: middle;"
-  >
-    <div>
-      <button (click)="onAudioPlay()" style="padding-left: 0;">
-        <i-feather [name]="value"></i-feather>
-      </button>
-    </div>
-
-    <audio #audioOption>
-      <source src="https://station.radio-rasclat.com/live" type="audio/mpeg" />
-    </audio>
-  </div>
-  <div
-    class="current-info"
-    style="display: table-cell;vertical-align: middle;"
-    *ngIf="currentShowName"
-  >
-    <h1><span translate>NOW</span>: {{ currentShowName | safeHtml }}</h1>
-    {{ currentShowStart | date: 'HH:mm' }} -
-    {{ currentShowEnd | date: 'HH:mm' }} Uhr
-  </div>
-  <div
-    class="current-info"
-    style="display: table-cell;vertical-align: middle;"
-    *ngIf="!currentShowName"
-  >
-    <h1>
-      OFF AIR. 🤷‍♀️
-    </h1>
-    <span *ngIf="nextShowName">
-      <!-- TODO: Translate bug -->
-      <span translate>Next</span>: {{ nextShowName }}
-      <span style="opacity: 0.4">&mdash; {{ nextShowStart }}</span>
-    </span>
-  </div>
-</div>
-
-<div *ngIf="isLoading" class="main-current" style="display: table;">
-  <div
-    class="current-keyvisual"
-    style="display: table-cell;vertical-align: middle;"
-  ></div>
-  <div class="current-info" style="display: table-cell;vertical-align: middle;">
-    <svg
-      version="1.1"
-      id="L4"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      x="0px"
-      y="0px"
-      viewBox="0 0 100 100"
-      enable-background="new 0 0 0 0"
-      xml:space="preserve"
+<div class="currentWidget">
+  <div *ngIf="!isLoading" class="main-current" style="display: table;">
+    <div
+      class="current-keyvisual"
+      style="display: table-cell;vertical-align: middle;"
     >
-      <circle fill="#000" stroke="none" cx="6" cy="50" r="6">
-        <animate
-          attributeName="opacity"
-          dur="1s"
-          values="0;1;0"
-          repeatCount="indefinite"
-          begin="0.1"
+      <div>
+        <button (click)="onAudioPlay()" style="padding-left: 0;">
+          <i-feather [name]="value"></i-feather>
+        </button>
+      </div>
+
+      <audio #audioOption>
+        <source
+          src="https://station.radio-rasclat.com/live"
+          type="audio/mpeg"
         />
-      </circle>
-      <circle fill="#000" stroke="none" cx="26" cy="50" r="6">
-        <animate
-          attributeName="opacity"
-          dur="1s"
-          values="0;1;0"
-          repeatCount="indefinite"
-          begin="0.2"
-        />
-      </circle>
-      <circle fill="#000" stroke="none" cx="46" cy="50" r="6">
-        <animate
-          attributeName="opacity"
-          dur="1s"
-          values="0;1;0"
-          repeatCount="indefinite"
-          begin="0.3"
-        />
-      </circle>
-    </svg>
+      </audio>
+    </div>
+    <div
+      class="current-info"
+      style="display: table-cell;vertical-align: middle;"
+      *ngIf="currentShowName"
+    >
+      <h1>Live: {{ currentShowName | safeHtml }}</h1>
+      {{ currentShowStart | date: 'HH:mm' }} -
+      {{ currentShowEnd | date: 'HH:mm' }} Uhr
+    </div>
+    <div
+      class="current-info"
+      style="display: table-cell;vertical-align: middle;"
+      *ngIf="!currentShowName"
+    >
+      <h1>
+        OFF AIR.
+      </h1>
+      <span *ngIf="nextShowName">
+        <!-- TODO: translation bug -->
+        Next: {{ nextShowName }}
+        <span style="opacity: 0.4">&mdash; {{ nextShowStart }}</span>
+      </span>
+    </div>
+  </div>
+
+  <div *ngIf="isLoading" class="main-current" style="display: table;">
+    <div
+      class="current-keyvisual"
+      style="display: table-cell;vertical-align: middle;"
+    ></div>
+    <div
+      class="current-info"
+      style="display: table-cell;vertical-align: middle;"
+    >
+      <app-loader></app-loader>
+    </div>
   </div>
 </div>

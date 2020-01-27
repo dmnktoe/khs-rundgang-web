@@ -19,6 +19,8 @@ export class RecordingsSingleComponent implements OnInit {
   getData: any;
   id: any;
   message: string;
+
+  defaultImage = './../../../assets/svg/placeholder.svg';
   private sub: any;
 
   constructor(
@@ -29,7 +31,7 @@ export class RecordingsSingleComponent implements OnInit {
   ) {}
 
   public setTitle({ title }: { title: any }) {
-    this.titleService.setTitle(title);
+    this.titleService.setTitle('Radio Rasclat • ' + title);
   }
 
   ngOnInit() {
