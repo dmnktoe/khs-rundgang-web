@@ -55,6 +55,9 @@
       controls
       src="{{ recording.audio }}"
       type="audio/mp3"
+      ngx-analyticsOn="click"
+      angularticsAction="PlayClick"
+      [angularticsCategory]="recording._id"
     >
       Ihr Browser kann dieses Tondokument nicht wiedergeben.
     </audio>
@@ -66,9 +69,8 @@
       href="{{ recording.audio }}"
       ngx-analyticsOn="click"
       angularticsAction="DownloadClick"
-      [angularticsCategory]="recording.title"
-      translate
-      >DOWNLOAD_BROADCAST_BUTTON</a
+      [angularticsCategory]="recording._id"
+      >Download Broadcast</a
     >
   </div>
 </div>
