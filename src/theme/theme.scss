@@ -53,14 +53,33 @@ body {
 
 /* Buttons */
 
+.btn,
+.btn-primary,
+.btn-secondary {
+  transition: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .btn-primary {
-  color: #fff !important;
+  color: #fff;
   background: $primary;
-  border: none !important;
+  border: none;
 }
 
 .btn-secondary {
-  border: none !important;
+  border: 2px solid $secondary;
+  width: 100%;
+  background: transparent;
+  color: $secondary;
+}
+
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus {
+  border: 2px solid $primary !important;
+  background: transparent !important;
+  color: $primary !important;
 }
 
 /* Recording List */
@@ -199,7 +218,7 @@ footer img {
   width: 100%;
   padding: 15px;
   line-height: inherit;
-  background: rgb(255, 255, 255);
+  background: $white;
   z-index: 9999;
 }
 
@@ -275,14 +294,6 @@ footer img {
 
 .page-wrapper .container-fluid {
   margin-bottom: 100px;
-}
-
-.btn:focus,
-.btn:active {
-  color: #fff !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
 }
 
 .navbar {
