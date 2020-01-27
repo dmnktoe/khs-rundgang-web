@@ -18,7 +18,7 @@
     <h1 [style.color]="hex">
       <span>{{ show?.title }}</span>
     </h1>
-    <p style="margin-top: 10px;">{{ show?.description }}</p>
+    <p style="margin-top: 10px;" [innerHTML]="show?.description"></p>
   </div>
   <div class="col-12">
     <app-recordings-list [recordings]="recordings"> </app-recordings-list>
