@@ -77,7 +77,7 @@ export class SentryErrorHandler implements ErrorHandler {
     CoreModule,
     SharedModule,
     ShellModule,
-    /*HomeModule,*/
+    HomeModule,
     RecordingsModule,
     ShowsModule,
     AboutModule,
