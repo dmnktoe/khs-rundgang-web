@@ -2,7 +2,7 @@
   <div
     class="center ShowCard broadcast"
     [hidden]="isLoading"
-    *ngFor="let show of shows"
+    *ngFor="let show of shows.slice(0, limit)"
   >
     <aside>
       <div class="recording__list__text__container">

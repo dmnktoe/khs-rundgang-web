@@ -31,7 +31,7 @@ export class RecordingsSingleComponent implements OnInit {
   ) {}
 
   public setTitle({ title }: { title: any }) {
-    this.titleService.setTitle(title);
+    this.titleService.setTitle('Radio Rasclat • ' + title);
   }
 
   ngOnInit() {

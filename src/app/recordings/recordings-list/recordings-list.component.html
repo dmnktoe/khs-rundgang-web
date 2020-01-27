@@ -6,10 +6,10 @@
   <div
     class="center RecordingCard broadcast"
     [hidden]="isLoading"
-    *ngFor="let recording of recordings"
+    *ngFor="let recording of recordings.slice(0, limit)"
   >
     <div class="recording__list__image__container">
-      <a class="show__link" routerLink="/recordings/{{ recording?.slug }}">
+      <a class="show__link" routerLink="/broadcasts/{{ recording?.slug }}">
         <figure class="circle">
           <img
             [defaultImage]="defaultImage"
@@ -26,10 +26,10 @@
             class="recording__list__text__container__tags"
             *ngFor="let genre of recording?.genres"
           >
-            <a routerLink="/recordings?genre=">{{ genre.title }}</a>
+            <a routerLink="/broadcasts?genre=">{{ genre.title }}</a>
           </span>
         </div>
-        <a class="show__link" routerLink="/recordings/{{ recording?.slug }}">
+        <a class="show__link" routerLink="/broadcasts/{{ recording?.slug }}">
           <h5>{{ recording?.title }}</h5>
           <p>
             {{ recording?.timeStart | date: 'dd.MM.yyyy' }} •

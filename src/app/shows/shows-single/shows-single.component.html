@@ -19,7 +19,8 @@
     <p style="margin-top: 10px;">{{ show?.description }}</p>
   </div>
   <div class="col-12">
-    <app-recordings-list [recordings]="recordings"> </app-recordings-list>
+    <app-recordings-list [recordings]="recordings" [hex]="hex">
+    </app-recordings-list>
   </div>
   <div class="col-12">
     <a
