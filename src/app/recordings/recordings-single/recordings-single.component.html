@@ -47,7 +47,7 @@
         >
       </span>
     </div>
-    <p style="margin-top: 10px;">{{ recording?.description }}</p>
+    <p style="margin-top: 10px;" [innerHTML]="recording?.description"></p>
   </div>
   <div class="col-12">
     <audio
