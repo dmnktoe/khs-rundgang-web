@@ -27,7 +27,7 @@ $gray-800: #343a40;
 $gray-900: #212529;
 $black: #000;
 
-$blue: #0073dd;
+$blue: #1034f8;
 $indigo: #6610f2;
 $purple: #6f42c1;
 $pink: #e83e8c;
@@ -36,18 +36,16 @@ $orange: #ff813f;
 $yellow: #ffc107;
 $green: #28a745;
 $teal: #20c997;
-$cyan: #17a2b8;
+$cyan: #04beaf;
 
-$theme-colors: (
-  primary: $blue,
-  secondary: $black,
-  success: $green,
-  info: $cyan,
-  warning: $yellow,
-  danger: $red,
-  light: $gray-400,
-  dark: $black
-);
+$primary: $blue;
+$secondary: $black;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-400;
+$dark: $black;
 
 :root {
   color-scheme: light dark;
@@ -62,39 +60,45 @@ body {
 @media (prefers-color-scheme: dark) {
   :root {
     body {
-      background-color: #000000;
-      color: #ffffff;
+      background-color: $black;
+      color: $white;
     }
     .recording__list__text__container a h5 {
-      color: #fff;
+      color: $white;
     }
     .recording__list__text__container a p {
       color: rgba(255, 255, 255, 0.6);
     }
     .currentWidget {
-      background: #000000;
+      background: $black;
     }
     .ShowCard {
       background: #0a0a0a;
     }
     button {
-      color: #fff;
+      color: $white;
+    }
+    .btn-secondary {
+      border: 2px solid $white;
+      width: 100%;
+      background: transparent;
+      color: $white;
     }
     hr {
       border-top: 1px #3c4148 dotted;
     }
     ::placeholder {
       /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: #ffffff;
+      color: $white;
       opacity: 1; /* Firefox */
     }
     :-ms-input-placeholder {
       /* Internet Explorer 10-11 */
-      color: #ffffff;
+      color: $white;
     }
     ::-ms-input-placeholder {
       /* Microsoft Edge */
-      color: #ffffff;
+      color: $white;
     }
     input {
       caret-color: white;
@@ -112,7 +116,7 @@ body {
     }
     .dropdown-item:hover,
     .dropdown-item:focus {
-      color: #ffffff;
+      color: $white;
       text-decoration: none;
       background-color: rgba(248, 249, 250, 0.05);
       outline: none;
@@ -130,12 +134,12 @@ body {
 
     .single__recording__list {
       background: #111111;
-      color: #fff;
+      color: $white;
     }
 
     .single__recording__list:hover {
       background: #1c1c1c;
-      color: #fff;
+      color: $white;
     }
 
     .recording__list__text__container__tags::after {
@@ -144,20 +148,20 @@ body {
 
     .single__show__list {
       background: #111111;
-      color: #fff;
+      color: $white;
     }
 
     .single__show__list:hover {
       background: #1c1c1c;
-      color: #fff;
+      color: $white;
     }
 
     .load-spinner svg circle {
-      fill: #fff;
+      fill: $white;
     }
 
     .recording__list__text__container {
-      color: #fff;
+      color: $white;
     }
   }
 }
