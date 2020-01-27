@@ -40,6 +40,7 @@ $cyan: #04beaf;
 
 $primary: $blue;
 $secondary: $black;
+$bgTint: rgba(112, 112, 112, 0.1);
 $success: $green;
 $info: $cyan;
 $warning: $yellow;
@@ -72,15 +73,11 @@ body {
     .currentWidget {
       background: $black;
     }
-    .ShowCard {
-      background: #0a0a0a;
-    }
     button {
       color: $white;
     }
     .btn-secondary {
-      border: 2px solid $white;
-      width: 100%;
+      border: 2px dashed $white;
       background: transparent;
       color: $white;
     }

@@ -68,16 +68,17 @@ body {
 }
 
 .btn-secondary {
-  border: 2px solid $secondary;
+  border: 2px dashed $secondary;
   width: 100%;
   background: transparent;
   color: $secondary;
+  padding: 15px 0;
 }
 
 .btn-secondary:hover,
 .btn-secondary:active,
 .btn-secondary:focus {
-  border: 2px solid $primary !important;
+  border: 2px dashed $primary !important;
   background: transparent !important;
   color: $primary !important;
 }
@@ -103,6 +104,26 @@ body {
   width: 100px;
   max-width: 10rem;
   min-width: 100px;
+}
+
+figure.square {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 100%;
+  margin: 0;
+}
+
+figure.square img {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  height: calc(100% + 2px);
+  width: calc(100% + 2px);
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
 }
 
 figure.circle {
@@ -167,12 +188,19 @@ aside {
   content: "";
 }
 
+/* Schedule Card */
+
+.ScheduleCard {
+  width: 100%;
+  min-height: 160px;
+}
+
 /* Show List */
 
 .ShowCard {
   display: flex;
   width: 100%;
-  background: #f0f0f0;
+  background: $bgTint;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -186,9 +214,8 @@ aside {
   -webkit-align-items: center;
   align-items: center;
   text-align: center;
-
   min-height: 160px;
-  padding: 20px;
+  padding: 15px 0;
 }
 
 /* Footer */

@@ -5,12 +5,14 @@
 </div>
 <div class="grid" *ngIf="isLoading == false">
   <div class="col-3@sm">
-    <img
-      [defaultImage]="defaultImage"
-      [lazyLoad]="show?.image"
-      alt="{{ show?.title }}"
-      style="width: 100%"
-    />
+    <figure class="square">
+      <img
+        [defaultImage]="defaultImage"
+        [lazyLoad]="show?.image"
+        alt="{{ show?.title }}"
+        style="width: 100%"
+      />
+    </figure>
   </div>
   <div class="col-9@sm">
     <h1 [style.color]="hex">

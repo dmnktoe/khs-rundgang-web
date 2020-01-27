@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { ApiService } from '@app/core/api.service';
 import { finalize } from 'rxjs/operators';
+import moment from 'moment';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,7 @@ export class HomeComponent implements OnInit {
   recordings = '';
   shows = '';
   hotRecording: any = [];
+  schedule: any;
   isLoading = false;
 
   public config: SwiperConfigInterface = {
@@ -63,13 +65,26 @@ export class HomeComponent implements OnInit {
             this.hotRecording = hotRecordings[0];
             this.apiService
               .getShows()
-              .pipe(
-                finalize(() => {
-                  this.isLoading = false;
-                })
-              )
+              .pipe(finalize(() => {}))
               .subscribe(shows => {
                 this.shows = shows;
+                this.apiService
+                  .getSchedule()
+                  .pipe(
+                    finalize(() => {
+                      this.isLoading = false;
+                    })
+                  )
+                  .subscribe(schedule => {
+                    const mydate = '2020-01-28T00:00:00';
+                    this.schedule =
+                      schedule[
+                        moment(mydate)
+                          .format('dddd')
+                          .toLowerCase()
+                      ];
+                    console.log(this.schedule);
+                  });
               });
           });
       });
