@@ -123,6 +123,20 @@ export class ApiService {
       );
   }
 
+  getShowsRecentlyUpdated() {
+    return this.httpClient
+      .cache()
+      .get(environment.serverUrl + '/shows/recently-updated')
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Shows konnten nicht geladen werden.'
+          )
+        )
+      );
+  }
+
   getShow({ showId }: { showId: any }) {
     return this.httpClient
       .cache()

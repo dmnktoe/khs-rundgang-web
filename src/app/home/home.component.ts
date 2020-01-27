@@ -11,7 +11,7 @@ import moment from 'moment';
 })
 export class HomeComponent implements OnInit {
   recordings = '';
-  shows = '';
+  showsRecentlyUpdated = '';
   hotRecordings: any = [];
   hotRecording: any = [];
   schedule: any;
@@ -66,10 +66,10 @@ export class HomeComponent implements OnInit {
           .subscribe(hotRecording => {
             this.hotRecording = hotRecording[0];
             this.apiService
-              .getShows()
+              .getShowsRecentlyUpdated()
               .pipe(finalize(() => {}))
-              .subscribe(shows => {
-                this.shows = shows;
+              .subscribe(showsRecentlyUpdated => {
+                this.showsRecentlyUpdated = showsRecentlyUpdated;
                 this.apiService
                   .getSchedule()
                   .pipe(finalize(() => {}))
