@@ -26,6 +26,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     LazyLoadImageModule
   ],
   declarations: [ShowsComponent, ShowsListComponent, ShowsSingleComponent],
+  exports: [ShowsListComponent],
   providers: [ApiService, Title]
 })
 export class ShowsModule {}
