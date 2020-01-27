@@ -22,6 +22,14 @@
       <div class="navbar-nav">
         <a
           class="nav-item nav-link"
+          routerLink="/search"
+          routerLinkActive="active"
+          (click)="closeMenu()"
+        >
+          <i class="fa fa-search search-icon"></i>
+        </a>
+        <a
+          class="nav-item nav-link"
           routerLink="/broadcasts"
           routerLinkActive="active"
           (click)="closeMenu()"

@@ -21,9 +21,9 @@
                   ')'
               }"
             >
-              <h3 class="align-bottom">
-                🔥 <span translate>MOST_VIEWED</span>:
-              </h3>
+              <h4 class="align-bottom">
+                🔥 Hot this week:
+              </h4>
               <h5 class="align-bottom">
                 {{ hotRecording?.title }}
               </h5>
@@ -71,23 +71,23 @@
       <app-recordings-list
         [recordings]="recordings"
         [hidden]="isLoading"
-        [limit]="2"
+        [limit]="4"
       >
       </app-recordings-list>
     </div>
   </div>
   <div class="col-4@lg">
     <div class="col-12" style="margin-bottom: 15px;">
-      <h3>Latest broadcasts</h3>
+      <h3>Hot broadcasts</h3>
+      <app-recordings-list
+        [recordings]="recordings"
+        [hidden]="isLoading"
+        [limit]="2"
+      >
+      </app-recordings-list>
     </div>
-    <app-recordings-list
-      [recordings]="recordings"
-      [hidden]="isLoading"
-      [limit]="1"
-    >
-    </app-recordings-list>
   </div>
-  <div class="col-12@xs col-start-5@md col-end-9@md text-center">
+  <div class="col-12 text-center">
     <a class="btn btn-secondary" routerLink="/broadcasts"
       >View all recordings</a
     >
@@ -98,22 +98,27 @@
         <h3>Recent shows</h3>
       </div>
       <app-shows-list [shows]="shows" [limit]="2"> </app-shows-list>
+      <div class="col-12 text-center" style="margin-top: 30px;">
+        <a class="btn btn-secondary" routerLink="/shows">
+          View all shows
+        </a>
+      </div>
     </div>
   </div>
   <div class="col-4@lg">
     <div class="col-12" style="margin-bottom: 15px;">
-      <h3>Todays schedule</h3>
+      <h3>{{ today }} schedule</h3>
     </div>
-    <div class="ScheduleCard">
+    <div *ngIf="schedule?.length >= 1" class="ScheduleCard">
       <p *ngFor="let show of schedule">
         {{ show?.starts | dateFormat: 'HH:mm' }} -
         {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
       </p>
     </div>
-  </div>
-  <div class="col-12@xs col-start-5@md col-end-9@md text-center">
-    <a class="btn btn-secondary" routerLink="/shows">
-      View all shows
-    </a>
+    <div *ngIf="schedule?.length == 0" class="ScheduleCard">
+      <p>
+        No program scheduled for today, sorry!
+      </p>
+    </div>
   </div>
 </div>

@@ -51,6 +51,14 @@ body {
   padding: 0;
 }
 
+/* headlines */
+
+h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 /* Buttons */
 
 .btn,
@@ -157,7 +165,7 @@ aside {
 }
 
 .recording__list__text__container a:hover > h5,
-.recording__list__text__container a:hover > p {
+.recording__list__text__container a:hover > h6 {
   color: $primary;
 }
 
@@ -182,6 +190,7 @@ aside {
 .recording__list__text__container__tags::after {
   content: "•";
   padding: 0 2px 0 1px;
+  color: #898989;
 }
 
 .recording__list__text__container__tags:last-child::after {
@@ -192,7 +201,6 @@ aside {
 
 .ScheduleCard {
   width: 100%;
-  min-height: 160px;
 }
 
 /* Show List */
@@ -457,7 +465,6 @@ a.show__link:hover {
 
 input.ais-SearchBox-input {
   font-size: 2.5rem;
-  color: #000 !important;
   border: 0;
   outline: 0;
   background: transparent;
@@ -465,6 +472,7 @@ input.ais-SearchBox-input {
   height: 49px;
   padding: 0;
   margin: -1px 0 0 0;
+  border-bottom: 2px dashed;
 }
 
 button.ais-SearchBox-submit {

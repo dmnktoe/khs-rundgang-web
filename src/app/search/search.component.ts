@@ -16,7 +16,7 @@ export class SearchComponent implements OnInit {
   get searchParameters() {
     return {
       query: this.query,
-      hitsPerPage: 8
+      hitsPerPage: 6
     };
   }
 

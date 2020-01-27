@@ -12,9 +12,11 @@ import moment from 'moment';
 export class HomeComponent implements OnInit {
   recordings = '';
   shows = '';
+  hotRecordings: any;
   hotRecording: any = [];
   schedule: any;
   isLoading = false;
+  today: any;
 
   public config: SwiperConfigInterface = {
     a11y: true,
@@ -76,14 +78,13 @@ export class HomeComponent implements OnInit {
                     })
                   )
                   .subscribe(schedule => {
-                    const mydate = '2020-01-28T00:00:00';
+                    this.today = moment().format('dddd');
                     this.schedule =
                       schedule[
-                        moment(mydate)
+                        moment()
                           .format('dddd')
                           .toLowerCase()
                       ];
-                    console.log(this.schedule);
                   });
               });
           });
