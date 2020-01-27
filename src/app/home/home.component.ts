@@ -12,7 +12,7 @@ import moment from 'moment';
 export class HomeComponent implements OnInit {
   recordings = '';
   shows = '';
-  hotRecordings: any;
+  hotRecordings: any = [];
   hotRecording: any = [];
   schedule: any;
   isLoading = false;
@@ -63,8 +63,8 @@ export class HomeComponent implements OnInit {
         this.apiService
           .getHotRecording()
           .pipe(finalize(() => {}))
-          .subscribe(hotRecordings => {
-            this.hotRecording = hotRecordings[0];
+          .subscribe(hotRecording => {
+            this.hotRecording = hotRecording[0];
             this.apiService
               .getShows()
               .pipe(finalize(() => {}))
@@ -72,11 +72,7 @@ export class HomeComponent implements OnInit {
                 this.shows = shows;
                 this.apiService
                   .getSchedule()
-                  .pipe(
-                    finalize(() => {
-                      this.isLoading = false;
-                    })
-                  )
+                  .pipe(finalize(() => {}))
                   .subscribe(schedule => {
                     this.today = moment().format('dddd');
                     this.schedule =
@@ -85,6 +81,16 @@ export class HomeComponent implements OnInit {
                           .format('dddd')
                           .toLowerCase()
                       ];
+                    this.apiService
+                      .getHotRecordings()
+                      .pipe(
+                        finalize(() => {
+                          this.isLoading = false;
+                        })
+                      )
+                      .subscribe(hotRecordings => {
+                        this.hotRecordings = hotRecordings;
+                      });
                   });
               });
           });

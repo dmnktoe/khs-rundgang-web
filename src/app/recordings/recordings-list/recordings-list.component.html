@@ -35,9 +35,12 @@
         </div>
         <a class="show__link" routerLink="/broadcasts/{{ recording?.slug }}">
           <h5>{{ recording?.title }}</h5>
-          <h6>
+          <h6 [hidden]="recording?.views">
             {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
             {{ recording?.timeStart | date: 'HH:mm' }}
+          </h6>
+          <h6 [hidden]="!recording?.views">
+            {{ recording?.views }} views the last 7 days
           </h6>
         </a>
       </div>

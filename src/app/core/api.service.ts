@@ -95,6 +95,20 @@ export class ApiService {
       );
   }
 
+  getHotRecordings() {
+    return this.httpClient
+      .cache()
+      .get(environment.serverUrl + '/recordings/top-3-viewed')
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Aufnahme konnte nicht geladen werden.'
+          )
+        )
+      );
+  }
+
   getShows() {
     return this.httpClient
       .cache()
