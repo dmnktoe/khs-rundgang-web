@@ -9,6 +9,7 @@
   </div>
   <div class="col-12">
     <ais-instantsearch [config]="recordingsConfig">
+      <ais-refinement-list attribute="genres"></ais-refinement-list>
       <h6><ais-stats></ais-stats></h6>
       <h3 style="margin-bottom: 15px;">Search Broadcasts</h3>
       <ais-configure [searchParameters]="searchParameters"></ais-configure>
