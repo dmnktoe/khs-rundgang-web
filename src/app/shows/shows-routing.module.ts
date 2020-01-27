@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { extract } from '@app/core';
 import { ShowsComponent } from '@app/shows/shows.component';
 import { ShowsSingleComponent } from './shows-single/shows-single.component';
 import { Shell } from '@app/shell/shell.service';
@@ -11,12 +10,11 @@ const routes: Routes = [
     {
       path: 'shows',
       component: ShowsComponent,
-      data: { title: extract('BROWSER_TITLE_SHOWS') }
+      data: { title: 'Radio Rasclat • Shows' }
     },
     {
       path: 'shows/:id',
-      component: ShowsSingleComponent,
-      data: { title: extract('SHOW_DETAIL') }
+      component: ShowsSingleComponent
     }
   ])
 ];

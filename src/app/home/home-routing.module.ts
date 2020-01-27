@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { extract } from '@app/core';
 import { HomeComponent } from './home.component';
 import { Shell } from '@app/shell/shell.service';
 
 const routes: Routes = [
   Shell.childRoutes([
-    { path: '', redirectTo: 'start', pathMatch: 'full' },
     {
-      path: 'start',
+      path: '',
       component: HomeComponent,
-      data: { title: extract('BROWSER_TITLE_START') }
+      data: { title: 'Radio Rasclat • Bass. Music. Live.' }
     }
   ])
 ];
