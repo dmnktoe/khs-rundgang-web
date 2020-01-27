@@ -1,3 +1,84 @@
-<p>
-  home works!
-</p>
+<div class="grid" *ngIf="isLoading == true">
+  <div class="col-12">
+    <app-loader></app-loader>
+  </div>
+</div>
+<div class="grid" *ngIf="isLoading == false">
+  <div class="col-12">
+    <div class="swiper-container" [swiper]="config">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide featured">
+          <a
+            class="show__link"
+            routerLink="/broadcasts/{{ hotRecording?.slug }}"
+          >
+            <div
+              class="swiper__show slider__img__container"
+              [ngStyle]="{
+                background:
+                  'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 75%), no-repeat center top url(' +
+                  hotRecording?.image +
+                  ')'
+              }"
+            >
+              <h3 class="align-bottom">
+                🔥 <span translate>MOST_VIEWED</span>:
+              </h3>
+              <h5 class="align-bottom">
+                {{ hotRecording?.title }}
+              </h5>
+              <h5 class="align-bottom" style="float: left;">
+                👀<span class="viewCounter">{{
+                  hotRecording?.viewCounter
+                }}</span>
+              </h5>
+            </div>
+          </a>
+        </div>
+        <div
+          class="swiper-slide"
+          *ngFor="let recording of recordings | slice: 0:5; let i = index"
+        >
+          <a class="show__link" routerLink="/broadcasts/{{ recording?.slug }}">
+            <div
+              class="swiper__show slider__img__container"
+              [ngStyle]="{
+                background:
+                  'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 75%), no-repeat center top url(' +
+                  recording?.image +
+                  ')'
+              }"
+            >
+              <h4 class="align-bottom">{{ recording?.title }}</h4>
+              <h5 class="align-bottom">
+                {{ recording?.timeStart | date: 'dd.MM.yyyy' }} •
+                {{ recording?.timeStart | date: 'HH:mm' }}
+              </h5>
+              <h6 class="align-bottom">
+                &mdash; {{ recording?.timeStart | timeago: live }}
+              </h6>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <h3>Latest broadcasts</h3>
+  </div>
+  <app-recordings-list
+    [recordings]="recordings"
+    [hidden]="isLoading"
+    [limit]="3"
+  >
+  </app-recordings-list>
+  <div class="col-start-5 col-end-9 text-center">
+    <a class="btn btn-secondary" routerLink="/broadcasts"
+      >View all recordings</a
+    >
+  </div>
+  <div class="col-12">
+    <h3>Our shows</h3>
+  </div>
+  <app-shows-list [shows]="shows" [limit]="8"> </app-shows-list>
+</div>

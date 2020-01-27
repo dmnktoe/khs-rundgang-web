@@ -9,6 +9,8 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
+import { RecordingsModule } from '@app/recordings/recordings.module';
+import { ShowsModule } from '@app/shows/shows.module';
 
 @NgModule({
   imports: [
@@ -17,7 +19,9 @@ import { SwiperModule } from 'ngx-swiper-wrapper';
     CoreModule,
     SharedModule,
     HomeRoutingModule,
-    SwiperModule
+    SwiperModule,
+    RecordingsModule,
+    ShowsModule
   ],
   declarations: [HomeComponent],
   providers: [ApiService, Title]
