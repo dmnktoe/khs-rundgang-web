@@ -4,12 +4,12 @@
       type="text"
       class="ais-SearchBox-input"
       autofocus
-      [placeholder]="'SEARCH' | translate"
       (keyup)="onQuery({ $event: $event })"
     />
   </div>
   <div class="col-12">
     <ais-instantsearch [config]="recordingsConfig">
+      <h6><ais-stats></ais-stats></h6>
       <h3 style="margin-bottom: 15px;">Search Broadcasts</h3>
       <ais-configure [searchParameters]="searchParameters"></ais-configure>
       <ais-hits>
@@ -23,6 +23,7 @@
   </div>
   <div class="col-12">
     <ais-instantsearch [config]="showsConfig">
+      <h6><ais-stats></ais-stats></h6>
       <h3 style="margin-bottom: 15px;">Search Shows</h3>
       <ais-configure [searchParameters]="searchParameters"></ais-configure>
       <ais-hits>
