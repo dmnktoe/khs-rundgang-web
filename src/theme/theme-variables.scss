@@ -27,7 +27,7 @@ $gray-800: #343a40;
 $gray-900: #212529;
 $black: #000;
 
-$blue: #1034f8;
+$blue: #0000ff;
 $indigo: #6610f2;
 $purple: #6f42c1;
 $pink: #e83e8c;
@@ -159,6 +159,9 @@ body {
 
     .recording__list__text__container {
       color: $white;
+    }
+    .ais-RefinementList-count {
+      background-color: rgba(0, 0, 255, 0.2);
     }
   }
 }

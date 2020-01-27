@@ -26,7 +26,11 @@
             class="recording__list__text__container__tags"
             *ngFor="let genre of recording?.genres"
           >
-            <a routerLink="/broadcasts?genre=">{{ genre.title }}</a>
+            <a
+              routerLink="/search"
+              [queryParams]="{ 'refinementList[genres.title][0]': genre.title }"
+              >{{ genre.title }}</a
+            >
           </span>
         </div>
         <a class="show__link" routerLink="/broadcasts/{{ recording?.slug }}">
