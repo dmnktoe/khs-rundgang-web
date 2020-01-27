@@ -229,7 +229,7 @@ aside {
 
 footer {
   position: relative;
-  padding: 5rem 0 7rem 0;
+  padding: 5rem 0 7rem;
   text-align: center;
 }
 
@@ -287,7 +287,7 @@ footer img {
 }
 .main-current .current-info p {
   font-size: 13px;
-  margin-top: 0px;
+  margin-top: 0;
   color: #000;
 }
 .main-current button {
@@ -343,7 +343,7 @@ footer img {
 
 .navbar-toggler {
   border: none;
-  padding: 0.25rem 0rem;
+  padding: 0.25rem 0;
 }
 
 .navbar-toggler .navbar-toggler-icon {
@@ -370,7 +370,7 @@ footer img {
 
 .card {
   border: 3px solid #000 !important;
-  border-radius: 0px !important;
+  border-radius: 0 !important;
 }
 
 * {
@@ -472,7 +472,7 @@ input.ais-SearchBox-input {
   width: 100%;
   height: 49px;
   padding: 0;
-  margin: -1px 0 0 0;
+  margin: -1px 0 0;
   border-bottom: 2px dashed;
 }
 
