@@ -651,7 +651,7 @@ mark,
   background-color: #efefef;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   body {
     font-size: 0.8rem;
   }
@@ -661,6 +661,10 @@ mark,
   }
   h3,
   .h3 {
+    font-size: 1.4rem;
+  }
+  h4,
+  .h4 {
     font-size: 1.2rem;
   }
   h5,
@@ -670,6 +674,13 @@ mark,
   h6,
   .h6 {
     font-size: 0.7rem;
+  }
+  .btn-primary {
+    font-size: 13px;
+  }
+  .btn-secondary {
+    border: 1px dashed #000;
+    font-size: 13px;
   }
   .recording__list__text__container__tags {
     font-size: 0.7rem;
