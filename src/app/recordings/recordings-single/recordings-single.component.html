@@ -1,9 +1,9 @@
-<div class="grid grid-gap-md" *ngIf="isLoading == true">
+<div class="grid" *ngIf="isLoading == true">
   <div class="col-12@xs">
     <app-loader></app-loader>
   </div>
 </div>
-<div class="grid grid-gap-md" *ngIf="isLoading == false">
+<div class="grid" *ngIf="isLoading == false">
   <div class="col-3@sm">
     <figure class="square">
       <img
@@ -69,7 +69,7 @@
       href="{{ recording.audio }}"
       ngx-analyticsOn="click"
       angularticsAction="DownloadClick"
-      [angularticsCategory]="recording._id"
+      [angularticsCategory]="recording.slug"
       >Download Broadcast</a
     >
   </div>

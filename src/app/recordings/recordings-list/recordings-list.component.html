@@ -2,10 +2,7 @@
   <span translate>NO_RECORDINGS_FOUND</span>
 </div>
 
-<div
-  class="grid-auto-md grid-auto-lg@md grid-gap-md grid-gap-lg@md"
-  *ngIf="isLoading == false"
->
+<div class="grid-auto-xl grid-gap-lg" *ngIf="isLoading == false">
   <div
     class="center RecordingCard broadcast"
     [hidden]="isLoading"
