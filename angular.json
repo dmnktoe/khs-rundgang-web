@@ -29,12 +29,16 @@
               "src/manifest.json",
               "src/assets"
             ],
-            "styles": ["src/main.scss"],
+            "styles": [
+              "./node_modules/smartbanner.js/dist/smartbanner.min.css",
+              "src/main.scss"
+            ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/popper.js/dist/umd/popper.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/node-vibrant/dist/vibrant.min.js"
+              "./node_modules/node-vibrant/dist/vibrant.min.js",
+              "./node_modules/smartbanner.js/dist/smartbanner.min.js"
             ]
           },
           "configurations": {
