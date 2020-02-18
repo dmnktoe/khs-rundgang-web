@@ -64,7 +64,6 @@
     "popper.js": "^1.15.0",
     "rxjs": "^6.5.3",
     "rxjs-compat": "^6.5.3",
-    "smartbanner.js": "^1.15.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
