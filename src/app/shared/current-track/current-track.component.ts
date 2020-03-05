@@ -11,6 +11,7 @@ import moment from 'moment';
 })
 export class CurrentTrackComponent implements OnInit {
   currentShowName: any;
+  currentShowImg: any;
   currentShowStart: any;
   currentShowEnd: any;
   nextShowName: any;
@@ -42,6 +43,7 @@ export class CurrentTrackComponent implements OnInit {
       .subscribe(currentShow => {
         if (currentShow !== null) {
           this.currentShowName = currentShow.name;
+          this.currentShowImg = currentShow.image_path;
           this.currentShowStart = new Date(currentShow.starts);
           this.currentShowEnd = new Date(currentShow.ends);
         }

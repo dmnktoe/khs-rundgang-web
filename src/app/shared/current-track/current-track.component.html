@@ -18,6 +18,13 @@
       </audio>
     </div>
     <div
+      *ngIf="currentShowImg"
+      class="current-image"
+      style="display: table-cell;vertical-align: middle;"
+    >
+      <img src="{{ currentShowImg }}" style="width: 45px;margin-right: 10px;" />
+    </div>
+    <div
       class="current-info"
       style="display: table-cell;vertical-align: middle;"
       *ngIf="currentShowName"
