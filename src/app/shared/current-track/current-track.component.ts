@@ -42,7 +42,6 @@ export class CurrentTrackComponent implements OnInit {
       .pipe(finalize(() => {}))
       .subscribe(currentShow => {
         if (currentShow !== null) {
-          console.log(currentShow);
           this.currentShowName = currentShow.name;
           this.currentShowImg = currentShow.image_path;
           this.currentShowStart = new Date(currentShow.starts);
