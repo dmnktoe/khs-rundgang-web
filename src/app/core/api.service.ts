@@ -189,6 +189,20 @@ export class ApiService {
       );
   }
 
+  getLiveInfo() {
+    return this.httpClient
+      .cache()
+      .get('/meta/live-info')
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Show konnte nicht geladen werden.'
+          )
+        )
+      );
+  }
+
   /* getCurrentTrackLive() {
     return this.socket.fromEvent<any>('currentTrack').map(data => data);
   }

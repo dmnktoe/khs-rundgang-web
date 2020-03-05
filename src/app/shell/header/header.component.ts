@@ -8,6 +8,7 @@ import {
   I18nService
 } from '@app/core';
 import { ApiService } from '@app/core/api.service';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -17,6 +18,7 @@ import { ApiService } from '@app/core/api.service';
 export class HeaderComponent implements OnInit {
   menuHidden = true;
   currentShow: any;
+  liveInfo: any;
 
   constructor(
     private router: Router,
@@ -48,6 +50,13 @@ export class HeaderComponent implements OnInit {
         });
       });
     }
+    this.apiService
+      .getLiveInfo()
+      .pipe(finalize(() => {}))
+      .subscribe(liveInfo => {
+        console.log(liveInfo);
+        this.liveInfo = liveInfo;
+      });
   }
 
   toggleMenu() {
