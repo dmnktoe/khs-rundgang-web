@@ -54,8 +54,9 @@ export class HeaderComponent implements OnInit {
       .getLiveInfo()
       .pipe(finalize(() => {}))
       .subscribe(liveInfo => {
-        console.log(liveInfo);
-        this.liveInfo = liveInfo;
+        if (liveInfo.source_enabled) {
+          this.liveInfo = liveInfo.source_enabled;
+        }
       });
   }
 
