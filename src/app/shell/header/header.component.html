@@ -74,6 +74,12 @@
             <span translate>SHOW_NOW</span>: {{ currentShow | safeHtml }}
           </span>
         </span>
+        <span
+          *ngIf="liveInfo.source_enabled === 'Master'"
+          class="nav-item nav-link live-indicator"
+        >
+          <button class="pulse-button"></button> LIVE
+        </span>
         <div class="nav-item" ngbDropdown placement="bottom-right">
           <a id="language-dropdown" class="nav-link" ngbDropdownToggle>{{
             currentLanguage
