@@ -3,7 +3,8 @@
 # Radio Rasclat
 
 <p>
-<img alt="undefined" src="https://img.shields.io/github/package-json/v/dmnktoe/radio-rasclat-web.svg?style=flat">
+<img src="https://img.shields.io/github/package-json/v/dmnktoe/radio-rasclat-web.svg">
+<img src="https://david-dm.org/dmnktoe/radio-rasclat-web/status.svg">
 </p>
 
 Radio Rasclat is a non-commercial internet radio station which is going to stream your music to the web, again! It offers you a platform to play & try out. It serves as a place for the exchange, dialogue and cooperation of music. Founded and curated in 2019, the radio returns to the new venue at KMMN 3. Submit your music via e-mail ([office@radio-rasclat.com](mailto:office@radio-rasclat.com)) to get your own show slot or appearance. Or just listen live on [radio-rasclat.com](https://radio-rasclat.com/).
