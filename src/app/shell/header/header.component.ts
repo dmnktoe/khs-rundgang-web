@@ -18,7 +18,7 @@ import { finalize } from 'rxjs/operators';
 export class HeaderComponent implements OnInit {
   menuHidden = true;
   currentShow: any;
-  liveInfo: any;
+  liveInfo = false;
 
   constructor(
     private router: Router,
@@ -54,8 +54,14 @@ export class HeaderComponent implements OnInit {
       .getLiveInfo()
       .pipe(finalize(() => {}))
       .subscribe(liveInfo => {
-        if (liveInfo.source_enabled) {
-          this.liveInfo = liveInfo.source_enabled;
+        if (liveInfo.source_enabled === 'Master') {
+          this.liveInfo = true;
+        } else {
+          if (liveInfo.source_enabled === 'Live') {
+            this.liveInfo = true;
+          } else {
+            this.liveInfo = false;
+          }
         }
       });
   }
