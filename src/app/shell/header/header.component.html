@@ -69,15 +69,7 @@
         </a> -->
       </div>
       <div class="navbar-nav ml-auto">
-        <span class="nav-item nav-link current__show">
-          <span *ngIf="currentShow !== undefined">
-            <span translate>SHOW_NOW</span>: {{ currentShow | safeHtml }}
-          </span>
-        </span>
-        <span
-          *ngIf="liveInfo.source_enabled === 'Master' || 'Live'"
-          class="nav-item nav-link live-indicator"
-        >
+        <span *ngIf="liveInfo" class="nav-item nav-link live-indicator">
           <button class="pulse-button"></button> LIVE
         </span>
         <div class="nav-item" ngbDropdown placement="bottom-right">
