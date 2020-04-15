@@ -51,7 +51,7 @@ export class CurrentTrackComponent implements OnInit {
             $(document).ready(function() {
               const countDownDate = new Date(currentShow.ends).getTime();
               const startDate = new Date(currentShow.starts).getTime();
-              const x = setInterval(function() {
+              function setBar() {
                 const now = new Date().getTime();
                 const distanceWhole = countDownDate - startDate;
                 const distanceLeft = countDownDate - now;
@@ -63,7 +63,9 @@ export class CurrentTrackComponent implements OnInit {
                 $('#progressbar')
                   .attr('aria-valuenow', progress)
                   .css('width', progress + '%');
-              }, 2000);
+              }
+              setBar();
+              setInterval(setBar, 60000);
             });
           }
         }
