@@ -51,14 +51,10 @@ export class CurrentTrackComponent implements OnInit {
             $(document).ready(function() {
               const countDownDate = new Date(currentShow.ends).getTime();
               const startDate = new Date(currentShow.starts).getTime();
-              // Update the count down every 1 second
               const x = setInterval(function() {
-                // Get todays date and time
                 const now = new Date().getTime();
-                // Find the distance between now and the count down date
                 const distanceWhole = countDownDate - startDate;
                 const distanceLeft = countDownDate - now;
-                // Time calculations for minutes and percentage progressed
                 const minutesLeft = Math.floor(distanceLeft / (1000 * 60));
                 const minutesTotal = Math.floor(distanceWhole / (1000 * 60));
                 const progress = Math.floor(
