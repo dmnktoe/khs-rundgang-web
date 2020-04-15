@@ -55,6 +55,7 @@
     "jquery": "^3.4.1",
     "moment": "^2.24.0",
     "ng-lazyload-image": "^7.0.1",
+    "ng2-tooltip-directive": "^2.9.20",
     "ngx-analytics": "^4.6.3-patch1",
     "ngx-socket-io": "^2.1.1",
     "ngx-swiper-wrapper": "^8.0.2",

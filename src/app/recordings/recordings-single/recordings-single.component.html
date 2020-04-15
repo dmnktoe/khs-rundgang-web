@@ -25,6 +25,24 @@
         }}</a></strong
       >
     </h6>
+    <h6 class="recording__artists">
+      <span
+        *ngFor="let artist of recording.artists"
+        class="recording__artists__single"
+      >
+        <img
+          class="recording__artists__single__image"
+          [src]="artist.image"
+          tooltip="{{ artist.title }}"
+          [options]="{
+            placement: 'top',
+            'hide-delay': 0,
+            'hide-delay-mobile': 0,
+            'animation-duration': 0
+          }"
+        />
+      </span>
+    </h6>
     <h6 style="color:rgba(112,122,122,0.99)">
       {{ recording.timeStart | date: 'dd.MM.yyyy' }},
       {{ recording.timeStart | date: 'HH:mm' }} -
