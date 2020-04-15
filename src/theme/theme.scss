@@ -250,7 +250,6 @@ footer img {
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 15px;
   line-height: inherit;
   background: $white;
   z-index: 9999;
@@ -733,6 +732,18 @@ mark,
   -moz-animation: none;
   -ms-animation: none;
   animation: none;
+}
+
+.progress {
+  display: flex;
+  height: 1px;
+  background-color: #e9ecef;
+  border-radius: 0;
+}
+
+.progress-bar {
+  height: 1px;
+  transition: width 0.6s ease;
 }
 
 @-webkit-keyframes pulse {

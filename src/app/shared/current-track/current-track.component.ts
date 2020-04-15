@@ -3,6 +3,7 @@ import 'rxjs/add/operator/map';
 import { ApiService } from '@app/core/api.service';
 import { finalize } from 'rxjs/operators';
 import moment from 'moment';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-current-track',
@@ -46,6 +47,27 @@ export class CurrentTrackComponent implements OnInit {
           this.currentShowImg = currentShow.image_path;
           this.currentShowStart = new Date(currentShow.starts);
           this.currentShowEnd = new Date(currentShow.ends);
+          {
+            $(document).ready(function() {
+              const countDownDate = new Date(currentShow.ends).getTime();
+              const startDate = new Date(currentShow.starts).getTime();
+              function setBar() {
+                const now = new Date().getTime();
+                const distanceWhole = countDownDate - startDate;
+                const distanceLeft = countDownDate - now;
+                const minutesLeft = Math.floor(distanceLeft / (1000 * 60));
+                const minutesTotal = Math.floor(distanceWhole / (1000 * 60));
+                const progress = Math.floor(
+                  ((minutesTotal - minutesLeft) / minutesTotal) * 100
+                );
+                $('#progressbar')
+                  .attr('aria-valuenow', progress)
+                  .css('width', progress + '%');
+              }
+              setBar();
+              setInterval(setBar, 60000);
+            });
+          }
         }
         this.apiService
           .getNextShow()
