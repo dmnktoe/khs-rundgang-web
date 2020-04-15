@@ -13,6 +13,7 @@ import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { NgxAnalyticsModule } from 'ngx-analytics';
+import { TooltipModule } from 'ng2-tooltip-directive';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { NgxAnalyticsModule } from 'ngx-analytics';
     RecordingsRoutingModule,
     SwiperModule,
     LazyLoadImageModule,
-    NgxAnalyticsModule
+    NgxAnalyticsModule,
+    TooltipModule
   ],
   declarations: [
     RecordingsComponent,
