@@ -27,6 +27,8 @@
               "src/apple-touch-icon.png",
               "src/robots.txt",
               "src/manifest.json",
+              "src/OneSignalSDKUpdaterWorker.js",
+              "src/OneSignalSDKWorker.js",
               "src/assets"
             ],
             "styles": ["src/main.scss"],
