@@ -15,7 +15,7 @@ install:
   - npm install
 
 script:
-  #  - npm test
+  - npm test
   - npm run build
   - bash sentry-deploy.sh
 
