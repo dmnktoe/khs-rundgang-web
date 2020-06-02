@@ -22,8 +22,8 @@ Radio Rasclat is a non-commercial internet radio station which is going to strea
 <!-- prettier-ignore -->
 | Branch    | Tests | Code Coverage | Codefactor | Comments                 |
 | --------- | ----- | ------------- | ---------- | ------------------------ |
-| `develop` | <img src="https://travis-ci.com/dmnktoe/radio-rasclat-web.svg?branch=develop"> | [![codecov](https://codecov.io/gh/dmnktoe/radio-rasclat-web/branch/develop/graph/badge.svg)](https://codecov.io/gh/dmnktoe/radio-rasclat-server) | [![CodeFactor](https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/badge/develop)](https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/overview/develop) | Work in progress |
-| `master`  | <img src="https://travis-ci.com/dmnktoe/radio-rasclat-web.svg?branch=master"> | [![codecov](https://codecov.io/gh/dmnktoe/radio-rasclat-web/branch/master/graph/badge.svg)](https://codecov.io/gh/dmnktoe/radio-rasclat-server) | [![CodeFactor](https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/badge/develop)](https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/overview/master) | Latest Production Release |
+| `develop` | <img src="https://travis-ci.com/dmnktoe/radio-rasclat-web.svg?branch=develop"> | [![codecov](https://codecov.io/gh/dmnktoe/radio-rasclat-web/branch/develop/graph/badge.svg)](https://codecov.io/gh/dmnktoe/radio-rasclat-web) | [![CodeFactor](https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/badge/develop)](https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/overview/develop) | Work in progress |
+| `master`  | <img src="https://travis-ci.com/dmnktoe/radio-rasclat-web.svg?branch=master"> | [![codecov](https://codecov.io/gh/dmnktoe/radio-rasclat-web/branch/master/graph/badge.svg)](https://codecov.io/gh/dmnktoe/radio-rasclat-web) | [![CodeFactor](https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/badge/master)](https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/overview/master) | Latest Production Release |
 
 ### Getting Started
 
