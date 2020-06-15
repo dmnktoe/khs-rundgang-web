@@ -260,10 +260,15 @@ footer img {
   stroke-width: 1.45px !important;
 }
 
+.main-current {
+  margin: 0;
+}
+
 .main-current .current-keyvisual {
   position: relative;
   display: inline-block;
 }
+
 .main-current .current-keyvisual img {
   position: relative;
   z-index: 2;
@@ -275,6 +280,11 @@ footer img {
   display: inline-block;
   box-sizing: content-box;
   vertical-align: top;
+}
+.main-current  .timeline {
+  display: inline-block;
+  box-sizing: content-box;
+  width: 100%;
 }
 .main-current .current-info h1,
 .main-current .current-info p {

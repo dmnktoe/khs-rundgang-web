@@ -13,18 +13,20 @@ import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { NgxAnalyticsModule } from 'ngx-analytics';
+import {FeatherModule} from "angular-feather";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    TranslateModule,
-    CoreModule,
-    SharedModule,
-    RecordingsRoutingModule,
-    SwiperModule,
-    LazyLoadImageModule,
-    NgxAnalyticsModule
-  ],
+    imports: [
+        CommonModule,
+        TranslateModule,
+        CoreModule,
+        SharedModule,
+        RecordingsRoutingModule,
+        SwiperModule,
+        LazyLoadImageModule,
+        NgxAnalyticsModule,
+        FeatherModule
+    ],
   declarations: [
     RecordingsComponent,
     RecordingsListComponent,

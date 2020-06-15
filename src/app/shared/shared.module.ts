@@ -9,6 +9,7 @@ import { SafeHtmlPipe } from '@app/shared/pipes/SafeHtmlPipe';
 import { MomentPipe } from '@app/shared/pipes/MomentPipe';
 import { IconsModule } from '@app/shared/icons/icons.module';
 import { TimeagoModule } from 'ngx-timeago';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
   imports: [CommonModule, NgbDropdownModule, IconsModule],
@@ -17,7 +18,8 @@ import { TimeagoModule } from 'ngx-timeago';
     CurrentTrackComponent,
     SafeHtmlPipe,
     LimitPipe,
-    MomentPipe
+    MomentPipe,
+    PlayerComponent
   ],
   exports: [
     LoaderComponent,
@@ -25,7 +27,8 @@ import { TimeagoModule } from 'ngx-timeago';
     SafeHtmlPipe,
     LimitPipe,
     MomentPipe,
-    TimeagoModule
+    TimeagoModule,
+    PlayerComponent
   ],
   providers: [ApiService]
 })

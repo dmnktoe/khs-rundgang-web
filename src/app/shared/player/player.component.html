@@ -1,0 +1,39 @@
+<div class="currentWidget">
+    <div class="main-current" style="display: table;">
+        <div class="current-keyvisual media-action-bar">
+            <!--                    <button [disabled]="isFirstPlaying()" (click)="previous()">
+                                    <i-feather name="skip-back"></i-feather>
+                                </button>-->
+
+            <button (click)="play()" [disabled]="state?.error" *ngIf="!state?.playing">
+                <i-feather name="play-circle"></i-feather>
+            </button>
+
+            <button (click)="pause()" *ngIf="state?.playing">
+                <i-feather name="pause-circle"></i-feather>
+            </button>
+
+            <!--                    <button [disabled]="isLastPlaying()" (click)="next()">
+                                    <i-feather name="skip-forward"></i-feather>
+                                </button>-->
+        </div>
+        <div class="current-info">
+            {{ state.currentTrack.currentTitle }}
+        </div>
+        <div class="timeline">
+            {{ state?.readableCurrentTime }}
+            <input type="range" class="time-slider" min="0" [max]="state?.duration" step="1" style="width: 50%"
+                   [value]="state?.currentTrack.currentTime" (input)="onSliderChangeEnd($event)"
+                   [disabled]="state?.error"
+                   *ngIf="state.currentTrack.currentSrc != ''">
+            {{ state?.readableDuration }}
+        </div>
+        <div
+                *ngIf="state.currentTrack.currentImage"
+                class="current-image"
+                style="display: table-cell;vertical-align: middle;"
+        >
+            <img src="{{ state.currentTrack.currentImage }}" style="width: 45px;margin-right: 10px;"/>
+        </div>
+    </div>
+</div>
