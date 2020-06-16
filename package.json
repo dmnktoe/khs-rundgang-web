@@ -41,7 +41,6 @@
     "@types/algoliasearch-helper": "^2.26.1",
     "@types/jquery": "^3.3.31",
     "algoliasearch": "^3.34.0",
-    "angular-audio-context": "19.0.15",
     "angular-feather": "^6.0.2",
     "angular-instantsearch": "^3.0.0-beta.4",
     "angulartics2": "7.5.2",

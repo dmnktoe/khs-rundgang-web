@@ -30,7 +30,6 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
-import { AudioContextModule } from 'angular-audio-context';
 import { environment } from '@env/environment';
 import * as Sentry from '@sentry/browser';
 
@@ -85,7 +84,6 @@ export class SentryErrorHandler implements ErrorHandler {
     TimeagoModule.forRoot(),
     IconsModule,
     LazyLoadImageModule,
-    AudioContextModule.forRoot('balanced'),
     AppRoutingModule // must be imported as the last module as it contains the fallback route,
   ],
   declarations: [AppComponent],
