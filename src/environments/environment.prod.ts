@@ -16,7 +16,6 @@ export const environment = {
   environment: 'production',
   version: env.npm_package_version,
   serverUrl: 'https://api.radio-rasclat.com',
-  socketio: 'https://api-live.radio-rasclat.com',
   defaultLanguage: 'EN',
   supportedLanguages: ['DE', 'EN', 'FR']
 };

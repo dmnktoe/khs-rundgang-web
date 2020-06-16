@@ -34,13 +34,6 @@ import { AudioContextModule } from 'angular-audio-context';
 import { environment } from '@env/environment';
 import * as Sentry from '@sentry/browser';
 
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-
-/*const config: SocketIoConfig = {
-  url: environment.socketio,
-  options: {}
-};*/
-
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal'
 };
@@ -86,7 +79,6 @@ export class SentryErrorHandler implements ErrorHandler {
     AboutModule,
     SearchModule,
     ScheduleModule,
-    /*SocketIoModule.forRoot(config),*/
     Angulartics2Module.forRoot(),
     SwiperModule,
     NgAisModule.forRoot(),

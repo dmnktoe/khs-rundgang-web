@@ -20,7 +20,6 @@ export const environment = {
   environment: 'development',
   version: env.npm_package_version + '-dev',
   serverUrl: 'http://localhost:8080',
-  socketio: 'http://localhost:52001',
   defaultLanguage: 'EN',
   supportedLanguages: ['DE', 'EN', 'FR']
 };
