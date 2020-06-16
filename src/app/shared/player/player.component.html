@@ -22,7 +22,9 @@
                                 </button>-->
     </div>
     <div class="current-info">
-      <h4>{{ state.currentTrack.currentTitle }}</h4>
+      <a routerLink="/broadcasts/{{ state.currentTrack.currentUrl }}">
+        <h4>{{ state.currentTrack.currentTitle }}</h4>
+      </a>
     </div>
     <div class="timeline">
       {{ state?.readableCurrentTime }}

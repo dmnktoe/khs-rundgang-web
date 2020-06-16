@@ -69,13 +69,12 @@ export class RecordingsSingleComponent implements OnInit {
   }
 
   openFile() {
-    //this.currentFile = { index, file };
     this.audioService.stop();
     this.playStream(this.recording.audio);
   }
 
   play() {
-    if (this.state.currentTrack.currentSrc == this.recording.audio) {
+    if (this.state.currentTrack.currentSrc === this.recording.audio) {
       this.audioService.play();
     } else {
       this.openFile();
@@ -88,7 +87,7 @@ export class RecordingsSingleComponent implements OnInit {
 
   playStream(url: string) {
     this.audioService
-      .playStream(url, this.recording.title, this.recording.image)
+      .playStream(url, this.id, this.recording.title, this.recording.image)
       .subscribe(events => {
         // listening for fun here
       });

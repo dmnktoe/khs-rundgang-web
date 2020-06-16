@@ -10,9 +10,10 @@ import { MomentPipe } from '@app/shared/pipes/MomentPipe';
 import { IconsModule } from '@app/shared/icons/icons.module';
 import { TimeagoModule } from 'ngx-timeago';
 import { PlayerComponent } from './player/player.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [CommonModule, NgbDropdownModule, IconsModule],
+  imports: [CommonModule, NgbDropdownModule, IconsModule, RouterModule],
   declarations: [
     LoaderComponent,
     CurrentTrackComponent,

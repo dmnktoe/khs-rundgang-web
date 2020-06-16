@@ -20,16 +20,18 @@ export class PlayerComponent {
     });
   }
 
-  playStream(url: string, title: string, image: string) {
-    this.audioService.playStream(url, title, image).subscribe(events => {
-      // listening for fun here
-    });
+  playStream(url: string, detailUrl: string, title: string, image: string) {
+    this.audioService
+      .playStream(url, detailUrl, title, image)
+      .subscribe(events => {
+        // listening for fun here
+      });
   }
 
   openFile(file: any, index: number) {
     this.currentFile = { index, file };
     this.audioService.stop();
-    this.playStream(file.url, file.name, this.defaultImage);
+    this.playStream(file.url, file.detailUrl, file.name, this.defaultImage);
   }
 
   pause() {

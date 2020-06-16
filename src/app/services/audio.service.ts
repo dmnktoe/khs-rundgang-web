@@ -8,8 +8,6 @@ import { StreamState } from '../interfaces/stream-state';
   providedIn: 'root'
 })
 export class AudioService {
-  private stop$ = new Subject();
-  private audioObj = new Audio();
   audioEvents = [
     'ended',
     'error',
@@ -21,6 +19,8 @@ export class AudioService {
     'loadedmetadata',
     'loadstart'
   ];
+  private stop$ = new Subject();
+  private audioObj = new Audio();
   private state: StreamState = {
     playing: false,
     readableCurrentTime: '',
@@ -30,11 +30,48 @@ export class AudioService {
       currentTime: undefined,
       currentSrc: '',
       currentImage: '',
-      currentTitle: ''
+      currentTitle: '',
+      currentUrl: ''
     },
     canplay: false,
     error: false
   };
+
+  private stateChange: BehaviorSubject<StreamState> = new BehaviorSubject(
+    this.state
+  );
+
+  playStream(url: string, detailUrl: string, title: string, image: string) {
+    this.state.currentTrack.currentTitle = title;
+    this.state.currentTrack.currentImage = image;
+    this.state.currentTrack.currentUrl = detailUrl;
+    return this.streamObservable(url).pipe(takeUntil(this.stop$));
+  }
+
+  play() {
+    this.audioObj.play();
+  }
+
+  pause() {
+    this.audioObj.pause();
+  }
+
+  stop() {
+    this.stop$.next();
+  }
+
+  seekTo(seconds: number) {
+    this.audioObj.currentTime = seconds;
+  }
+
+  formatTime(time: number, format: string = 'HH:mm:ss') {
+    const momentTime = time * 1000;
+    return moment.utc(momentTime).format(format);
+  }
+
+  getState(): Observable<StreamState> {
+    return this.stateChange.asObservable();
+  }
 
   private streamObservable(url: string) {
     return new Observable(observer => {
@@ -81,45 +118,13 @@ export class AudioService {
     });
   }
 
-  playStream(url: string, title: string, image: string) {
-    this.state.currentTrack.currentTitle = title;
-    this.state.currentTrack.currentImage = image;
-    //console.log(title);
-    return this.streamObservable(url).pipe(takeUntil(this.stop$));
-  }
-
-  play() {
-    this.audioObj.play();
-  }
-
-  pause() {
-    this.audioObj.pause();
-  }
-
-  stop() {
-    this.stop$.next();
-  }
-
-  seekTo(seconds: number) {
-    this.audioObj.currentTime = seconds;
-  }
-
-  formatTime(time: number, format: string = 'HH:mm:ss') {
-    const momentTime = time * 1000;
-    return moment.utc(momentTime).format(format);
-  }
-
-  private stateChange: BehaviorSubject<StreamState> = new BehaviorSubject(
-    this.state
-  );
-
   private updateStateEvents(event: Event): void {
     switch (event.type) {
       case 'canplay':
         this.state.duration = this.audioObj.duration;
         this.state.readableDuration = this.formatTime(this.state.duration);
         this.state.currentTrack.currentSrc = this.audioObj.currentSrc;
-        //this.state.currentTitle = this.title;
+        // this.state.currentTitle = this.title;
         console.log(this.state.currentTrack.currentTitle);
         this.state.canplay = true;
         break;
@@ -153,14 +158,11 @@ export class AudioService {
         currentTime: undefined,
         currentSrc: '',
         currentImage: '',
-        currentTitle: ''
+        currentTitle: '',
+        currentUrl: ''
       },
       canplay: false,
       error: false
     };
-  }
-
-  getState(): Observable<StreamState> {
-    return this.stateChange.asObservable();
   }
 }
