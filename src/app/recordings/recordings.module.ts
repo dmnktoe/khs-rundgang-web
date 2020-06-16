@@ -12,7 +12,7 @@ import { RecordingsSingleComponent } from './recordings-single/recordings-single
 import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { NgxAnalyticsModule } from 'ngx-analytics';
+import { Angulartics2Module } from 'angulartics2';
 import { TooltipModule } from 'ng2-tooltip-directive';
 
 @NgModule({
@@ -24,7 +24,7 @@ import { TooltipModule } from 'ng2-tooltip-directive';
     RecordingsRoutingModule,
     SwiperModule,
     LazyLoadImageModule,
-    NgxAnalyticsModule,
+    Angulartics2Module,
     TooltipModule
   ],
   declarations: [

@@ -73,7 +73,7 @@
       controls
       src="{{ recording.audio }}"
       type="audio/mp3"
-      ngx-analyticsOn="click"
+      angulartics2On="click"
       angularticsAction="PlayClick"
       [angularticsCategory]="recording.slug"
     >
@@ -85,7 +85,7 @@
       class="btn btn-primary"
       [style.backgroundColor]="hex"
       href="{{ recording.audio }}"
-      ngx-analyticsOn="click"
+      angulartics2On="click"
       angularticsAction="DownloadClick"
       [angularticsCategory]="recording.slug"
       >Download Broadcast</a
