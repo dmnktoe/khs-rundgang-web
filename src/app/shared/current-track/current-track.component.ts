@@ -21,7 +21,7 @@ export class CurrentTrackComponent implements OnInit {
   isLoading = false;
   value: string;
 
-  @ViewChild('audioOption', { static: false }) audioPlayerRef: ElementRef;
+  @ViewChild('audioOption') audioPlayerRef: ElementRef;
 
   constructor(private apiService: ApiService) {}
 
