@@ -24,12 +24,12 @@
               <h4 class="align-bottom">
                 🔥 Hot this month:
               </h4>
-              <h5 class="align-bottom">
+              <h3 class="align-bottom">
                 {{ hotRecording?.title }}
-              </h5>
-              <h6 class="align-bottom" style="float: left;">
+              </h3>
+              <h5 class="align-bottom" style="float: left;">
                 &mdash; {{ hotRecording?.viewCounter }} plays
-              </h6>
+              </h5>
             </div>
           </a>
         </div>
@@ -47,7 +47,7 @@
                   ')'
               }"
             >
-              <h4 class="align-bottom">{{ recording?.title }}</h4>
+              <h3 class="align-bottom">{{ recording?.title }}</h3>
               <h5 class="align-bottom">
                 {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
                 {{ recording?.timeStart | date: 'HH:mm' }}
