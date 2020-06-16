@@ -1,8 +1,7 @@
 <header>
-  <nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-xl fixed-top">
     <a class="navbar-brand" routerLink="/" translate>
       <img class="logo" src="../../../assets/svg/logo.svg" />
-      <span translate>APP_NAME</span>
     </a>
     <button
       class="navbar-toggler"
@@ -26,7 +25,7 @@
           routerLinkActive="active"
           (click)="closeMenu()"
         >
-          <i class="fa fa-search search-icon"></i>
+          <i-feather name="search" class="header__icon"></i-feather>
         </a>
         <a
           class="nav-item nav-link"

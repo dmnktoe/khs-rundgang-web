@@ -22,21 +22,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { IconsModule } from '@app/shared/icons/icons.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgAisModule } from 'angular-instantsearch';
-import { NgxAnalyticsModule } from 'ngx-analytics';
-import { NgxAnalyticsGoogleAnalytics } from 'ngx-analytics/ga';
+
+/* Analytics */
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
-import { AudioContextModule } from 'angular-audio-context';
 import { environment } from '@env/environment';
 import * as Sentry from '@sentry/browser';
-
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-
-/*const config: SocketIoConfig = {
-  url: environment.socketio,
-  options: {}
-};*/
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal'
@@ -83,14 +78,12 @@ export class SentryErrorHandler implements ErrorHandler {
     AboutModule,
     SearchModule,
     ScheduleModule,
-    /*SocketIoModule.forRoot(config),*/
-    NgxAnalyticsModule.forRoot([NgxAnalyticsGoogleAnalytics]),
+    Angulartics2Module.forRoot(),
     SwiperModule,
     NgAisModule.forRoot(),
     TimeagoModule.forRoot(),
     IconsModule,
     LazyLoadImageModule,
-    AudioContextModule.forRoot('balanced'),
     AppRoutingModule // must be imported as the last module as it contains the fallback route,
   ],
   declarations: [AppComponent],

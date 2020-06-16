@@ -25,7 +25,8 @@
       >
         <img
           class="recording__artists__single__image"
-          [src]="artist.image"
+          [defaultImage]="defaultImage"
+          [lazyLoad]="artist?.image"
           tooltip="{{ artist.title }}"
           [options]="{
             placement: 'top',
@@ -67,25 +68,34 @@
     </div>
     <p style="margin-top: 10px;" [innerHTML]="recording?.description"></p>
   </div>
-  <div class="col-12">
+  <div class="col-12 main-current">
+    <button (click)="play()" [disabled]="state?.error" *ngIf="!state?.playing || state.currentTrack.currentSrc != this.recording.audio">
+      <i-feather name="play-circle"></i-feather>
+    </button>
+
+    <button (click)="pause()" *ngIf="state?.playing && state.currentTrack.currentSrc == this.recording.audio">
+      <i-feather name="pause-circle"></i-feather>
+    </button>
+  </div>
+<!--  <div class="col-12">
     <audio
       id="audio_with_controls"
       controls
       src="{{ recording.audio }}"
       type="audio/mp3"
-      ngx-analyticsOn="click"
+      angulartics2On="click"
       angularticsAction="PlayClick"
       [angularticsCategory]="recording.slug"
     >
       Ihr Browser kann dieses Tondokument nicht wiedergeben.
     </audio>
-  </div>
+  </div>-->
   <div class="col-12">
     <a
       class="btn btn-primary"
       [style.backgroundColor]="hex"
       href="{{ recording.audio }}"
-      ngx-analyticsOn="click"
+      angulartics2On="click"
       angularticsAction="DownloadClick"
       [angularticsCategory]="recording.slug"
       >Download Broadcast</a

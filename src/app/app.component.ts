@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { merge } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
-import { NgxAnalyticsGoogleAnalytics } from 'ngx-analytics/ga';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 import { environment } from '@env/environment';
 import { Logger, I18nService, untilDestroyed } from '@app/core';
@@ -23,8 +23,10 @@ export class AppComponent implements OnInit, OnDestroy {
     private titleService: Title,
     private translateService: TranslateService,
     private i18nService: I18nService,
-    ngxAnalyticsGoogleAnalytics: NgxAnalyticsGoogleAnalytics
-  ) {}
+    angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics
+  ) {
+    angulartics2GoogleAnalytics.startTracking();
+  }
 
   ngOnInit() {
     // Setup logger
