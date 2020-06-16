@@ -18,6 +18,25 @@
     <h1 [style.color]="hex">
       <span>{{ recording?.title }}</span>
     </h1>
+    <h6 class="recording__artists">
+      <span
+        *ngFor="let artist of recording.artists"
+        class="recording__artists__single"
+      >
+        <img
+          class="recording__artists__single__image"
+          [defaultImage]="defaultImage"
+          [lazyLoad]="artist?.image"
+          tooltip="{{ artist.title }}"
+          [options]="{
+            placement: 'top',
+            'hide-delay': 0,
+            'hide-delay-mobile': 0,
+            'animation-duration': 0
+          }"
+        />
+      </span>
+    </h6>
     <h6 style="padding-top: 4px;">
       <strong>
         <a [style.color]="hex" routerLink="/shows/{{ recording?.show.slug }}">{{
@@ -64,7 +83,7 @@
       controls
       src="{{ recording.audio }}"
       type="audio/mp3"
-      ngx-analyticsOn="click"
+      angulartics2On="click"
       angularticsAction="PlayClick"
       [angularticsCategory]="recording.slug"
     >
@@ -76,7 +95,7 @@
       class="btn btn-primary"
       [style.backgroundColor]="hex"
       href="{{ recording.audio }}"
-      ngx-analyticsOn="click"
+      angulartics2On="click"
       angularticsAction="DownloadClick"
       [angularticsCategory]="recording.slug"
       >Download Broadcast</a

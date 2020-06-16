@@ -12,8 +12,9 @@ import { RecordingsSingleComponent } from './recordings-single/recordings-single
 import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { NgxAnalyticsModule } from 'ngx-analytics';
-import {FeatherModule} from "angular-feather";
+import { Angulartics2Module } from 'angulartics2';
+import { TooltipModule } from 'ng2-tooltip-directive';
+import { FeatherModule } from "angular-feather";
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import {FeatherModule} from "angular-feather";
         RecordingsRoutingModule,
         SwiperModule,
         LazyLoadImageModule,
-        NgxAnalyticsModule,
+        Angulartics2Module,
+        TooltipModule,
         FeatherModule
     ],
   declarations: [
