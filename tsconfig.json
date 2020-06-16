@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "downlevelIteration": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -9,8 +10,8 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
-    "module": "commonjs",
+    "target": "es2015",
+    "module": "esnext",
     "lib": ["es2018", "dom"],
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
