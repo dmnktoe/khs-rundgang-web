@@ -20,13 +20,13 @@ html {
 }
 
 body {
-  font-family: "DrukTextWide", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: "Circular Std", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  padding-top: 60px;
+  padding-top: 80px;
   background-position-x: -20px;
   background-attachment: fixed;
-  color: #000;
+  background-color: #f1f3f4;
 }
 
 .grid {
@@ -53,10 +53,26 @@ body {
 
 /* headlines */
 
-h6 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  font-family: "Trash Medium", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: "Circular Std", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /* Buttons */
@@ -76,28 +92,29 @@ h6 {
 }
 
 .btn-secondary {
-  border: 2px dashed $secondary;
   width: 100%;
-  background: transparent;
-  color: $secondary;
+  background: rgba($primary, 0.05) !important;
+  color: $primary;
   padding: 15px 0;
+  border: 0;
 }
 
 .btn-secondary:hover,
 .btn-secondary:active,
 .btn-secondary:focus {
-  border: 2px dashed $primary !important;
-  background: transparent !important;
+  background: rgba($primary, 0.1) !important;
   color: $primary !important;
 }
 
 /* Recording List */
 
 .RecordingCard {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .RecordingCard.center {
@@ -164,7 +181,7 @@ aside {
   flex: 1;
 }
 
-.recording__list__text__container a:hover > h5,
+.recording__list__text__container a:hover > h4,
 .recording__list__text__container a:hover > h6 {
   color: $primary;
 }
@@ -180,16 +197,14 @@ aside {
 }
 
 .recording__list__text__container__tags {
-  font-size: 1rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.9rem;
 }
 
 .recording__list__text__container__tags::after {
   content: "•";
   padding: 0 2px 0 1px;
   color: rgba(112, 122, 122, 0.99);
+  font-family: sans-serif;
 }
 
 .recording__list__text__container__tags:last-child::after {
@@ -330,10 +345,15 @@ footer img {
 }
 
 .navbar {
-  height: 45px;
+  height: 65px;
   padding: 0 1rem !important;
   font-size: 1.5rem;
   font-weight: 400;
+  font-family: "Trash Medium", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background: #fff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
@@ -420,11 +440,15 @@ $duration: 30s;
 }
 
 img.logo {
-  width: 35px;
+  width: 45px;
   display: block;
   position: relative;
   float: left;
-  margin-right: 10px;
+  transition: all 0.2s;
+}
+
+img.logo:hover {
+  transform: rotate(-5deg);
 }
 
 .cc-revoke,
@@ -449,8 +473,7 @@ a.recording__link:hover {
 }
 
 a.show__link {
-  transition: all 0.1s;
-  color: #000;
+  color: #23272b;
 }
 
 a.show__link:hover {
@@ -630,19 +653,29 @@ button.ais-CurrentRefinements-delete:hover {
 }
 
 .nav-link {
-  color: #808080 !important;
+  color: #22262a;
+  transition: all 0.1s;
 }
 
 .nav-link.active {
-  color: #fff !important;
+  color: $primary;
 }
 
 .nav-link:hover {
-  color: #bfbfbf !important;
+  color: #666666;
 }
 
 .nav-link:focus {
-  color: #fff !important;
+  color: $primary;
+}
+
+.header__icon {
+  display: block !important;
+  margin-top: -2px !important;
+  margin-right: -3px !important;
+  height: 20px !important;
+  width: 20px !important;
+  stroke-width: 3px !important;
 }
 
 mark,
