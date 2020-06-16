@@ -18,9 +18,5 @@ export const environment = {
   serverUrl: 'https://api.radio-rasclat.com',
   socketio: 'https://api-live.radio-rasclat.com',
   defaultLanguage: 'EN',
-  supportedLanguages: ['DE', 'EN', 'FR'],
-  googleAnalytics: {
-    domain: 'auto',
-    trackingId: 'UA-24449183-8' // replace with your Tracking Id
-  }
+  supportedLanguages: ['DE', 'EN', 'FR']
 };

@@ -22,11 +22,7 @@ export const environment = {
   serverUrl: 'http://localhost:8080',
   socketio: 'http://localhost:52001',
   defaultLanguage: 'EN',
-  supportedLanguages: ['DE', 'EN', 'FR'],
-  googleAnalytics: {
-    domain: 'auto',
-    trackingId: 'UA-24449183-8' // replace with your Tracking Id
-  }
+  supportedLanguages: ['DE', 'EN', 'FR']
 };
 
 /*

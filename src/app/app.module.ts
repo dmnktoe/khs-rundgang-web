@@ -22,8 +22,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { IconsModule } from '@app/shared/icons/icons.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgAisModule } from 'angular-instantsearch';
-import { NgxAnalyticsModule } from 'ngx-analytics';
-import { NgxAnalyticsGoogleAnalytics } from 'ngx-analytics/ga';
+
+/* Analytics */
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
@@ -84,7 +87,7 @@ export class SentryErrorHandler implements ErrorHandler {
     SearchModule,
     ScheduleModule,
     /*SocketIoModule.forRoot(config),*/
-    NgxAnalyticsModule.forRoot([NgxAnalyticsGoogleAnalytics]),
+    Angulartics2Module.forRoot(),
     SwiperModule,
     NgAisModule.forRoot(),
     TimeagoModule.forRoot(),
