@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '@env/environment';
-import * as algoliasearch from 'algoliasearch/lite';
+import algoliasearch from 'algoliasearch/lite';
 
 const searchClient = algoliasearch(
   environment.algoliaAppId,
