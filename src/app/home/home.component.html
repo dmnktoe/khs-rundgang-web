@@ -24,12 +24,12 @@
               <h4 class="align-bottom">
                 🔥 Hot this month:
               </h4>
-              <h5 class="align-bottom">
+              <h3 class="align-bottom">
                 {{ hotRecording?.title }}
-              </h5>
-              <h6 class="align-bottom" style="float: left;">
+              </h3>
+              <h5 class="align-bottom" style="float: left;">
                 &mdash; {{ hotRecording?.viewCounter }} plays
-              </h6>
+              </h5>
             </div>
           </a>
         </div>
@@ -47,7 +47,7 @@
                   ')'
               }"
             >
-              <h4 class="align-bottom">{{ recording?.title }}</h4>
+              <h3 class="align-bottom">{{ recording?.title }}</h3>
               <h5 class="align-bottom">
                 {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
                 {{ recording?.timeStart | date: 'HH:mm' }}
@@ -63,8 +63,11 @@
   </div>
   <div class="col-8@lg">
     <div class="col-12">
-      <div class="col-12" style="margin-bottom: 15px;">
-        <h3>⏱️ Latest broadcasts</h3>
+      <div
+        class="col-12"
+        style="margin-bottom: 15px;border-bottom: 1px solid rgba(112, 112, 112, 0.1);"
+      >
+        <h2>⏱️ Latest broadcasts</h2>
       </div>
       <app-recordings-list
         [recordings]="recordings"
@@ -76,8 +79,11 @@
   </div>
   <div class="col-4@lg">
     <div class="col-12">
-      <div class="col-12" style="margin-bottom: 15px;">
-        <h3>🔥 Hot broadcasts</h3>
+      <div
+        class="col-12"
+        style="margin-bottom: 15px;border-bottom: 1px solid rgba(112, 112, 112, 0.1);"
+      >
+        <h2>🔥 Hot broadcasts</h2>
       </div>
       <app-recordings-list
         [recordings]="hotRecordings"
@@ -94,8 +100,16 @@
   </div>
   <div class="col-8@lg">
     <div class="col-12">
-      <div class="col-12" style="margin-bottom: 15px;">
-        <h3>🌍 Recent shows</h3>
+      <div
+        class="col-12"
+        style="margin-bottom: 15px;border-bottom: 1px solid rgba(112, 112, 112, 0.1);"
+      >
+        <h2>🌍 Recent shows</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua.
+        </p>
       </div>
       <app-shows-list [shows]="showsRecentlyUpdated" [limit]="4">
       </app-shows-list>
@@ -107,8 +121,11 @@
     </div>
   </div>
   <div class="col-4@lg">
-    <div class="col-12" style="margin-bottom: 15px;">
-      <h3>{{ today }} schedule</h3>
+    <div
+      class="col-12"
+      style="margin-bottom: 15px;border-bottom: 1px solid rgba(112, 112, 112, 0.1);"
+    >
+      <h2>{{ today }} schedule</h2>
     </div>
     <div *ngIf="schedule?.length >= 1" class="ScheduleCard">
       <p *ngFor="let show of schedule">
