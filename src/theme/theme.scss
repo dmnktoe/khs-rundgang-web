@@ -295,7 +295,7 @@ footer img {
   box-sizing: content-box;
   vertical-align: top;
 }
-.main-current  .timeline {
+.main-current .timeline {
   display: inline-block;
   box-sizing: content-box;
   width: 100%;
@@ -459,6 +459,18 @@ img.logo {
 
 img.logo:hover {
   transform: rotate(-5deg);
+}
+
+img.ng-lazyloaded {
+  animation: fadein 0.5s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .cc-revoke,
