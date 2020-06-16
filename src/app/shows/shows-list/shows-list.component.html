@@ -3,6 +3,13 @@
     class="center ShowCard broadcast"
     [hidden]="isLoading"
     *ngFor="let show of shows.slice(0, limit)"
+    [ngStyle]="{
+      background:
+        'linear-gradient(-180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 95%), no-repeat center center url(' +
+        show?.image +
+        ')',
+      'background-size': 'cover'
+    }"
   >
     <aside>
       <div class="recording__list__text__container">

@@ -14,7 +14,8 @@ import {
   Pause,
   PauseCircle,
   PlayCircle,
-  Search
+  Search,
+  Download
 } from 'angular-feather/icons';
 
 const icons = {
@@ -30,7 +31,8 @@ const icons = {
   Pause,
   PauseCircle,
   PlayCircle,
-  Search
+  Search,
+  Download
 };
 
 @NgModule({

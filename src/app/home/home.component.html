@@ -94,9 +94,7 @@
     </div>
   </div>
   <div class="col-12 text-center">
-    <a class="btn btn-secondary" routerLink="/broadcasts"
-      >View all recordings</a
-    >
+    <a class="btn btn-primary" routerLink="/broadcasts">View all recordings</a>
   </div>
   <div class="col-8@lg">
     <div class="col-12">
@@ -114,7 +112,7 @@
       <app-shows-list [shows]="showsRecentlyUpdated" [limit]="4">
       </app-shows-list>
       <div class="col-12 text-center" style="margin-top: 30px;">
-        <a class="btn btn-secondary" routerLink="/shows">
+        <a class="btn btn-primary" routerLink="/shows">
           View all shows
         </a>
       </div>
@@ -137,6 +135,11 @@
       <p>
         No program scheduled for today, sorry! Come back tomorrow.
       </p>
+    </div>
+    <div class="col-12 text-center" style="margin-top: 30px;">
+      <a class="btn btn-primary" routerLink="/schedule">
+        Go to schedule
+      </a>
     </div>
   </div>
 </div>

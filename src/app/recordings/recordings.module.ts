@@ -14,21 +14,21 @@ import { SwiperModule } from 'ngx-swiper-wrapper';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { Angulartics2Module } from 'angulartics2';
 import { TooltipModule } from 'ng2-tooltip-directive';
-import { FeatherModule } from "angular-feather";
+import { FeatherModule } from 'angular-feather';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        TranslateModule,
-        CoreModule,
-        SharedModule,
-        RecordingsRoutingModule,
-        SwiperModule,
-        LazyLoadImageModule,
-        Angulartics2Module,
-        TooltipModule,
-        FeatherModule
-    ],
+  imports: [
+    CommonModule,
+    TranslateModule,
+    CoreModule,
+    SharedModule,
+    RecordingsRoutingModule,
+    SwiperModule,
+    LazyLoadImageModule,
+    Angulartics2Module,
+    TooltipModule,
+    FeatherModule
+  ],
   declarations: [
     RecordingsComponent,
     RecordingsListComponent,

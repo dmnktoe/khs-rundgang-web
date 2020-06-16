@@ -11,7 +11,15 @@ export class AudioService {
   private stop$ = new Subject();
   private audioObj = new Audio();
   audioEvents = [
-    'ended', 'error', 'play', 'playing', 'pause', 'timeupdate', 'canplay', 'loadedmetadata', 'loadstart'
+    'ended',
+    'error',
+    'play',
+    'playing',
+    'pause',
+    'timeupdate',
+    'canplay',
+    'loadedmetadata',
+    'loadstart'
   ];
   private state: StreamState = {
     playing: false,
@@ -25,10 +33,10 @@ export class AudioService {
       currentTitle: ''
     },
     canplay: false,
-    error: false,
+    error: false
   };
 
-  private streamObservable(url:string) {
+  private streamObservable(url: string) {
     return new Observable(observer => {
       // Play audio
       this.audioObj.src = url;
@@ -53,19 +61,27 @@ export class AudioService {
     });
   }
 
-  private addEvents(obj:HTMLAudioElement, events:Array<string>, handler:any) {
+  private addEvents(
+    obj: HTMLAudioElement,
+    events: Array<string>,
+    handler: any
+  ) {
     events.forEach(event => {
       obj.addEventListener(event, handler);
     });
   }
 
-  private removeEvents(obj:HTMLAudioElement, events:Array<string>, handler:any) {
+  private removeEvents(
+    obj: HTMLAudioElement,
+    events: Array<string>,
+    handler: any
+  ) {
     events.forEach(event => {
       obj.removeEventListener(event, handler);
     });
   }
 
-  playStream(url:string, title:string, image: string) {
+  playStream(url: string, title: string, image: string) {
     this.state.currentTrack.currentTitle = title;
     this.state.currentTrack.currentImage = image;
     //console.log(title);
@@ -84,7 +100,7 @@ export class AudioService {
     this.stop$.next();
   }
 
-  seekTo(seconds:number) {
+  seekTo(seconds: number) {
     this.audioObj.currentTime = seconds;
   }
 
@@ -93,7 +109,9 @@ export class AudioService {
     return moment.utc(momentTime).format(format);
   }
 
-  private stateChange: BehaviorSubject<StreamState> = new BehaviorSubject(this.state);
+  private stateChange: BehaviorSubject<StreamState> = new BehaviorSubject(
+    this.state
+  );
 
   private updateStateEvents(event: Event): void {
     switch (event.type) {
@@ -113,7 +131,9 @@ export class AudioService {
         break;
       case 'timeupdate':
         this.state.currentTrack.currentTime = this.audioObj.currentTime;
-        this.state.readableCurrentTime = this.formatTime(this.state.currentTrack.currentTime);
+        this.state.readableCurrentTime = this.formatTime(
+          this.state.currentTrack.currentTime
+        );
         break;
       case 'error':
         this.resetState();

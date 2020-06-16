@@ -13,6 +13,44 @@
         style="width: 100%"
       />
     </figure>
+    <div style="margin-top: 20px">
+      <a
+        class="btn btn-primary"
+        [style.backgroundColor]="hex"
+        href="{{ recording.audio }}"
+        angulartics2On="click"
+        angularticsAction="DownloadClick"
+        [angularticsCategory]="recording.slug"
+      >
+        <i-feather name="download"></i-feather>
+        Download
+      </a>
+      <button
+        class="btn btn-primary"
+        [style.backgroundColor]="hex"
+        (click)="play()"
+        [disabled]="state?.error"
+        *ngIf="
+          !state?.playing ||
+          state.currentTrack.currentSrc != this.recording.audio
+        "
+      >
+        <i-feather name="play"></i-feather>
+        Play
+      </button>
+      <button
+        class="btn btn-primary"
+        [style.backgroundColor]="hex"
+        (click)="pause()"
+        *ngIf="
+          state?.playing &&
+          state.currentTrack.currentSrc == this.recording.audio
+        "
+      >
+        <i-feather name="pause"></i-feather>
+        Pause
+      </button>
+    </div>
   </div>
   <div class="col-9@sm">
     <h1 [style.color]="hex">
@@ -68,37 +106,5 @@
     </div>
     <p style="margin-top: 10px;" [innerHTML]="recording?.description"></p>
   </div>
-  <div class="col-12 main-current">
-    <button (click)="play()" [disabled]="state?.error" *ngIf="!state?.playing || state.currentTrack.currentSrc != this.recording.audio">
-      <i-feather name="play-circle"></i-feather>
-    </button>
-
-    <button (click)="pause()" *ngIf="state?.playing && state.currentTrack.currentSrc == this.recording.audio">
-      <i-feather name="pause-circle"></i-feather>
-    </button>
-  </div>
-<!--  <div class="col-12">
-    <audio
-      id="audio_with_controls"
-      controls
-      src="{{ recording.audio }}"
-      type="audio/mp3"
-      angulartics2On="click"
-      angularticsAction="PlayClick"
-      [angularticsCategory]="recording.slug"
-    >
-      Ihr Browser kann dieses Tondokument nicht wiedergeben.
-    </audio>
-  </div>-->
-  <div class="col-12">
-    <a
-      class="btn btn-primary"
-      [style.backgroundColor]="hex"
-      href="{{ recording.audio }}"
-      angulartics2On="click"
-      angularticsAction="DownloadClick"
-      [angularticsCategory]="recording.slug"
-      >Download Broadcast</a
-    >
-  </div>
+  <div class="col-12"></div>
 </div>

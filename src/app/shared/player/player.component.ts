@@ -15,20 +15,18 @@ export class PlayerComponent {
 
   constructor(private audioService: AudioService) {
     // listen to stream state
-    this.audioService.getState()
-        .subscribe(state => {
-          this.state = state;
-        });
+    this.audioService.getState().subscribe(state => {
+      this.state = state;
+    });
   }
 
-  playStream(url:string, title:string, image:string) {
-    this.audioService.playStream(url, title, image)
-        .subscribe(events => {
-          // listening for fun here
-        });
+  playStream(url: string, title: string, image: string) {
+    this.audioService.playStream(url, title, image).subscribe(events => {
+      // listening for fun here
+    });
   }
 
-  openFile(file:any, index:number) {
+  openFile(file: any, index: number) {
     this.currentFile = { index, file };
     this.audioService.stop();
     this.playStream(file.url, file.name, this.defaultImage);
@@ -66,7 +64,7 @@ export class PlayerComponent {
     return this.currentFile.index === this.files.length - 1;
   }
 
-  onSliderChangeEnd(change:Event) {
-    this.audioService.seekTo(change.target["value"]);
+  onSliderChangeEnd(change: Event) {
+    this.audioService.seekTo(change.target['value']);
   }
 }
