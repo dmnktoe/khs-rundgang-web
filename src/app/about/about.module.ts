@@ -5,7 +5,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AboutRoutingModule } from './about-routing.module';
 import { AboutComponent } from './about.component';
 import { IconsModule } from '@app/shared/icons/icons.module';
-import { CoffeeComponent } from '@app/shared/coffee/coffee.component';
 import { SharedModule } from '@app/shared';
 
 @NgModule({
@@ -14,8 +13,8 @@ import { SharedModule } from '@app/shared';
     TranslateModule,
     AboutRoutingModule,
     IconsModule,
-    SharedModule
+    SharedModule,
   ],
-  declarations: [AboutComponent, CoffeeComponent]
+  declarations: [AboutComponent],
 })
 export class AboutModule {}
