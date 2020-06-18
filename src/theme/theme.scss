@@ -122,7 +122,7 @@ h6,
   background: #fff;
   padding: 15px 20px;
   border-radius: 5px;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .RecordingCard.center {
@@ -146,13 +146,13 @@ figure.square {
   padding-bottom: 100%;
   margin: 0;
   border-radius: 5px;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 figure.square img {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   height: calc(100% + 0px);
   width: calc(100% + 0px);
   -o-object-fit: cover;
@@ -172,8 +172,8 @@ figure.circle {
 
 figure.circle img {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   height: calc(100% + 0px);
   width: calc(100% + 0px);
   -o-object-fit: cover;
@@ -248,7 +248,7 @@ aside {
   min-height: 160px;
   padding: 15px 0;
   border-radius: 5px;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .ShowCard h4 {
@@ -378,7 +378,7 @@ footer img {
     Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   background: #fff;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
