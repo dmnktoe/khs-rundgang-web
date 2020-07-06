@@ -3,27 +3,30 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { environment } from '@env/environment';
+import { withCache } from '@ngneat/cashew';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
   constructor(private httpClient: HttpClient) {}
 
   getArtists() {
-    return this.httpClient.get(environment.serverUrl + '/artists').pipe(
-      map((body: any) => body),
-      catchError(() =>
-        of(
-          'Es ist ein Fehler aufgetreten. Die Artists konnten nicht geladen werden.'
+    return this.httpClient
+      .get(environment.serverUrl + '/artists', withCache())
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Artists konnten nicht geladen werden.'
+          )
         )
-      )
-    );
+      );
   }
 
   getArtist({ artistId }: { artistId: any }) {
     return this.httpClient
-      .get(environment.serverUrl + '/artists/artist/' + artistId)
+      .get(environment.serverUrl + '/artists/artist/' + artistId, withCache())
       .pipe(
         map((body: any) => body),
         catchError(() =>
@@ -35,30 +38,37 @@ export class ApiService {
   }
 
   getGenres() {
-    return this.httpClient.get(environment.serverUrl + '/genres').pipe(
-      map((body: any) => body),
-      catchError(() =>
-        of(
-          'Es ist ein Fehler aufgetreten. Die Genres konnten nicht geladen werden.'
+    return this.httpClient
+      .get(environment.serverUrl + '/genres', withCache())
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Genres konnten nicht geladen werden.'
+          )
         )
-      )
-    );
+      );
   }
 
   getRecordings() {
-    return this.httpClient.get(environment.serverUrl + '/recordings').pipe(
-      map((body: any) => body),
-      catchError(() =>
-        of(
-          'Es ist ein Fehler aufgetreten. Die Recordings konnten nicht geladen werden.'
+    return this.httpClient
+      .get(environment.serverUrl + '/recordings', withCache())
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Recordings konnten nicht geladen werden.'
+          )
         )
-      )
-    );
+      );
   }
 
   getRecording({ recordingId }: { recordingId: any }) {
     return this.httpClient
-      .get(environment.serverUrl + '/recordings/recording/' + recordingId)
+      .get(
+        environment.serverUrl + '/recordings/recording/' + recordingId,
+        withCache()
+      )
       .pipe(
         map((body: any) => body),
         catchError(() =>
@@ -71,7 +81,7 @@ export class ApiService {
 
   getHotRecording() {
     return this.httpClient
-      .get(environment.serverUrl + '/recordings/most-viewed')
+      .get(environment.serverUrl + '/recordings/most-viewed', withCache())
       .pipe(
         map((body: any) => body),
         catchError(() =>
@@ -84,7 +94,7 @@ export class ApiService {
 
   getHotRecordings() {
     return this.httpClient
-      .get(environment.serverUrl + '/recordings/top-3-viewed')
+      .get(environment.serverUrl + '/recordings/top-3-viewed', withCache())
       .pipe(
         map((body: any) => body),
         catchError(() =>
@@ -96,19 +106,21 @@ export class ApiService {
   }
 
   getShows() {
-    return this.httpClient.get(environment.serverUrl + '/shows').pipe(
-      map((body: any) => body),
-      catchError(() =>
-        of(
-          'Es ist ein Fehler aufgetreten. Die Shows konnten nicht geladen werden.'
+    return this.httpClient
+      .get(environment.serverUrl + '/shows', withCache())
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Shows konnten nicht geladen werden.'
+          )
         )
-      )
-    );
+      );
   }
 
   getShowsRecentlyUpdated() {
     return this.httpClient
-      .get(environment.serverUrl + '/shows/recently-updated')
+      .get(environment.serverUrl + '/shows/recently-updated', withCache())
       .pipe(
         map((body: any) => body),
         catchError(() =>
@@ -157,7 +169,7 @@ export class ApiService {
   }
 
   getSchedule() {
-    return this.httpClient.get('/meta/schedule').pipe(
+    return this.httpClient.get('/meta/schedule', withCache()).pipe(
       map((body: any) => body),
       catchError(() =>
         of(
