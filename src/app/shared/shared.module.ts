@@ -20,7 +20,7 @@ import { RouterModule } from '@angular/router';
     SafeHtmlPipe,
     LimitPipe,
     MomentPipe,
-    PlayerComponent
+    PlayerComponent,
   ],
   exports: [
     LoaderComponent,
@@ -29,8 +29,8 @@ import { RouterModule } from '@angular/router';
     LimitPipe,
     MomentPipe,
     TimeagoModule,
-    PlayerComponent
+    PlayerComponent,
   ],
-  providers: [ApiService]
+  providers: [ApiService],
 })
 export class SharedModule {}

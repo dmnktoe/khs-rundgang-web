@@ -1,7 +1,7 @@
 import {
   ActivatedRouteSnapshot,
   DetachedRouteHandle,
-  RouteReuseStrategy
+  RouteReuseStrategy,
 } from '@angular/router';
 import { Injectable } from '@angular/core';
 

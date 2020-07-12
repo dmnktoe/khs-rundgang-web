@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AudioService } from '../../services/audio.service';
+import { StreamState } from '../../interfaces/stream-state';
+import moment from 'moment';
 import * as $ from 'jquery';
 
 import {
   AuthenticationService,
   CredentialsService,
-  I18nService
+  I18nService,
 } from '@app/core';
 import { ApiService } from '@app/core/api.service';
 import { finalize } from 'rxjs/operators';
@@ -13,26 +16,45 @@ import { finalize } from 'rxjs/operators';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
   menuHidden = true;
   currentShow: any;
   liveInfo = false;
+  currentShowName: any;
+  currentShowImg: any;
+  currentShowStart: any;
+  currentShowEnd: any;
+  nextShowName: any;
+  nextShowStart: any;
+  nextShowEnd: any;
+  isLoading = false;
+  state: StreamState;
+
+  defaultImage = './../../../assets/svg/placeholder.svg';
+  streamUrl = 'https://station.radio-rasclat.com/live';
 
   constructor(
     private router: Router,
+    private audioService: AudioService,
     private authenticationService: AuthenticationService,
     private credentialsService: CredentialsService,
     private i18nService: I18nService,
     private apiService: ApiService
-  ) {}
+  ) {
+    // listen to stream state
+    this.audioService.getState().subscribe((state) => {
+      this.state = state;
+    });
+  }
 
   ngOnInit() {
     {
-      $(document).ready(function() {
+      this.isLoading = true;
+      $(document).ready(function () {
         let lastScrollTop = 0;
-        $(window).scroll(function(event) {
+        $(window).scroll(function (event) {
           const st = $(this).scrollTop();
           if (st > lastScrollTop) {
             if (!$('.navbar').hasClass('hidden')) {
@@ -53,7 +75,7 @@ export class HeaderComponent implements OnInit {
     this.apiService
       .getLiveInfo()
       .pipe(finalize(() => {}))
-      .subscribe(liveInfo => {
+      .subscribe((liveInfo) => {
         if (liveInfo.source_enabled === 'Master') {
           this.liveInfo = true;
         } else {
@@ -64,6 +86,52 @@ export class HeaderComponent implements OnInit {
           }
         }
       });
+    this.apiService
+        .getCurrentShow()
+        .pipe(finalize(() => {}))
+        .subscribe((currentShow) => {
+          if (currentShow !== null) {
+            this.currentShowName = currentShow.name;
+            this.currentShowImg = currentShow.image_path;
+            this.currentShowStart = new Date(currentShow.starts);
+            this.currentShowEnd = new Date(currentShow.ends);
+            {
+              $(document).ready(function () {
+                const countDownDate = new Date(currentShow.ends).getTime();
+                const startDate = new Date(currentShow.starts).getTime();
+                function setBar() {
+                  const now = new Date().getTime();
+                  const distanceWhole = countDownDate - startDate;
+                  const distanceLeft = countDownDate - now;
+                  const minutesLeft = Math.floor(distanceLeft / (1000 * 60));
+                  const minutesTotal = Math.floor(distanceWhole / (1000 * 60));
+                  const progress = Math.floor(
+                      ((minutesTotal - minutesLeft) / minutesTotal) * 100
+                  );
+                  $('#progressbar')
+                      .attr('aria-valuenow', progress)
+                      .css('width', progress + '%');
+                }
+                setBar();
+                setInterval(setBar, 60000);
+              });
+            }
+          }
+          this.apiService
+              .getNextShow()
+              .pipe(finalize(() => {}))
+              .subscribe((nextShow) => {
+                if (nextShow.length > 0) {
+                  const startDate = moment(
+                      nextShow[0].starts,
+                      'YYYY-MM-DD HH:mm:ss'
+                  ).toDate();
+                  this.nextShowName = nextShow[0].name;
+                  this.nextShowStart = moment(startDate).fromNow();
+                }
+                this.isLoading = false;
+              });
+        });
   }
 
   toggleMenu() {
@@ -95,5 +163,29 @@ export class HeaderComponent implements OnInit {
   get username(): string | null {
     const credentials = this.credentialsService.credentials;
     return credentials ? credentials.username : null;
+  }
+
+  openStream() {
+    this.audioService.stop();
+    this.playLiveStream();
+  }
+
+  play() {
+    if (this.state.currentTrack.currentSrc === this.streamUrl) {
+      this.audioService.play();
+    } else {
+      this.openStream();
+    }
+  }
+
+  pause() {
+    this.audioService.pause();
+  }
+
+  playLiveStream() {
+    this.audioService.playLiveStream(this.streamUrl, this.currentShowName, this.currentShowImg)
+        .subscribe((events) => {
+          // listening for fun here
+        });
   }
 }
