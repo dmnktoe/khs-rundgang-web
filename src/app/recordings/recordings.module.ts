@@ -27,14 +27,14 @@ import { FeatherModule } from 'angular-feather';
     LazyLoadImageModule,
     Angulartics2Module,
     TooltipModule,
-    FeatherModule
+    FeatherModule,
   ],
   declarations: [
     RecordingsComponent,
     RecordingsListComponent,
-    RecordingsSingleComponent
+    RecordingsSingleComponent,
   ],
   exports: [RecordingsListComponent],
-  providers: [ApiService, Title]
+  providers: [ApiService, Title],
 })
 export class RecordingsModule {}

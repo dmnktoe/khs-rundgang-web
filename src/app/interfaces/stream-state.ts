@@ -11,5 +11,9 @@ export interface StreamState {
     currentUrl: string;
   };
   canplay: boolean;
+  hidden: boolean;
+  live: boolean;
+  nextShowName: string | undefined,
+  nextShowStart: string | undefined,
   error: boolean;
 }

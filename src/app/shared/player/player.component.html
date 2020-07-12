@@ -1,18 +1,21 @@
-<div class="currentWidget">
+<div class="currentWidget" *ngIf="!state?.hidden" [@enterAnimation]>
   <div class="main-current" style="display: table;">
     <div class="current-keyvisual media-action-bar">
       <!--                    <button [disabled]="isFirstPlaying()" (click)="previous()">
                                     <i-feather name="skip-back"></i-feather>
                                 </button>-->
-
+      <div class="grid" *ngIf="!state?.playing && !state?.canplay">
+        <div class="col-12">
+          <app-loader></app-loader>
+        </div>
+      </div>
       <button
         (click)="play()"
         [disabled]="state?.error"
-        *ngIf="!state?.playing"
+        *ngIf="!state?.playing && state?.canplay"
       >
         <i-feather name="play-circle"></i-feather>
       </button>
-
       <button (click)="pause()" *ngIf="state?.playing">
         <i-feather name="pause-circle"></i-feather>
       </button>
@@ -21,12 +24,22 @@
                                     <i-feather name="skip-forward"></i-feather>
                                 </button>-->
     </div>
+    <div class="current-info" *ngIf="!state?.nextShowName && state?.live">
+      <h4 style="margin: 10% 0;">
+        OFF AIR.
+      </h4>
+      <span *ngIf="state?.nextShowName">
+          <!-- TODO: translation bug -->
+          Next: {{ state?.nextShowName }}
+          <span style="opacity: 0.4;">&mdash; {{ state?.nextShowStart }}</span>
+        </span>
+    </div>
     <div class="current-info">
       <a routerLink="/broadcasts/{{ state.currentTrack.currentUrl }}">
         <h4>{{ state.currentTrack.currentTitle }}</h4>
       </a>
     </div>
-    <div class="timeline">
+    <div class="timeline" *ngIf="!state?.live">
       {{ state?.readableCurrentTime }}
       <input
         type="range"
@@ -34,7 +47,7 @@
         min="0"
         [max]="state?.duration"
         step="1"
-        style="width: 50%"
+        style="width: 50%;"
         [value]="state?.currentTrack.currentTime"
         (input)="onSliderChangeEnd($event)"
         [disabled]="state?.error"
@@ -45,12 +58,20 @@
     <div
       *ngIf="state.currentTrack.currentImage"
       class="current-image"
-      style="display: table-cell;vertical-align: middle;"
+      style="display: table-cell; vertical-align: middle;"
     >
       <img
         src="{{ state.currentTrack.currentImage }}"
-        style="width: 45px;margin-right: 10px;"
+        style="width: 45px; margin-right: 10px;"
       />
+    </div>
+    <div>
+    <button
+            (click)="hide()"
+            [disabled]="state?.error"
+    >
+      <i-feather name="x-circle"></i-feather>
+    </button>
     </div>
   </div>
 </div>

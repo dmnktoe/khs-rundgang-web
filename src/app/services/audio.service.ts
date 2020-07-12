@@ -5,7 +5,7 @@ import * as moment from 'moment';
 import { StreamState } from '../interfaces/stream-state';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AudioService {
   audioEvents = [
@@ -17,7 +17,9 @@ export class AudioService {
     'timeupdate',
     'canplay',
     'loadedmetadata',
-    'loadstart'
+    'loadstart',
+    'hide',
+    'live'
   ];
   private stop$ = new Subject();
   private audioObj = new Audio();
@@ -31,9 +33,13 @@ export class AudioService {
       currentSrc: '',
       currentImage: '',
       currentTitle: '',
-      currentUrl: ''
+      currentUrl: '',
     },
     canplay: false,
+    hidden: true,
+    live: false,
+    nextShowName: undefined,
+    nextShowStart: undefined,
     error: false
   };
 
@@ -42,13 +48,31 @@ export class AudioService {
   );
 
   playStream(url: string, detailUrl: string, title: string, image: string) {
+    if (this.state.hidden) {
+      this.state.hidden = false;
+    }
     this.state.currentTrack.currentTitle = title;
     this.state.currentTrack.currentImage = image;
     this.state.currentTrack.currentUrl = detailUrl;
     return this.streamObservable(url).pipe(takeUntil(this.stop$));
   }
 
+  playLiveStream(url: string, title: string, image: string, nextShowName: any, nextShowStart: any) {
+    this.state.live = true;
+    if (this.state.hidden) {
+      this.state.hidden = false;
+    }
+    this.state.currentTrack.currentTitle = title;
+    this.state.currentTrack.currentImage = image;
+    this.state.nextShowName = nextShowName;
+    this.state.nextShowStart = nextShowStart;
+    return this.streamObservable(url).pipe(takeUntil(this.stop$));
+  }
+
   play() {
+    if (this.state.hidden) {
+      this.state.hidden = false;
+    }
     this.audioObj.play();
   }
 
@@ -58,6 +82,17 @@ export class AudioService {
 
   stop() {
     this.stop$.next();
+    if(this.state.live) {
+      this.state.live = false;
+    }
+  }
+
+  hide() {
+    if (this.state.playing) {
+      this.pause();
+    }
+    //TODO: restart audiofile when hide
+    //this.resetState();
   }
 
   seekTo(seconds: number) {
@@ -74,7 +109,7 @@ export class AudioService {
   }
 
   private streamObservable(url: string) {
-    return new Observable(observer => {
+    return new Observable((observer) => {
       // Play audio
       this.audioObj.src = url;
       this.audioObj.load();
@@ -103,7 +138,7 @@ export class AudioService {
     events: Array<string>,
     handler: any
   ) {
-    events.forEach(event => {
+    events.forEach((event) => {
       obj.addEventListener(event, handler);
     });
   }
@@ -113,7 +148,7 @@ export class AudioService {
     events: Array<string>,
     handler: any
   ) {
-    events.forEach(event => {
+    events.forEach((event) => {
       obj.removeEventListener(event, handler);
     });
   }
@@ -125,7 +160,6 @@ export class AudioService {
         this.state.readableDuration = this.formatTime(this.state.duration);
         this.state.currentTrack.currentSrc = this.audioObj.currentSrc;
         // this.state.currentTitle = this.title;
-        console.log(this.state.currentTrack.currentTitle);
         this.state.canplay = true;
         break;
       case 'playing':
@@ -139,6 +173,13 @@ export class AudioService {
         this.state.readableCurrentTime = this.formatTime(
           this.state.currentTrack.currentTime
         );
+        break;
+      case 'hide':
+        this.state.hidden = true;
+        this.state.playing = false;
+        break;
+      case 'live':
+        this.state.live = true;
         break;
       case 'error':
         this.resetState();
@@ -159,10 +200,14 @@ export class AudioService {
         currentSrc: '',
         currentImage: '',
         currentTitle: '',
-        currentUrl: ''
+        currentUrl: '',
       },
       canplay: false,
-      error: false
+      hidden: true,
+      live: false,
+      nextShowName: undefined,
+      nextShowStart: undefined,
+      error: false,
     };
   }
 }

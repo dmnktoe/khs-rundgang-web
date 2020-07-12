@@ -1,11 +1,25 @@
 import { Component } from '@angular/core';
 import { AudioService } from '../../services/audio.service';
 import { StreamState } from '../../interfaces/stream-state';
+import { trigger, style, animate, transition } from '@angular/animations';
+export type FadeState = 'visible' | 'hidden';
 
 @Component({
   selector: 'app-player',
   templateUrl: './player.component.html',
-  styleUrls: ['./player.component.scss']
+  styleUrls: ['./player.component.scss'],
+  animations: [
+    trigger('enterAnimation', [
+      transition(':enter', [
+        style({transform: 'translateY(100%)', opacity: 0}),
+        animate('500ms', style({transform: 'translateY(0)', opacity: 1}))
+      ]),
+      transition(':leave', [
+        style({transform: 'translateY(0)', opacity: 1}),
+        animate('500ms', style({transform: 'translateY(100%)', opacity: 0}))
+      ])
+    ])
+  ]
 })
 export class PlayerComponent {
   files: Array<any> = [];
@@ -15,7 +29,7 @@ export class PlayerComponent {
 
   constructor(private audioService: AudioService) {
     // listen to stream state
-    this.audioService.getState().subscribe(state => {
+    this.audioService.getState().subscribe((state) => {
       this.state = state;
     });
   }
@@ -23,7 +37,7 @@ export class PlayerComponent {
   playStream(url: string, detailUrl: string, title: string, image: string) {
     this.audioService
       .playStream(url, detailUrl, title, image)
-      .subscribe(events => {
+      .subscribe((events) => {
         // listening for fun here
       });
   }
@@ -57,7 +71,11 @@ export class PlayerComponent {
     const file = this.files[index];
     this.openFile(file, index);
   }
-
+  
+  hide() {
+    this.audioService.hide();
+    this.state.hidden = true;
+  }
   isFirstPlaying() {
     return this.currentFile.index === 0;
   }

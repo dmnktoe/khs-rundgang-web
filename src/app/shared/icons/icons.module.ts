@@ -15,7 +15,8 @@ import {
   PauseCircle,
   PlayCircle,
   Search,
-  Download
+  Download,
+  XCircle,
 } from 'angular-feather/icons';
 
 const icons = {
@@ -32,11 +33,12 @@ const icons = {
   PauseCircle,
   PlayCircle,
   Search,
-  Download
+  Download,
+  XCircle,
 };
 
 @NgModule({
   imports: [FeatherModule.pick(icons)],
-  exports: [FeatherModule]
+  exports: [FeatherModule],
 })
 export class IconsModule {}
