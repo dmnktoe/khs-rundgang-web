@@ -11,6 +11,8 @@ import { IconsModule } from '@app/shared/icons/icons.module';
 import { TimeagoModule } from 'ngx-timeago';
 import { PlayerComponent } from './player/player.component';
 import { RouterModule } from '@angular/router';
+import { LiveComponent } from './live/live.component';
+import { TextSeperatorComponent } from './text-seperator/text-seperator.component';
 
 @NgModule({
   imports: [CommonModule, NgbDropdownModule, IconsModule, RouterModule],
@@ -21,6 +23,8 @@ import { RouterModule } from '@angular/router';
     LimitPipe,
     MomentPipe,
     PlayerComponent,
+    LiveComponent,
+    TextSeperatorComponent,
   ],
   exports: [
     LoaderComponent,
@@ -30,6 +34,8 @@ import { RouterModule } from '@angular/router';
     MomentPipe,
     TimeagoModule,
     PlayerComponent,
+    LiveComponent,
+    TextSeperatorComponent,
   ],
   providers: [ApiService],
 })
