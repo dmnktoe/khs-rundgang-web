@@ -2,12 +2,5 @@
 
 <app-text-seperator [text]="'July 2020'" [isLink]="false"> </app-text-seperator>
 
-<div class="grid">
-  <div class="col-12" *ngIf="isLoading == true">
-    <app-loader></app-loader>
-  </div>
-  <div class="col-12" *ngIf="isLoading == false">
-    <app-recordings-gallery [recordings]="recordings" [hidden]="isLoading">
-    </app-recordings-gallery>
-  </div>
-</div>
+<app-recordings-gallery [recordings]="recordings" [hidden]="isLoading">
+</app-recordings-gallery>

@@ -25,7 +25,7 @@ export class RecordingsComponent implements OnInit {
         this.recordings = recordings;
         // helper function to get the month name from an item
         const monthName = (item: { timeStart: moment.MomentInput }) =>
-          moment(item.timeStart, 'YYYY-MM-DD').format('MM-YYYY');
+          moment(item.timeStart, 'YYYY-MM-DD').format('YYYY-MM');
         // group items by month name and then get the name for each month
         const result = _.groupBy(recordings, monthName);
         this.recordingsSorted = result;
