@@ -1,26 +1,41 @@
-<app-recordings-slideshow
-  [isLoading]="isLoading"
-  [recordings]="recordings"
-  [hotRecording]="hotRecording"
->
-</app-recordings-slideshow>
+<div class="container">
+  <app-recordings-slideshow
+    [isLoading]="isLoading"
+    [recordings]="recordings"
+    [hotRecording]="hotRecording"
+  >
+  </app-recordings-slideshow>
 
-<app-text-seperator [text]="'Latest Broadcasts'" [isLink]="false">
-</app-text-seperator>
+  <app-text-seperator [text]="'Latest Broadcasts'" [isLink]="false">
+  </app-text-seperator>
 
-<app-recordings-gallery
-  [recordings]="recordings"
-  [hidden]="isLoading"
-  [limit]="8"
->
-</app-recordings-gallery>
+  <app-recordings-gallery
+    [recordings]="recordings"
+    [hidden]="isLoading"
+    [limit]="8"
+  >
+  </app-recordings-gallery>
 
-<app-text-seperator
-  [text]="'(' + recordings.length + ') View all >'"
-  [isLink]="true"
-  [url]="'/broadcasts'"
->
-</app-text-seperator>
+  <app-text-seperator
+    [text]="'(' + recordings.length + ') View all >'"
+    [isLink]="true"
+    [url]="'/broadcasts'"
+  >
+  </app-text-seperator>
+</div>
+
+<div class="container">
+  <div class="grid">
+    <div class="col-12 col-6@md">
+      <app-text-seperator [text]="'Shows'"></app-text-seperator>
+    </div>
+    <div class="col-12 col-6@md">
+      <span class="scheduleSide">
+        <app-text-seperator [text]="'Schedule'"></app-text-seperator>
+      </span>
+    </div>
+  </div>
+</div>
 
 <div class="grid" *ngIf="isLoading == false">
   <div class="col-12 text-center">

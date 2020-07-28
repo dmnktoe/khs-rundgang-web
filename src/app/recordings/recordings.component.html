@@ -1,6 +1,9 @@
-<app-page-title [title]="'Broadcasts'"></app-page-title>
+<div class="container">
+  <app-page-title [title]="'Broadcasts'"></app-page-title>
 
-<app-text-seperator [text]="'July 2020'" [isLink]="false"> </app-text-seperator>
+  <app-text-seperator [text]="'July 2020'" [isLink]="false">
+  </app-text-seperator>
 
-<app-recordings-gallery [recordings]="recordings" [hidden]="isLoading">
-</app-recordings-gallery>
+  <app-recordings-gallery [recordings]="recordings" [hidden]="isLoading">
+  </app-recordings-gallery>
+</div>

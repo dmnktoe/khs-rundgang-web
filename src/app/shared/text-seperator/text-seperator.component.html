@@ -1,14 +1,12 @@
-<div class="container">
-  <div class="grid">
-    <div class="col-12">
-      <div class="textSeperator" *ngIf="!isLink">
+<div class="grid">
+  <div class="col-12">
+    <div class="textSeperator" *ngIf="!isLink">
+      {{ text }}
+    </div>
+    <div class="textSeperator" *ngIf="isLink">
+      <a routerLink="{{ url }}">
         {{ text }}
-      </div>
-      <div class="textSeperator" *ngIf="isLink">
-        <a routerLink="{{ url }}">
-          {{ text }}
-        </a>
-      </div>
+      </a>
     </div>
   </div>
 </div>
