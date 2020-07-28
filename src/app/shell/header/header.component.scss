@@ -1,28 +1,80 @@
-@import "src/theme/theme-variables";
+/* Header */
 
-@media (min-width: 1200px) {
-  .navbar {
-    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.86, 0, 0.07, 1);
-    -moz-transition: -moz-transform 0.2s cubic-bezier(0.86, 0, 0.07, 1);
-    transition: transform 0.2s cubic-bezier(0.86, 0, 0.07, 1);
+header {
+  background: #fff;
+  border-bottom: 1px solid #222222;
+  font-family: "Trash";
+  position: fixed;
+  width: 100%;
+  z-index: 9998;
+}
+
+header .grid {
+  align-items: center;
+  height: 50px;
+  margin: 0 auto;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header .logo {
+  margin-top: 3px;
+}
+
+header img.playIcon {
+  width: 9px;
+}
+
+header img.menuIcon {
+  width: 15px;
+}
+
+header .logo img {
+  width: 35px;
+}
+
+@media only screen and (min-width: 32rem) {
+  header img.playIcon {
+    width: 11px;
   }
 
-  .navbar.hidden {
-    -webkit-transform: translateY(-100%);
-    -moz-transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
-    -o-transform: translateY(-100%);
-    transform: translateY(-100%);
+  header img.menuIcon {
+    width: 19px;
   }
 }
 
-@media (max-width: 1199px) {
-  .nav-link {
-    display: block;
-    padding: 0.1rem 0rem;
+@media only screen and (min-width: 48rem) {
+  header .logo img {
+    width: 40px;
+  }
+
+  header img.playIcon {
+    width: 10px;
+  }
+
+  header img.menuIcon {
+    width: 18px;
   }
 }
 
-.nav-link.dropdown-toggle {
-  cursor: pointer;
+@media only screen and (min-width: 64rem) {
+  header img.playIcon {
+    width: 12px;
+  }
+
+  header img.menuIcon {
+    width: 20px;
+  }
+}
+
+@media only screen and (min-width: 80rem) {
+  header img.playIcon {
+    width: 13px;
+  }
+
+  header img.menuIcon {
+    width: 22px;
+  }
 }
