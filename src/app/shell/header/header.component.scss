@@ -25,10 +25,6 @@ header .logo {
   margin-top: 3px;
 }
 
-header img.playIcon {
-  width: 9px;
-}
-
 header img.menuIcon {
   width: 15px;
 }
@@ -38,12 +34,8 @@ header .logo img {
 }
 
 @media only screen and (min-width: 32rem) {
-  header img.playIcon {
-    width: 11px;
-  }
-
   header img.menuIcon {
-    width: 19px;
+    width: 18px;
   }
 }
 
@@ -57,30 +49,18 @@ header .logo img {
     transform: rotate(-5deg);
   }
 
-  header img.playIcon {
-    width: 10px;
-  }
-
   header img.menuIcon {
-    width: 18px;
+    width: 19px;
   }
 }
 
 @media only screen and (min-width: 64rem) {
-  header img.playIcon {
-    width: 12px;
-  }
-
   header img.menuIcon {
     width: 20px;
   }
 }
 
 @media only screen and (min-width: 80rem) {
-  header img.playIcon {
-    width: 13px;
-  }
-
   header img.menuIcon {
     width: 22px;
   }
