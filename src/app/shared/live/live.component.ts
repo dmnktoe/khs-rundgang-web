@@ -18,17 +18,17 @@ import moment from 'moment';
   styleUrls: ['./live.component.scss'],
 })
 export class LiveComponent implements OnInit {
-  liveInfo = false;
   currentShowName: any;
   currentShowImg: any;
   currentShowStart: any;
   currentShowEnd: any;
+
   nextShowName: any;
   nextShowStart: any;
-  nextShowEnd: any;
-  isLoading = false;
-  state: StreamState;
 
+  isLoading = false;
+
+  state: StreamState;
   streamUrl = 'http://stream3.sthoerfunk.de:7000/sthoerfunk.mp3';
 
   constructor(
@@ -36,7 +36,6 @@ export class LiveComponent implements OnInit {
     private i18nService: I18nService,
     private apiService: ApiService
   ) {
-    // listen to stream state
     this.audioService.getState().subscribe((state) => {
       this.state = state;
     });
