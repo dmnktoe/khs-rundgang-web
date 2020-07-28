@@ -9,8 +9,13 @@ import { I18nService } from '@app/core';
 })
 export class HeaderComponent implements OnInit {
   isNavVisible = false;
+  now: number;
 
-  constructor(private router: Router, private i18nService: I18nService) {}
+  constructor(private router: Router, private i18nService: I18nService) {
+    setInterval(() => {
+      this.now = Date.now();
+    }, 10);
+  }
 
   toggleNav() {
     this.isNavVisible = !this.isNavVisible;
