@@ -1,15 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StreamState } from '@app/interfaces/stream-state';
-import { Router } from '@angular/router';
 import { AudioService } from '@app/services/audio.service';
-import {
-  AuthenticationService,
-  CredentialsService,
-  I18nService,
-} from '@app/core';
 import { ApiService } from '@app/core/api.service';
 import { finalize } from 'rxjs/operators';
-import * as $ from 'jquery';
 import moment from 'moment';
 
 @Component({
@@ -33,7 +26,6 @@ export class LiveComponent implements OnInit {
 
   constructor(
     private audioService: AudioService,
-    private i18nService: I18nService,
     private apiService: ApiService
   ) {
     this.audioService.getState().subscribe((state) => {
