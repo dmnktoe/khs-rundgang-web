@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 import { ApiService } from '@app/core/api.service';
+import _ from 'lodash';
+import moment from 'moment';
 
 @Component({
   selector: 'app-recordings',
@@ -9,6 +11,7 @@ import { ApiService } from '@app/core/api.service';
 })
 export class RecordingsComponent implements OnInit {
   recordings = '';
+  recordingsSorted: any;
   isLoading = false;
 
   constructor(private apiService: ApiService) {}
@@ -20,7 +23,15 @@ export class RecordingsComponent implements OnInit {
       .pipe(finalize(() => {}))
       .subscribe((recordings) => {
         this.recordings = recordings;
+        // helper function to get the month name from an item
+        const monthName = (item: { timeStart: moment.MomentInput }) =>
+          moment(item.timeStart, 'YYYY-MM-DD').format('MM-YYYY');
+        // group items by month name and then get the name for each month
+        const result = _.groupBy(recordings, monthName);
+        this.recordingsSorted = result;
+        // turn off loading state
         this.isLoading = false;
+        console.log(this.recordingsSorted);
       });
   }
 }
