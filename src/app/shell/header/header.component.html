@@ -3,13 +3,13 @@
     <div *ngIf="currentShowName" class="show__progress_bar">
       <div class="progress">
         <div
-                id="progressbar"
-                class="progress-bar"
-                role="progressbar"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="width: 0%;"
+          id="progressbar"
+          class="progress-bar"
+          role="progressbar"
+          aria-valuenow="0"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style="width: 0%;"
         ></div>
       </div>
     </div>
@@ -82,49 +82,44 @@
       </div>
       <div class="navbar-nav ml-auto">
         <button
-                class="btn"
-                [style.backgroundColor]="hex"
-                (click)="play()"
-                [disabled]="state?.error"
-                *ngIf="
-          !state?.playing ||
-          state.currentTrack.currentSrc != this.streamUrl
-        "
+          class="btn"
+          [style.backgroundColor]="hex"
+          (click)="play()"
+          [disabled]="state?.error"
+          *ngIf="
+            !state?.playing || state.currentTrack.currentSrc != this.streamUrl
+          "
         >
           <i-feather name="play-circle"></i-feather>
         </button>
         <button
-                class="btn"
-                [style.backgroundColor]="hex"
-                (click)="pause()"
-                *ngIf="
-          state?.playing &&
-          state.currentTrack.currentSrc == this.streamUrl
-        "
+          class="btn"
+          [style.backgroundColor]="hex"
+          (click)="pause()"
+          *ngIf="
+            state?.playing && state.currentTrack.currentSrc == this.streamUrl
+          "
         >
           <i-feather name="pause-circle"></i-feather>
         </button>
         <div
-                class="current-info"
-                style="display: table-cell; vertical-align: middle;"
-                *ngIf="currentShowName"
+          class="current-info"
+          style="display: table-cell; vertical-align: middle;"
+          *ngIf="currentShowName"
         >
           <h1>Live: {{ currentShowName | safeHtml }}</h1>
           {{ currentShowStart | date: 'HH:mm' }} -
           {{ currentShowEnd | date: 'HH:mm' }} Uhr
         </div>
-        <div
-                class="current-info"
-                *ngIf="!currentShowName"
-        >
+        <div class="current-info" *ngIf="!currentShowName">
           <h4 style="margin: 10% 0;">
             OFF AIR.
           </h4>
           <span *ngIf="nextShowName">
-          <!-- TODO: translation bug -->
-          Next: {{ nextShowName }}
-          <span style="opacity: 0.4;">&mdash; {{ nextShowStart }}</span>
-        </span>
+            <!-- TODO: translation bug -->
+            Next: {{ nextShowName }}
+            <span style="opacity: 0.4;">&mdash; {{ nextShowStart }}</span>
+          </span>
         </div>
         <span *ngIf="liveInfo" class="nav-item nav-link live-indicator">
           <button class="pulse-button"></button> LIVE
@@ -146,4 +141,29 @@
       </div>
     </div>
   </nav>
+</header>
+
+<header>
+  <div class="container">
+    <div class="grid grid-gap-xs">
+      <div class="col-5">
+        <a href="#">
+          <img class="playIcon" src="images/svg/play.svg" />
+          Live: AMP//R FM w/ 3diz • 03.06.2020
+        </a>
+      </div>
+      <div class="col-2 text-center">
+        <div class="logo">
+          <a href="#">
+            <img src="https://www.radio-rasclat.com/assets/svg/logo.svg" />
+          </a>
+        </div>
+      </div>
+      <div class="col-5 text-right">
+        <a onclick="toggleMenu()">
+          MENÜ <img class="menuIcon" src="images/svg/menu.svg" />
+        </a>
+      </div>
+    </div>
+  </div>
 </header>
