@@ -1,4 +1,4 @@
-<header>
+<!-- <header>
   <nav class="navbar navbar-expand-xl fixed-top">
     <div *ngIf="currentShowName" class="show__progress_bar">
       <div class="progress">
@@ -31,55 +31,6 @@
       class="collapse navbar-collapse float-xs-none"
       [ngbCollapse]="menuHidden"
     >
-      <div class="navbar-nav">
-        <a
-          class="nav-item nav-link"
-          routerLink="/search"
-          routerLinkActive="active"
-          (click)="closeMenu()"
-        >
-          <i-feather name="search" class="header__icon"></i-feather>
-        </a>
-        <a
-          class="nav-item nav-link"
-          routerLink="/broadcasts"
-          routerLinkActive="active"
-          (click)="closeMenu()"
-        >
-          <span translate>RECORDINGS</span>
-        </a>
-        <a
-          class="nav-item nav-link"
-          routerLink="/shows"
-          routerLinkActive="active"
-          (click)="closeMenu()"
-        >
-          <span translate>SHOWS</span>
-        </a>
-        <a
-          class="nav-item nav-link"
-          routerLink="/schedule"
-          routerLinkActive="active"
-          (click)="closeMenu()"
-        >
-          <span translate>SCHEDULE</span>
-        </a>
-        <a
-          class="nav-item nav-link"
-          href="https://radio-rasclat.chatango.com/"
-          target="_blank"
-        >
-          <span translate>CHAT</span>
-        </a>
-        <!-- <a
-          class="nav-item nav-link"
-          routerLink="/search"
-          routerLinkActive="active"
-          (click)="closeMenu()"
-        >
-          <span translate>SEARCH</span>
-        </a> -->
-      </div>
       <div class="navbar-nav ml-auto">
         <button
           class="btn"
@@ -116,7 +67,6 @@
             OFF AIR.
           </h4>
           <span *ngIf="nextShowName">
-            <!-- TODO: translation bug -->
             Next: {{ nextShowName }}
             <span style="opacity: 0.4;">&mdash; {{ nextShowStart }}</span>
           </span>
@@ -141,29 +91,196 @@
       </div>
     </div>
   </nav>
-</header>
+</header> -->
 
 <header>
   <div class="container">
     <div class="grid grid-gap-xs">
       <div class="col-5">
-        <a href="#">
-          <img class="playIcon" src="images/svg/play.svg" />
-          Live: AMP//R FM w/ 3diz • 03.06.2020
-        </a>
+        <app-live></app-live>
       </div>
       <div class="col-2 text-center">
         <div class="logo">
-          <a href="#">
-            <img src="https://www.radio-rasclat.com/assets/svg/logo.svg" />
+          <a routerLink="/" routerLinkActive="active">
+            <img src="../../../assets/svg/logo.svg" />
           </a>
         </div>
       </div>
       <div class="col-5 text-right">
-        <a onclick="toggleMenu()">
-          MENÜ <img class="menuIcon" src="images/svg/menu.svg" />
+        <a (click)="toggleNav()">
+          MENU <img class="menuIcon" src="../../../assets/svg/menu.svg" />
         </a>
       </div>
     </div>
   </div>
 </header>
+<nav id="navigationSection" *ngIf="isNavVisible">
+  <div class="infoBanner">
+    <div class="container">
+      <div class="grid grid-gap-xs">
+        <div class="col-12 text-center">
+          <span
+            >Radio Rasclat is a non-commercial and
+            <a href="#">open source</a> community radio station.</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navigation">
+    <div class="container">
+      <div class="grid grid-gap-xs">
+        <div class="col-6 col-3@md">
+          <h5>↳ Listen</h5>
+          <ul>
+            <li>
+              <a
+                routerLink="/broadcasts"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
+                Broadcasts
+              </a>
+            </li>
+            <li>
+              <a
+                routerLink="/shows"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
+                Shows
+              </a>
+            </li>
+            <li>
+              <a
+                routerLink="/schedule"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
+                Schedule
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Chat
+              </a>
+            </li>
+            <li>
+              <a
+                routerLink="/search"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
+                Search
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="#">
+                iOS-App <img src="../../../assets/svg/external.svg" />
+              </a>
+            </li>
+            <li>
+              <a href="https://soundcloud.com/radiorasclat" target="_blank">
+                SoundCloud <img src="../../../assets/svg/external.svg" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-3@md">
+          <h5>↳ Radio Rasclat</h5>
+          <ul>
+            <li>
+              <a href="#">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Contact
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Participate
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="#">
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Events
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-3@md">
+          <h5>↳ Open Source</h5>
+          <ul>
+            <li>
+              <a href="#">
+                Contribute <img src="../../../assets/svg/external.svg" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Licenses
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="#">
+                Changelog
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Status <img src="../../../assets/svg/external.svg" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-3@md">
+          <h5>↳ Internal</h5>
+          <ul>
+            <li>
+              <a href="#">
+                Imprint
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Privacy
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="#">
+                Cookie Preferences
+                <img src="../../../assets/svg/dropdown.svg" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Language settings <img src="../../../assets/svg/dropdown.svg" />
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              8:43pm
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

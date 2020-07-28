@@ -19,7 +19,8 @@ import { finalize } from 'rxjs/operators';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  menuHidden = true;
+  isNavVisible = false;
+
   currentShow: any;
   liveInfo = false;
   currentShowName: any;
@@ -49,28 +50,13 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  toggleNav() {
+    this.isNavVisible = !this.isNavVisible;
+  }
+
   ngOnInit() {
     {
       this.isLoading = true;
-      $(document).ready(function () {
-        let lastScrollTop = 0;
-        $(window).scroll(function (event) {
-          const st = $(this).scrollTop();
-          if (st > lastScrollTop) {
-            if (!$('.navbar').hasClass('hidden')) {
-              $('.navbar').addClass('hidden');
-            }
-          } else {
-            $('.navbar').removeClass('hidden');
-          }
-
-          lastScrollTop = st;
-
-          if ($(this).scrollTop() <= 30) {
-            $('.navbar').removeClass('hidden');
-          }
-        });
-      });
     }
     this.apiService
       .getLiveInfo()
@@ -87,59 +73,51 @@ export class HeaderComponent implements OnInit {
         }
       });
     this.apiService
-        .getCurrentShow()
-        .pipe(finalize(() => {}))
-        .subscribe((currentShow) => {
-          if (currentShow !== null) {
-            this.currentShowName = currentShow.name;
-            this.currentShowImg = currentShow.image_path;
-            this.currentShowStart = new Date(currentShow.starts);
-            this.currentShowEnd = new Date(currentShow.ends);
-            {
-              $(document).ready(function () {
-                const countDownDate = new Date(currentShow.ends).getTime();
-                const startDate = new Date(currentShow.starts).getTime();
-                function setBar() {
-                  const now = new Date().getTime();
-                  const distanceWhole = countDownDate - startDate;
-                  const distanceLeft = countDownDate - now;
-                  const minutesLeft = Math.floor(distanceLeft / (1000 * 60));
-                  const minutesTotal = Math.floor(distanceWhole / (1000 * 60));
-                  const progress = Math.floor(
-                      ((minutesTotal - minutesLeft) / minutesTotal) * 100
-                  );
-                  $('#progressbar')
-                      .attr('aria-valuenow', progress)
-                      .css('width', progress + '%');
-                }
-                setBar();
-                setInterval(setBar, 60000);
-              });
-            }
+      .getCurrentShow()
+      .pipe(finalize(() => {}))
+      .subscribe((currentShow) => {
+        if (currentShow !== null) {
+          this.currentShowName = currentShow.name;
+          this.currentShowImg = currentShow.image_path;
+          this.currentShowStart = new Date(currentShow.starts);
+          this.currentShowEnd = new Date(currentShow.ends);
+          {
+            $(document).ready(function () {
+              const countDownDate = new Date(currentShow.ends).getTime();
+              const startDate = new Date(currentShow.starts).getTime();
+              function setBar() {
+                const now = new Date().getTime();
+                const distanceWhole = countDownDate - startDate;
+                const distanceLeft = countDownDate - now;
+                const minutesLeft = Math.floor(distanceLeft / (1000 * 60));
+                const minutesTotal = Math.floor(distanceWhole / (1000 * 60));
+                const progress = Math.floor(
+                  ((minutesTotal - minutesLeft) / minutesTotal) * 100
+                );
+                $('#progressbar')
+                  .attr('aria-valuenow', progress)
+                  .css('width', progress + '%');
+              }
+              setBar();
+              setInterval(setBar, 60000);
+            });
           }
-          this.apiService
-              .getNextShow()
-              .pipe(finalize(() => {}))
-              .subscribe((nextShow) => {
-                if (nextShow.length > 0) {
-                  const startDate = moment(
-                      nextShow[0].starts,
-                      'YYYY-MM-DD HH:mm:ss'
-                  ).toDate();
-                  this.nextShowName = nextShow[0].name;
-                  this.nextShowStart = moment(startDate).fromNow();
-                }
-                this.isLoading = false;
-              });
-        });
-  }
-
-  toggleMenu() {
-    this.menuHidden = !this.menuHidden;
-  }
-
-  closeMenu() {
-    this.menuHidden = true;
+        }
+        this.apiService
+          .getNextShow()
+          .pipe(finalize(() => {}))
+          .subscribe((nextShow) => {
+            if (nextShow.length > 0) {
+              const startDate = moment(
+                nextShow[0].starts,
+                'YYYY-MM-DD HH:mm:ss'
+              ).toDate();
+              this.nextShowName = nextShow[0].name;
+              this.nextShowStart = moment(startDate).fromNow();
+            }
+            this.isLoading = false;
+          });
+      });
   }
 
   setLanguage(language: string) {
@@ -183,9 +161,16 @@ export class HeaderComponent implements OnInit {
   }
 
   playLiveStream() {
-    this.audioService.playLiveStream(this.streamUrl, this.currentShowName, this.currentShowImg, this.nextShowName, this.nextShowStart)
-        .subscribe((events) => {
-          // listening for fun here
-        });
+    this.audioService
+      .playLiveStream(
+        this.streamUrl,
+        this.currentShowName,
+        this.currentShowImg,
+        this.nextShowName,
+        this.nextShowStart
+      )
+      .subscribe((events) => {
+        // listening for fun here
+      });
   }
 }

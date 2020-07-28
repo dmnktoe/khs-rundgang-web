@@ -1,3 +1,5 @@
+@import "src/theme/_variables";
+
 /* Header */
 
 header {
@@ -48,6 +50,11 @@ header .logo img {
 @media only screen and (min-width: 48rem) {
   header .logo img {
     width: 40px;
+    transition: all 0.2s;
+  }
+
+  header .logo img:hover {
+    transform: rotate(-5deg);
   }
 
   header img.playIcon {
@@ -76,5 +83,109 @@ header .logo img {
 
   header img.menuIcon {
     width: 22px;
+  }
+}
+
+/* Navigation */
+
+#navigationSection {
+  position: fixed;
+  width: 100%;
+  z-index: 9998;
+  top: 51px;
+}
+
+.infoBanner {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background: #fff;
+  border-bottom: 1px solid #222222;
+  display: none;
+}
+
+.infoBanner .grid {
+  align-items: stretch;
+  height: auto;
+  margin: 0 auto;
+}
+
+.navigation {
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #222222;
+  line-height: 21px;
+}
+
+.navigation a {
+  text-decoration: underline;
+}
+
+.navigation a.active {
+  color: $secondary-color;
+}
+
+.navigation ul {
+  margin-bottom: 1rem;
+}
+
+.navigation li {
+  list-style-type: none;
+}
+
+.navigation h5 {
+  margin-bottom: 0.7rem;
+  display: block;
+}
+
+.navigation .grid {
+  align-items: stretch;
+  height: auto;
+  margin: 0 auto;
+}
+
+.navigation img {
+  width: 10px;
+}
+
+@media only screen and (min-width: 32rem) {
+  .navigation img {
+    width: 11px;
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  .infoBanner {
+    display: block;
+  }
+
+  .navigation img {
+    width: 13px;
+  }
+
+  .navigation {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+    line-height: 24px;
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  .navigation {
+    line-height: 28px;
+  }
+
+  .navigation img {
+    width: 15px;
+  }
+}
+
+@media only screen and (min-width: 80rem) {
+  .navigation {
+    line-height: 29px;
+  }
+
+  .navigation img {
+    width: 16px;
   }
 }
