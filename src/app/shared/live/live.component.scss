@@ -1,0 +1,27 @@
+img.playIcon {
+  width: 11px;
+}
+
+@media only screen and (min-width: 32rem) {
+  img.playIcon {
+    width: 12px;
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  img.playIcon {
+    width: 13px;
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  img.playIcon {
+    width: 14px;
+  }
+}
+
+@media only screen and (min-width: 80rem) {
+  img.playIcon {
+    width: 15px;
+  }
+}
