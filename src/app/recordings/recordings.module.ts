@@ -7,7 +7,7 @@ import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { RecordingsRoutingModule } from './recordings-routing.module';
 import { RecordingsComponent } from '@app/recordings/recordings.component';
-import { RecordingsListComponent } from './recordings-list/recordings-list.component';
+import { RecordingsGalleryComponent } from './recordings-gallery/recordings-gallery.component';
 import { RecordingsSingleComponent } from './recordings-single/recordings-single.component';
 import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
@@ -15,6 +15,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { Angulartics2Module } from 'angulartics2';
 import { TooltipModule } from 'ng2-tooltip-directive';
 import { FeatherModule } from 'angular-feather';
+import { RecordingsSlideshowComponent } from './recordings-slideshow/recordings-slideshow.component';
 
 @NgModule({
   imports: [
@@ -31,10 +32,11 @@ import { FeatherModule } from 'angular-feather';
   ],
   declarations: [
     RecordingsComponent,
-    RecordingsListComponent,
+    RecordingsGalleryComponent,
     RecordingsSingleComponent,
+    RecordingsSlideshowComponent,
   ],
-  exports: [RecordingsListComponent],
+  exports: [RecordingsGalleryComponent, RecordingsSlideshowComponent],
   providers: [ApiService, Title],
 })
 export class RecordingsModule {}

@@ -1,12 +1,13 @@
+<app-page-title [title]="'Broadcasts'"></app-page-title>
+
+<app-text-seperator [text]="'July 2020'" [isLink]="false"> </app-text-seperator>
+
 <div class="grid">
-  <div class="col-12">
-    <h1>Broadcasts</h1>
-  </div>
   <div class="col-12" *ngIf="isLoading == true">
     <app-loader></app-loader>
   </div>
   <div class="col-12" *ngIf="isLoading == false">
-    <app-recordings-list [recordings]="recordings" [hidden]="isLoading">
-    </app-recordings-list>
+    <app-recordings-gallery [recordings]="recordings" [hidden]="isLoading">
+    </app-recordings-gallery>
   </div>
 </div>

@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="grid">
+    <div class="col-12">
+      <div class="recordingSlider">
+        <div class="swiper-container" [swiper]="config">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngIf="hotRecording">
+              <div
+                class="recordingSlide"
+                [defaultImage]="defaultImage"
+                [lazyLoad]="hotRecording?.image"
+              >
+                <a routerLink="/broadcasts/{{ hotRecording?.slug }}">
+                  <div class="recordingSlideInner">
+                    <div class="recordingSlideCaptionWrapper">
+                      <div class="recordingSlideCaption">
+                        <div class="recordingSlideCaption__playArea">
+                          <img
+                            class="playIcon"
+                            src="../../assets/svg/play_white.svg"
+                            width="16"
+                          />
+                        </div>
+                        <div class="recordingSlideCaption__textArea">
+                          🔥 Hot this month &mdash;
+                          {{ hotRecording?.viewCounter }} plays:<br />
+                          <h4>
+                            ↳{{
+                              hotRecording?.title?.length > 50
+                                ? (hotRecording?.title | slice: 0:50) + '...'
+                                : hotRecording?.title
+                            }}
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              *ngFor="let recording of recordings | slice: 0:5; let i = index"
+            >
+              <div
+                class="recordingSlide"
+                [defaultImage]="defaultImage"
+                [lazyLoad]="recording?.image"
+              >
+                <div class="recordingSlideCaptionWrapper">
+                  <div class="recordingSlideCaption">
+                    <div class="recordingSlideCaption__playArea">
+                      <img
+                        class="playIcon"
+                        src="../../assets/svg/play_white.svg"
+                        width="16"
+                      />
+                    </div>
+                    <div class="recordingSlideCaption__textArea">
+                      {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
+                      {{ recording?.timeStart | date: 'HH:mm' }}<br />
+                      <h4>
+                        ↳{{
+                          recording?.title.length > 50
+                            ? (recording?.title | slice: 0:50) + '...'
+                            : recording?.title
+                        }}
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

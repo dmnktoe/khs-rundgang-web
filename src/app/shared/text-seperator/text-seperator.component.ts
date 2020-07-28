@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-text-seperator',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./text-seperator.component.scss'],
 })
 export class TextSeperatorComponent implements OnInit {
+  @Input() text: string;
+  @Input() isLink: boolean;
+  @Input() url: string;
+
   constructor() {}
 
   ngOnInit(): void {}

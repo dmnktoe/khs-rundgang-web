@@ -101,7 +101,7 @@
       </div>
       <div class="col-2 text-center">
         <div class="logo">
-          <a routerLink="/" routerLinkActive="active">
+          <a routerLink="/">
             <img src="../../../assets/svg/logo.svg" />
           </a>
         </div>
@@ -134,6 +134,11 @@
           <h5>↳ Listen</h5>
           <ul>
             <li>
+              <a routerLink="/" (click)="toggleNav()">
+                Home
+              </a>
+            </li>
+            <li>
               <a
                 routerLink="/broadcasts"
                 routerLinkActive="active"
@@ -161,8 +166,8 @@
               </a>
             </li>
             <li>
-              <a href="#">
-                Chat
+              <a href="https://radio-rasclat.chatango.com/" target="_blank">
+                Chat <img src="../../../assets/svg/external.svg" />
               </a>
             </li>
             <li>
@@ -177,7 +182,10 @@
           </ul>
           <ul>
             <li>
-              <a href="#">
+              <a
+                href="https://apps.apple.com/us/app/radio-rasclat/id1499269866"
+                target="_blank"
+              >
                 iOS-App <img src="../../../assets/svg/external.svg" />
               </a>
             </li>
@@ -192,7 +200,11 @@
           <h5>↳ Radio Rasclat</h5>
           <ul>
             <li>
-              <a href="#">
+              <a
+                routerLink="/about"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
                 About
               </a>
             </li>

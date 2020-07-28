@@ -1,0 +1,80 @@
+/* Recordings Slideshow */
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  background: #fff;
+  width: 100% !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.recordingSlider {
+  border-bottom: 1px solid #222222;
+  padding-bottom: 1rem;
+}
+
+.swiper-slide .recordingSlide {
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.recordingSlideInner {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.recordingSlideCaptionWrapper {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+.recordingSlideCaption {
+  color: #fff;
+  padding: 1rem;
+}
+
+.recordingSlideCaption__playArea {
+  display: none;
+}
+
+.recordingSlideCaption__textArea h4 {
+  margin-top: 0.5rem;
+}
+
+.recordingSlideCaption__textArea h4:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 48rem) {
+  .swiper-slide {
+    width: 75% !important;
+  }
+
+  .recordingSlideCaption__playArea {
+    float: left;
+    padding: 1rem;
+    display: block;
+    margin-right: 0.5rem;
+  }
+}

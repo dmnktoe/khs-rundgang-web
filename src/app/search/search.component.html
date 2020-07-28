@@ -26,7 +26,9 @@
       <ais-hits>
         <ng-template let-hits="hits" let-results="results">
           <div class="col-12">
-            <app-recordings-list [recordings]="hits"> </app-recordings-list>
+            <app-recordings-gallery
+              [recordings]="hits"
+            ></app-recordings-gallery>
           </div>
         </ng-template>
       </ais-hits>

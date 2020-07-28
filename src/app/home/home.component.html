@@ -1,105 +1,28 @@
-<app-text-seperator></app-text-seperator>
-<div class="grid" *ngIf="isLoading == true">
-  <div class="col-12">
-    <app-loader></app-loader>
-  </div>
-</div>
+<app-recordings-slideshow
+  [isLoading]="isLoading"
+  [recordings]="recordings"
+  [hotRecording]="hotRecording"
+>
+</app-recordings-slideshow>
+
+<app-text-seperator [text]="'Latest Broadcasts'" [isLink]="false">
+</app-text-seperator>
+
+<app-recordings-gallery
+  [recordings]="recordings"
+  [hidden]="isLoading"
+  [limit]="8"
+>
+</app-recordings-gallery>
+
+<app-text-seperator
+  [text]="'(' + recordings.length + ') View all >'"
+  [isLink]="true"
+  [url]="'/broadcasts'"
+>
+</app-text-seperator>
+
 <div class="grid" *ngIf="isLoading == false">
-  <div class="col-12">
-    <div class="swiper-container" [swiper]="config">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide featured">
-          <a
-            class="show__link"
-            routerLink="/broadcasts/{{ hotRecording?.slug }}"
-          >
-            <div
-              class="swiper__show slider__img__container"
-              [ngStyle]="{
-                background:
-                  'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 75%), no-repeat center top url(' +
-                  hotRecording?.image +
-                  ')'
-              }"
-            >
-              <h4 class="align-bottom">
-                🔥 Hot this month:
-              </h4>
-              <h3 class="align-bottom">
-                {{ hotRecording?.title }}
-              </h3>
-              <h5 class="align-bottom" style="float: left;">
-                &mdash; {{ hotRecording?.viewCounter }} plays
-              </h5>
-            </div>
-          </a>
-        </div>
-        <div
-          class="swiper-slide"
-          *ngFor="let recording of recordings | slice: 0:5; let i = index"
-        >
-          <a class="show__link" routerLink="/broadcasts/{{ recording?.slug }}">
-            <div
-              class="swiper__show slider__img__container"
-              [ngStyle]="{
-                background:
-                  'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 75%), no-repeat center top url(' +
-                  recording?.image +
-                  ')'
-              }"
-            >
-              <h3 class="align-bottom">{{ recording?.title }}</h3>
-              <h5 class="align-bottom">
-                {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
-                {{ recording?.timeStart | date: 'HH:mm' }}
-              </h5>
-              <h6 class="align-bottom">
-                &mdash; {{ recording?.timeStart | timeago: live }}
-              </h6>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-8@lg">
-    <div class="col-12">
-      <div
-        class="col-12"
-        style="
-          margin-bottom: 15px;
-          border-bottom: 1px solid rgba(112, 112, 112, 0.1);
-        "
-      >
-        <h2>⏱️ Latest broadcasts</h2>
-      </div>
-      <app-recordings-list
-        [recordings]="recordings"
-        [hidden]="isLoading"
-        [limit]="6"
-      >
-      </app-recordings-list>
-    </div>
-  </div>
-  <div class="col-4@lg">
-    <div class="col-12">
-      <div
-        class="col-12"
-        style="
-          margin-bottom: 15px;
-          border-bottom: 1px solid rgba(112, 112, 112, 0.1);
-        "
-      >
-        <h2>🔥 Hot broadcasts</h2>
-      </div>
-      <app-recordings-list
-        [recordings]="hotRecordings"
-        [hidden]="isLoading"
-        [limit]="3"
-      >
-      </app-recordings-list>
-    </div>
-  </div>
   <div class="col-12 text-center">
     <a class="btn btn-primary" routerLink="/broadcasts">View all recordings</a>
   </div>

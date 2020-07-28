@@ -13,6 +13,7 @@ import { PlayerComponent } from './player/player.component';
 import { RouterModule } from '@angular/router';
 import { LiveComponent } from './live/live.component';
 import { TextSeperatorComponent } from './text-seperator/text-seperator.component';
+import { PageTitleComponent } from './page-title/page-title.component';
 
 @NgModule({
   imports: [CommonModule, NgbDropdownModule, IconsModule, RouterModule],
@@ -25,6 +26,7 @@ import { TextSeperatorComponent } from './text-seperator/text-seperator.componen
     PlayerComponent,
     LiveComponent,
     TextSeperatorComponent,
+    PageTitleComponent,
   ],
   exports: [
     LoaderComponent,
@@ -36,6 +38,7 @@ import { TextSeperatorComponent } from './text-seperator/text-seperator.componen
     PlayerComponent,
     LiveComponent,
     TextSeperatorComponent,
+    PageTitleComponent,
   ],
   providers: [ApiService],
 })
