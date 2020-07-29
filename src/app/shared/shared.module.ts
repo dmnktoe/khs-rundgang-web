@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { LoaderComponent } from './loader/loader.component';
 import { CurrentTrackComponent } from './current-track/current-track.component';
 import { ApiService } from '@app/core/api.service';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { LimitPipe } from '@app/shared/pipes/LimitPipe';
 import { SafeHtmlPipe } from '@app/shared/pipes/SafeHtmlPipe';
 import { MomentPipe } from '@app/shared/pipes/MomentPipe';
