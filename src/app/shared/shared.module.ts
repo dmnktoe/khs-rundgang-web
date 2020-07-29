@@ -15,7 +15,7 @@ import { TextSeperatorComponent } from './text-seperator/text-seperator.componen
 import { PageTitleComponent } from './page-title/page-title.component';
 
 @NgModule({
-  imports: [CommonModule, NgbDropdownModule, IconsModule, RouterModule],
+  imports: [CommonModule, IconsModule, RouterModule],
   declarations: [
     LoaderComponent,
     CurrentTrackComponent,
