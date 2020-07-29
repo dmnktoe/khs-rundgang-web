@@ -33,10 +33,7 @@
               "src/assets"
             ],
             "styles": ["src/main.scss"],
-            "scripts": [
-              "./node_modules/jquery/dist/jquery.min.js",
-              "./node_modules/node-vibrant/dist/vibrant.min.js"
-            ]
+            "scripts": ["./node_modules/node-vibrant/dist/vibrant.min.js"]
           },
           "configurations": {
             "production": {
