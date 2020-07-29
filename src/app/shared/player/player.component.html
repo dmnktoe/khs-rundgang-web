@@ -29,10 +29,10 @@
         OFF AIR.
       </h4>
       <span *ngIf="state?.nextShowName">
-          <!-- TODO: translation bug -->
-          Next: {{ state?.nextShowName }}
-          <span style="opacity: 0.4;">&mdash; {{ state?.nextShowStart }}</span>
-        </span>
+        <!-- TODO: translation bug -->
+        Next: {{ state?.nextShowName }}
+        <span style="opacity: 0.4;">&mdash; {{ state?.nextShowStart }}</span>
+      </span>
     </div>
     <div class="current-info">
       <a routerLink="/broadcasts/{{ state.currentTrack.currentUrl }}">
@@ -63,15 +63,13 @@
       <img
         src="{{ state.currentTrack.currentImage }}"
         style="width: 45px; margin-right: 10px;"
+        alt="{{ state.currentTrack.currentTitle }}"
       />
     </div>
     <div>
-    <button
-            (click)="hide()"
-            [disabled]="state?.error"
-    >
-      <i-feather name="x-circle"></i-feather>
-    </button>
+      <button (click)="hide()" [disabled]="state?.error">
+        <i-feather name="x-circle"></i-feather>
+      </button>
     </div>
   </div>
 </div>

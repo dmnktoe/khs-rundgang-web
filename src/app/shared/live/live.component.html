@@ -7,12 +7,14 @@
     (click)="play()"
     *ngIf="!state?.playing || state.currentTrack.currentSrc != this.streamUrl"
     src="../../../assets/svg/play.svg"
+    alt="Play"
   />
   <img
     class="playIcon"
     (click)="pause()"
     *ngIf="state?.playing && state.currentTrack.currentSrc == this.streamUrl"
     src="../../../assets/svg/pause.svg"
+    alt="Pause"
   />
   <span *ngIf="currentShowName"> Live: {{ currentShowName | safeHtml }} </span>
   <span *ngIf="!currentShowName">
