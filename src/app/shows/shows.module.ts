@@ -7,7 +7,7 @@ import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { ShowsRoutingModule } from './shows-routing.module';
 import { ShowsComponent } from '@app/shows/shows.component';
-import { ShowsListComponent } from './shows-list/shows-list.component';
+import { ShowsGalleryComponent } from './shows-gallery/shows-gallery.component';
 import { ShowsSingleComponent } from './shows-single/shows-single.component';
 import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
@@ -25,8 +25,8 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     RecordingsModule,
     LazyLoadImageModule,
   ],
-  declarations: [ShowsComponent, ShowsListComponent, ShowsSingleComponent],
-  exports: [ShowsListComponent],
+  declarations: [ShowsComponent, ShowsGalleryComponent, ShowsSingleComponent],
+  exports: [ShowsGalleryComponent],
   providers: [ApiService, Title],
 })
 export class ShowsModule {}
