@@ -11,6 +11,7 @@ import { ApiService } from '../core/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { RecordingsModule } from '@app/recordings/recordings.module';
 import { ShowsModule } from '@app/shows/shows.module';
+import { ScheduleModule } from '@app/schedule/schedule.module';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { ShowsModule } from '@app/shows/shows.module';
     SwiperModule,
     RecordingsModule,
     ShowsModule,
+    ScheduleModule,
   ],
   declarations: [HomeComponent],
   providers: [ApiService, Title],
