@@ -28,6 +28,10 @@
   <div class="grid">
     <div class="col-12 col-6@md">
       <app-text-seperator [text]="'Shows'"></app-text-seperator>
+      <app-shows-gallery
+        [shows]="showsRecentlyUpdated"
+        [limit]="2"
+      ></app-shows-gallery>
     </div>
     <div class="col-12 col-6@md">
       <app-text-seperator
