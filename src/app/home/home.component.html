@@ -28,69 +28,31 @@
   <div class="grid">
     <div class="col-12 col-6@md">
       <app-text-seperator [text]="'Shows'"></app-text-seperator>
-      <app-shows-gallery
-        [shows]="showsRecentlyUpdated"
-        [limit]="2"
-      ></app-shows-gallery>
+
+      <app-shows-gallery [shows]="shows" [limit]="2"></app-shows-gallery>
+
+      <app-text-seperator
+        [text]="'(' + shows.length + ') View all >'"
+        [isLink]="true"
+        [url]="'/shows'"
+      >
+      </app-text-seperator>
     </div>
     <div class="col-12 col-6@md">
       <app-text-seperator
         [text]="'Schedule'"
         [border]="true"
       ></app-text-seperator>
-    </div>
-  </div>
-</div>
 
-<div class="grid" *ngIf="isLoading == false">
-  <div class="col-12 text-center">
-    <a class="btn btn-primary" routerLink="/broadcasts">View all recordings</a>
-  </div>
-  <div class="col-8@lg">
-    <div class="col-12">
-      <div
-        class="col-12"
-        style="
-          margin-bottom: 15px;
-          border-bottom: 1px solid rgba(112, 112, 112, 0.1);
-        "
+      <app-schedule-day-list [schedule]="schedule"></app-schedule-day-list>
+
+      <app-text-seperator
+        [text]="'See more >'"
+        [isLink]="true"
+        [url]="'/schedule'"
+        [border]="true"
       >
-        <h2>🌍 Recent shows</h2>
-      </div>
-      <app-shows-list [shows]="showsRecentlyUpdated" [limit]="4">
-      </app-shows-list>
-      <div class="col-12 text-center" style="margin-top: 30px;">
-        <a class="btn btn-primary" routerLink="/shows">
-          View all shows
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="col-4@lg">
-    <div
-      class="col-12"
-      style="
-        margin-bottom: 15px;
-        border-bottom: 1px solid rgba(112, 112, 112, 0.1);
-      "
-    >
-      <h2>{{ today }} schedule</h2>
-    </div>
-    <div *ngIf="schedule?.length >= 1" class="ScheduleCard">
-      <p *ngFor="let show of schedule">
-        {{ show?.starts | dateFormat: 'HH:mm' }} -
-        {{ show?.ends | dateFormat: 'HH:mm' }} {{ show?.name | safeHtml }}
-      </p>
-    </div>
-    <div *ngIf="schedule?.length == 0" class="ScheduleCard">
-      <p>
-        No program scheduled for today, sorry! Come back tomorrow.
-      </p>
-    </div>
-    <div class="col-12 text-center" style="margin-top: 30px;">
-      <a class="btn btn-primary" routerLink="/schedule">
-        Go to schedule
-      </a>
+      </app-text-seperator>
     </div>
   </div>
 </div>
