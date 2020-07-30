@@ -9,6 +9,7 @@ import { SharedModule } from '@app/shared';
 
 import { ScheduleRoutingModule } from './schedule-routing.module';
 import { ScheduleComponent } from './schedule.component';
+import { ScheduleDayListComponent } from './schedule-day-list/schedule-day-list.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { ScheduleComponent } from './schedule.component';
     CoreModule,
     SharedModule,
   ],
-  declarations: [ScheduleComponent],
+  declarations: [ScheduleComponent, ScheduleDayListComponent],
   providers: [Title],
+  exports: [ScheduleDayListComponent],
 })
 export class ScheduleModule {}
