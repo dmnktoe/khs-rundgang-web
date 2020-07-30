@@ -1,9 +1,17 @@
 <div class="grid">
   <div class="col-12">
-    <div class="textSeperator" *ngIf="!isLink">
+    <div
+      class="textSeperator"
+      *ngIf="!isLink"
+      [class.border-left]="border === true"
+    >
       {{ text }}
     </div>
-    <div class="textSeperator" *ngIf="isLink">
+    <div
+      class="textSeperator"
+      *ngIf="isLink"
+      [class.border-left]="border === true"
+    >
       <a routerLink="{{ url }}">
         {{ text }}
       </a>
