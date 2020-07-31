@@ -19,7 +19,7 @@ export class AudioService {
     'loadedmetadata',
     'loadstart',
     'hide',
-    'live'
+    'live',
   ];
   private stop$ = new Subject();
   private audioObj = new Audio();
@@ -40,7 +40,7 @@ export class AudioService {
     live: false,
     nextShowName: undefined,
     nextShowStart: undefined,
-    error: false
+    error: false,
   };
 
   private stateChange: BehaviorSubject<StreamState> = new BehaviorSubject(
@@ -57,7 +57,13 @@ export class AudioService {
     return this.streamObservable(url).pipe(takeUntil(this.stop$));
   }
 
-  playLiveStream(url: string, title: string, image: string, nextShowName: any, nextShowStart: any) {
+  playLiveStream(
+    url: string,
+    title: string,
+    image: string,
+    nextShowName: any,
+    nextShowStart: any
+  ) {
     this.state.live = true;
     if (this.state.hidden) {
       this.state.hidden = false;
@@ -82,7 +88,7 @@ export class AudioService {
 
   stop() {
     this.stop$.next();
-    if(this.state.live) {
+    if (this.state.live) {
       this.state.live = false;
     }
   }
@@ -91,8 +97,8 @@ export class AudioService {
     if (this.state.playing) {
       this.pause();
     }
-    //TODO: restart audiofile when hide
-    //this.resetState();
+    // TODO: restart audiofile when hide
+    // this.resetState();
   }
 
   seekTo(seconds: number) {
