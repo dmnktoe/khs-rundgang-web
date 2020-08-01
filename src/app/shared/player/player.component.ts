@@ -11,15 +11,15 @@ export type FadeState = 'visible' | 'hidden';
   animations: [
     trigger('enterAnimation', [
       transition(':enter', [
-        style({transform: 'translateY(100%)', opacity: 0}),
-        animate('500ms', style({transform: 'translateY(0)', opacity: 1}))
+        style({ transform: 'translateY(100%)', opacity: 0 }),
+        animate('500ms', style({ transform: 'translateY(0)', opacity: 1 })),
       ]),
       transition(':leave', [
-        style({transform: 'translateY(0)', opacity: 1}),
-        animate('500ms', style({transform: 'translateY(100%)', opacity: 0}))
-      ])
-    ])
-  ]
+        style({ transform: 'translateY(0)', opacity: 1 }),
+        animate('500ms', style({ transform: 'translateY(100%)', opacity: 0 })),
+      ]),
+    ]),
+  ],
 })
 export class PlayerComponent {
   files: Array<any> = [];
@@ -71,7 +71,7 @@ export class PlayerComponent {
     const file = this.files[index];
     this.openFile(file, index);
   }
-  
+
   hide() {
     this.audioService.hide();
     this.state.hidden = true;

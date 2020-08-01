@@ -13,7 +13,7 @@ export interface StreamState {
   canplay: boolean;
   hidden: boolean;
   live: boolean;
-  nextShowName: string | undefined,
-  nextShowStart: string | undefined,
+  nextShowName: string | undefined;
+  nextShowStart: string | undefined;
   error: boolean;
 }
