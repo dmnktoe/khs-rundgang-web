@@ -11,6 +11,10 @@ import { SharedModule } from '@app/shared';
 import { AboutModule } from './about/about.module';
 import { HomeModule } from './home/home.module';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { ImprintModule } from './imprint/imprint.module';
+import { PrivacyModule } from './privacy/privacy.module';
+import { ChangelogModule } from './changelog/changelog.module';
+import { LicensesModule } from './licenses/licenses.module';
 import { RecordingsModule } from './recordings/recordings.module';
 import { ScheduleModule } from '@app/schedule/schedule.module';
 import { SearchModule } from './search/search.module';
@@ -73,6 +77,10 @@ export class SentryErrorHandler implements ErrorHandler {
     SharedModule,
     ShellModule,
     HomeModule,
+    ImprintModule,
+    PrivacyModule,
+    ChangelogModule,
+    LicensesModule,
     RecordingsModule,
     ShowsModule,
     AboutModule,
