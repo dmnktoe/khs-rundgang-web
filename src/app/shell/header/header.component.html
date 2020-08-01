@@ -171,7 +171,10 @@
           <h5>↳ Open Source</h5>
           <ul>
             <li>
-              <a href="#">
+              <a
+                href="https://github.com/dmnktoe/radio-rasclat-web"
+                target="_blank"
+              >
                 Contribute
                 <img
                   src="../../../assets/svg/external.svg"
@@ -180,19 +183,27 @@
               </a>
             </li>
             <li>
-              <a href="#">
-                Licenses
+              <a
+                routerLink="/licenses"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
+                3rd Party Licenses
               </a>
             </li>
           </ul>
           <ul>
             <li>
-              <a href="#">
+              <a
+                routerLink="/changelog"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
                 Changelog
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="https://status.radio-rasclat.com/" target="_blank">
                 Status
                 <img
                   src="../../../assets/svg/external.svg"
@@ -206,12 +217,20 @@
           <h5>↳ Internal</h5>
           <ul>
             <li>
-              <a href="#">
+              <a
+                routerLink="/imprint"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
                 Imprint
               </a>
             </li>
             <li>
-              <a href="#">
+              <a
+                routerLink="/privacy"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
                 Privacy
               </a>
             </li>
