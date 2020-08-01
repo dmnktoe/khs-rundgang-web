@@ -47,29 +47,33 @@
               [defaultImage]="defaultImage"
               [lazyLoad]="recording?.image"
             >
-              <div class="recordingSlideCaptionWrapper">
-                <div class="recordingSlideCaption">
-                  <div class="recordingSlideCaption__playArea">
-                    <img
-                      class="playIcon"
-                      src="../../assets/svg/play_white.svg"
-                      width="16"
-                      alt="Play"
-                    />
-                  </div>
-                  <div class="recordingSlideCaption__textArea">
-                    {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
-                    {{ recording?.timeStart | date: 'HH:mm' }}<br />
-                    <h4>
-                      ↳{{
-                        recording?.title.length > 50
-                          ? (recording?.title | slice: 0:50) + '...'
-                          : recording?.title
-                      }}
-                    </h4>
+              <a routerLink="/broadcasts/{{ recording?.slug }}">
+                <div class="recordingSlideInner">
+                  <div class="recordingSlideCaptionWrapper">
+                    <div class="recordingSlideCaption">
+                      <div class="recordingSlideCaption__playArea">
+                        <img
+                          class="playIcon"
+                          src="../../assets/svg/play_white.svg"
+                          width="16"
+                          alt="Play"
+                        />
+                      </div>
+                      <div class="recordingSlideCaption__textArea">
+                        {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
+                        {{ recording?.timeStart | date: 'HH:mm' }}<br />
+                        <h4>
+                          ↳{{
+                            recording?.title.length > 50
+                              ? (recording?.title | slice: 0:50) + '...'
+                              : recording?.title
+                          }}
+                        </h4>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
