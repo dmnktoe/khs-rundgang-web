@@ -26,9 +26,9 @@
   }
 }
 
-.show:hover {
+.show:hover > .show__wrapper {
   transition: all 0.15s ease;
-  background-color: #f0f0f0;
+  background-color: #f2f2f2;
 }
 
 .show__wrapper {
