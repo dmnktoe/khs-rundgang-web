@@ -18,6 +18,7 @@ export class RecordingsSingleComponent implements OnInit {
   showRecordings: any;
   title: any;
   hex: any;
+  rgba: any;
   isLoading = false;
   getData: any;
   id: any;
@@ -64,6 +65,14 @@ export class RecordingsSingleComponent implements OnInit {
             .getPalette()
             .then((palette) => {
               this.hex = palette.Vibrant.hex;
+              this.rgba =
+                'rgba(' +
+                palette.Vibrant.r +
+                ',' +
+                palette.Vibrant.g +
+                ',' +
+                palette.Vibrant.b +
+                ',0.15)';
             });
           this.apiService
             .getShow({ showId: this.recording?.show._id })
