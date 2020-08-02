@@ -15,6 +15,7 @@ import { Palette } from 'node-vibrant/lib/color';
 })
 export class RecordingsSingleComponent implements OnInit {
   recording: any;
+  showRecordings: any;
   title: any;
   hex: any;
   isLoading = false;
@@ -63,6 +64,20 @@ export class RecordingsSingleComponent implements OnInit {
             .getPalette()
             .then((palette) => {
               this.hex = palette.Vibrant.hex;
+            });
+          this.apiService
+            .getShow({ showId: this.recording?.show._id })
+            .pipe(
+              finalize(() => {
+                this.isLoading = false;
+              })
+            )
+            .subscribe((show) => {
+              if (typeof show.recordings[0]['title'] !== 'undefined') {
+                this.showRecordings = show.recordings;
+              } else {
+                this.showRecordings = [];
+              }
             });
         });
     });
