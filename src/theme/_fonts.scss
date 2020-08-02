@@ -1,4 +1,20 @@
 @font-face {
+  font-family: "Trash Light";
+  src: url("./assets/fonts/Trash-Light.woff2") format("woff2"),
+    url("./assets/fonts/Trash-Light.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Trash";
+  src: url("./assets/fonts/Trash.woff2") format("woff2"),
+    url("./assets/fonts/Trash.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Trash Medium";
   src: url("./assets/fonts/Trash-Medium.woff2") format("woff2"),
     url("./assets/fonts/Trash-Medium.woff") format("woff");
