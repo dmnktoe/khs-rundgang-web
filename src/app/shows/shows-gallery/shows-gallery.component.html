@@ -8,7 +8,7 @@
     <div
       class="show"
       [hidden]="isLoading"
-      *ngFor="let show of shows.slice(0, limit)"
+      *ngFor="let show of shows?.slice(0, limit)"
     >
       <div class="show__wrapper">
         <div class="show__info__container">
