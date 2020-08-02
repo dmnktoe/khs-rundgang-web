@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { environment } from '@env/environment';
-import { finalize } from 'rxjs/operators';
-import { ApiService } from '@app/core/api.service';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-licenses',
@@ -11,8 +9,14 @@ import { ApiService } from '@app/core/api.service';
 })
 export class LicensesComponent implements OnInit {
   isLoading = false;
+  licenses: Observable<string>;
 
-  constructor(private apiService: ApiService) {}
+  constructor(private http: HttpClient) {
+    this.licenses = http.get(
+      'https://radio-rasclat.com/3rdpartylicenses.txt  ',
+      { responseType: 'text' }
+    );
+  }
 
   ngOnInit() {}
 }
