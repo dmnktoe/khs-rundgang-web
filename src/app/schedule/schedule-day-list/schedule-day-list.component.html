@@ -1,6 +1,5 @@
 <div class="scheduleList" *ngIf="schedule?.length == 0">
-  <div class="scheduleList_Day" *ngFor="let entry of schedule">
-    >
+  <div class="scheduleList_Day">
     <div class="scheduleListDay__info__container">
       <h4>No program scheduled for today, sorry! Come back tomorrow.</h4>
     </div>
@@ -9,15 +8,17 @@
 
 <div class="scheduleList" *ngIf="schedule?.length >= 1">
   <div class="scheduleList_Day" *ngFor="let entry of schedule">
-    >
-    <div class="scheduleListDay__image__container">
-      <!-- TODO: Scheduled shows image -->
-      <!-- <img src="https://picsum.photos/800?random=11" /> -->
+    <div class="scheduleListDay__image__container" *ngIf="entry?.image_path">
+      <img src="{{ entry?.image_path }}" alt="{{ entry?.name | safeHtml }}" />
+    </div>
+    <div class="scheduleListDay__image__container" *ngIf="!entry?.image_path">
+      <img
+        src="./../../../assets/svg/logo.svg"
+        alt="{{ entry?.name | safeHtml }}"
+      />
     </div>
     <div class="scheduleListDay__info__container">
-      <h4>
-        <a href="#">↳{{ entry?.name | safeHtml }}</a>
-      </h4>
+      <h4>↳{{ entry?.name | safeHtml }}</h4>
       {{ entry?.starts | dateFormat: 'HH:mm' }} -
       {{ entry?.ends | dateFormat: 'HH:mm' }}
     </div>
