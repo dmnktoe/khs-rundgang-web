@@ -89,3 +89,9 @@
   -o-object-position: center;
   object-position: center;
 }
+
+@media only screen and (min-width: 48rem) {
+  .show__info__container {
+    height: 80px;
+  }
+}
