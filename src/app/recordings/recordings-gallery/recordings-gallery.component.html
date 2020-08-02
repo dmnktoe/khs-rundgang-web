@@ -11,7 +11,7 @@
     <div
       class="recording"
       [hidden]="isLoading"
-      *ngFor="let recording of recordings.slice(0, limit)"
+      *ngFor="let recording of recordings?.slice(0, limit)"
     >
       <div class="recording__wrapper">
         <div class="recording__info__container">
