@@ -141,6 +141,10 @@ p a:hover {
   display: inline-block;
 }
 
+.btn:hover {
+  text-decoration: underline;
+}
+
 .btn-primary {
   color: $primary-color;
   background: rgba($primary-color, 0.3);
