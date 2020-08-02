@@ -14,8 +14,8 @@
         <div class="show__info__container">
           <div class="show__description">
             {{
-              show?.description.length > 130
-                ? (show?.description | safeHtml | slice: 0:130) + '...'
+              show?.description.length > 30
+                ? (show?.description | safeHtml | slice: 0:30) + '...'
                 : show?.description
             }}
           </div>
