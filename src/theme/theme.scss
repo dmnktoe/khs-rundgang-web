@@ -117,6 +117,16 @@ p a:hover {
   text-decoration: underline;
 }
 
+/* paragraphs */
+
+p {
+  margin-bottom: 1rem;
+}
+
+p:last-child {
+  margin: 0;
+}
+
 /* Text Alignments */
 
 .text-left {
