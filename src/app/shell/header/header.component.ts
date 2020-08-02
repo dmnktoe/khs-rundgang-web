@@ -21,6 +21,10 @@ export class HeaderComponent implements OnInit {
     this.isNavVisible = !this.isNavVisible;
   }
 
+  closeNav() {
+    this.isNavVisible = false;
+  }
+
   ngOnInit() {}
 
   setLanguage(language: string) {
