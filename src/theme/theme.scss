@@ -16,6 +16,8 @@ body {
   background-color: $page-background;
 }
 
+/* container */
+
 .container {
   max-width: 1500px;
   margin: 0 auto;
@@ -26,6 +28,8 @@ body {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+/* responsive font-sizes */
 
 @media only screen and (min-width: 32rem) {
   body {
@@ -105,6 +109,14 @@ a:hover {
   color: $secondary-color;
 }
 
+p a {
+  text-decoration: underline;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
 /* Text Alignments */
 
 .text-left {
@@ -117,4 +129,24 @@ a:hover {
 
 .text-right {
   text-align: right;
+}
+
+/* Buttons */
+
+.btn {
+  padding: 0.6rem 1.5rem 0.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: "Trash Medium";
+  display: inline-block;
+}
+
+.btn-primary {
+  color: $primary-color;
+  background: rgba($primary-color, 0.3);
+}
+
+.btn-secondary {
+  color: $secondary-color;
+  background: rgba($secondary-color, 0.3);
 }
