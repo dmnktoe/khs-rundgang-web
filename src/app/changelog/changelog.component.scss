@@ -1,0 +1,61 @@
+.changelogList {
+  padding-top: 1rem;
+}
+
+.changelogItem {
+  padding: 25px 0;
+  border-bottom: 1px solid #f3f3f3;
+  position: relative;
+  transition: none;
+}
+
+.changelogItem .logTime {
+  color: #c8c8c8;
+  margin-bottom: 1rem;
+}
+
+.changelogItem time {
+  display: inline-block;
+  line-height: 20px;
+}
+
+.changelogItem .changesSection {
+  margin-bottom: 2rem;
+}
+
+.changelogItem .changesSection:last-child {
+  margin-bottom: 0rem;
+}
+
+.changelogItem .articleMeta {
+  margin: 1rem 0 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.changelogItem .category {
+  margin-right: 1rem;
+  position: relative;
+  border-radius: 20px;
+  padding: 3px 9px 1px;
+  font-size: 13px;
+  height: 20px;
+  line-height: 19px;
+  margin-bottom: 5px;
+}
+
+.category_new {
+  background-color: #b26cee;
+  color: #fff;
+}
+
+.category_fixed {
+  background-color: #ee6c6c;
+  color: #fff;
+}
+
+.changelogItem .content {
+  line-height: 1.55rem;
+  min-height: 40px;
+  clear: both;
+}
