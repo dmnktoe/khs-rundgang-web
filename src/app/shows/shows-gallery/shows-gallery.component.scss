@@ -4,13 +4,26 @@
   border-bottom: 1px solid #222222;
 }
 
-.showList > .grid-auto-lg {
+.showList > .grid-auto-xl {
   grid-gap: 1px;
-  background-color: #222222;
+  overflow: hidden;
 }
 
 .show {
   background-color: #fff;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    // match the grid gap for border thickness
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    // this becomes the border, and handles overlap
+    background-color: #222222;
+  }
 }
 
 .show:hover {
@@ -20,6 +33,8 @@
 
 .show__wrapper {
   padding: 1rem;
+  position: relative;
+  background-color: #fff;
 }
 
 .show__info__container {
@@ -59,7 +74,7 @@
   position: relative;
   overflow: hidden;
   height: 0;
-  padding-bottom: 40%;
+  padding-bottom: 45%;
   border: 1px solid #000;
 }
 
