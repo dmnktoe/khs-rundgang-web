@@ -7,7 +7,9 @@ export enum ThemeMode {
   LIGHT,
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class UiStyleToggleService {
   public theme$ = new BehaviorSubject<ThemeMode>(ThemeMode.LIGHT);
   private readonly THEME_KEY = 'THEME';
