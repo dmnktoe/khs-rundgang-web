@@ -1,26 +1,49 @@
-<div class="grid" *ngIf="isLoading == true">
-  <div class="col-12@xs">
-    <app-loader></app-loader>
+<div class="container">
+  <div class="showSingle">
+    <div class="grid">
+      <div class="col-12">
+        <div class="show__banner">
+          <div
+            class="show__banner__image"
+            [defaultImage]="defaultImage"
+            [lazyLoad]="show?.image"
+          >
+            <div class="show__banner__noise"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-gap-lg">
+      <div class="col-4@sm">
+        <div class="show__image__container">
+          <figure class="square">
+            <img
+              [defaultImage]="defaultImage"
+              [lazyLoad]="show?.image"
+              alt="{{ show?.title }}"
+            />
+          </figure>
+        </div>
+      </div>
+      <div class="col-8@sm">
+        <div class="show__info__container">
+          <div class="show__title">
+            <h1 [style.color]="hex">↳{{ show?.title }}</h1>
+          </div>
+          <div class="show__counter" [style.color]="hex">
+            {{ recordings?.length }} broadcast(s).
+          </div>
+        </div>
+        <div class="show__description__container">
+          <p [innerHTML]="show?.description"></p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<div class="grid" *ngIf="isLoading == false">
-  <div class="col-3@sm">
-    <figure class="square">
-      <img
-        [defaultImage]="defaultImage"
-        [lazyLoad]="show?.image"
-        alt="{{ show?.title }}"
-        style="width: 100%;"
-      />
-    </figure>
-  </div>
-  <div class="col-9@sm">
-    <h1 [style.color]="hex">
-      <span>{{ show?.title }}</span>
-    </h1>
-    <p style="margin-top: 10px;" [innerHTML]="show?.description"></p>
-  </div>
-  <div class="col-12">
-    <app-recordings-gallery [recordings]="recordings"> </app-recordings-gallery>
-  </div>
+
+  <app-text-seperator [text]="'All in ' + show?.title" [isLink]="false">
+  </app-text-seperator>
+
+  <app-recordings-gallery [recordings]="recordings" [hidden]="isLoading">
+  </app-recordings-gallery>
 </div>
