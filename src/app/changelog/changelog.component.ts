@@ -11,6 +11,7 @@ import { ApiService } from '@app/core/api.service';
 })
 export class ChangelogComponent implements OnInit {
   isLoading = false;
+  version: string = environment.version;
 
   constructor(private apiService: ApiService) {}
 

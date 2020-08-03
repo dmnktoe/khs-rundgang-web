@@ -1,24 +1,29 @@
 <div class="container">
   <app-page-title [title]="'Changelog > Web-App'"></app-page-title>
 
+  <app-text-seperator [text]="'Recent Version: ' + version">
+  </app-text-seperator>
+
   <div class="grid">
     <div
       class="col-start-1 col-end-13 col-start-3@sm col-end-11@sm col-start-4@md col-end-10@md"
     >
       <div class="changelogList">
         <div class="changelogItem">
-          <div class="logTime">
-            10.07.2020
+          <div class="changelogItemHeader">
+            <div class="logTime">
+              10.07.2020
+            </div>
+            <h3 class="title">
+              <a
+                href="https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Radio Rasclat Web (v4.0.0)</a
+              >
+            </h3>
           </div>
-          <h4 class="title">
-            <a
-              href="https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.0"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Radio Rasclat Web (v4.0.0)</a
-            >
-          </h4>
           <div class="changes">
             <div class="changesSection">
               <div class="articleMeta">

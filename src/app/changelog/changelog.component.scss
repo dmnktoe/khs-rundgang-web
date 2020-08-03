@@ -3,10 +3,18 @@
 }
 
 .changelogItem {
-  padding: 25px 0;
-  border-bottom: 1px solid #f3f3f3;
+  margin: 2rem 0;
   position: relative;
   transition: none;
+  background: var(--card-background-hover);
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.changelogItemHeader {
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--card-border);
 }
 
 .changelogItem .logTime {
