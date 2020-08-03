@@ -12,10 +12,9 @@ export class LicensesComponent implements OnInit {
   licenses: Observable<string>;
 
   constructor(private http: HttpClient) {
-    this.licenses = http.get(
-      'https://radio-rasclat.com/3rdpartylicenses.txt  ',
-      { responseType: 'text' }
-    );
+    this.licenses = http.get('https://radio-rasclat.com/3rdpartylicenses.txt', {
+      responseType: 'text',
+    });
   }
 
   ngOnInit() {}
