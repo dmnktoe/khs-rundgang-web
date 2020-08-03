@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { LiveComponent } from './live/live.component';
 import { TextSeperatorComponent } from './text-seperator/text-seperator.component';
 import { PageTitleComponent } from './page-title/page-title.component';
+import { DarkModeToggleComponent } from './dark-mode-toggle/dark-mode-toggle.component';
 
 @NgModule({
   imports: [CommonModule, IconsModule, RouterModule],
@@ -26,6 +27,7 @@ import { PageTitleComponent } from './page-title/page-title.component';
     LiveComponent,
     TextSeperatorComponent,
     PageTitleComponent,
+    DarkModeToggleComponent,
   ],
   exports: [
     LoaderComponent,
@@ -38,6 +40,7 @@ import { PageTitleComponent } from './page-title/page-title.component';
     LiveComponent,
     TextSeperatorComponent,
     PageTitleComponent,
+    DarkModeToggleComponent,
   ],
   providers: [ApiService],
 })

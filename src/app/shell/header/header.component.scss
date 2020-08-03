@@ -80,11 +80,10 @@ nav {
   padding-bottom: 1rem;
   background: #fff;
   border-bottom: 1px solid #222222;
-  display: none;
 }
 
 .infoBanner .grid {
-  align-items: stretch;
+  align-items: center;
   height: auto;
   margin: 0 auto;
 }
@@ -139,10 +138,6 @@ nav {
 }
 
 @media only screen and (min-width: 48rem) {
-  .infoBanner {
-    display: block;
-  }
-
   .navigation img {
     width: 13px;
   }

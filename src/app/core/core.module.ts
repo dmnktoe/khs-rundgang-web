@@ -11,6 +11,8 @@ import { RouteReusableStrategy } from './route-reusable-strategy';
 import { AuthenticationService } from './authentication/authentication.service';
 import { CredentialsService } from './authentication/credentials.service';
 import { I18nService } from './i18n.service';
+import { UiStyleToggleService } from '@app/services/ui-style-toggle.service';
+import { StorageService } from '@app/services/local-storage.service';
 import { HttpService } from './http/http.service';
 import { HttpCacheService } from './http/http-cache.service';
 import { ApiPrefixInterceptor } from './http/api-prefix.interceptor';
@@ -24,6 +26,8 @@ import { CacheInterceptor } from './http/cache.interceptor';
     CredentialsService,
     I18nService,
     HttpCacheService,
+    UiStyleToggleService,
+    StorageService,
     ApiPrefixInterceptor,
     ErrorHandlerInterceptor,
     CacheInterceptor,
