@@ -66,10 +66,10 @@ export class HomeComponent implements OnInit {
           .subscribe((hotRecording) => {
             this.hotRecording = hotRecording[0];
             this.apiService
-              .getShows()
+              .getShowsRecentlyUpdated()
               .pipe(finalize(() => {}))
-              .subscribe((shows) => {
-                this.shows = shows;
+              .subscribe((showsRecentlyUpdated) => {
+                this.shows = showsRecentlyUpdated;
                 this.apiService
                   .getSchedule()
                   .pipe(finalize(() => {}))

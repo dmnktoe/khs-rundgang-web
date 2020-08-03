@@ -24,35 +24,29 @@
   </app-text-seperator>
 </div>
 
-<div class="container">
-  <div class="grid">
+<div class="container" style="padding-bottom: 3rem;">
+  <div class="grid grid-auto-cols@lg">
     <div class="col-12 col-6@md">
-      <app-text-seperator [text]="'Shows'"></app-text-seperator>
-
-      <app-shows-gallery [shows]="shows" [limit]="2"></app-shows-gallery>
-
       <app-text-seperator
-        [text]="'(' + shows.length + ') View all >'"
+        [text]="'Shows >'"
         [isLink]="true"
         [url]="'/shows'"
-      >
-      </app-text-seperator>
+      ></app-text-seperator>
+
+      <app-shows-gallery
+        [hidden]="isLoading"
+        [shows]="shows"
+        [limit]="1"
+      ></app-shows-gallery>
     </div>
-    <div class="col-12 col-6@md">
+    <div class="col-12 col-6@md scheduleColumn">
       <app-text-seperator
-        [text]="'Schedule'"
-        [border]="true"
+        [text]="'Schedule >'"
+        [isLink]="true"
+        [url]="'/schedule'"
       ></app-text-seperator>
 
       <app-schedule-day-list [schedule]="schedule"></app-schedule-day-list>
-
-      <app-text-seperator
-        [text]="'See more >'"
-        [isLink]="true"
-        [url]="'/schedule'"
-        [border]="true"
-      >
-      </app-text-seperator>
     </div>
   </div>
 </div>
