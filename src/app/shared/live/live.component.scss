@@ -10,14 +10,17 @@
   background-color: var(--secondary-color);
 }
 
+span.icon {
+  width: 11px;
+  height: 11px;
+}
+
 span.playIcon {
   background-color: var(--text-color);
   -webkit-mask: url("../../../assets/svg/play.svg") no-repeat center;
   mask: url("../../../assets/svg/play.svg") no-repeat center;
   position: relative;
   display: inline-block;
-  width: 15px;
-  height: 15px;
 }
 
 span.pauseIcon {
@@ -26,30 +29,32 @@ span.pauseIcon {
   mask: url("../../../assets/svg/pause.svg") no-repeat center;
   position: relative;
   display: inline-block;
-  width: 15px;
-  height: 15px;
 }
 
 @media only screen and (min-width: 32rem) {
-  img.playIcon {
+  span.icon {
     width: 12px;
+    height: 12px;
   }
 }
 
 @media only screen and (min-width: 48rem) {
-  img.playIcon {
+  span.icon {
     width: 13px;
+    height: 13px;
   }
 }
 
 @media only screen and (min-width: 64rem) {
-  img.playIcon {
+  span.icon {
     width: 14px;
+    height: 14px;
   }
 }
 
 @media only screen and (min-width: 80rem) {
-  img.playIcon {
+  span.icon {
     width: 15px;
+    height: 15px;
   }
 }
