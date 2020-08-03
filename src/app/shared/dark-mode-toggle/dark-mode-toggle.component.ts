@@ -7,9 +7,13 @@ import { UiStyleToggleService } from '@app/services/ui-style-toggle.service';
   styleUrls: ['./dark-mode-toggle.component.scss'],
 })
 export class DarkModeToggleComponent implements OnInit {
+  isDarkModeActivated: Boolean;
+
   constructor(private uiStyleToggleService: UiStyleToggleService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isDarkModeActivated = document.body.classList.contains('theme-dark');
+  }
 
   toggleTheme() {
     this.uiStyleToggleService.toggle();

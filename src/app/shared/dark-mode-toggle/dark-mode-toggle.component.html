@@ -1,1 +1,7 @@
-<input id="toggle" class="toggle" type="checkbox" (click)="toggleTheme()" />
+<input
+  id="toggle"
+  [checked]="isDarkModeActivated"
+  class="toggle"
+  type="checkbox"
+  (click)="toggleTheme()"
+/>
