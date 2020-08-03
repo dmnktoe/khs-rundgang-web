@@ -1,7 +1,7 @@
 /* Recordings List App */
 
 .recordingList {
-  border-bottom: 1px solid #222222;
+  border-bottom: 1px solid var(--card-border);
 }
 
 .recordingList > .grid-auto-lg {
@@ -10,7 +10,7 @@
 }
 
 .recording {
-  background-color: #fff;
+  background-color: var(--card-background);
   position: relative;
 
   &::before {
@@ -22,19 +22,19 @@
     bottom: -1px;
     left: -1px;
     // this becomes the border, and handles overlap
-    background-color: #222222;
+    background-color: var(--card-border);
   }
 }
 
 .recording:hover > .recording__wrapper {
   transition: all 0.15s ease;
-  background-color: #f2f2f2;
+  background-color: var(--card-background-hover);
 }
 
 .recording__wrapper {
   padding: 1rem;
   position: relative;
-  background-color: #fff;
+  background-color: var(--card-background);
 }
 
 .recording__info__container {
@@ -70,7 +70,7 @@
   overflow: hidden;
   height: 0;
   padding-bottom: 100%;
-  border: 1px solid #000;
+  border: 1px solid var(--card-border);
 }
 
 .recording__image__container figure.square img {
