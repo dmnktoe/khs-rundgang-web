@@ -1,3 +1,12 @@
+::selection {
+  background: var(--secondary-color);
+  color: var(--text-color);
+}
+::-moz-selection {
+  background: var(--secondary-color);
+  color: var(--text-color);
+}
+
 * {
   outline: none !important;
 }
@@ -13,7 +22,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 90%;
-  background-color: $page-background;
+  background-color: var(--page-background);
+  color: var(--text-color);
 }
 
 /* container */
@@ -100,13 +110,13 @@ h6 {
 /* Links */
 
 a {
-  color: $primary-color;
+  color: var(--primary-color);
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: none;
-  color: $secondary-color;
+  color: var(--secondary-color);
 }
 
 p a {
@@ -156,11 +166,11 @@ p:last-child {
 }
 
 .btn-primary {
-  color: $primary-color;
-  background: rgba($primary-color, 0.3);
+  color: var(--primary-color);
+  background: rgba(var(--primary-color), 0.3);
 }
 
 .btn-secondary {
-  color: $secondary-color;
-  background: rgba($secondary-color, 0.3);
+  color: var(--secondary-color);
+  background: rgba(var(--secondary-color), 0.3);
 }
