@@ -1,10 +1,8 @@
-@import "src/theme/_variables";
-
 /* Header */
 
 header {
-  background: #fff;
-  border-bottom: 1px solid #222222;
+  background: var(--card-background);
+  border-bottom: 1px solid var(--card-border);
   font-family: "Trash", sans-serif;
   position: fixed;
   width: 100%;
@@ -25,8 +23,22 @@ header .logo {
   margin-top: 3px;
 }
 
-header img.menuIcon {
-  width: 15px;
+header span.menuIcon {
+  background-color: var(--text-color);
+  -webkit-mask: url("../../../assets/svg/menu.svg") no-repeat center;
+  mask: url("../../../assets/svg/menu.svg") no-repeat center;
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 10px;
+}
+
+header a.menu {
+  cursor: pointer;
+}
+
+header a.menu:hover > span.menuIcon {
+  background-color: var(--secondary-color);
 }
 
 header .logo img {
@@ -34,8 +46,9 @@ header .logo img {
 }
 
 @media only screen and (min-width: 32rem) {
-  header img.menuIcon {
+  header span.menuIcon {
     width: 18px;
+    height: 12px;
   }
 }
 
@@ -49,20 +62,23 @@ header .logo img {
     transform: rotate(-5deg);
   }
 
-  header img.menuIcon {
-    width: 19px;
+  header span.menuIcon {
+    width: 20px;
+    height: 12px;
   }
 }
 
 @media only screen and (min-width: 64rem) {
-  header img.menuIcon {
-    width: 20px;
+  header span.menuIcon {
+    width: 21px;
+    height: 13px;
   }
 }
 
 @media only screen and (min-width: 80rem) {
-  header img.menuIcon {
+  header span.menuIcon {
     width: 22px;
+    height: 14px;
   }
 }
 
@@ -78,8 +94,8 @@ nav {
 .infoBanner {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background: #fff;
-  border-bottom: 1px solid #222222;
+  background: var(--card-background);
+  border-bottom: 1px solid var(--card-border);
 }
 
 .infoBanner .grid {
@@ -95,8 +111,8 @@ nav {
 .navigation {
   padding-top: 2rem;
   padding-bottom: 1.5rem;
-  background: #fff;
-  border-bottom: 1px solid #222222;
+  background: var(--card-background);
+  border-bottom: 1px solid var(--card-border);
   line-height: 21px;
 }
 
@@ -105,7 +121,7 @@ nav {
 }
 
 .navigation a.active {
-  color: $secondary-color;
+  color: var(--secondary-color);
 }
 
 .navigation ul {
@@ -127,8 +143,24 @@ nav {
   margin: 0 auto;
 }
 
-.navigation img {
-  width: 10px;
+.navigation span.externalIcon {
+  background-color: var(--text-color);
+  -webkit-mask: url("../../../assets/svg/external.svg") no-repeat center;
+  mask: url("../../../assets/svg/external.svg") no-repeat center;
+  position: relative;
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+}
+
+.navigation span.dropdownIcon {
+  background-color: var(--text-color);
+  -webkit-mask: url("../../../assets/svg/dropdown.svg") no-repeat center;
+  mask: url("../../../assets/svg/dropdown.svg") no-repeat center;
+  position: relative;
+  display: inline-block;
+  width: 17px;
+  height: 17px;
 }
 
 @media only screen and (min-width: 32rem) {
