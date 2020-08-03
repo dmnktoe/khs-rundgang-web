@@ -26,9 +26,6 @@ export class UiStyleToggleService {
     } else {
       this.setLightTheme();
     }
-    setTimeout(() => {
-      document.body.classList.add('animate-colors-transition');
-    }, 500);
   }
 
   public toggle() {
