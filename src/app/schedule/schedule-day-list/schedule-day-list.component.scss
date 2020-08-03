@@ -2,17 +2,16 @@
 
 .scheduleList {
   padding: 1rem 0rem;
-  border-bottom: 1px solid #222222;
+  border-bottom: 1px solid var(--card-border);
 }
 
 .scheduleList_Day {
-  min-height: 75px;
   display: block;
   margin-bottom: 1.8rem;
 }
 
 .scheduleList_Day:last-child {
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 }
 
 .scheduleListDay__image__container {
@@ -37,21 +36,12 @@
     float: left;
     margin-right: 1rem;
   }
-
-  .scheduleListDay__info__container h4 {
-    padding-bottom: 0.3rem;
-  }
 }
 
 @media only screen and (min-width: 64rem) {
   .scheduleList {
     padding: 2.5rem;
-    border-bottom: 1px solid #222222;
-    border-left: 1px solid #222222;
-  }
-
-  .scheduleList {
-    min-height: 855px;
+    border-bottom: 1px solid var(--card-border);
   }
 
   .scheduleListDay__image__container {
@@ -64,7 +54,7 @@
 @media only screen and (min-width: 80rem) {
   .scheduleList {
     padding: 2rem;
-    border-bottom: 1px solid #222222;
+    border-bottom: 1px solid var(--card-border);
   }
 
   .scheduleList_Day {

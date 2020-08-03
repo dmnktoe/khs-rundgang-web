@@ -3,7 +3,7 @@
   text-align: center;
   font-family: "Trash", sans-serif;
   font-size: 2rem;
-  border-bottom: 1px solid #222222;
+  border-bottom: 1px solid var(--card-border);
 }
 
 @media only screen and (min-width: 32rem) {
@@ -24,6 +24,6 @@
   }
 
   .textSeperator.border-left {
-    border-left: 1px solid #222222;
+    border-left: 1px solid var(--card-border);
   }
 }

@@ -6,12 +6,12 @@
 // Theme variables, must be included before the libraries to allow overriding defaults
 @import "theme/_normalize";
 @import "theme/_fonts";
-@import "theme/_variables";
+@import "theme/_colors";
+@import "theme/_map";
 
 // 3rd party libraries
 @import "~flashgrid/dist/flashgrid";
+@import "~swiper/css/swiper.min.css";
 
 // Theme
 @import "theme/theme";
-
-@import "~swiper/css/swiper.min.css";

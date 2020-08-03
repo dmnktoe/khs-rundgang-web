@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ErrorHandler, Injectable } from '@angular/core';
+import {
+  NgModule,
+  ErrorHandler,
+  Injectable,
+  APP_INITIALIZER,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -27,6 +32,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgAisModule } from 'angular-instantsearch';
 import { HttpCacheInterceptorModule } from '@ngneat/cashew';
 
+/* Services */
+import { UiStyleToggleService } from '@app/services/ui-style-toggle.service';
+import { StorageService } from '@app/services/local-storage.service';
+
 /* Analytics */
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
@@ -40,6 +49,10 @@ import * as Sentry from '@sentry/browser';
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
 };
+
+export function themeFactory(themeService: UiStyleToggleService) {
+  return () => themeService.setThemeOnStart();
+}
 
 @Injectable()
 export class SentryErrorHandler implements ErrorHandler {
@@ -96,6 +109,8 @@ export class SentryErrorHandler implements ErrorHandler {
   ],
   declarations: [AppComponent],
   providers: [
+    UiStyleToggleService,
+    StorageService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG,
@@ -103,6 +118,12 @@ export class SentryErrorHandler implements ErrorHandler {
     {
       provide: ErrorHandler,
       useClass: SentryErrorHandler,
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: themeFactory,
+      deps: [UiStyleToggleService],
+      multi: true,
     },
   ],
   bootstrap: [AppComponent],

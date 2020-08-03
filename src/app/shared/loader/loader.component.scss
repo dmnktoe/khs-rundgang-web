@@ -1,7 +1,3 @@
-.fa {
-  vertical-align: middle;
-}
-
 .loading-spinner {
   position: absolute;
   top: 0;
@@ -12,6 +8,10 @@
   display: block;
   width: 38px;
   height: 38px;
+}
+
+svg circle {
+  fill: var(--text-color);
 }
 
 svg path,
