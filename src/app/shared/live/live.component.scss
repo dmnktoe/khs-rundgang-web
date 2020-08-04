@@ -6,54 +6,34 @@
   color: var(--secondary-color);
 }
 
-.liveInfo:hover > span.icon {
-  background-color: var(--secondary-color);
-}
-
-span.icon {
+svg-icon {
   width: 11px;
   height: 11px;
 }
 
-span.playIcon {
-  background-color: var(--text-color);
-  -webkit-mask: url("../../../assets/svg/play.svg") no-repeat center;
-  mask: url("../../../assets/svg/play.svg") no-repeat center;
-  position: relative;
-  display: inline-block;
-}
-
-span.pauseIcon {
-  background-color: var(--text-color);
-  -webkit-mask: url("../../../assets/svg/pause.svg") no-repeat center;
-  mask: url("../../../assets/svg/pause.svg") no-repeat center;
-  position: relative;
-  display: inline-block;
-}
-
 @media only screen and (min-width: 32rem) {
-  span.icon {
+  svg-icon {
     width: 12px;
     height: 12px;
   }
 }
 
 @media only screen and (min-width: 48rem) {
-  span.icon {
+  svg-icon {
     width: 13px;
     height: 13px;
   }
 }
 
 @media only screen and (min-width: 64rem) {
-  span.icon {
+  svg-icon {
     width: 14px;
     height: 14px;
   }
 }
 
 @media only screen and (min-width: 80rem) {
-  span.icon {
+  svg-icon {
     width: 15px;
     height: 15px;
   }

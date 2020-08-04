@@ -7,7 +7,7 @@
     *ngIf="!state?.playing || state.currentTrack.currentSrc != this.streamUrl"
     class="liveInfo"
   >
-    <span class="icon playIcon"></span>
+    <svg-icon key="play"></svg-icon>
     <span *ngIf="currentShowName">
       Live: {{ currentShowName | safeHtml }}
     </span>
@@ -20,7 +20,7 @@
     *ngIf="state?.playing && state.currentTrack.currentSrc == this.streamUrl"
     class="liveInfo"
   >
-    <span class="icon pauseIcon"></span>
+    <svg-icon key="pause"></svg-icon>
     <span *ngIf="currentShowName">
       Live: {{ currentShowName | safeHtml }}
     </span>
