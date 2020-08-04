@@ -14,9 +14,18 @@ import { LiveComponent } from './live/live.component';
 import { TextSeperatorComponent } from './text-seperator/text-seperator.component';
 import { PageTitleComponent } from './page-title/page-title.component';
 import { DarkModeToggleComponent } from './dark-mode-toggle/dark-mode-toggle.component';
+import { SvgIconsModule } from '@ngneat/svg-icon';
+import icons from '../../assets/svg/svg-icons';
 
 @NgModule({
-  imports: [CommonModule, IconsModule, RouterModule],
+  imports: [
+    CommonModule,
+    IconsModule,
+    RouterModule,
+    SvgIconsModule.forRoot({
+      icons,
+    }),
+  ],
   declarations: [
     LoaderComponent,
     CurrentTrackComponent,

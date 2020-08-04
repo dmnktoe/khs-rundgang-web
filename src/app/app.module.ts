@@ -12,6 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '@app/core';
 import { TimeagoModule } from 'ngx-timeago';
 import { SharedModule } from '@app/shared';
+import { SvgIconsModule } from '@ngneat/svg-icon';
 /* VIEWS */
 import { AboutModule } from './about/about.module';
 import { HomeModule } from './home/home.module';
@@ -45,6 +46,9 @@ import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { environment } from '@env/environment';
 import * as Sentry from '@sentry/browser';
+
+/* Icons */
+import icons from '../assets/svg/svg-icons';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',

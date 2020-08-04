@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SharedModule } from '@app/shared';
 import { IconsModule } from '@app/shared/icons/icons.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SvgIconsModule } from '@ngneat/svg-icon';
+import icons from '../../assets/svg/svg-icons';
 
 @NgModule({
   imports: [
@@ -17,6 +19,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule,
     SharedModule,
     IconsModule,
+    SvgIconsModule.forRoot({
+      icons,
+    }),
   ],
   declarations: [HeaderComponent, ShellComponent, FooterComponent],
 })
