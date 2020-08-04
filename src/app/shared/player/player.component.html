@@ -6,7 +6,7 @@
           class="col-12 playerInner"
           *ngIf="!state?.playing && !state?.canplay"
         >
-          <div>
+          <div class="playerControls">
             <app-loader></app-loader>
           </div>
         </div>
@@ -26,36 +26,29 @@
               </a>
             </span>
           </div>
-          <div class="playerControls playerClose">
-            <span (click)="hide()">
-              <a>
-                <svg-icon key="close"></svg-icon>
-              </a>
-            </span>
-          </div>
           <div class="playerImage">
-            <div *ngIf="state.currentTrack.currentImage">
+            <div *ngIf="state?.currentTrack.currentImage">
               <img
-                src="{{ state.currentTrack.currentImage }}"
-                style="width: 50px;"
+                src="{{ state?.currentTrack.currentImage }}"
+                style="width: 3.5rem;"
                 alt="Radio Rasclat Live"
               />
             </div>
-            <div *ngIf="!state.currentTrack.currentImage">
+            <div *ngIf="!state?.currentTrack.currentImage">
               <img
                 src="./../../../assets/svg/logo.svg"
-                style="width: 50px;"
+                style="width: 3.5rem;"
                 alt="Radio Rasclat Live"
               />
             </div>
           </div>
           <div class="playerInfo" *ngIf="!state?.live">
-            <a routerLink="/broadcasts/{{ state.currentTrack.currentUrl }}">
+            <a routerLink="/broadcasts/{{ state?.currentTrack.currentUrl }}">
               <h5>
                 ↳{{
-                  state.currentTrack.currentTitle.length > 30
-                    ? (state.currentTrack.currentTitle | slice: 0:30) + '...'
-                    : state.currentTrack.currentTitle
+                  state?.currentTrack.currentTitle.length > 45
+                    ? (state?.currentTrack.currentTitle | slice: 0:45) + '...'
+                    : state?.currentTrack.currentTitle
                 }}
               </h5>
             </a>
@@ -63,7 +56,7 @@
               <span>
                 {{ state?.readableCurrentTime }} — {{ state?.readableDuration }}
               </span>
-              <div class="rangeSlider">
+              <!-- <div class="rangeSlider">
                 <input
                   type="range"
                   class="time-slider"
@@ -76,11 +69,20 @@
                   [disabled]="state?.error"
                   *ngIf="state.currentTrack.currentSrc != ''"
                 />
-              </div>
+              </div> -->
             </div>
           </div>
-          <div class="playerInfo" *ngIf="state?.live">
-            <h5>{{ state.currentTrack.currentTitle }}</h5>
+          <div
+            class="playerInfo"
+            *ngIf="state?.currentTrack.currentTitle && state?.live"
+          >
+            <h5>
+              ↳{{
+                state?.currentTrack.currentTitle.length > 45
+                  ? (state?.currentTrack.currentTitle | slice: 0:45) + '...'
+                  : state?.currentTrack.currentTitle
+              }}
+            </h5>
           </div>
           <div
             class="playerInfo"
@@ -92,6 +94,13 @@
               <span style="opacity: 0.4;"
                 >&mdash; {{ state?.nextShowStart }}</span
               >
+            </span>
+          </div>
+          <div class="playerControls playerClose">
+            <span (click)="hide()">
+              <a>
+                <svg-icon key="close"></svg-icon>
+              </a>
             </span>
           </div>
         </div>

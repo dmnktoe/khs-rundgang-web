@@ -1,10 +1,13 @@
 #player {
-  background: var(--card-background);
+  background: var(--card-background-hover);
   position: fixed;
   bottom: 0;
   width: 100%;
-  border-top: 1px solid var(--card-border);
-  min-height: 50px;
+  min-height: 73px;
+}
+
+.playerWrapper {
+  padding: 0.5rem 0;
 }
 
 .playerInner {
@@ -37,9 +40,14 @@ svg-icon {
   border-radius: 50%;
   width: 16px;
   height: 16px;
+  cursor: pointer;
 }
 
 .playerImage {
   width: 65px;
   height: 50px;
+}
+
+.playerImage img {
+  display: flex;
 }
