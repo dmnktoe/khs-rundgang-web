@@ -11,7 +11,6 @@ import { MockCredentialsService } from '@app/core/authentication/credentials.ser
 
 import { ShellComponent } from './shell.component';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 
 describe('ShellComponent', () => {
   let component: ShellComponent;
@@ -24,7 +23,7 @@ describe('ShellComponent', () => {
         { provide: AuthenticationService, useClass: MockAuthenticationService },
         { provide: CredentialsService, useClass: MockCredentialsService },
       ],
-      declarations: [HeaderComponent, ShellComponent, FooterComponent],
+      declarations: [HeaderComponent, ShellComponent],
     }).compileComponents();
   }));
 
