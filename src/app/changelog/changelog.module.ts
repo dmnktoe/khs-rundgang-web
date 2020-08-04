@@ -5,6 +5,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ChangelogRoutingModule } from './changelog-routing.module';
 import { ChangelogComponent } from './changelog.component';
 import { SharedModule } from '@app/shared';
+import { SvgIconsModule } from '@ngneat/svg-icon';
+import icons from '../../assets/svg/svg-icons';
 
 @NgModule({
   imports: [
@@ -12,6 +14,9 @@ import { SharedModule } from '@app/shared';
     TranslateModule,
     ChangelogRoutingModule,
     SharedModule,
+    SvgIconsModule.forRoot({
+      icons,
+    }),
   ],
   declarations: [ChangelogComponent],
 })
