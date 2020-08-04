@@ -4,17 +4,10 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { LicensesRoutingModule } from './licenses-routing.module';
 import { LicensesComponent } from './licenses.component';
-import { IconsModule } from '@app/shared/icons/icons.module';
 import { SharedModule } from '@app/shared';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    TranslateModule,
-    LicensesRoutingModule,
-    IconsModule,
-    SharedModule,
-  ],
+  imports: [CommonModule, TranslateModule, LicensesRoutingModule, SharedModule],
   declarations: [LicensesComponent],
 })
 export class LicensesModule {}

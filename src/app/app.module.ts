@@ -28,7 +28,6 @@ import { ShellModule } from './shell/shell.module';
 import { ShowsModule } from './shows/shows.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { IconsModule } from '@app/shared/icons/icons.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgAisModule } from 'angular-instantsearch';
 import { HttpCacheInterceptorModule } from '@ngneat/cashew';
@@ -107,7 +106,6 @@ export class SentryErrorHandler implements ErrorHandler {
     SwiperModule,
     NgAisModule.forRoot(),
     TimeagoModule.forRoot(),
-    IconsModule,
     LazyLoadImageModule,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route,
   ],

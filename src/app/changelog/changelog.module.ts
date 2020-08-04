@@ -4,7 +4,6 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { ChangelogRoutingModule } from './changelog-routing.module';
 import { ChangelogComponent } from './changelog.component';
-import { IconsModule } from '@app/shared/icons/icons.module';
 import { SharedModule } from '@app/shared';
 
 @NgModule({
@@ -12,7 +11,6 @@ import { SharedModule } from '@app/shared';
     CommonModule,
     TranslateModule,
     ChangelogRoutingModule,
-    IconsModule,
     SharedModule,
   ],
   declarations: [ChangelogComponent],

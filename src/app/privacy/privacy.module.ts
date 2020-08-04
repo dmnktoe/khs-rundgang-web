@@ -4,17 +4,10 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { PrivacyRoutingModule } from './privacy-routing.module';
 import { PrivacyComponent } from './privacy.component';
-import { IconsModule } from '@app/shared/icons/icons.module';
 import { SharedModule } from '@app/shared';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    TranslateModule,
-    PrivacyRoutingModule,
-    IconsModule,
-    SharedModule,
-  ],
+  imports: [CommonModule, TranslateModule, PrivacyRoutingModule, SharedModule],
   declarations: [PrivacyComponent],
 })
 export class PrivacyModule {}
