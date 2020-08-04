@@ -1,5 +1,5 @@
 #player {
-  background: var(--card-background-hover);
+  background: var(--card-light-background);
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -35,7 +35,7 @@
 }
 
 svg-icon {
-  background: var(--card-background-hover);
+  background: var(--card-light-background-hover);
   padding: 0.5rem;
   border-radius: 50%;
   width: 16px;
