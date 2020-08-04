@@ -20,6 +20,11 @@ $card-background-hover-dark: #191919;
 $card-border: #222222;
 $card-border-dark: #eaeaea;
 
+$card-light-background: #f2f2f2;
+$card-light-background-dark: #191919;
+$card-light-background-hover: #dedede;
+$card-light-background-hover-dark: #2d2d2d;
+
 $colors: (
   --primary-color: (
     $primary-color,
@@ -52,5 +57,13 @@ $colors: (
   --card-border: (
     $card-border,
     $card-border-dark,
+  ),
+  --card-light-background: (
+    $card-light-background,
+    $card-light-background-dark,
+  ),
+  --card-light-background-hover: (
+    $card-light-background-hover,
+    $card-light-background-hover-dark,
   ),
 );
