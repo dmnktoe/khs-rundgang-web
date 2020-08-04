@@ -8,7 +8,7 @@
   "display": "standalone",
   "icons": [
     {
-      "src": "assets/radio-rasclat-logo.png",
+      "src": "assets/images/radio-rasclat-logo.png",
       "sizes": "512x512",
       "type": "image/png"
     }
