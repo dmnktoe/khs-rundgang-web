@@ -14,6 +14,7 @@ import { PageTitleComponent } from './page-title/page-title.component';
 import { DarkModeToggleComponent } from './dark-mode-toggle/dark-mode-toggle.component';
 import { SvgIconsModule } from '@ngneat/svg-icon';
 import icons from '../../assets/svg/svg-icons';
+import { Ng5SliderModule } from 'ng5-slider';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import icons from '../../assets/svg/svg-icons';
     SvgIconsModule.forRoot({
       icons,
     }),
+    Ng5SliderModule,
   ],
   declarations: [
     LoaderComponent,

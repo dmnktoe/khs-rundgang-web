@@ -2,6 +2,23 @@
   <div class="container-full">
     <div class="playerWrapper">
       <div class="grid">
+        <div class="col-12" *ngIf="!state?.live">
+          <div class="timeline">
+            <div class="rangeSlider">
+              <ng5-slider
+                [options]="{
+                  floor: '0',
+                  ceil: state?.duration,
+                  animate: false,
+                  showSelectionBar: true
+                }"
+                [(value)]="state?.currentTrack.currentTime"
+                (userChangeEnd)="onSliderChangeEnd($event)"
+                *ngIf="state.currentTrack.currentSrc != ''"
+              ></ng5-slider>
+            </div>
+          </div>
+        </div>
         <div
           class="col-12 playerInner"
           *ngIf="!state?.playing && !state?.canplay"
@@ -30,14 +47,14 @@
             <div *ngIf="state?.currentTrack.currentImage">
               <img
                 src="{{ state?.currentTrack.currentImage }}"
-                style="width: 3.5rem;"
+                style="width: 2.5rem;"
                 alt="Radio Rasclat Live"
               />
             </div>
             <div *ngIf="!state?.currentTrack.currentImage">
               <img
                 src="./../../../assets/svg/logo.svg"
-                style="width: 3.5rem;"
+                style="width: 2.5rem;"
                 alt="Radio Rasclat Live"
               />
             </div>
@@ -52,25 +69,6 @@
                 }}
               </h5>
             </a>
-            <div class="timeline" *ngIf="!state?.live">
-              <span>
-                {{ state?.readableCurrentTime }} — {{ state?.readableDuration }}
-              </span>
-              <!-- <div class="rangeSlider">
-                <input
-                  type="range"
-                  class="time-slider"
-                  min="0"
-                  [max]="state?.duration"
-                  step="1"
-                  style="width: 100%;"
-                  [value]="state?.currentTrack.currentTime"
-                  (input)="onSliderChangeEnd($event)"
-                  [disabled]="state?.error"
-                  *ngIf="state.currentTrack.currentSrc != ''"
-                />
-              </div> -->
-            </div>
           </div>
           <div
             class="playerInfo"
@@ -94,6 +92,11 @@
               <span style="opacity: 0.4;"
                 >&mdash; {{ state?.nextShowStart }}</span
               >
+            </span>
+          </div>
+          <div class="playerDuration" *ngIf="!state?.live">
+            <span class="playerDurationInner">
+              {{ state?.readableCurrentTime }} — {{ state?.readableDuration }}
             </span>
           </div>
           <div class="playerControls playerClose">

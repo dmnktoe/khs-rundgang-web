@@ -3,11 +3,42 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  min-height: 73px;
 }
 
 .playerWrapper {
   padding: 0.5rem 0;
+}
+
+/* Range slider */
+.playerWrapper .rangeSlider {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+::ng-deep {
+  .ng5-slider {
+    margin: 0 !important;
+  }
+  .ng5-slider .ng5-slider-bar {
+    background: var(--card-light-background-hover) !important;
+    border-radius: 0 !important;
+    cursor: pointer;
+  }
+  .ng5-slider .ng5-slider-bar-wrapper {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    height: 4px !important;
+  }
+  .ng5-slider .ng5-slider-pointer {
+    display: none !important;
+  }
+  .ng5-slider-bubble {
+    display: none !important;
+  }
+  .ng5-slider .ng5-slider-selection {
+    background: var(--secondary-color) !important;
+    border-radius: 0 !important;
+  }
 }
 
 .playerInner {
@@ -29,9 +60,28 @@
   padding-right: 0;
 }
 
+.playerImage {
+  width: 50px;
+  height: 50px;
+}
+
+.playerImage img {
+  display: flex;
+}
+
+.playerDuration {
+  width: 0;
+  text-align: right;
+}
+
+.playerDurationInner {
+  display: none;
+}
+
 .playerClose {
   width: 35px;
   height: 50px;
+  padding-left: 1rem;
 }
 
 svg-icon {
@@ -43,11 +93,13 @@ svg-icon {
   cursor: pointer;
 }
 
-.playerImage {
-  width: 65px;
-  height: 50px;
-}
+@media only screen and (min-width: 64rem) {
+  .playerDuration {
+    width: 220px;
+    text-align: right;
+  }
 
-.playerImage img {
-  display: flex;
+  .playerDurationInner {
+    display: block;
+  }
 }
