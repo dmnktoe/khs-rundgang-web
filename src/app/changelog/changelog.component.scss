@@ -12,13 +12,11 @@
 }
 
 .changelogItemHeader {
-  padding-bottom: 1rem;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--card-border);
 }
 
 .changelogItem .logTime {
-  color: #c8c8c8;
+  color: var(--text-color-light);
   margin-bottom: 1rem;
 }
 
@@ -27,7 +25,7 @@
 }
 
 .changelogItem .changesSection:last-child {
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 }
 
 .changelogItem .articleMeta {
