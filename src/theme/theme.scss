@@ -152,6 +152,12 @@ p:last-child {
   text-align: right;
 }
 
+/* Icons */
+
+svg-icon {
+  display: inline-flex !important;
+}
+
 /* Buttons */
 
 .btn {
