@@ -62,9 +62,9 @@
           <div class="playerInfo" *ngIf="!state?.live">
             <a routerLink="/broadcasts/{{ state?.currentTrack.currentUrl }}">
               <h5>
-                ↳{{
-                  state?.currentTrack.currentTitle.length > 45
-                    ? (state?.currentTrack.currentTitle | slice: 0:45) + '...'
+                {{
+                  state?.currentTrack.currentTitle.length > 50
+                    ? (state?.currentTrack.currentTitle | slice: 0:50) + '...'
                     : state?.currentTrack.currentTitle
                 }}
               </h5>
@@ -75,9 +75,9 @@
             *ngIf="state?.currentTrack.currentTitle && state?.live"
           >
             <h5>
-              ↳{{
-                state?.currentTrack.currentTitle.length > 45
-                  ? (state?.currentTrack.currentTitle | slice: 0:45) + '...'
+              {{
+                state?.currentTrack.currentTitle.length > 50
+                  ? (state?.currentTrack.currentTitle | slice: 0:50) + '...'
                   : state?.currentTrack.currentTitle
               }}
             </h5>
