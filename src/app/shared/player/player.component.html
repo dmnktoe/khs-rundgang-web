@@ -32,10 +32,15 @@
               <img
                 src="{{ state.currentTrack.currentImage }}"
                 style="width: 50px;"
+                alt="Radio Rasclat Live"
               />
             </div>
             <div *ngIf="!state.currentTrack.currentImage">
-              <img src="./../../../assets/svg/logo.svg" style="width: 50px;" />
+              <img
+                src="./../../../assets/svg/logo.svg"
+                style="width: 50px;"
+                alt="Radio Rasclat Live"
+              />
             </div>
           </div>
           <div class="playerInfo" *ngIf="!state?.live">
