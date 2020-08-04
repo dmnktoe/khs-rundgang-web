@@ -1,7 +1,7 @@
 <div id="player" *ngIf="!state?.hidden" [@enterAnimation]>
   <div class="container-full">
     <div class="playerWrapper">
-      <div class="row">
+      <div class="grid">
         <div
           class="col-12 playerInner"
           *ngIf="!state?.playing && !state?.canplay"
@@ -14,17 +14,23 @@
           class="col-12 playerInner"
           *ngIf="state?.playing || state?.canplay"
         >
-          <div class="playerControls">
+          <div class="playerControls playerPlay">
             <span (click)="play()" *ngIf="!state?.playing && state?.canplay">
-              <i-feather name="play" style="color: #2005ff;"></i-feather>
+              <a>
+                <svg-icon key="play"></svg-icon>
+              </a>
             </span>
             <span (click)="pause()" *ngIf="state?.playing">
-              <i-feather name="pause" style="color: #2005ff;"></i-feather>
+              <a>
+                <svg-icon key="pause"></svg-icon>
+              </a>
             </span>
           </div>
-          <div class="playerClose">
+          <div class="playerControls playerClose">
             <span (click)="hide()">
-              <span class="icon closeIcon"></span>
+              <a>
+                <svg-icon key="close"></svg-icon>
+              </a>
             </span>
           </div>
           <div class="playerImage">
@@ -45,7 +51,13 @@
           </div>
           <div class="playerInfo" *ngIf="!state?.live">
             <a routerLink="/broadcasts/{{ state.currentTrack.currentUrl }}">
-              <h5>{{ state.currentTrack.currentTitle }}</h5>
+              <h5>
+                ↳{{
+                  state.currentTrack.currentTitle.length > 30
+                    ? (state.currentTrack.currentTitle | slice: 0:30) + '...'
+                    : state.currentTrack.currentTitle
+                }}
+              </h5>
             </a>
             <div class="timeline" *ngIf="!state?.live">
               <span>
@@ -68,19 +80,19 @@
             </div>
           </div>
           <div class="playerInfo" *ngIf="state?.live">
-            <h4>{{ state.currentTrack.currentTitle }}</h4>
+            <h5>{{ state.currentTrack.currentTitle }}</h5>
           </div>
           <div
             class="playerInfo"
             *ngIf="!state?.currentTrack.currentTitle && state?.live"
           >
-            <h4>OFF AIR.</h4>
-            <h6 *ngIf="state?.nextShowName">
+            <h5>OFF AIR.</h5>
+            <span *ngIf="state?.nextShowName">
               Nächste Show: {{ state?.nextShowName }}
               <span style="opacity: 0.4;"
                 >&mdash; {{ state?.nextShowStart }}</span
               >
-            </h6>
+            </span>
           </div>
         </div>
       </div>

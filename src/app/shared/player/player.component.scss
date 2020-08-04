@@ -19,12 +19,11 @@
 .playerControls {
   width: 35px;
   height: 50px;
+  padding-right: 1rem;
 }
 
-.playerControls span {
-  cursor: pointer;
-  position: absolute;
-  margin-top: -21px;
+.playerControls:last-child {
+  padding-right: 0;
 }
 
 .playerClose {
@@ -32,10 +31,16 @@
   height: 50px;
 }
 
-.playerClose span {
-  cursor: pointer;
-  position: absolute;
-  margin-top: -21px;
+.playerInfo h5 {
+  line-height: 20px;
+}
+
+svg-icon {
+  background: var(--card-background-hover);
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
 }
 
 .playerImage {
