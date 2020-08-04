@@ -15,6 +15,8 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { Angulartics2Module } from 'angulartics2';
 import { TooltipModule } from 'ng2-tooltip-directive';
 import { RecordingsSlideshowComponent } from './recordings-slideshow/recordings-slideshow.component';
+import { SvgIconsModule } from '@ngneat/svg-icon';
+import icons from '../../assets/svg/svg-icons';
 
 @NgModule({
   imports: [
@@ -27,6 +29,9 @@ import { RecordingsSlideshowComponent } from './recordings-slideshow/recordings-
     LazyLoadImageModule,
     Angulartics2Module,
     TooltipModule,
+    SvgIconsModule.forRoot({
+      icons,
+    }),
   ],
   declarations: [
     RecordingsComponent,
