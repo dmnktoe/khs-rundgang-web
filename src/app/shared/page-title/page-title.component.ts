@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PageTitleComponent implements OnInit {
   @Input() title: string;
+  @Input() isLink: boolean;
+  @Input() url: string;
 
   constructor() {}
 
