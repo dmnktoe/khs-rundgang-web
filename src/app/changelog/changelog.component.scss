@@ -16,6 +16,10 @@
   cursor: pointer;
 }
 
+.changelog .app.active {
+  background-color: var(--card-light-background-hover);
+}
+
 .changelog .appImage {
   padding: 0 2.5rem 1rem;
 }
@@ -47,7 +51,7 @@
   transition: none;
   background: var(--card-light-background);
   border-radius: 20px;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .changelog .changelogItem:first-child {
