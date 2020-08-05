@@ -7,6 +7,7 @@ import { SharedModule } from '@app/shared';
 import { ScheduleRoutingModule } from './schedule-routing.module';
 import { ScheduleComponent } from './schedule.component';
 import { ScheduleDayListComponent } from './schedule-day-list/schedule-day-list.component';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { ScheduleDayListComponent } from './schedule-day-list/schedule-day-list.
     ScheduleRoutingModule,
     CoreModule,
     SharedModule,
+    LazyLoadImageModule,
   ],
   declarations: [ScheduleComponent, ScheduleDayListComponent],
   providers: [Title],
