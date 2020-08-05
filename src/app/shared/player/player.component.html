@@ -87,9 +87,9 @@
             *ngIf="!state?.currentTrack.currentTitle && state?.live"
           >
             <h5>OFF AIR.</h5>
-            <span *ngIf="state?.nextShowName">
+            <span class="nextShow" *ngIf="state?.nextShowName">
               Nächste Show: {{ state?.nextShowName }}
-              <span style="opacity: 0.4;"
+              <span class="nextShow__time"
                 >&mdash; {{ state?.nextShowStart }}</span
               >
             </span>
