@@ -1,8 +1,12 @@
 $primary-color: #000000;
 $primary-color-dark: #ffffff;
+$primary-color-light: rgba($primary-color, 0.15);
+$primary-color-light-dark: rgba($primary-color-dark, 0.15);
 
 $secondary-color: #0387fe;
 $secondary-color-dark: #0387fe;
+$secondary-color-light: rgba($secondary-color, 0.15);
+$secondary-color-light-dark: rgba($secondary-color-dark, 0.15);
 
 $page-background: #ffffff;
 $page-background-dark: #000000;
@@ -30,9 +34,17 @@ $colors: (
     $primary-color,
     $primary-color-dark,
   ),
+  --primary-color-light: (
+    $primary-color-light,
+    $primary-color-light-dark,
+  ),
   --secondary-color: (
     $secondary-color,
     $secondary-color-dark,
+  ),
+  --secondary-color-light: (
+    $secondary-color-light,
+    $secondary-color-light-dark,
   ),
   --page-background: (
     $page-background,
