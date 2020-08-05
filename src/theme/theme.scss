@@ -68,7 +68,7 @@ body {
 /* pageContent */
 
 .pageContent {
-  padding-top: 4rem;
+  padding-top: 3rem;
   padding-bottom: 4rem;
   overflow-wrap: break-word;
 }
@@ -212,10 +212,10 @@ svg-icon {
 
 .btn-primary {
   color: var(--primary-color);
-  background: rgba(var(--primary-color), 0.3);
+  background: var(--primary-color-light);
 }
 
 .btn-secondary {
   color: var(--secondary-color);
-  background: rgba(var(--secondary-color), 0.3);
+  background: var(--secondary-color-light);
 }
