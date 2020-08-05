@@ -9,6 +9,7 @@ export class TextSeperatorComponent implements OnInit {
   @Input() text: string;
   @Input() isLink: boolean;
   @Input() border: boolean;
+  @Input() active: boolean;
   @Input() url: string;
 
   constructor() {}

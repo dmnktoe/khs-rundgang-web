@@ -3,6 +3,7 @@
     <div
       class="textSeperator"
       *ngIf="!isLink"
+      [class.active]="active === true"
       [class.border-left]="border === true"
     >
       {{ text }}
@@ -10,6 +11,7 @@
     <div
       class="textSeperator"
       *ngIf="isLink"
+      [class.active]="active === true"
       [class.border-left]="border === true"
     >
       <a routerLink="{{ url }}">
