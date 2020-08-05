@@ -15,6 +15,8 @@ import { DarkModeToggleComponent } from './dark-mode-toggle/dark-mode-toggle.com
 import { SvgIconsModule } from '@ngneat/svg-icon';
 import icons from '../../assets/svg/svg-icons';
 import { Ng5SliderModule } from 'ng5-slider';
+import { PageBannerComponent } from './page-banner/page-banner.component';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   imports: [
@@ -24,6 +26,7 @@ import { Ng5SliderModule } from 'ng5-slider';
       icons,
     }),
     Ng5SliderModule,
+    LazyLoadImageModule,
   ],
   declarations: [
     LoaderComponent,
@@ -35,6 +38,7 @@ import { Ng5SliderModule } from 'ng5-slider';
     TextSeperatorComponent,
     PageTitleComponent,
     DarkModeToggleComponent,
+    PageBannerComponent,
   ],
   exports: [
     LoaderComponent,
@@ -47,6 +51,7 @@ import { Ng5SliderModule } from 'ng5-slider';
     TextSeperatorComponent,
     PageTitleComponent,
     DarkModeToggleComponent,
+    PageBannerComponent,
   ],
   providers: [ApiService],
 })
