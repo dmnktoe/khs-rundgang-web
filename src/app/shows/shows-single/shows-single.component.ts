@@ -17,7 +17,6 @@ export class ShowsSingleComponent implements OnInit {
   title: any;
   hex: any;
   isLoading = false;
-  getData: any;
   id: any;
   message: string;
 

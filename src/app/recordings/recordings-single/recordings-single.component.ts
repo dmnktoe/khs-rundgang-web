@@ -20,7 +20,6 @@ export class RecordingsSingleComponent implements OnInit {
   hex: any;
   rgba: any;
   isLoading = false;
-  getData: any;
   id: any;
   message: string;
   state: StreamState;
