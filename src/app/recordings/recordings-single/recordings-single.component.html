@@ -55,6 +55,9 @@
       </div>
       <div class="col-8@sm">
         <div class="recording__info__container">
+          <div class="recording__title">
+            <h1 [style.color]="hex">↳{{ recording?.title }}</h1>
+          </div>
           <div class="recording__tags">
             <span
               class="recording__tags__single"
@@ -73,9 +76,6 @@
             {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
             {{ recording?.timeStart | date: 'HH:mm' }} —
             {{ recording?.timeEnd | date: 'HH:mm' }}
-          </div>
-          <div class="recording__title">
-            <h1 [style.color]="hex">↳{{ recording?.title }}</h1>
           </div>
           <div class="recording__artists">
             <span *ngFor="let artist of recording?.artists">
