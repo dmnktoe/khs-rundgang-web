@@ -1,111 +1,79 @@
-<div class="grid" *ngIf="isLoading == true">
-  <div class="col-12">
-    <app-loader></app-loader>
-  </div>
-</div>
-<div class="grid grid-gap-lg" *ngIf="isLoading == false">
-  <div class="col-12@xs">
-    <h1>About</h1>
-  </div>
-  <div class="col-12@xs col-8@md">
-    <h3>Radio Rasclat</h3>
-    <p>
-      <strong>Stimulating the gun-finger with Bass Music from Kassel.</strong>
-    </p>
-    <p>
-      Radio Rasclat is a non-commercial internet radio station which is going to
-      stream your music to the web, again! It offers you a platform to play &
-      try out. It serves as a place for the exchange, dialogue and cooperation
-      of music. Founded and curated in 2019, the radio returns to the new venue
-      at KMMN 3.
-    </p>
-  </div>
-  <div class="col-12@xs col-4@md">
-    <h3>Contact</h3>
-    <p>
-      <strong>Don't hesitate to contact us.</strong>
-    </p>
-    <p>
-      <i-feather name="instagram" class="icon"></i-feather> Instagram:
-      <a href="https://instagram.com/radio.rasclat" target="_blank"
-        >@radio.rasclat</a
-      ><br />
-      <i-feather name="twitter" class="icon"></i-feather> Twitter:
-      <a href="https://twitter.com/radiorasclat" target="_blank"
-        >@radiorasclat</a
-      ><br />
-      <i-feather name="mail" class="icon"></i-feather> E-Mail:
-      <a href="mailto:office@radio-rasclat.com"
-        >office (at) radio-rasclat.com</a
-      >
-    </p>
-  </div>
-  <div class="col-12@xs col-4@md">
-    <h3>How to listen?</h3>
-  </div>
-  <div class="col-12@xs col-8@md">
-    <p>
-      There are multiple options to listen to Radio Rasclat on the go or at your
-      desktop. You can either use the stream it's direct link:
-    </p>
-    <p>
-      <i-feather class="icon" name="music"></i-feather>
-      <a href="https://station.radio-rasclat.com/live" target="_blank">
-        MP3 / 128kbps (SSL)
-      </a>
-    </p>
-    <p>
-      Due to our amazing financial contributors — thanks again — you can
-      download our corresponding app for iOS available for free on the App
-      Store:<br />
-    </p>
-    <p>
-      <a
-        href="https://apps.apple.com/us/app/radio-rasclat/id1499269866?mt=8"
-        target="_blank"
-        style="
-          display: inline-block;
-          overflow: hidden;
-          background: url(https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2020-02-17&kind=iossoftware&bubble=ios_apps)
-            no-repeat;
-          width: 135px;
-          height: 40px;
-        "
-      >
-      </a>
-    </p>
-    <p>
-      As an alternative we are working on a skill for Alexa which allows native
-      background music on any Alexa, Android and iOS device. Coming soon.
-    </p>
-  </div>
-  <div class="col-12"></div>
-  <div class="col-12@xs col-4@md">
-    <h3>We would like to thank.</h3>
-  </div>
-  <div class="col-12@xs col-8@md">
-    We would like to thank all our amazing artists and guests such as
-    <span [hidden]="isLoading" *ngFor="let artist of artists">
-      {{ artist?.title }},
-    </span>
-    who has been part of the program!
-  </div>
-  <div class="col-12"></div>
-  <div class="col-12@xs col-4@md">
-    <h3>Open Source.</h3>
-  </div>
-  <div class="col-12@xs col-8@md">
-    <p>
-      This radio web app is open source and based on Angular, NodeJS, Express
-      and MongoDB. Please feel free to clone the project, open a new issue or
-      create a pull request. The complete source code is located on Github.<br />
-    </p>
-    <p>
-      <i-feather name="github" class="icon"></i-feather>
-      <a href="https://github.com/dmnktoe/radio-rasclat-web" target="_blank"
-        >Radio Rasclat</a
-      >
-      • v<span>{{ version }}</span>
-    </p>
+<div class="container">
+  <div class="aboutPage">
+    <app-page-title [title]="'About'"></app-page-title>
+    <app-page-banner [image]="'radio-rasclat-spinner.gif'"></app-page-banner>
+    <app-text-seperator
+      [text]="'„In the shadow of perceived success there exists the hardlife“'"
+    ></app-text-seperator>
+    <div class="grid grid-gap-xl">
+      <div class="col-12 col-4@md">
+        <h2>Radio Rasclat</h2>
+        <p>&nbsp;</p>
+        <p>
+          <strong
+            >Stimulating the gun-finger with Bass Music from Kassel.</strong
+          >
+        </p>
+      </div>
+      <div class="col-12 col-8@md">
+        <p>
+          Radio Rasclat is a non-commercial internet radio station which is
+          going to stream your music to the web, again! It offers you a platform
+          to play & try out. It serves as a place for the exchange, dialogue and
+          cooperation of music. Founded and curated in 2019, the radio returns
+          to the new venue at KMMN 3.
+        </p>
+      </div>
+    </div>
+    <div class="grid grid-gap-xl">
+      <div class="col-12 col-4@md">
+        <h5>Season °1</h5>
+        <p>17.07.2019 — 19.07.2019</p>
+      </div>
+      <div class="col-12 col-8@md">
+        <p>
+          <strong>Kunsthochschule Kassel Rundgang:</strong>
+        </p>
+        <p>
+          Radio Rasclat is a non-commercial internet radio station which is
+          going to stream your music to the web, again! It offers you a platform
+          to play & try out. It serves as a place for the exchange, dialogue and
+          cooperation of music. Founded and curated in 2019, the radio returns
+          to the new venue at KMMN 3.
+        </p>
+      </div>
+    </div>
+    <div class="grid grid-gap-xl">
+      <div class="col-12 col-4@md">
+        <h5>Season °2</h5>
+        <p>10.01.2020 — 01.06.2020</p>
+      </div>
+      <div class="col-12 col-8@md">
+        <p>
+          <strong>KMMN III:</strong>
+        </p>
+        <p>
+          Radio Rasclat is a non-commercial internet radio station which is
+          going to stream your music to the web, again! It offers you a platform
+          to play & try out. It serves as a place for the exchange, dialogue and
+          cooperation of music. Founded and curated in 2019, the radio returns
+          to the new venue at KMMN 3.
+        </p>
+      </div>
+    </div>
+    <div class="grid grid-gap-xl">
+      <div class="col-12 col-4@md">
+        <h3>Hall of Fame.</h3>
+      </div>
+      <div class="col-12 col-8@md">
+        <p>
+          We would like to thank all our amazing artists and guests such as
+          <span [hidden]="isLoading" *ngFor="let artist of artists">
+            {{ artist?.title }},
+          </span>
+          who has been part of the program!
+        </p>
+      </div>
+    </div>
   </div>
 </div>
