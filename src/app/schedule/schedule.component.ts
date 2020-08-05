@@ -10,6 +10,7 @@ import { ApiService } from '@app/core/api.service';
 export class ScheduleComponent implements OnInit {
   schedule: any;
   isLoading = false;
+  view = 'thisWeek';
 
   constructor(private apiService: ApiService) {}
 
