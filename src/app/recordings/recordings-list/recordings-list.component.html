@@ -1,11 +1,3 @@
-<div class="col-12" *ngIf="isLoading == false && recordings?.length == 0">
-  <app-text-seperator
-    [text]="'NO_RECORDINGS_FOUND' | translate"
-    [isLink]="false"
-  >
-  </app-text-seperator>
-</div>
-
 <div class="recordingList" *ngIf="!isLoading == true">
   <div class="grid">
     <div class="col-12">
