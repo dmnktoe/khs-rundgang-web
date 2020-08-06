@@ -4,6 +4,15 @@
   <!-- July 2020 -->
   <app-text-seperator [text]="'July 2020'" [isLink]="false">
   </app-text-seperator>
+  <app-recordings-list
+    [recordings]="recordingsSorted['2020-07']"
+    [hidden]="isLoading"
+  >
+  </app-recordings-list>
+
+  <!-- July 2020 -->
+  <app-text-seperator [text]="'July 2020'" [isLink]="false">
+  </app-text-seperator>
   <app-recordings-gallery
     [recordings]="recordingsSorted['2020-07']"
     [hidden]="isLoading"

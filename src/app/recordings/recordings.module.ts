@@ -17,6 +17,7 @@ import { TooltipModule } from 'ng2-tooltip-directive';
 import { RecordingsSlideshowComponent } from './recordings-slideshow/recordings-slideshow.component';
 import { SvgIconsModule } from '@ngneat/svg-icon';
 import icons from '../../assets/svg/svg-icons';
+import { RecordingsListComponent } from './recordings-list/recordings-list.component';
 
 @NgModule({
   imports: [
@@ -38,6 +39,7 @@ import icons from '../../assets/svg/svg-icons';
     RecordingsGalleryComponent,
     RecordingsSingleComponent,
     RecordingsSlideshowComponent,
+    RecordingsListComponent,
   ],
   exports: [RecordingsGalleryComponent, RecordingsSlideshowComponent],
   providers: [ApiService, Title],

@@ -1,0 +1,82 @@
+/* Recordings List App */
+
+.recordingList {
+  border-bottom: 1px solid var(--card-border);
+}
+
+.recording {
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.recording:first-child {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.recording:last-child {
+  position: relative;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.recording:hover > .recording__wrapper {
+  transition: all 0.15s ease;
+  background-color: var(--card-background-hover);
+}
+
+.recording__wrapper {
+  padding: 1rem;
+  position: relative;
+  background-color: var(--card-background);
+}
+
+.recording__info__container {
+  width: 100%;
+}
+
+.recording__tags {
+  margin-bottom: 0.5rem;
+}
+
+.recording__tags__single::after {
+  content: "•";
+}
+
+.recording__tags__single:last-child::after {
+  content: "";
+}
+
+.recording__tags a {
+  text-decoration: underline;
+}
+
+.recording__dates {
+  margin-bottom: 1rem;
+}
+
+.recording__image__container {
+  padding: 0;
+}
+
+.recording__image__container figure.square {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 100%;
+  border: 1px solid var(--card-border);
+}
+
+.recording__image__container figure.square img {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  height: calc(100% + 2px);
+  width: calc(100% + 2px);
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
