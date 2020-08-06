@@ -10,35 +10,83 @@
 }
 
 /* Range slider */
+
+input[type="range"] {
+  margin: auto;
+  -webkit-appearance: none;
+  position: relative;
+  overflow: hidden;
+  height: 4px;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+::-webkit-slider-runnable-track {
+  background: var(--card-light-background-hover);
+}
+
+::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 4px;
+  box-shadow: -100vw 0 0 100vw var(--secondary-color);
+  border: 0;
+}
+
+::-moz-range-track {
+  height: 4px;
+  background: var(--card-light-background-hover);
+}
+
+::-moz-range-thumb {
+  background: #fff;
+  height: 4px;
+  width: 0;
+  border: 0;
+  border-radius: 0 !important;
+  box-shadow: -100vw 0 0 100vw var(--secondary-color);
+  box-sizing: border-box;
+}
+
+::-ms-fill-lower {
+  background: var(--secondary-color);
+  height: 4px;
+}
+
+::-ms-thumb {
+  background: #fff;
+  border: 0;
+  height: 4px;
+  width: 0;
+  box-sizing: border-box;
+}
+
+::-ms-ticks-after {
+  display: none;
+}
+
+::-ms-ticks-before {
+  display: none;
+}
+
+::-ms-track {
+  background: var(--card-light-background-hover);
+  color: transparent;
+  height: 40px;
+  border: none;
+}
+
+::-ms-tooltip {
+  display: none;
+}
+
 .playerWrapper .rangeSlider {
   display: flex;
   margin-bottom: 0.5rem;
-}
-
-::ng-deep {
-  .ng5-slider {
-    margin: 0 !important;
-  }
-  .ng5-slider .ng5-slider-bar {
-    background: var(--card-light-background-hover) !important;
-    border-radius: 0 !important;
-    cursor: pointer;
-  }
-  .ng5-slider .ng5-slider-bar-wrapper {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    height: 4px !important;
-  }
-  .ng5-slider .ng5-slider-pointer {
-    display: none !important;
-  }
-  .ng5-slider-bubble {
-    display: none !important;
-  }
-  .ng5-slider .ng5-slider-selection {
-    background: var(--secondary-color) !important;
-    border-radius: 0 !important;
-  }
 }
 
 .playerInner {

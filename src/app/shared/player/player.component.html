@@ -5,17 +5,18 @@
         <div class="col-12" *ngIf="!state?.live">
           <div class="timeline">
             <div class="rangeSlider">
-              <ng5-slider
-                [options]="{
-                  floor: '0',
-                  ceil: state?.duration,
-                  animate: false,
-                  showSelectionBar: true
-                }"
-                [(value)]="state?.currentTrack.currentTime"
-                (userChangeEnd)="onSliderChangeEnd($event)"
+              <input
+                type="range"
+                class="time-slider"
+                min="0"
+                [max]="state?.duration"
+                step="1"
+                style="width: 100%;"
+                [value]="state?.currentTrack.currentTime"
+                (input)="onSliderChangeEnd($event)"
+                [disabled]="state?.error"
                 *ngIf="state.currentTrack.currentSrc != ''"
-              ></ng5-slider>
+              />
             </div>
           </div>
         </div>

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { AudioService } from '@app/services/audio.service';
 import { StreamState } from '@app/interfaces/stream-state';
 import { trigger, style, animate, transition } from '@angular/animations';
-import { Options } from 'ng5-slider';
 export type FadeState = 'visible' | 'hidden';
 
 @Component({
@@ -27,12 +26,6 @@ export class PlayerComponent {
   state: StreamState;
   currentFile: any = {};
   defaultImage = './../../../assets/svg/placeholder.svg';
-
-  options: Options = {
-    floor: 0,
-    animate: false,
-    showSelectionBar: true,
-  };
 
   constructor(private audioService: AudioService) {
     // listen to stream state
@@ -93,6 +86,6 @@ export class PlayerComponent {
 
   onSliderChangeEnd(change: Event) {
     // @ts-ignore
-    this.audioService.seekTo(change?.value);
+    this.audioService.seekTo(change.target['value']);
   }
 }

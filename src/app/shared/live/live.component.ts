@@ -22,7 +22,7 @@ export class LiveComponent implements OnInit {
   isLoading = false;
 
   state: StreamState;
-  streamUrl = 'http://stream3.sthoerfunk.de:7000/sthoerfunk.mp3';
+  streamUrl = 'https://station.radio-rasclat.com/live';
 
   constructor(
     private audioService: AudioService,
