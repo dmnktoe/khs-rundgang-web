@@ -1,10 +1,10 @@
-/* Shows List App */
+/* Shows Gallery App */
 
-.showList {
+.showGallery {
   border-bottom: 1px solid var(--card-border);
 }
 
-.showList > .grid-auto-xl {
+.showGallery > .grid-auto-xl {
   grid-gap: 1px;
   overflow: hidden;
 }
