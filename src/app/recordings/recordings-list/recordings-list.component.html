@@ -49,7 +49,7 @@
                 <div class="recording__title">
                   <a routerLink="/broadcasts/{{ recording?.slug }}">
                     <h4>
-                      ↳{{
+                      {{
                         recording?.title.length > 50
                           ? (recording?.title | slice: 0:50) + '...'
                           : recording?.title
