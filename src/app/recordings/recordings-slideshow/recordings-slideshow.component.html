@@ -1,4 +1,4 @@
-<div class="grid">
+<div class="grid" *ngIf="!isLoading">
   <div class="col-12">
     <div class="recordingSlider">
       <div class="swiper-container" [swiper]="config">
@@ -17,7 +17,7 @@
                         <svg-icon key="play"></svg-icon>
                       </div>
                       <div class="recordingSlideCaption__textArea">
-                        🔥 Hot this month &mdash;
+                        Hot this month &mdash;
                         {{ hotRecording?.viewCounter }} plays:<br />
                         <h4>
                           ↳{{
@@ -64,6 +64,54 @@
                   </div>
                 </div>
               </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="grid" *ngIf="isLoading">
+  <div class="col-12">
+    <div class="recordingSlider">
+      <div class="swiper-container" [swiper]="config">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="recordingSlide loading">
+              <div class="recordingSlideInner">
+                <div class="recordingSlideCaptionWrapper">
+                  <div class="recordingSlideCaption">
+                    <div class="recordingSlideCaption__playArea">
+                      <svg-icon key="play"></svg-icon>
+                    </div>
+                    <div class="recordingSlideCaption__textArea">
+                      Loading...
+                      <h4>
+                        ↳Loading...
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide" *ngIf="hotRecording">
+            <div class="recordingSlide loading">
+              <div class="recordingSlideInner">
+                <div class="recordingSlideCaptionWrapper">
+                  <div class="recordingSlideCaption">
+                    <div class="recordingSlideCaption__playArea">
+                      <svg-icon key="play"></svg-icon>
+                    </div>
+                    <div class="recordingSlideCaption__textArea">
+                      Loading...
+                      <h4>
+                        Loading...
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
