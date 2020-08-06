@@ -1,10 +1,10 @@
-/* Recordings List App */
+/* Recordings Gallery App */
 
-.recordingList {
+.recordingGallery {
   border-bottom: 1px solid var(--card-border);
 }
 
-.recordingList > .grid-auto-lg {
+.recordingGallery > .grid-auto-lg {
   grid-gap: 1px;
   overflow: hidden;
 }
