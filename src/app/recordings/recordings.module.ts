@@ -41,7 +41,11 @@ import { RecordingsListComponent } from './recordings-list/recordings-list.compo
     RecordingsSlideshowComponent,
     RecordingsListComponent,
   ],
-  exports: [RecordingsGalleryComponent, RecordingsSlideshowComponent],
+  exports: [
+    RecordingsGalleryComponent,
+    RecordingsSlideshowComponent,
+    RecordingsListComponent,
+  ],
   providers: [ApiService, Title],
 })
 export class RecordingsModule {}
