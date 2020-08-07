@@ -37,6 +37,13 @@
                     >
                   </span>
                 </div>
+                <div class="recording__title">
+                  <a routerLink="/broadcasts/{{ recording?.slug }}">
+                    <h4>
+                      {{ recording?.title }}
+                    </h4>
+                  </a>
+                </div>
                 <div class="recording__dates">
                   <span [hidden]="recording?.views">
                     {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
@@ -45,17 +52,6 @@
                   <span [hidden]="!recording?.views">
                     {{ recording?.views }} plays the last 7 days
                   </span>
-                </div>
-                <div class="recording__title">
-                  <a routerLink="/broadcasts/{{ recording?.slug }}">
-                    <h4>
-                      {{
-                        recording?.title.length > 50
-                          ? (recording?.title | slice: 0:50) + '...'
-                          : recording?.title
-                      }}
-                    </h4>
-                  </a>
                 </div>
               </div>
             </div>
