@@ -16,23 +16,23 @@ export class SearchComponent implements OnInit {
   get searchParameters() {
     return {
       query: this.query,
-      hitsPerPage: 9,
+      hitsPerPage: 6,
     };
   }
 
-  public recordingsConfig = {
+  public algoliaRecordingsConfig = {
     indexName: environment.algoliaRecordingsIndex,
     routing: true,
     searchClient,
   };
 
-  public showsConfig = {
+  public algoliaShowsConfig = {
     indexName: environment.algoliaShowsIndex,
     routing: true,
     searchClient,
   };
 
-  public artistsConfig = {
+  public algoliaArtistsConfig = {
     indexName: environment.algoliaArtistsIndex,
     routing: true,
     searchClient,

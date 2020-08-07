@@ -1,56 +1,64 @@
-<div class="grid" style="padding-bottom: 0;">
-  <div class="col-12">
-    <h1>Search</h1>
-  </div>
-  <div class="col-12">
-    <input
-      type="text"
-      class="ais-SearchBox-input"
-      autofocus
-      [placeholder]="'Search...'"
-      (keyup)="onQuery({ $event: $event })"
-    />
-  </div>
-  <div class="col-12">
-    <h3>Search Broadcasts</h3>
-  </div>
-</div>
-<div class="grid">
-  <ais-instantsearch [config]="recordingsConfig">
-    <div class="col-12@xs" style="margin-bottom: 15px;">
-      <ais-refinement-list attribute="genres.title"></ais-refinement-list>
-      <ais-current-refinements></ais-current-refinements>
-      <ais-configure [searchParameters]="searchParameters"></ais-configure>
+<div class="container">
+  <app-page-title [title]="'Search'"></app-page-title>
+
+  <ais-instantsearch [config]="algoliaRecordingsConfig">
+    <div class="grid">
+      <div class="col-12">
+        <ais-search-box placeholder="Search a recording"></ais-search-box>
+      </div>
     </div>
-    <div class="col-12@xs">
-      <ais-hits>
-        <ng-template let-hits="hits" let-results="results">
-          <div class="col-12">
-            <app-recordings-gallery
-              [recordings]="hits"
-            ></app-recordings-gallery>
-          </div>
-        </ng-template>
-      </ais-hits>
-    </div>
-    <div class="col-12@xs">
-      <ais-pagination
-        [showFirst]="true"
-        [showLast]="true"
-        [showPrevious]="true"
-        [showNext]="true"
-      ></ais-pagination>
+    <div class="grid">
+      <div class="col-12 col-3@md">
+        <ais-clear-refinements buttonLabel="Clear all filters">
+        </ais-clear-refinements>
+
+        <ais-panel header="Genres">
+          <ais-refinement-list
+            attribute="genres.title"
+            operator="and"
+            limit="5"
+          >
+          </ais-refinement-list>
+        </ais-panel>
+
+        <ais-panel header="Artists">
+          <ais-refinement-list
+            attribute="artists.title"
+            operator="and"
+            limit="5"
+          >
+          </ais-refinement-list>
+        </ais-panel>
+
+        <ais-panel header="Shows">
+          <ais-refinement-list attribute="show.title" operator="and" limit="5">
+          </ais-refinement-list>
+        </ais-panel>
+      </div>
+      <div class="col-12 col-9@md">
+        <ais-current-refinements></ais-current-refinements>
+        <ais-configure [searchParameters]="searchParameters"></ais-configure>
+        <ais-hits>
+          <ng-template let-hits="hits" let-results="results">
+            <div class="col-12">
+              <app-recordings-list [recordings]="hits"></app-recordings-list>
+            </div>
+          </ng-template>
+        </ais-hits>
+        <ais-pagination
+          [showFirst]="true"
+          [showLast]="true"
+          [showPrevious]="true"
+          [showNext]="true"
+        ></ais-pagination>
+      </div>
     </div>
   </ais-instantsearch>
 </div>
+
 <div class="grid">
   <div class="col-12">
-    <hr />
-  </div>
-</div>
-<div class="grid">
-  <div class="col-12">
-    <ais-instantsearch [config]="showsConfig">
+    <ais-instantsearch [config]="algoliaShowsConfig">
       <h3>Search Shows</h3>
       <h6><ais-stats></ais-stats></h6>
       <ais-configure [searchParameters]="searchParameters"></ais-configure>
@@ -60,7 +68,7 @@
             <span translate>NO_RESULTS</span> {{ results.query }}
           </div>
           <div class="col-12">
-            <app-shows-list [shows]="hits"> </app-shows-list>
+            <app-shows-gallery [shows]="hits"> </app-shows-gallery>
           </div>
         </ng-template>
       </ais-hits>

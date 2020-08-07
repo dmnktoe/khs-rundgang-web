@@ -7,6 +7,7 @@ import { SearchComponent } from './search.component';
 import { NgAisModule } from 'angular-instantsearch';
 import { RecordingsModule } from '@app/recordings/recordings.module';
 import { ShowsModule } from '@app/shows/shows.module';
+import { SharedModule } from '@app/shared';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { ShowsModule } from '@app/shows/shows.module';
     NgAisModule,
     RecordingsModule,
     ShowsModule,
+    SharedModule,
   ],
   declarations: [SearchComponent],
 })
