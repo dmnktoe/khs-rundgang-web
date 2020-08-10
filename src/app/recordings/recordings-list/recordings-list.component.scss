@@ -6,20 +6,12 @@
 
 .recording {
   position: relative;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid var(--card-border);
-}
-
-.recording:first-child {
-  position: relative;
-  margin: 1rem 0;
+  border-bottom: 1px solid var(--card-light-background-hover);
 }
 
 .recording:last-child {
   position: relative;
-  margin-bottom: 0;
-  border-bottom: 0;
+  border-bottom: none;
 }
 
 .recording:hover > .recording__wrapper {
@@ -28,7 +20,7 @@
 }
 
 .recording__wrapper {
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   position: relative;
   background-color: var(--card-background);
 }
