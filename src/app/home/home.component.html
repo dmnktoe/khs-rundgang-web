@@ -1,5 +1,5 @@
 <div class="container">
-  <app-page-title [title]="'Radio Rasclat'"></app-page-title>
+  <app-page-title [title]="'appTitle' | translate"></app-page-title>
 
   <app-recordings-slideshow
     [isLoading]="isLoading"
@@ -8,7 +8,7 @@
   >
   </app-recordings-slideshow>
 
-  <app-text-seperator [text]="'Latest Broadcasts'" [isLink]="false">
+  <app-text-seperator [text]="'latestBroadcasts' | translate" [isLink]="false">
   </app-text-seperator>
 
   <app-recordings-gallery
