@@ -6,6 +6,7 @@ import { Logger } from './logger.service';
 import deDE from '../../translations/de-DE.json';
 import enUS from '../../translations/en-US.json';
 import frFR from '../../translations/fr-FR.json';
+import esES from '../../translations/es-ES.json';
 
 const log = new Logger('I18nService');
 const languageKey = 'language';
@@ -32,6 +33,7 @@ export class I18nService {
     translateService.setTranslation('DE', deDE);
     translateService.setTranslation('EN', enUS);
     translateService.setTranslation('FR', frFR);
+    translateService.setTranslation('ES', esES);
   }
 
   /**
