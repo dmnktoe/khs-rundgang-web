@@ -1,13 +1,13 @@
 .liveInfo {
-  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
 
-.liveInfo:hover {
+.liveInfo__wrapper:hover {
   color: var(--secondary-color);
+  cursor: pointer;
 }
 
 .liveInfo.center {
