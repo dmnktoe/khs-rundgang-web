@@ -1,7 +1,21 @@
+::-webkit-input-placeholder {
+  color: var(--text-color);
+}
+::-moz-placeholder {
+  color: var(--text-color);
+}
+:-ms-input-placeholder {
+  color: var(--text-color);
+}
+:-moz-placeholder {
+  color: var(--text-color);
+}
+
 ::selection {
   background: var(--secondary-color);
   color: var(--text-color);
 }
+
 ::-moz-selection {
   background: var(--secondary-color);
   color: var(--text-color);
@@ -119,6 +133,7 @@ a {
 a:hover {
   text-decoration: none;
   color: var(--secondary-color);
+  cursor: pointer;
 }
 
 p a {
