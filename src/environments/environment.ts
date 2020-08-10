@@ -21,7 +21,7 @@ export const environment = {
   version: env.npm_package_version + '-dev',
   serverUrl: 'http://localhost:8080',
   defaultLanguage: 'EN',
-  supportedLanguages: ['DE', 'EN', 'FR'],
+  supportedLanguages: ['DE', 'EN', 'FR', 'ES'],
 };
 
 /*

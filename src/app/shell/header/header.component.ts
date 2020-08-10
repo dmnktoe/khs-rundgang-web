@@ -9,6 +9,7 @@ import { I18nService } from '@app/core';
 })
 export class HeaderComponent implements OnInit {
   isNavVisible = false;
+  isLanguagePickerVisible = false;
   now: number;
 
   constructor(private router: Router, private i18nService: I18nService) {
@@ -23,6 +24,10 @@ export class HeaderComponent implements OnInit {
 
   closeNav() {
     this.isNavVisible = false;
+  }
+
+  toggleLanguagePicker() {
+    this.isLanguagePickerVisible = !this.isLanguagePickerVisible;
   }
 
   ngOnInit() {}

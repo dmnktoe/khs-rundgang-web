@@ -30,6 +30,7 @@ header svg-icon.svg-icon-menu {
 
 header a.menu {
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 header .logo img {
@@ -177,4 +178,40 @@ nav {
   .navigation svg-icon {
     width: 17px;
   }
+}
+
+/* Language Picker */
+
+.languagePicker {
+  position: absolute;
+  background: var(--card-background);
+  padding: 0.3rem 1rem;
+  border: 1px solid var(--card-border);
+  border-radius: 5px;
+  margin-top: 10px;
+  display: flex;
+}
+
+.languagePicker__item.currentLanguage {
+  border-right: 1px solid var(--card-border);
+  padding-right: 1rem;
+  width: auto;
+  min-width: 30px;
+  text-align: center;
+}
+
+.languagePicker__item {
+  margin-right: 1rem;
+}
+
+.languagePicker__item:last-child {
+  margin-right: 0;
+}
+
+.languagePicker a {
+  text-decoration: none;
+}
+
+.languagePicker__item.language a:hover {
+  text-decoration: underline;
 }

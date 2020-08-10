@@ -17,5 +17,5 @@ export const environment = {
   version: env.npm_package_version,
   serverUrl: 'https://api.radio-rasclat.com',
   defaultLanguage: 'EN',
-  supportedLanguages: ['DE', 'EN', 'FR'],
+  supportedLanguages: ['DE', 'EN', 'FR', 'ES'],
 };

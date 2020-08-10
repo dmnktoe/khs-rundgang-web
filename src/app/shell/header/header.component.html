@@ -13,7 +13,7 @@
       </div>
       <div class="col-5 text-right">
         <a (click)="toggleNav()" class="menu">
-          MENU
+          {{ 'menu' | translate }}
           <svg-icon key="menu"></svg-icon>
         </a>
       </div>
@@ -26,15 +26,7 @@
       <div class="grid grid-gap-xs">
         <div class="col-2"></div>
         <div class="col-8 text-center">
-          <span
-            >Radio Rasclat is a non-commercial and
-            <a
-              href="https://github.com/dmnktoe/radio-rasclat-web"
-              target="_blank"
-              >open source</a
-            >
-            community radio station.</span
-          >
+          <span>{{ 'infoBannerText' | translate }}</span>
         </div>
         <div class="col-2 text-right">
           <app-dark-mode-toggle></app-dark-mode-toggle>
@@ -46,11 +38,11 @@
     <div class="container">
       <div class="grid grid-gap-xs">
         <div class="col-6 col-3@md">
-          <h5>↳ Listen</h5>
+          <h5>↳ {{ 'listen' | translate }}</h5>
           <ul>
             <li>
               <a routerLink="/" (click)="toggleNav()">
-                Home
+                {{ 'home' | translate }}
               </a>
             </li>
             <li>
@@ -59,7 +51,7 @@
                 routerLinkActive="active"
                 (click)="toggleNav()"
               >
-                Broadcasts
+                {{ 'broadcasts' | translate }}
               </a>
             </li>
             <li>
@@ -68,7 +60,7 @@
                 routerLinkActive="active"
                 (click)="toggleNav()"
               >
-                Shows
+                {{ 'shows' | translate }}
               </a>
             </li>
             <li>
@@ -77,7 +69,7 @@
                 routerLinkActive="active"
                 (click)="toggleNav()"
               >
-                Schedule
+                {{ 'schedule' | translate }}
               </a>
             </li>
             <li>
@@ -86,7 +78,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Chat
+                {{ 'chat' | translate }}
                 <svg-icon key="external"></svg-icon>
               </a>
             </li>
@@ -96,7 +88,7 @@
                 routerLinkActive="active"
                 (click)="toggleNav()"
               >
-                Search
+                {{ 'search' | translate }}
               </a>
             </li>
           </ul>
@@ -107,7 +99,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                iOS-App
+                {{ 'iosApp' | translate }}
                 <svg-icon key="external"></svg-icon>
               </a>
             </li>
@@ -117,23 +109,23 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                SoundCloud
+                {{ 'soundcloud' | translate }}
                 <svg-icon key="external"></svg-icon>
               </a>
             </li>
           </ul>
         </div>
         <div class="col-6 col-3@md">
-          <h5>↳ Radio Rasclat</h5>
+          <h5>↳ {{ 'appTitle' | translate }}</h5>
           <ul>
             <li>
               <a href="#">
-                Projects
+                {{ 'about' | translate }}
               </a>
             </li>
             <li>
               <a href="#">
-                Events
+                {{ 'events' | translate }}
               </a>
             </li>
           </ul>
@@ -144,23 +136,23 @@
                 routerLinkActive="active"
                 (click)="toggleNav()"
               >
-                About
+                {{ 'about' | translate }}
               </a>
             </li>
             <li>
               <a href="#">
-                Contact
+                {{ 'contact' | translate }}
               </a>
             </li>
             <li>
               <a href="#">
-                Participate
+                {{ 'participate' | translate }}
               </a>
             </li>
           </ul>
         </div>
         <div class="col-6 col-3@md">
-          <h5>↳ Open Source</h5>
+          <h5>↳ {{ 'openSource' | translate }}</h5>
           <ul>
             <li>
               <a
@@ -168,7 +160,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Contribute
+                {{ 'contribute' | translate }}
                 <svg-icon key="external"></svg-icon>
               </a>
             </li>
@@ -178,7 +170,7 @@
                 routerLinkActive="active"
                 (click)="toggleNav()"
               >
-                3rd Party Licenses
+                {{ '3rdPartyLicenses' | translate }}
               </a>
             </li>
           </ul>
@@ -189,7 +181,7 @@
                 routerLinkActive="active"
                 (click)="toggleNav()"
               >
-                Changelog
+                {{ 'changelog' | translate }}
               </a>
             </li>
             <li>
@@ -198,14 +190,14 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Status
+                {{ 'status' | translate }}
                 <svg-icon key="external"></svg-icon>
               </a>
             </li>
           </ul>
         </div>
         <div class="col-6 col-3@md">
-          <h5>↳ Internal</h5>
+          <h5>↳ {{ 'internal' | translate }}</h5>
           <ul>
             <li>
               <a
@@ -213,7 +205,7 @@
                 routerLinkActive="active"
                 (click)="toggleNav()"
               >
-                Imprint
+                {{ 'imprint' | translate }}
               </a>
             </li>
             <li>
@@ -222,22 +214,47 @@
                 routerLinkActive="active"
                 (click)="toggleNav()"
               >
-                Privacy
+                {{ 'privacy' | translate }}
               </a>
             </li>
           </ul>
           <ul>
             <li>
               <a href="#">
-                Cookie Preferences
+                {{ 'cookiePreferences' | translate }}
                 <svg-icon key="dropdown"></svg-icon>
               </a>
             </li>
             <li>
-              <a href="#">
-                Language settings
+              <a (click)="toggleLanguagePicker()">
+                {{ 'languageSettings' | translate }}
                 <svg-icon key="dropdown"></svg-icon>
               </a>
+              <div class="languagePicker" *ngIf="isLanguagePickerVisible">
+                <div class="languagePicker__item currentLanguage">
+                  {{ currentLanguage }}
+                </div>
+                <div class="languagePicker__item language">
+                  <a (click)="setLanguage('DE')">
+                    🇩🇪
+                  </a>
+                </div>
+                <div class="languagePicker__item language">
+                  <a (click)="setLanguage('EN')">
+                    🇺🇸
+                  </a>
+                </div>
+                <div class="languagePicker__item language">
+                  <a (click)="setLanguage('FR')">
+                    🇫🇷
+                  </a>
+                </div>
+                <div class="languagePicker__item language">
+                  <a (click)="setLanguage('ES')">
+                    🇪🇸
+                  </a>
+                </div>
+              </div>
             </li>
           </ul>
           <ul>
