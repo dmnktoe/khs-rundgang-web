@@ -102,7 +102,7 @@
   </div>
 
   <app-text-seperator
-    [text]="'More from ' + recording?.show.title + ' >'"
+    [text]="('moreFrom' | translate) + ' ' + recording?.show.title + ' >'"
     [isLink]="true"
     [url]="'/shows/' + recording?.show.slug"
   >
