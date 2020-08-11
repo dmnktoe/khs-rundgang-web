@@ -12,31 +12,37 @@
     </div>
     <div class="grid grid-gap-lg">
       <div class="col-12 col-3@md">
-        <h4>Genres</h4>
-        <ais-panel>
-          <ais-refinement-list
-            attribute="genres.title"
-            operator="and"
-            limit="5"
-          >
-          </ais-refinement-list>
-        </ais-panel>
+        <div class="filterPanel">
+          <h4>Genres</h4>
+          <ais-panel>
+            <ais-refinement-list
+              attribute="genres.title"
+              operator="and"
+              limit="5"
+            >
+            </ais-refinement-list>
+          </ais-panel>
 
-        <h4>Artists</h4>
-        <ais-panel>
-          <ais-refinement-list
-            attribute="artists.title"
-            operator="and"
-            limit="5"
-          >
-          </ais-refinement-list>
-        </ais-panel>
+          <h4>Artists</h4>
+          <ais-panel>
+            <ais-refinement-list
+              attribute="artists.title"
+              operator="and"
+              limit="5"
+            >
+            </ais-refinement-list>
+          </ais-panel>
 
-        <h4>Shows</h4>
-        <ais-panel>
-          <ais-refinement-list attribute="show.title" operator="and" limit="5">
-          </ais-refinement-list>
-        </ais-panel>
+          <h4>Shows</h4>
+          <ais-panel>
+            <ais-refinement-list
+              attribute="show.title"
+              operator="and"
+              limit="5"
+            >
+            </ais-refinement-list>
+          </ais-panel>
+        </div>
       </div>
       <div class="col-12 col-9@md">
         <ais-configure [searchParameters]="searchParameters"></ais-configure>
