@@ -130,6 +130,11 @@ a {
   text-decoration: none;
 }
 
+a.underline {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
 a:hover {
   text-decoration: none;
   color: var(--secondary-color);
