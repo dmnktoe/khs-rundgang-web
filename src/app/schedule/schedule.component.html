@@ -3,7 +3,7 @@
   <div class="grid grid-auto-cols@lg">
     <div class="col-12 col-6@md">
       <app-text-seperator
-        [text]="'This week >'"
+        [text]="'weekThis' | translate"
         [isLink]="true"
         [url]="'/schedule'"
         [active]="view === 'thisWeek'"
@@ -12,7 +12,7 @@
     </div>
     <div class="col-12 col-6@md scheduleColumn">
       <app-text-seperator
-        [text]="'Next week >'"
+        [text]="'weekNext' | translate"
         [isLink]="true"
         [url]="'/schedule'"
         [active]="view === 'nextWeek'"

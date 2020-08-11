@@ -1,11 +1,11 @@
 <div class="container">
-  <app-page-title [title]="'Search'"></app-page-title>
+  <app-page-title [title]="'search' | translate"></app-page-title>
 
   <ais-instantsearch [config]="algoliaRecordingsConfig">
     <div class="grid">
       <div class="col-12">
         <ais-search-box
-          placeholder="Search..."
+          placeholder="{{ 'searchDotted' | translate }}"
           [autofocus]="true"
         ></ais-search-box>
       </div>
@@ -13,7 +13,7 @@
     <div class="grid grid-gap-lg">
       <div class="col-12 col-3@md">
         <div class="filterPanel">
-          <h4>Genres</h4>
+          <h4>{{ 'genres' | translate }}</h4>
           <ais-panel>
             <ais-refinement-list
               attribute="genres.title"
@@ -23,7 +23,7 @@
             </ais-refinement-list>
           </ais-panel>
 
-          <h4>Artists</h4>
+          <h4>{{ 'artists' | translate }}</h4>
           <ais-panel>
             <ais-refinement-list
               attribute="artists.title"
@@ -33,7 +33,7 @@
             </ais-refinement-list>
           </ais-panel>
 
-          <h4>Shows</h4>
+          <h4>{{ 'shows' | translate }}</h4>
           <ais-panel>
             <ais-refinement-list
               attribute="show.title"
@@ -49,7 +49,7 @@
         <ais-hits>
           <ng-template let-hits="hits" let-results="results">
             <div class="col-12">
-              <h4>Broadcasts</h4>
+              <h4>{{ 'broadcasts' | translate }}</h4>
               <span *ngIf="hits?.length == 0">
                 <span [innerHTML]="'noRecordingsFound' | translate"></span>
               </span>
