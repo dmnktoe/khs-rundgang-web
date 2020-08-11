@@ -96,10 +96,6 @@ nav {
   margin: 0 auto;
 }
 
-.infoBanner a {
-  text-decoration: underline;
-}
-
 .navigation {
   padding-top: 2rem;
   padding-bottom: 1.5rem;
@@ -190,6 +186,7 @@ nav {
   border-radius: 5px;
   margin-top: 10px;
   display: flex;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .languagePicker__item.currentLanguage {
