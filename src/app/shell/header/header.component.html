@@ -26,7 +26,7 @@
       <div class="grid grid-gap-xs">
         <div class="col-2"></div>
         <div class="col-8 text-center">
-          <span>{{ 'infoBannerText' | translate }}</span>
+          <span [innerHTML]="'infoBannerText' | translate"></span>
         </div>
         <div class="col-2 text-right">
           <app-dark-mode-toggle></app-dark-mode-toggle>
@@ -222,7 +222,6 @@
             <li>
               <a href="#">
                 {{ 'cookiePreferences' | translate }}
-                <svg-icon key="modal"></svg-icon>
               </a>
             </li>
             <li>

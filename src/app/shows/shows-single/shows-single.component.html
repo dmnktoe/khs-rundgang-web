@@ -1,6 +1,6 @@
 <div class="container">
   <app-page-title
-    [title]="'Shows'"
+    [title]="'shows' | translate"
     [isLink]="true"
     [url]="'/shows'"
   ></app-page-title>
@@ -23,7 +23,7 @@
             <h1 [style.color]="hex">↳{{ show?.title }}</h1>
           </div>
           <div class="show__counter" [style.color]="hex">
-            {{ recordings?.length }} broadcast(s).
+            {{ recordings?.length }} {{ 'broadcasts' | translate }}.
           </div>
         </div>
         <div class="show__description__container">

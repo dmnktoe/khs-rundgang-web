@@ -1,5 +1,5 @@
 <div class="container">
-  <app-page-title [title]="'Changelog'"></app-page-title>
+  <app-page-title [title]="'changelog' | translate"></app-page-title>
 
   <div class="changelog">
     <div class="appSelect">
@@ -73,12 +73,7 @@
     <div class="bugsNotice">
       <div class="grid text-center">
         <div class="col-12">
-          <p>
-            Please report any bugs to
-            <a href="mailto:office@radio-rasclat.com"
-              >office@radio-rasclat.com</a
-            >
-          </p>
+          <p [innerHTML]="'reportBugs' | translate"></p>
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@
   </app-recordings-gallery>
 
   <app-text-seperator
-    [text]="'(' + recordings.length + ') View all >'"
+    [text]="'(' + recordings.length + ')' + ('viewAll' | translate) + ' >'"
     [isLink]="true"
     [url]="'/broadcasts'"
   >
@@ -30,7 +30,7 @@
   <div class="grid grid-auto-cols@lg">
     <div class="col-12 col-6@md">
       <app-text-seperator
-        [text]="'Shows >'"
+        [text]="('shows' | translate) + ' >'"
         [isLink]="true"
         [url]="'/shows'"
       ></app-text-seperator>
@@ -43,7 +43,7 @@
     </div>
     <div class="col-12 col-6@md scheduleColumn">
       <app-text-seperator
-        [text]="'Schedule >'"
+        [text]="('schedule' | translate) + ' >'"
         [isLink]="true"
         [url]="'/schedule'"
       ></app-text-seperator>
