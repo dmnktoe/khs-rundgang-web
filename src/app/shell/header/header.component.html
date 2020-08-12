@@ -119,13 +119,30 @@
           <h5>↳ {{ 'appTitle' | translate }}</h5>
           <ul>
             <li>
-              <a href="#">
-                {{ 'about' | translate }}
+              <a
+                routerLink="/blog"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
+                {{ 'blog' | translate }}
               </a>
             </li>
             <li>
-              <a href="#">
+              <a
+                routerLink="/events"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
                 {{ 'events' | translate }}
+              </a>
+            </li>
+            <li>
+              <a
+                routerLink="/projects"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
+                {{ 'projects' | translate }}
               </a>
             </li>
           </ul>
@@ -140,12 +157,20 @@
               </a>
             </li>
             <li>
-              <a href="#">
+              <a
+                routerLink="/contact"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
                 {{ 'contact' | translate }}
               </a>
             </li>
             <li>
-              <a href="#">
+              <a
+                routerLink="/participate"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
                 {{ 'participate' | translate }}
               </a>
             </li>
