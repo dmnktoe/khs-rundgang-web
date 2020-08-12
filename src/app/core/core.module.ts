@@ -10,7 +10,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { RouteReusableStrategy } from './route-reusable-strategy';
 import { AuthenticationService } from './authentication/authentication.service';
 import { CredentialsService } from './authentication/credentials.service';
-import { I18nService } from './i18n.service';
+import { I18nService } from './services/i18n.service';
 import { HttpService } from './http/http.service';
 import { HttpCacheService } from './http/http-cache.service';
 import { ApiPrefixInterceptor } from './http/api-prefix.interceptor';
