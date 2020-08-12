@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UiStyleToggleService } from '@app/services/ui-style-toggle.service';
+import { UiStyleToggleService } from '@app/core/services/ui-style-toggle.service';
 
 @Component({
   selector: 'app-dark-mode-toggle',

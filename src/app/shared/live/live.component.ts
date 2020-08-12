@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StreamState } from '@app/interfaces/stream-state';
-import { AudioService } from '@app/services/audio.service';
-import { ApiService } from '@app/core/api.service';
+import { StreamState } from '@app/core/interfaces/stream-state';
+import { AudioService } from '@app/core/services/audio.service';
+import { ApiService } from '@app/core/services/api.service';
 import { finalize } from 'rxjs/operators';
 import moment from 'moment';
 

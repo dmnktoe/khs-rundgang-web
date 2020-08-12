@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 
-import { Logger } from '../logger.service';
+import { Logger } from '../services/logger.service';
 
 const log = new Logger('HttpCacheService');
 const cachePersistenceKey = 'httpCache';

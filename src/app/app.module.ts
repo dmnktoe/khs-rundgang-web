@@ -14,18 +14,18 @@ import { TimeagoModule } from 'ngx-timeago';
 import { SharedModule } from '@app/shared';
 import { SvgIconsModule } from '@ngneat/svg-icon';
 /* VIEWS */
-import { AboutModule } from './about/about.module';
-import { HomeModule } from './home/home.module';
+import { AboutModule } from './pages/about/about.module';
+import { HomeModule } from './pages/home/home.module';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { ImprintModule } from './imprint/imprint.module';
-import { PrivacyModule } from './privacy/privacy.module';
-import { ChangelogModule } from './changelog/changelog.module';
-import { LicensesModule } from './licenses/licenses.module';
-import { RecordingsModule } from './recordings/recordings.module';
-import { ScheduleModule } from '@app/schedule/schedule.module';
-import { SearchModule } from './search/search.module';
+import { ImprintModule } from './pages/imprint/imprint.module';
+import { PrivacyModule } from './pages/privacy/privacy.module';
+import { ChangelogModule } from './pages/changelog/changelog.module';
+import { LicensesModule } from './pages/licenses/licenses.module';
+import { RecordingsModule } from './pages/recordings/recordings.module';
+import { ScheduleModule } from '@app/pages/schedule/schedule.module';
+import { SearchModule } from './pages/search/search.module';
 import { ShellModule } from './shell/shell.module';
-import { ShowsModule } from './shows/shows.module';
+import { ShowsModule } from './pages/shows/shows.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -33,8 +33,8 @@ import { NgAisModule } from 'angular-instantsearch';
 import { HttpCacheInterceptorModule } from '@ngneat/cashew';
 
 /* Services */
-import { UiStyleToggleService } from '@app/services/ui-style-toggle.service';
-import { StorageService } from '@app/services/local-storage.service';
+import { UiStyleToggleService } from '@app/core/services/ui-style-toggle.service';
+import { StorageService } from '@app/core/services/local-storage.service';
 
 /* Analytics */
 import { Angulartics2Module } from 'angulartics2';

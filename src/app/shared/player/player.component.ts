@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AudioService } from '@app/services/audio.service';
-import { StreamState } from '@app/interfaces/stream-state';
+import { AudioService } from '@app/core/services/audio.service';
+import { StreamState } from '@app/core/interfaces/stream-state';
 import { trigger, style, animate, transition } from '@angular/animations';
 export type FadeState = 'visible' | 'hidden';
 

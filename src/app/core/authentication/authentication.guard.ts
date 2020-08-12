@@ -6,7 +6,7 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 
-import { Logger } from '../logger.service';
+import { Logger } from '../services/logger.service';
 import { CredentialsService } from './credentials.service';
 
 const log = new Logger('AuthenticationGuard');

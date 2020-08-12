@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoaderComponent } from './loader/loader.component';
-import { ApiService } from '@app/core/api.service';
+import { ApiService } from '@app/core/services/api.service';
 import { LimitPipe } from '@app/shared/pipes/LimitPipe';
 import { SafeHtmlPipe } from '@app/shared/pipes/SafeHtmlPipe';
 import { MomentPipe } from '@app/shared/pipes/MomentPipe';
