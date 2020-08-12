@@ -83,7 +83,8 @@
                 class="recording__artists__single__image"
                 [defaultImage]="defaultImage"
                 [lazyLoad]="artist?.image"
-                tooltip="{{ artist.title }}"
+                tooltip="{{ artist?.title }}"
+                alt="{{ artist?.title }}"
                 [options]="{
                   placement: 'top',
                   'hide-delay': 0,
