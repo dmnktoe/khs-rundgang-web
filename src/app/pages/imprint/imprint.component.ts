@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { environment } from '../../../environments/environment';
+import { environment } from '@env/environment';
 import { finalize } from 'rxjs/operators';
 import { ApiService } from '../../core/services/api.service';
 
