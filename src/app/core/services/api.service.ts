@@ -37,6 +37,17 @@ export class ApiService {
       );
   }
 
+  getBlogPosts() {
+    return this.httpClient.get('assets/data/blog.json', withCache()).pipe(
+      map((body: any) => body),
+      catchError(() =>
+        of(
+          'Es ist ein Fehler aufgetreten. Die Artists konnten nicht geladen werden.'
+        )
+      )
+    );
+  }
+
   getGenres() {
     return this.httpClient
       .get(environment.serverUrl + '/genres', withCache())
