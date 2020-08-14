@@ -18,6 +18,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "paths": {
       "@app/*": ["app/*"],
+      "@assets/*": ["assets/*"],
       "@env/*": ["environments/*"]
     },
     "typeRoots": ["node_modules/@types"]
