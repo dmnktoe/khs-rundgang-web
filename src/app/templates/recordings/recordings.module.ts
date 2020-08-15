@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { Title } from '@angular/platform-browser';
 
-import { CoreModule } from '../../core';
+import { CoreModule } from '@app/core';
 import { SharedModule } from '../shared';
 import { RecordingsRoutingModule } from './recordings-routing.module';
 import { RecordingsComponent } from './recordings.component';
 import { RecordingsGalleryComponent } from './recordings-gallery/recordings-gallery.component';
 import { RecordingsSingleComponent } from './recordings-single/recordings-single.component';
-import { ApiService } from '../../core/services/api.service';
+import { ApiService } from '@app/core/services/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { Angulartics2Module } from 'angulartics2';
