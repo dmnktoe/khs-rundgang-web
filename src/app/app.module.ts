@@ -11,21 +11,21 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '@app/core';
 import { TimeagoModule } from 'ngx-timeago';
-import { SharedModule } from '@app/shared';
-import { SvgIconsModule } from '@ngneat/svg-icon';
+import { SharedModule } from '@app/templates/shared';
+
 /* VIEWS */
-import { AboutModule } from './pages/about/about.module';
-import { HomeModule } from './pages/home/home.module';
+import { AboutModule } from '@app/templates/about/about.module';
+import { HomeModule } from './templates/home/home.module';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { ImprintModule } from './pages/imprint/imprint.module';
-import { PrivacyModule } from './pages/privacy/privacy.module';
-import { ChangelogModule } from './pages/changelog/changelog.module';
-import { LicensesModule } from './pages/licenses/licenses.module';
-import { RecordingsModule } from './pages/recordings/recordings.module';
-import { ScheduleModule } from '@app/pages/schedule/schedule.module';
-import { SearchModule } from './pages/search/search.module';
-import { ShellModule } from './shell/shell.module';
-import { ShowsModule } from './pages/shows/shows.module';
+import { ImprintModule } from './templates/imprint/imprint.module';
+import { PrivacyModule } from './templates/privacy/privacy.module';
+import { ChangelogModule } from './templates/changelog/changelog.module';
+import { LicensesModule } from './templates/licenses/licenses.module';
+import { RecordingsModule } from './templates/recordings/recordings.module';
+import { ScheduleModule } from '@app/templates/schedule/schedule.module';
+import { SearchModule } from '@app/templates/search/search.module';
+import { ShellModule } from './templates/shell/shell.module';
+import { ShowsModule } from './templates/shows/shows.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -45,9 +45,6 @@ import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { environment } from '@env/environment';
 import * as Sentry from '@sentry/browser';
-
-/* Icons */
-import icons from '../assets/svg/svg-icons';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
