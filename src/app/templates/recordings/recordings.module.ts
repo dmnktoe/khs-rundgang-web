@@ -14,7 +14,7 @@ import { SwiperModule } from 'ngx-swiper-wrapper';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { Angulartics2Module } from 'angulartics2';
 import { TooltipModule } from 'ng2-tooltip-directive';
-import { RecordingsSlideshowComponent } from './recordings-slideshow/recordings-slideshow.component';
+import { SlideshowComponent } from '../home/slideshow/slideshow.component';
 import { SvgIconsModule } from '@ngneat/svg-icon';
 import icons from '../../../assets/svg/svg-icons';
 import { RecordingsListComponent } from './recordings-list/recordings-list.component';
@@ -38,12 +38,12 @@ import { RecordingsListComponent } from './recordings-list/recordings-list.compo
     RecordingsComponent,
     RecordingsGalleryComponent,
     RecordingsSingleComponent,
-    RecordingsSlideshowComponent,
+    SlideshowComponent,
     RecordingsListComponent,
   ],
   exports: [
     RecordingsGalleryComponent,
-    RecordingsSlideshowComponent,
+    SlideshowComponent,
     RecordingsListComponent,
   ],
   providers: [ApiService, Title],

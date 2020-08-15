@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 @Component({
-  selector: 'app-recordings-slideshow',
-  templateUrl: './recordings-slideshow.component.html',
-  styleUrls: ['./recordings-slideshow.component.scss'],
+  selector: 'app-slideshow',
+  templateUrl: './slideshow.component.html',
+  styleUrls: ['./slideshow.component.scss'],
 })
-export class RecordingsSlideshowComponent implements OnInit {
+export class SlideshowComponent implements OnInit {
   @Input() recordings = '';
   @Input() hotRecording = '';
   @Input() isLoading = false;
