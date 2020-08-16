@@ -31,7 +31,6 @@ export class RecordingsComponent implements OnInit {
         this.recordingsSorted = result;
         // turn off loading state
         this.isLoading = false;
-        console.log(this.recordingsSorted);
       });
   }
 }
