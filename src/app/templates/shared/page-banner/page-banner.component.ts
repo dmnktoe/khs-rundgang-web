@@ -13,6 +13,6 @@ export class PageBannerComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.imagePath = './../../../assets/images/' + this.image;
+    this.imagePath = this.image;
   }
 }
