@@ -1,0 +1,17 @@
+<div class="col-12" *ngIf="isLoading == false && blogPosts?.length == 0">
+  <app-text-seperator [text]="'noBlogPostsFound' | translate" [isLink]="false">
+  </app-text-seperator>
+</div>
+
+<div class="blogPostList" *ngIf="!isLoading == true">
+  <div class="grid">
+    <div
+      class="col-start-1 col-end-13 col-start-3@sm col-end-11@sm col-start-4@md col-end-10@md"
+    >
+      <div
+        class="blogPostEntry"
+        *ngFor="let blogPost of blogPosts?.slice(0, limit)"
+      ></div>
+    </div>
+  </div>
+</div>

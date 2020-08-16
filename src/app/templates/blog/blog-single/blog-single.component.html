@@ -1,0 +1,11 @@
+<div class="container">
+  <app-page-title
+    [title]="'blog' | translate"
+    [isLink]="true"
+    [url]="'/blog'"
+  ></app-page-title>
+
+  <app-page-banner [image]="blogPost.image"></app-page-banner>
+
+  {{ blogPost?.title }}
+</div>
