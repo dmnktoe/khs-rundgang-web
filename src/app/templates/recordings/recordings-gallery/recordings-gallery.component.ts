@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Recording } from '@app/core/models/Recording';
 
 @Component({
   selector: 'app-recordings-gallery',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./recordings-gallery.component.scss'],
 })
 export class RecordingsGalleryComponent implements OnInit {
-  @Input() recordings = '';
+  @Input() recordings: Recording[];
   @Input() limit: number;
   @Input() isLoading = false;
 
