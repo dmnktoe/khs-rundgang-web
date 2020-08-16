@@ -51,7 +51,7 @@
             <div class="col-12">
               <h4>{{ 'broadcasts' | translate }}</h4>
               <span *ngIf="hits?.length == 0">
-                <span [innerHTML]="'noRecordingsFound' | translate"></span>
+                <span [innerHTML]="'noBroadcastsFound' | translate"></span>
               </span>
               <span *ngIf="hits?.length >= 1">
                 <app-recordings-list [recordings]="hits"></app-recordings-list>
