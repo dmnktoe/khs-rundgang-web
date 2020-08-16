@@ -10,6 +10,8 @@ import moment from 'moment';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  blogPosts = '';
+  projects = '';
   recordings = '';
   shows = '';
   hotRecordings: any = [];
@@ -79,13 +81,25 @@ export class HomeComponent implements OnInit {
                       schedule[moment().format('dddd').toLowerCase()];
                     this.apiService
                       .getHotRecordings()
-                      .pipe(
-                        finalize(() => {
-                          this.isLoading = false;
-                        })
-                      )
+                      .pipe(finalize(() => {}))
                       .subscribe((hotRecordings) => {
                         this.hotRecordings = hotRecordings;
+                        this.apiService
+                          .getBlogPosts()
+                          .pipe(finalize(() => {}))
+                          .subscribe((blogPosts) => {
+                            this.blogPosts = blogPosts;
+                            this.apiService
+                              .getProjects()
+                              .pipe(
+                                finalize(() => {
+                                  this.isLoading = false;
+                                })
+                              )
+                              .subscribe((projects) => {
+                                this.projects = projects;
+                              });
+                          });
                       });
                   });
               });
