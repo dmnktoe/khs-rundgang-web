@@ -6,7 +6,7 @@
 
 .changelog .app {
   background-color: var(--card-light-background);
-  border-radius: 25px;
+  border-radius: var(--card-border-radius);
   padding: 1rem;
   transition: all 0.15s ease;
 }
@@ -50,7 +50,7 @@
   position: relative;
   transition: none;
   background: var(--card-light-background);
-  border-radius: 20px;
+  border-radius: var(--card-border-radius);
   padding: 2rem;
 }
 
@@ -84,7 +84,7 @@
 .changelog .changelogItem .category {
   margin-right: 1rem;
   position: relative;
-  border-radius: 20px;
+  border-radius: var(--card-border-radius);
   padding: 3px 9px 1px;
   font-size: 13px;
   height: 20px;

@@ -220,7 +220,7 @@ svg-icon {
 
 .btn {
   padding: 0.6rem 1.5rem 0.5rem;
-  border-radius: 50px;
+  border-radius: var(--btn-border-radius);
   cursor: pointer;
   font-family: "Trash Medium", sans-serif;
   display: inline-block;

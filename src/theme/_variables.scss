@@ -1,1 +1,6 @@
-$border-radius: 25px !default;
+$border-radius: 25px;
+
+:root {
+  --card-border-radius: $border-radius;
+  --btn-border-radius: $border-radius;
+}

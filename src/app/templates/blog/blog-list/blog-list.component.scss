@@ -8,7 +8,7 @@
   position: relative;
   transition: none;
   background: var(--card-light-background);
-  border-radius: 25px;
+  border-radius: var(--card-border-radius);
 }
 
 .blogPostList .blogPostEntry:first-child {
@@ -43,8 +43,8 @@
 }
 
 .blogPostList .blogPostEntry__image__container figure.blogListBanner {
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+  border-top-left-radius: var(--card-border-radius);
+  border-top-right-radius: var(--card-border-radius);
   position: relative;
   overflow: hidden;
   height: 0;
