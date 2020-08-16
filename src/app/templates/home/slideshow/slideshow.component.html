@@ -17,7 +17,7 @@
                         <svg-icon key="play"></svg-icon>
                       </div>
                       <div class="recordingSlideCaption__textArea">
-                        Hot this month &mdash;
+                        {{ 'hotThisMonth' | translate }} &mdash;
                         {{ hotRecording?.viewCounter }} plays:<br />
                         <h4>
                           ↳{{
@@ -35,7 +35,100 @@
           </div>
           <div
             class="swiper-slide"
-            *ngFor="let recording of recordings | slice: 0:5; let i = index"
+            *ngFor="let project of projects | slice: 0:1; let i = index"
+          >
+            <div
+              class="recordingSlide"
+              [defaultImage]="defaultImage"
+              [lazyLoad]="project?.image"
+            >
+              <a routerLink="/projects/project/{{ project?.slug }}">
+                <div class="recordingSlideInner">
+                  <div class="recordingSlideCaptionWrapper">
+                    <div class="recordingSlideCaption">
+                      <div class="recordingSlideCaption__textArea">
+                        {{ 'ourNextEvent' | translate }} &mdash;
+                        {{ project?.timeStart | timeago }}<br />
+                        <h4>
+                          ↳{{
+                            project?.title.length > 50
+                              ? (project?.title | slice: 0:50) + '...'
+                              : project?.title
+                          }}
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div
+            class="swiper-slide"
+            *ngFor="let recording of recordings | slice: 0:2; let i = index"
+          >
+            <div
+              class="recordingSlide"
+              [defaultImage]="defaultImage"
+              [lazyLoad]="recording?.image"
+            >
+              <a routerLink="/broadcasts/{{ recording?.slug }}">
+                <div class="recordingSlideInner">
+                  <div class="recordingSlideCaptionWrapper">
+                    <div class="recordingSlideCaption">
+                      <div class="recordingSlideCaption__playArea">
+                        <svg-icon key="play"></svg-icon>
+                      </div>
+                      <div class="recordingSlideCaption__textArea">
+                        {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
+                        {{ recording?.timeStart | date: 'HH:mm' }}<br />
+                        <h4>
+                          ↳{{
+                            recording?.title.length > 50
+                              ? (recording?.title | slice: 0:50) + '...'
+                              : recording?.title
+                          }}
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div
+            class="swiper-slide"
+            *ngFor="let blogPost of blogPosts | slice: 0:1; let i = index"
+          >
+            <div
+              class="recordingSlide"
+              [defaultImage]="defaultImage"
+              [lazyLoad]="blogPost?.image"
+            >
+              <a routerLink="/blog/post/{{ blogPost?.slug }}">
+                <div class="recordingSlideInner">
+                  <div class="recordingSlideCaptionWrapper">
+                    <div class="recordingSlideCaption">
+                      <div class="recordingSlideCaption__textArea">
+                        {{ 'fromOurBlog' | translate }} &mdash;
+                        {{ blogPost?.createdAt | date: 'dd.MM.yyyy' }}<br />
+                        <h4>
+                          ↳{{
+                            blogPost?.title.length > 50
+                              ? (blogPost?.title | slice: 0:50) + '...'
+                              : blogPost?.title
+                          }}
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div
+            class="swiper-slide"
+            *ngFor="let recording of recordings | slice: 2:4; let i = index"
           >
             <div
               class="recordingSlide"

@@ -7,7 +7,9 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
   styleUrls: ['./slideshow.component.scss'],
 })
 export class SlideshowComponent implements OnInit {
+  @Input() blogPosts = '';
   @Input() recordings = '';
+  @Input() projects = '';
   @Input() hotRecording = '';
   @Input() isLoading = false;
 
