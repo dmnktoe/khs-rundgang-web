@@ -38,14 +38,29 @@ export class ApiService {
   }
 
   getBlogPosts() {
-    return this.httpClient.get('assets/data/blog.json', withCache()).pipe(
-      map((body: any) => body),
-      catchError(() =>
-        of(
-          'Es ist ein Fehler aufgetreten. Die Artists konnten nicht geladen werden.'
+    return this.httpClient
+      .get(environment.serverUrl + '/blog/posts', withCache())
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Blog-Einträge konnten nicht geladen werden.'
+          )
         )
-      )
-    );
+      );
+  }
+
+  getBlogPost({ blogPostId }: { blogPostId: any }) {
+    return this.httpClient
+      .get(environment.serverUrl + '/blog/post/' + blogPostId, withCache())
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Der Blog-Eintrag konnte nicht geladen werden.'
+          )
+        )
+      );
   }
 
   getGenres() {
@@ -111,6 +126,35 @@ export class ApiService {
         catchError(() =>
           of(
             'Es ist ein Fehler aufgetreten. Die Aufnahme konnte nicht geladen werden.'
+          )
+        )
+      );
+  }
+
+  getProjects() {
+    return this.httpClient
+      .get(environment.serverUrl + '/projects', withCache())
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die Projekt-Einträge konnten nicht geladen werden.'
+          )
+        )
+      );
+  }
+
+  getProject({ projectId }: { projectId: any }) {
+    return this.httpClient
+      .get(
+        environment.serverUrl + '/projects/project/' + projectId,
+        withCache()
+      )
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Der Projekt-Eintrag konnte nicht geladen werden.'
           )
         )
       );
