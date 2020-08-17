@@ -12,7 +12,7 @@ We present Radio Rasclat Web in version four. The entire application has been en
 - New defined dark-mode.
 - News / Project
 
-## Changes
+### Changes
 
 - The main menu has been relocated to the top-bar as a dropdown.
 
