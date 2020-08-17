@@ -36,6 +36,8 @@
   "moreFrom": "More from",
   "noBlogPostsFound": "No blog posts were found in the database.",
   "noBroadcastsFound": "No broadcasts were found in the database.",
+  "noProgramNextWeek": "Unfortunately there is no program planned for next week.",
+  "noProgramThisWeek": "Unfortunately no program is planned for this week.",
   "noProgramToday": "No program scheduled for today, sorry! Come back tomorrow.",
   "noShowsFound": "No shows were found in the database.",
   "openSource": "Open Source",
