@@ -17,6 +17,7 @@ import { SharedModule } from '@app/templates/shared';
 import { AboutModule } from '@app/templates/about/about.module';
 import { HomeModule } from './templates/home/home.module';
 import { BlogModule } from './templates/blog/blog.module';
+import { ProjectsModule } from './templates/projects/projects.module';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ImprintModule } from './templates/imprint/imprint.module';
 import { PrivacyModule } from './templates/privacy/privacy.module';
@@ -92,6 +93,7 @@ export class SentryErrorHandler implements ErrorHandler {
     ShellModule,
     HomeModule,
     BlogModule,
+    ProjectsModule,
     ImprintModule,
     PrivacyModule,
     ChangelogModule,
