@@ -1,22 +1,22 @@
 <div class="grid" *ngIf="!isLoading">
   <div class="col-12">
-    <div class="recordingSlider">
+    <div class="slideshowSlider">
       <div class="swiper-container" [swiper]="config">
         <div class="swiper-wrapper">
           <div class="swiper-slide" *ngIf="hotRecording">
             <div
-              class="recordingSlide"
+              class="slideshowSlide"
               [defaultImage]="defaultImage"
               [lazyLoad]="hotRecording?.image"
             >
               <a routerLink="/broadcasts/{{ hotRecording?.slug }}">
-                <div class="recordingSlideInner">
-                  <div class="recordingSlideCaptionWrapper">
-                    <div class="recordingSlideCaption">
-                      <div class="recordingSlideCaption__playArea">
+                <div class="slideshowSlideInner">
+                  <div class="slideshowSlideCaptionWrapper">
+                    <div class="slideshowSlideCaption">
+                      <div class="slideshowSlideCaption__playArea">
                         <svg-icon key="play"></svg-icon>
                       </div>
-                      <div class="recordingSlideCaption__textArea">
+                      <div class="slideshowSlideCaption__textArea">
                         {{ 'hotThisMonth' | translate }} &mdash;
                         {{ hotRecording?.viewCounter }} plays:<br />
                         <h4>
@@ -38,15 +38,15 @@
             *ngFor="let project of projects | slice: 0:1; let i = index"
           >
             <div
-              class="recordingSlide"
+              class="slideshowSlide"
               [defaultImage]="defaultImage"
               [lazyLoad]="project?.image"
             >
               <a routerLink="/projects/project/{{ project?.slug }}">
-                <div class="recordingSlideInner">
-                  <div class="recordingSlideCaptionWrapper">
-                    <div class="recordingSlideCaption">
-                      <div class="recordingSlideCaption__textArea">
+                <div class="slideshowSlideInner">
+                  <div class="slideshowSlideCaptionWrapper">
+                    <div class="slideshowSlideCaption">
+                      <div class="slideshowSlideCaption__textArea">
                         {{ 'ourNextEvent' | translate }} &mdash;
                         {{ project?.timeStart | timeago }}<br />
                         <h4>
@@ -68,18 +68,18 @@
             *ngFor="let recording of recordings | slice: 0:2; let i = index"
           >
             <div
-              class="recordingSlide"
+              class="slideshowSlide"
               [defaultImage]="defaultImage"
               [lazyLoad]="recording?.image"
             >
               <a routerLink="/broadcasts/{{ recording?.slug }}">
-                <div class="recordingSlideInner">
-                  <div class="recordingSlideCaptionWrapper">
-                    <div class="recordingSlideCaption">
-                      <div class="recordingSlideCaption__playArea">
+                <div class="slideshowSlideInner">
+                  <div class="slideshowSlideCaptionWrapper">
+                    <div class="slideshowSlideCaption">
+                      <div class="slideshowSlideCaption__playArea">
                         <svg-icon key="play"></svg-icon>
                       </div>
-                      <div class="recordingSlideCaption__textArea">
+                      <div class="slideshowSlideCaption__textArea">
                         {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
                         {{ recording?.timeStart | date: 'HH:mm' }}<br />
                         <h4>
@@ -101,15 +101,15 @@
             *ngFor="let blogPost of blogPosts | slice: 0:1; let i = index"
           >
             <div
-              class="recordingSlide"
+              class="slideshowSlide"
               [defaultImage]="defaultImage"
               [lazyLoad]="blogPost?.image"
             >
               <a routerLink="/blog/post/{{ blogPost?.slug }}">
-                <div class="recordingSlideInner">
-                  <div class="recordingSlideCaptionWrapper">
-                    <div class="recordingSlideCaption">
-                      <div class="recordingSlideCaption__textArea">
+                <div class="slideshowSlideInner">
+                  <div class="slideshowSlideCaptionWrapper">
+                    <div class="slideshowSlideCaption">
+                      <div class="slideshowSlideCaption__textArea">
                         {{ 'fromOurBlog' | translate }} &mdash;
                         {{ blogPost?.createdAt | date: 'dd.MM.yyyy' }}<br />
                         <h4>
@@ -131,18 +131,18 @@
             *ngFor="let recording of recordings | slice: 2:4; let i = index"
           >
             <div
-              class="recordingSlide"
+              class="slideshowSlide"
               [defaultImage]="defaultImage"
               [lazyLoad]="recording?.image"
             >
               <a routerLink="/broadcasts/{{ recording?.slug }}">
-                <div class="recordingSlideInner">
-                  <div class="recordingSlideCaptionWrapper">
-                    <div class="recordingSlideCaption">
-                      <div class="recordingSlideCaption__playArea">
+                <div class="slideshowSlideInner">
+                  <div class="slideshowSlideCaptionWrapper">
+                    <div class="slideshowSlideCaption">
+                      <div class="slideshowSlideCaption__playArea">
                         <svg-icon key="play"></svg-icon>
                       </div>
-                      <div class="recordingSlideCaption__textArea">
+                      <div class="slideshowSlideCaption__textArea">
                         {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
                         {{ recording?.timeStart | date: 'HH:mm' }}<br />
                         <h4>
@@ -166,18 +166,18 @@
 </div>
 <div class="grid" *ngIf="isLoading">
   <div class="col-12">
-    <div class="recordingSlider">
+    <div class="slideshowSlider">
       <div class="swiper-container" [swiper]="config">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="recordingSlide loading">
-              <div class="recordingSlideInner">
-                <div class="recordingSlideCaptionWrapper">
-                  <div class="recordingSlideCaption">
-                    <div class="recordingSlideCaption__playArea">
+            <div class="slideshowSlide loading">
+              <div class="slideshowSlideInner">
+                <div class="slideshowSlideCaptionWrapper">
+                  <div class="slideshowSlideCaption">
+                    <div class="slideshowSlideCaption__playArea">
                       <svg-icon key="play"></svg-icon>
                     </div>
-                    <div class="recordingSlideCaption__textArea">
+                    <div class="slideshowSlideCaption__textArea">
                       &nbsp;
                       <h4>↳{{ 'loading' | translate }}...</h4>
                     </div>
@@ -187,14 +187,14 @@
             </div>
           </div>
           <div class="swiper-slide" *ngIf="hotRecording">
-            <div class="recordingSlide loading">
-              <div class="recordingSlideInner">
-                <div class="recordingSlideCaptionWrapper">
-                  <div class="recordingSlideCaption">
-                    <div class="recordingSlideCaption__playArea">
+            <div class="slideshowSlide loading">
+              <div class="slideshowSlideInner">
+                <div class="slideshowSlideCaptionWrapper">
+                  <div class="slideshowSlideCaption">
+                    <div class="slideshowSlideCaption__playArea">
                       <svg-icon key="play"></svg-icon>
                     </div>
-                    <div class="recordingSlideCaption__textArea">
+                    <div class="slideshowSlideCaption__textArea">
                       &nbsp;
                       <h4>↳{{ 'loading' | translate }}...</h4>
                     </div>
