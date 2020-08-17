@@ -76,9 +76,7 @@ npm install
 
 ### Setup the backend
 
-In order for the application to run completely and properly, you need to download the corresponding backend. The backend is used to load data and content from the database so that it can be displayed in the frontend (this repository).
-
-Head over to www.google.de to download and install the backend.
+In order for the application to run completely and properly, you need to download the corresponding backend. The backend is used to load data and content from the database so that it can be displayed in the frontend (this repository). Head over to [Radio Rasclat Server](https://github.com/dmnktoe/radio-rasclat-server) to download and install the backend.
 
 ### Main Tasks
 
