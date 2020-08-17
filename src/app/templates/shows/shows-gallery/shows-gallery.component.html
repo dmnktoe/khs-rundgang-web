@@ -1,0 +1,42 @@
+<div class="col-12" *ngIf="isLoading == false && shows?.length == 0">
+  <app-text-seperator [text]="'noShowsFound' | translate" [isLink]="false">
+  </app-text-seperator>
+</div>
+
+<div class="showGallery">
+  <div class="grid-auto-xl">
+    <div
+      class="show"
+      [hidden]="isLoading"
+      *ngFor="let show of shows?.slice(0, limit)"
+    >
+      <div class="show__wrapper">
+        <div class="show__info__container">
+          <div class="show__description">
+            {{
+              show?.description.length > 30
+                ? (show?.description | safeHtml | slice: 0:30) + '...'
+                : show?.description
+            }}
+          </div>
+          <div class="show__title">
+            <h4>
+              <a routerLink="/shows/{{ show?.slug }}"> ↳{{ show.title }} </a>
+            </h4>
+          </div>
+        </div>
+        <div class="show__image__container">
+          <a routerLink="/shows/{{ show?.slug }}">
+            <figure class="banner">
+              <img
+                [defaultImage]="defaultImage"
+                [lazyLoad]="show?.image"
+                alt="{{ show?.title }}"
+              />
+            </figure>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,17 +4,15 @@
  */
 
 // Theme variables, must be included before the libraries to allow overriding defaults
-@import "theme/theme-variables";
+@import "theme/_normalize";
+@import "theme/_fonts";
+@import "theme/_variables";
+@import "theme/_colors";
+@import "theme/_map";
 
 // 3rd party libraries
 @import "~flashgrid/dist/flashgrid";
-@import "~bootstrap/scss/bootstrap";
-@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "~@fortawesome/fontawesome-free/scss/brands.scss";
-@import "~@fortawesome/fontawesome-free/scss/regular.scss";
-@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~swiper/css/swiper.min.css";
 
-// Theme customization
+// Theme
 @import "theme/theme";
-
-@import "~swiper/dist/css/swiper.min.css";

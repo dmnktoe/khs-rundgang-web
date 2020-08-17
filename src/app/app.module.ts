@@ -1,46 +1,60 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ErrorHandler, Injectable } from '@angular/core';
+import {
+  NgModule,
+  ErrorHandler,
+  Injectable,
+  APP_INITIALIZER,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from '@app/core';
 import { TimeagoModule } from 'ngx-timeago';
-import { SharedModule } from '@app/shared';
+import { SharedModule } from '@app/templates/shared';
+
 /* VIEWS */
-import { AboutModule } from './about/about.module';
-import { HomeModule } from './home/home.module';
+import { AboutModule } from '@app/templates/about/about.module';
+import { HomeModule } from './templates/home/home.module';
+import { BlogModule } from './templates/blog/blog.module';
+import { ProjectsModule } from './templates/projects/projects.module';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { RecordingsModule } from './recordings/recordings.module';
-import { ScheduleModule } from '@app/schedule/schedule.module';
-import { SearchModule } from './search/search.module';
-import { ShellModule } from './shell/shell.module';
-import { ShowsModule } from './shows/shows.module';
+import { ImprintModule } from './templates/imprint/imprint.module';
+import { PrivacyModule } from './templates/privacy/privacy.module';
+import { ChangelogModule } from './templates/changelog/changelog.module';
+import { LicensesModule } from './templates/licenses/licenses.module';
+import { RecordingsModule } from './templates/recordings/recordings.module';
+import { ScheduleModule } from '@app/templates/schedule/schedule.module';
+import { SearchModule } from '@app/templates/search/search.module';
+import { ShellModule } from './templates/shell/shell.module';
+import { ShowsModule } from './templates/shows/shows.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { IconsModule } from '@app/shared/icons/icons.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgAisModule } from 'angular-instantsearch';
-import { NgxAnalyticsModule } from 'ngx-analytics';
-import { NgxAnalyticsGoogleAnalytics } from 'ngx-analytics/ga';
+import { HttpCacheInterceptorModule } from '@ngneat/cashew';
+
+/* Services */
+import { UiStyleToggleService } from '@app/core/services/ui-style-toggle.service';
+import { StorageService } from '@app/core/services/local-storage.service';
+
+/* Analytics */
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
-import { AudioContextModule } from 'angular-audio-context';
 import { environment } from '@env/environment';
 import * as Sentry from '@sentry/browser';
 
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-
-/*const config: SocketIoConfig = {
-  url: environment.socketio,
-  options: {}
-};*/
-
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
-  direction: 'horizontal'
+  direction: 'horizontal',
 };
+
+export function themeFactory(themeService: UiStyleToggleService) {
+  return () => themeService.setThemeOnStart();
+}
 
 @Injectable()
 export class SentryErrorHandler implements ErrorHandler {
@@ -53,8 +67,8 @@ export class SentryErrorHandler implements ErrorHandler {
       ignoreErrors: [
         'ERR_CONNECTION_REFUSED',
         'Es is',
-        'Es ist ein Fehler aufgetreten'
-      ]
+        'Es ist ein Fehler aufgetreten',
+      ],
     });
   }
   handleError(error: any) {
@@ -68,42 +82,53 @@ export class SentryErrorHandler implements ErrorHandler {
     BrowserModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('./ngsw-worker.js', {
-      enabled: environment.production
+      enabled: environment.production,
     }),
     FormsModule,
     HttpClientModule,
+    HttpCacheInterceptorModule.forRoot(),
     TranslateModule.forRoot(),
-    NgbModule,
     CoreModule,
     SharedModule,
     ShellModule,
     HomeModule,
+    BlogModule,
+    ProjectsModule,
+    ImprintModule,
+    PrivacyModule,
+    ChangelogModule,
+    LicensesModule,
     RecordingsModule,
     ShowsModule,
     AboutModule,
     SearchModule,
     ScheduleModule,
-    /*SocketIoModule.forRoot(config),*/
-    NgxAnalyticsModule.forRoot([NgxAnalyticsGoogleAnalytics]),
+    Angulartics2Module.forRoot(),
     SwiperModule,
     NgAisModule.forRoot(),
     TimeagoModule.forRoot(),
-    IconsModule,
     LazyLoadImageModule,
-    AudioContextModule.forRoot('balanced'),
-    AppRoutingModule // must be imported as the last module as it contains the fallback route,
+    AppRoutingModule, // must be imported as the last module as it contains the fallback route,
   ],
   declarations: [AppComponent],
   providers: [
+    UiStyleToggleService,
+    StorageService,
     {
       provide: SWIPER_CONFIG,
-      useValue: DEFAULT_SWIPER_CONFIG
+      useValue: DEFAULT_SWIPER_CONFIG,
     },
     {
       provide: ErrorHandler,
-      useClass: SentryErrorHandler
-    }
+      useClass: SentryErrorHandler,
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: themeFactory,
+      deps: [UiStyleToggleService],
+      multi: true,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
