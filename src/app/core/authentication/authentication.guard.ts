@@ -3,10 +3,10 @@ import {
   Router,
   CanActivate,
   ActivatedRouteSnapshot,
-  RouterStateSnapshot
+  RouterStateSnapshot,
 } from '@angular/router';
 
-import { Logger } from '../logger.service';
+import { Logger } from '../services/logger.service';
 import { CredentialsService } from './credentials.service';
 
 const log = new Logger('AuthenticationGuard');
@@ -29,7 +29,7 @@ export class AuthenticationGuard implements CanActivate {
     log.debug('Not authenticated, redirecting and adding redirect url...');
     this.router.navigate(['/login'], {
       queryParams: { redirect: state.url },
-      replaceUrl: true
+      replaceUrl: true,
     });
     return false;
   }

@@ -1,0 +1,34 @@
+.textSeperator {
+  padding: 1.5rem 0 1rem;
+  text-align: center;
+  font-family: "Trash", sans-serif;
+  font-size: 2rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.textSeperator.active {
+  background: var(--card-background-hover);
+  transition: all 0.15s ease;
+}
+
+@media only screen and (min-width: 32rem) {
+  .textSeperator {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  .textSeperator {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  .textSeperator {
+    font-size: 4.5rem;
+  }
+
+  .textSeperator.border-left {
+    border-left: 1px solid var(--card-border);
+  }
+}

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 
-import { Logger } from '../logger.service';
+import { Logger } from '../services/logger.service';
 
 const log = new Logger('HttpCacheService');
 const cachePersistenceKey = 'httpCache';
@@ -32,7 +32,7 @@ export class HttpCacheService {
   setCacheData(url: string, data: HttpResponse<any>, lastUpdated?: Date) {
     this.cachedData[url] = {
       lastUpdated: lastUpdated || new Date(),
-      data: data
+      data: data,
     };
     log.debug(`Cache set for key: "${url}"`);
     this.saveCacheData();

@@ -1,0 +1,69 @@
+/* Schedule Day List */
+
+.scheduleList {
+  padding: 1rem 0rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.scheduleList_Day {
+  display: block;
+  margin-bottom: 1.8rem;
+}
+
+.scheduleList_Day:last-child {
+  margin-bottom: 0;
+}
+
+.scheduleListDay__image__container {
+  width: 3rem;
+  float: left;
+  margin-right: 1rem;
+  display: table;
+}
+
+.scheduleListDay__info__container {
+  display: table;
+  height: auto;
+}
+
+.scheduleListDay__image__container img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 48rem) {
+  .scheduleListDay__image__container {
+    width: 3.5rem;
+    float: left;
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  .scheduleList {
+    padding: 2.5rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .scheduleListDay__image__container {
+    width: 4rem;
+    float: left;
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (min-width: 80rem) {
+  .scheduleList {
+    padding: 2rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .scheduleList_Day {
+    margin-bottom: 3rem;
+  }
+
+  .scheduleListDay__image__container {
+    width: 5rem;
+    float: left;
+    margin-right: 1.5rem;
+  }
+}

@@ -1,0 +1,34 @@
+<div class="container">
+  <app-page-title
+    [title]="'projects' | translate"
+    [isLink]="true"
+    [url]="'/projects'"
+  ></app-page-title>
+
+  <app-page-banner [image]="project.image"></app-page-banner>
+
+  <div class="grid">
+    <div
+      class="col-start-1 col-end-13 col-start-3@sm col-end-11@sm col-start-4@md col-end-10@md"
+    >
+      <div class="projectsEntry">
+        <div class="projectsEntry__wrapper">
+          <div class="projectsEntry__body">
+            <div class="projectsEntry__meta">
+              <div class="projectsEntry__date">
+                {{ project?.createdAt | date: 'dd.MM.yyyy' }}<br />
+                {{ project?.timeStart | timeago }}
+              </div>
+              <div class="projectsEntry__title">
+                <h1 [style.color]="hex">↳{{ project?.title }}</h1>
+              </div>
+            </div>
+            <div class="projectsEntry__excerpt">
+              <p [innerHTML]="project?.description"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

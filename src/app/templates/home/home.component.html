@@ -1,0 +1,67 @@
+<div class="container">
+  <app-page-title [title]="'appTitle' | translate"></app-page-title>
+
+  <app-slideshow
+    [isLoading]="isLoading"
+    [recordings]="recordings"
+    [hotRecording]="hotRecording"
+    [blogPosts]="blogPosts"
+    [projects]="projects"
+    [hidden]="isLoading"
+  >
+  </app-slideshow>
+
+  <app-text-seperator
+    [hidden]="isLoading"
+    [text]="'latestBroadcasts' | translate"
+    [isLink]="false"
+  >
+  </app-text-seperator>
+
+  <app-recordings-gallery
+    [recordings]="recordings"
+    [hidden]="isLoading"
+    [limit]="8"
+  >
+  </app-recordings-gallery>
+
+  <app-text-seperator
+    [text]="'(' + recordings.length + ') ' + ('viewAll' | translate) + ' >'"
+    [isLink]="true"
+    [url]="'/broadcasts'"
+    [hidden]="isLoading"
+  >
+  </app-text-seperator>
+</div>
+
+<div class="container">
+  <div class="grid grid-auto-cols@lg">
+    <div class="col-12 col-6@md">
+      <app-text-seperator
+        [text]="('shows' | translate) + ' >'"
+        [isLink]="true"
+        [url]="'/shows'"
+        [hidden]="isLoading"
+      ></app-text-seperator>
+
+      <app-shows-gallery
+        [hidden]="isLoading"
+        [shows]="shows"
+        [limit]="1"
+      ></app-shows-gallery>
+    </div>
+    <div class="col-12 col-6@md scheduleColumn">
+      <app-text-seperator
+        [text]="('schedule' | translate) + ' >'"
+        [isLink]="true"
+        [url]="'/schedule'"
+        [hidden]="isLoading"
+      ></app-text-seperator>
+
+      <app-schedule-day-list
+        [hidden]="isLoading"
+        [schedule]="schedule"
+      ></app-schedule-day-list>
+    </div>
+  </div>
+</div>

@@ -30,6 +30,7 @@
 .settings/
 xcuserdata/
 *.sublime-workspace
+radio-rasclat-web.iml
 
 # IDE - VSCode
 .vscode/*

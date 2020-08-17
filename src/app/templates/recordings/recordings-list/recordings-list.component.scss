@@ -1,0 +1,74 @@
+/* Recordings List App */
+
+.recordingList {
+  border-bottom: 1px solid var(--card-border);
+}
+
+.recording {
+  position: relative;
+  border-bottom: 1px solid var(--card-light-background-hover);
+}
+
+.recording:last-child {
+  position: relative;
+  border-bottom: none;
+}
+
+.recording:hover > .recording__wrapper {
+  transition: all 0.15s ease;
+  background-color: var(--card-background-hover);
+}
+
+.recording__wrapper {
+  padding: 1.5rem 1rem;
+  position: relative;
+  background-color: var(--card-background);
+}
+
+.recording__info__container {
+  width: 100%;
+}
+
+.recording__tags {
+  margin-bottom: 0.5rem;
+}
+
+.recording__tags__single::after {
+  content: "•";
+}
+
+.recording__tags__single:last-child::after {
+  content: "";
+}
+
+.recording__tags a {
+  text-decoration: underline;
+}
+
+.recording__dates {
+  margin-bottom: 0.5rem;
+}
+
+.recording__image__container {
+  padding: 0;
+}
+
+.recording__image__container figure.square {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 100%;
+  border: 1px solid var(--card-border);
+}
+
+.recording__image__container figure.square img {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  height: calc(100% + 2px);
+  width: calc(100% + 2px);
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}

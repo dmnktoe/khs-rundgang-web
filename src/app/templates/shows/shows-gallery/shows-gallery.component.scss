@@ -1,0 +1,77 @@
+/* Shows Gallery App */
+
+.showGallery {
+  border-bottom: 1px solid var(--card-border);
+}
+
+.showGallery > .grid-auto-xl {
+  grid-gap: 1px;
+  overflow: hidden;
+}
+
+.show {
+  background-color: var(--card-background);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    // match the grid gap for border thickness
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    // this becomes the border, and handles overlap
+    background-color: var(--card-border);
+  }
+}
+
+.show:hover > .show__wrapper {
+  transition: all 0.15s ease;
+  background-color: var(--card-background-hover);
+}
+
+.show__wrapper {
+  padding: 1rem;
+  position: relative;
+  background-color: var(--card-background);
+}
+
+.show__info__container {
+  width: 100%;
+}
+
+.show__description {
+  line-height: inherit;
+  margin-bottom: 1rem;
+}
+
+.show__image__container {
+  padding: 2rem;
+}
+
+.show__image__container figure.banner {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 45%;
+  border: 1px solid var(--card-border);
+}
+
+.show__image__container figure.banner img {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  height: calc(100% + 2px);
+  width: calc(100% + 2px);
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+@media only screen and (min-width: 48rem) {
+  .show__info__container {
+    height: 80px;
+  }
+}

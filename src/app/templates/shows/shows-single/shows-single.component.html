@@ -1,0 +1,41 @@
+<div class="container">
+  <app-page-title
+    [title]="'shows' | translate"
+    [isLink]="true"
+    [url]="'/shows'"
+  ></app-page-title>
+  <div class="showSingle">
+    <div class="grid grid-gap-lg">
+      <div class="col-4@sm">
+        <div class="show__image__container">
+          <figure class="square">
+            <img
+              [defaultImage]="defaultImage"
+              [lazyLoad]="show?.image"
+              alt="{{ show?.title }}"
+            />
+          </figure>
+        </div>
+      </div>
+      <div class="col-8@sm">
+        <div class="show__info__container">
+          <div class="show__title">
+            <h1 [style.color]="hex">↳{{ show?.title }}</h1>
+          </div>
+          <div class="show__counter" [style.color]="hex">
+            {{ recordings?.length }} {{ 'broadcasts' | translate }}.
+          </div>
+        </div>
+        <div class="show__description__container">
+          <p [innerHTML]="show?.description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-text-seperator [text]="'All in ' + show?.title" [isLink]="false">
+  </app-text-seperator>
+
+  <app-recordings-gallery [recordings]="recordings" [hidden]="isLoading">
+  </app-recordings-gallery>
+</div>

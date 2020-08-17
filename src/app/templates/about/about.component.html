@@ -1,0 +1,117 @@
+<div class="container">
+  <div class="aboutPage">
+    <app-page-title [title]="'about' | translate"></app-page-title>
+    <app-page-banner
+      [image]="'./../../../assets/images/radio-rasclat-spinner.gif'"
+    ></app-page-banner>
+    <!-- <app-text-seperator
+      [text]="'„In the shadow of perceived success there exists the hardlife“'"
+    ></app-text-seperator> -->
+    <div class="grid grid-gap-xl">
+      <div class="col-12 col-4@md">
+        <h2>Radio Rasclat</h2>
+        <p>&nbsp;</p>
+        <p>
+          <strong
+            >Stimulating the gun-finger with Bass Music from Kassel.</strong
+          >
+        </p>
+      </div>
+      <div class="col-12 col-8@md">
+        <p>
+          Radio Rasclat is a non-commercial internet radio station which is
+          going to stream your music to the web, again! It offers you a platform
+          to play & try out. It serves as a place for the exchange, dialogue and
+          cooperation of music. Founded and curated in 2019, the radio returns
+          to the new venue at KMMN 3.
+        </p>
+      </div>
+    </div>
+    <!-- <div class="grid grid-gap-xl">
+      <div class="col-12 col-4@md">
+        <h5>Season °1</h5>
+        <p>17.07.2019 — 19.07.2019</p>
+      </div>
+      <div class="col-12 col-8@md">
+        <p>
+          <strong>Kunsthochschule Kassel Rundgang:</strong>
+        </p>
+        <p>
+          Radio Rasclat is a non-commercial internet radio station which is
+          going to stream your music to the web, again! It offers you a platform
+          to play & try out. It serves as a place for the exchange, dialogue and
+          cooperation of music. Founded and curated in 2019, the radio returns
+          to the new venue at KMMN 3.
+        </p>
+      </div>
+    </div>
+    <div class="grid grid-gap-xl">
+      <div class="col-12 col-4@md">
+        <h5>Season °2</h5>
+        <p>10.01.2020 — 01.06.2020</p>
+      </div>
+      <div class="col-12 col-8@md">
+        <p>
+          <strong>KMMN III:</strong>
+        </p>
+        <p>
+          Radio Rasclat is a non-commercial internet radio station which is
+          going to stream your music to the web, again! It offers you a platform
+          to play & try out. It serves as a place for the exchange, dialogue and
+          cooperation of music. Founded and curated in 2019, the radio returns
+          to the new venue at KMMN 3.
+        </p>
+      </div>
+    </div>
+    <div class="grid grid-gap-xl">
+      <div class="col-12 col-4@md">
+        <h5>Season °3</h5>
+        <p>10.01.2020 — 01.06.2020</p>
+      </div>
+      <div class="col-12 col-8@md">
+        <p>
+          <strong>Central Service:</strong>
+        </p>
+        <p>
+          Radio Rasclat is a non-commercial internet radio station which is
+          going to stream your music to the web, again! It offers you a platform
+          to play & try out. It serves as a place for the exchange, dialogue and
+          cooperation of music. Founded and curated in 2019, the radio returns
+          to the new venue at KMMN 3.
+        </p>
+      </div>
+    </div>
+    <div class="grid grid-gap-xl">
+      <div class="col-12 col-4@md">
+        <h5>Season °4</h5>
+        <p>10.01.2020 — 01.06.2020</p>
+      </div>
+      <div class="col-12 col-8@md">
+        <p>
+          <strong>Galerie Feiertag:</strong>
+        </p>
+        <p>
+          Radio Rasclat is a non-commercial internet radio station which is
+          going to stream your music to the web, again! It offers you a platform
+          to play & try out. It serves as a place for the exchange, dialogue and
+          cooperation of music. Founded and curated in 2019, the radio returns
+          to the new venue at KMMN 3.
+        </p>
+      </div>
+    </div> -->
+    <div class="grid grid-gap-xl">
+      <div class="col-12 col-4@md">
+        <h3>Hall of Fame.</h3>
+      </div>
+      <div class="col-12 col-8@md">
+        <p>
+          We would like to thank all our amazing artists and guests such as
+          <span [hidden]="isLoading" *ngFor="let artist of artists">
+            {{ artist?.title }},
+          </span>
+          who has been part of the program!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
