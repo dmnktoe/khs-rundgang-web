@@ -82,6 +82,21 @@
               [schedule]="schedule?.sunday"
             ></app-schedule-day-list>
           </div>
+          <div
+            *ngIf="
+              schedule?.monday.length == 0 &&
+              schedule?.tuesday.length == 0 &&
+              schedule?.wednesday.length == 0 &&
+              schedule?.thursday.length == 0 &&
+              schedule?.friday.length == 0 &&
+              schedule?.saturday.length == 0 &&
+              schedule?.sunday.length == 0
+            "
+          >
+            <app-page-title
+              [title]="'noProgramThisWeek' | translate"
+            ></app-page-title>
+          </div>
         </div>
       </div>
     </div>
@@ -147,6 +162,21 @@
             <app-schedule-day-list
               [schedule]="schedule?.nextsunday"
             ></app-schedule-day-list>
+          </div>
+          <div
+            *ngIf="
+              schedule?.nextmonday.length == 0 &&
+              schedule?.nexttuesday.length == 0 &&
+              schedule?.nextwednesday.length == 0 &&
+              schedule?.nextthursday.length == 0 &&
+              schedule?.nextfriday.length == 0 &&
+              schedule?.nextsaturday.length == 0 &&
+              schedule?.nextsunday.length == 0
+            "
+          >
+            <app-page-title
+              [title]="'noProgramNextWeek' | translate"
+            ></app-page-title>
           </div>
         </div>
       </div>

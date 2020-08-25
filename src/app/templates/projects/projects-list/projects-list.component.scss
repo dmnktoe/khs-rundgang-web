@@ -1,48 +1,48 @@
 /* Blog Posts List App */
 
-.blogPostList {
+.projectsList {
   margin-top: 1rem;
 }
 
-.blogPostList .blogPostEntry {
+.projectsList .projectsEntry {
   position: relative;
   transition: none;
   background: var(--card-light-background);
   border-radius: var(--card-border-radius);
 }
 
-.blogPostList .blogPostEntry:first-child {
+.projectsList .projectsEntry:first-child {
   margin: 0 0 2rem;
 }
 
-.blogPostList .blogPostEntry .blogPostEntry__body {
+.projectsList .projectsEntry .projectsEntry__body {
   padding: 2rem;
 }
 
-.blogPostList .blogPostEntry .blogPostEntry__meta {
+.projectsList .projectsEntry .projectsEntry__meta {
   margin-bottom: 1rem;
 }
 
-.blogPostList .blogPostEntry .blogPostEntry__meta .blogPostEntry__title h3 {
+.projectsList .projectsEntry .projectsEntry__meta .projectsEntry__title h3 {
   line-height: 35px;
 }
 
-.blogPostList .blogPostEntry .blogPostEntry__meta .blogPostEntry__date {
+.projectsList .projectsEntry .projectsEntry__meta .projectsEntry__date {
   color: var(--text-color-light);
   margin-bottom: 1rem;
 }
 
-.blogPostList .blogPostEntry .blogPostEntry__excerpt {
+.projectsList .projectsEntry .projectsEntry__excerpt {
   padding-bottom: 2rem;
 }
 
-.blogPostList .blogPostEntry .blogPostEntry__readMore {
+.projectsList .projectsEntry .projectsEntry__readMore {
   text-align: center;
   padding: 2rem 0 0;
   border-top: 1px solid var(--card-light-background-hover);
 }
 
-.blogPostList .blogPostEntry__image__container figure.blogListBanner {
+.projectsList .projectsEntry__image__container figure.projectsListBanner {
   border-top-left-radius: var(--card-border-radius);
   border-top-right-radius: var(--card-border-radius);
   position: relative;
@@ -51,7 +51,7 @@
   padding-bottom: 60%;
 }
 
-.blogPostList .blogPostEntry__image__container figure.blogListBanner img {
+.projectsList .projectsEntry__image__container figure.projectsListBanner img {
   position: absolute;
   top: -1px;
   left: -1px;

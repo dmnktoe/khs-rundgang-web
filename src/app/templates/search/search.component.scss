@@ -43,7 +43,7 @@
     margin-bottom: 3rem;
     padding: 0.2rem 1rem;
     background: var(--card-light-background);
-    border-radius: 25px;
+    border-radius: var(--card-border-radius);
   }
 
   button.ais-SearchBox-reset {

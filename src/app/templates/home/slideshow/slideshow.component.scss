@@ -22,52 +22,52 @@
   align-items: center;
 }
 
-.recordingSlider {
+.slideshowSlider {
   border-bottom: 1px solid var(--card-border);
   padding: 1rem 0 1rem;
 }
 
-.swiper-slide .recordingSlide {
+.swiper-slide .slideshowSlide {
   width: 100%;
   height: 450px;
   background-size: cover;
   background-position: center center;
 }
 
-.swiper-slide .recordingSlide.loading {
+.swiper-slide .slideshowSlide.loading {
   width: 100%;
   height: 450px;
   background-color: var(--card-background-hover);
 }
 
-.recordingSlideInner {
+.slideshowSlideInner {
   position: absolute;
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.recordingSlideCaptionWrapper {
+.slideshowSlideCaptionWrapper {
   position: absolute;
   bottom: 0;
   display: block;
   width: 100%;
   background: rgba(0, 0, 0, 0.7);
 }
-.recordingSlideCaption {
+.slideshowSlideCaption {
   color: #fff;
   padding: 1rem;
 }
 
-.recordingSlideCaption__playArea {
+.slideshowSlideCaption__playArea {
   display: none;
 }
 
-.recordingSlideCaption__textArea h4 {
+.slideshowSlideCaption__textArea h4 {
   margin-top: 0.5rem;
 }
 
-.recordingSlideCaption__textArea h4:hover {
+.slideshowSlideCaption__textArea h4:hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -77,7 +77,7 @@
     width: 75% !important;
   }
 
-  .recordingSlideCaption__playArea {
+  .slideshowSlideCaption__playArea {
     float: left;
     padding: 1rem;
     display: block;

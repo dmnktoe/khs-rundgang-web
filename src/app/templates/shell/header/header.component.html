@@ -150,7 +150,7 @@
                 {{ 'about' | translate }}
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a
                 routerLink="/contact"
                 routerLinkActive="active"
@@ -167,7 +167,7 @@
               >
                 {{ 'participate' | translate }}
               </a>
-            </li>
+            </li> -->
           </ul>
         </div>
         <div class="col-6 col-3@md">
@@ -179,7 +179,17 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {{ 'contribute' | translate }}
+                {{ 'contributeCode' | translate }}
+                <svg-icon key="external"></svg-icon>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://translate.radio-rasclat.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ 'contributeTranslations' | translate }}
                 <svg-icon key="external"></svg-icon>
               </a>
             </li>
@@ -193,7 +203,7 @@
               </a>
             </li>
           </ul>
-          <ul>
+          <!--<ul>
             <li>
               <a
                 routerLink="/changelog"
@@ -213,7 +223,7 @@
                 <svg-icon key="external"></svg-icon>
               </a>
             </li>
-          </ul>
+          </ul> -->
         </div>
         <div class="col-6 col-3@md">
           <h5>↳ {{ 'internal' | translate }}</h5>
@@ -238,11 +248,11 @@
             </li>
           </ul>
           <ul>
-            <li>
+            <!-- <li>
               <a href="#">
                 {{ 'cookiePreferences' | translate }}
               </a>
-            </li>
+            </li> -->
             <li>
               <a (click)="toggleLanguagePicker()">
                 {{ 'languageSettings' | translate }}
