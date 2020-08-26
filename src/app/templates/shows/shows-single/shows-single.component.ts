@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 import { ApiService } from '../../../core/services/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import Vibrant from 'node-vibrant';
 import { Palette } from 'node-vibrant/lib/color';
+import mediumZoom from 'medium-zoom';
 
 @Component({
   selector: 'app-shows-single',
   templateUrl: './shows-single.component.html',
   styleUrls: ['./shows-single.component.scss'],
 })
-export class ShowsSingleComponent implements OnInit {
+export class ShowsSingleComponent implements OnInit, AfterViewInit {
   show: any;
   recordings: any;
   title: any;
@@ -59,6 +60,12 @@ export class ShowsSingleComponent implements OnInit {
               this.hex = palette.Vibrant.hex;
             });
         });
+    });
+  }
+
+  ngAfterViewInit() {
+    mediumZoom('[data-zoomable]', {
+      margin: 60,
     });
   }
 }
