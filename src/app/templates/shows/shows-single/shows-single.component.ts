@@ -65,7 +65,8 @@ export class ShowsSingleComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     mediumZoom('[data-zoomable]', {
-      margin: 60,
+      margin: 80,
+      background: '',
     });
   }
 }

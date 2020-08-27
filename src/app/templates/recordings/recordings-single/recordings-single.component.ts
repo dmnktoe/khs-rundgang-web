@@ -94,7 +94,8 @@ export class RecordingsSingleComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     mediumZoom('[data-zoomable]', {
-      margin: 60,
+      margin: 80,
+      background: '',
     });
   }
 
