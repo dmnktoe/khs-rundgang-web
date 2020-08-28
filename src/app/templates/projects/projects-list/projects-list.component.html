@@ -31,7 +31,7 @@
           <div class="projectsEntry__body">
             <div class="projectsEntry__meta">
               <div class="projectsEntry__date">
-                {{ project?.createdAt | date: 'dd.MM.yyyy' }} —
+                <strong>{{ project?.timeStart | date: 'dd.MM.yyyy' }}</strong> —
                 {{ project?.timeStart | timeago }}
               </div>
               <div class="projectsEntry__title">
