@@ -1,5 +1,23 @@
 # Changelog
 
+## [4.0.2] - 2020-08-29
+
+### New
+
+- Adds a bunch of new translation files and also updates the source language file.
+- Adds a pulsating live indicator on the live slideshow slide.
+- Adds ngx-translate-extract-marker.
+
+### Changes
+
+- The recordings under the recordings page are now getting automatically ordered and sorted after month.
+- Slice slideshow wrapper text with CSS instead of Angular string manipulation.
+
+### Bug-Fixes
+
+- Remove link from live slideshow slide.
+- Fixed a bug where the images were to large on the shows page.
+
 ## [4.0.1] - 2020-08-28
 
 ### New
@@ -38,5 +56,6 @@ We present Radio Rasclat Web in version four. The entire application has been en
 
 - Responsive UI issues.
 
+[4.0.2]: https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.2
 [4.0.1]: https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.1
 [4.0.0]: https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.0
