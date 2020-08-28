@@ -17,7 +17,8 @@
       <div class="col-5 text-right">
         <a (click)="toggleNav()" class="menu">
           {{ 'menu' | translate }}
-          <svg-icon key="menu"></svg-icon>
+          <svg-icon *ngIf="!isNavVisible" key="menu"></svg-icon>
+          <svg-icon *ngIf="isNavVisible" key="menuClose"></svg-icon>
         </a>
       </div>
     </div>
@@ -203,7 +204,7 @@
               </a>
             </li>
           </ul>
-          <!--<ul>
+          <ul>
             <li>
               <a
                 routerLink="/changelog"
@@ -213,7 +214,7 @@
                 {{ 'changelog' | translate }}
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a
                 href="https://status.radio-rasclat.com/"
                 target="_blank"
@@ -222,8 +223,8 @@
                 {{ 'status' | translate }}
                 <svg-icon key="external"></svg-icon>
               </a>
-            </li>
-          </ul> -->
+            </li> -->
+          </ul>
         </div>
         <div class="col-6 col-3@md">
           <h5>↳ {{ 'internal' | translate }}</h5>

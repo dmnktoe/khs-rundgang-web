@@ -22,6 +22,7 @@
 
 .changelog .appImage {
   padding: 0 2.5rem 1rem;
+  display: none;
 }
 
 .changelog .appImage img {
@@ -112,4 +113,10 @@
   line-height: 1.55rem;
   min-height: 40px;
   clear: both;
+}
+
+@media only screen and (min-width: 48rem) {
+  .changelog .appImage {
+    display: block;
+  }
 }

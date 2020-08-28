@@ -12,6 +12,10 @@ import moment from 'moment';
 export class HomeComponent implements OnInit {
   blogPosts = '';
   projects = '';
+
+  currentShow: any;
+  nextShow: any;
+
   recordings = '';
   shows = '';
   hotRecordings: any = [];
@@ -91,13 +95,57 @@ export class HomeComponent implements OnInit {
                             this.blogPosts = blogPosts;
                             this.apiService
                               .getProjects()
-                              .pipe(
-                                finalize(() => {
-                                  this.isLoading = false;
-                                })
-                              )
+                              .pipe(finalize(() => {}))
                               .subscribe((projects) => {
                                 this.projects = projects;
+                                this.apiService
+                                  .getCurrentShow()
+                                  .pipe(finalize(() => {}))
+                                  .subscribe((currentShow) => {
+                                    if (currentShow !== null) {
+                                      this.currentShow = {
+                                        title: currentShow.name,
+                                        image: currentShow.image_path,
+                                        timeStart: new Date(currentShow.starts),
+                                        timeEnd: new Date(currentShow.ends),
+                                      };
+                                    } else {
+                                      this.currentShow = false;
+                                    }
+                                    this.apiService
+                                      .getNextShow()
+                                      .pipe(finalize(() => {}))
+                                      .subscribe((nextShow) => {
+                                        if (nextShow.length > 0) {
+                                          const startDate = moment(
+                                            nextShow[0].starts,
+                                            'YYYY-MM-DD HH:mm:ss'
+                                          ).toDate();
+                                          if (
+                                            moment().isBetween(
+                                              moment(startDate).subtract(
+                                                30,
+                                                'minutes'
+                                              ),
+                                              startDate
+                                            )
+                                          ) {
+                                            this.nextShow = {
+                                              title: nextShow[0].name,
+                                              image: nextShow[0].image_path,
+                                              timeStart: moment(
+                                                startDate
+                                              ).fromNow(),
+                                            };
+                                          } else {
+                                            this.nextShow = false;
+                                          }
+                                        } else {
+                                          this.nextShow = false;
+                                        }
+                                        this.isLoading = false;
+                                      });
+                                  });
                               });
                           });
                       });

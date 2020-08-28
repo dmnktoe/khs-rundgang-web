@@ -22,6 +22,17 @@
   align-items: center;
 }
 
+.swiper-slide.toggleable .slideshowSlideCaptionWrapper {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.15s ease;
+}
+
+.swiper-slide.toggleable:hover .slideshowSlideCaptionWrapper {
+  visibility: hidden;
+  opacity: 0;
+}
+
 .slideshowSlider {
   border-bottom: 1px solid var(--card-border);
   padding: 1rem 0 1rem;
@@ -70,6 +81,27 @@
 .slideshowSlideCaption__textArea h4:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.slideIndicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  margin: 1.5rem 2rem 0 0;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.slideIndicator.live {
+  background: #ff0000;
+}
+
+.slideIndicator.nextUp {
+  background: var(--secondary-color);
 }
 
 @media only screen and (min-width: 48rem) {
