@@ -17,7 +17,8 @@
       <div class="col-5 text-right">
         <a (click)="toggleNav()" class="menu">
           {{ 'menu' | translate }}
-          <svg-icon key="menu"></svg-icon>
+          <svg-icon *ngIf="!isNavVisible" key="menu"></svg-icon>
+          <svg-icon *ngIf="isNavVisible" key="menuClose"></svg-icon>
         </a>
       </div>
     </div>
