@@ -3,6 +3,60 @@
     <div class="slideshowSlider">
       <div class="swiper-container" [swiper]="config">
         <div class="swiper-wrapper">
+          <div class="swiper-slide" *ngIf="live">
+            <div
+              class="slideshowSlide"
+              [defaultImage]="defaultImage"
+              [lazyLoad]="live?.image"
+            >
+              <a routerLink="/broadcasts/{{ live?.slug }}">
+                <div class="slideshowSlideInner">
+                  <div class="slideshowSlideCaptionWrapper">
+                    <div class="slideshowSlideCaption">
+                      <div class="slideshowSlideCaption__textArea">
+                        {{ 'live' | translate }} on Radio Rasclat &mdash;
+                        {{ live.timeEnd | timeago }} left
+                        <h4>
+                          ↳{{
+                            live?.title?.length > 50
+                              ? (live?.title | slice: 0:50) + '...'
+                              : live?.title
+                          }}
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slideIndicator live">LIVE</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide" *ngIf="nextUp">
+            <div
+              class="slideshowSlide"
+              [defaultImage]="defaultImage"
+              [lazyLoad]="nextUp?.image"
+            >
+              <div class="slideshowSlideInner">
+                <div class="slideshowSlideCaptionWrapper">
+                  <div class="slideshowSlideCaption">
+                    <div class="slideshowSlideCaption__textArea">
+                      {{ 'nextUp' | translate }} on Radio Rasclat &mdash;
+                      {{ nextUp?.timeStart }}<br />
+                      <h4>
+                        ↳{{
+                          nextUp?.title?.length > 50
+                            ? (nextUp?.title | slice: 0:50) + '...'
+                            : nextUp?.title
+                        }}
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="slideIndicator nextUp">NEXT UP</div>
+              </div>
+            </div>
+          </div>
           <div class="swiper-slide" *ngIf="hotRecording">
             <div
               class="slideshowSlide"
@@ -31,6 +85,29 @@
                   </div>
                 </div>
               </a>
+            </div>
+          </div>
+          <div class="swiper-slide toggleable">
+            <div class="slideshowSlide">
+              <div class="slideshowSlideInner">
+                <div class="slideshowSlideCaptionWrapper">
+                  <div class="slideshowSlideCaption">
+                    <div class="slideshowSlideCaption__textArea">
+                      Stream the KW36 live.<br />
+                      <h4>
+                        ↳Radio Rasclat now live on Twitch!
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <iframe
+                  src="https://player.twitch.tv/?channel=RadioRasclat&parent=radio-rasclat.com"
+                  height="100%"
+                  width="100%"
+                  allowfullscreen="true"
+                >
+                </iframe>
+              </div>
             </div>
           </div>
           <div
@@ -76,9 +153,6 @@
                 <div class="slideshowSlideInner">
                   <div class="slideshowSlideCaptionWrapper">
                     <div class="slideshowSlideCaption">
-                      <!-- <div class="slideshowSlideCaption__playArea">
-                        <svg-icon key="play"></svg-icon>
-                      </div> -->
                       <div class="slideshowSlideCaption__textArea">
                         {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
                         {{ recording?.timeStart | date: 'HH:mm' }}<br />
@@ -139,9 +213,6 @@
                 <div class="slideshowSlideInner">
                   <div class="slideshowSlideCaptionWrapper">
                     <div class="slideshowSlideCaption">
-                      <!-- <div class="slideshowSlideCaption__playArea">
-                        <svg-icon key="play"></svg-icon>
-                      </div> -->
                       <div class="slideshowSlideCaption__textArea">
                         {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
                         {{ recording?.timeStart | date: 'HH:mm' }}<br />
@@ -174,9 +245,6 @@
               <div class="slideshowSlideInner">
                 <div class="slideshowSlideCaptionWrapper">
                   <div class="slideshowSlideCaption">
-                    <!-- <div class="slideshowSlideCaption__playArea">
-                        <svg-icon key="play"></svg-icon>
-                      </div> -->
                     <div class="slideshowSlideCaption__textArea">
                       &nbsp;
                       <h4>↳{{ 'loading' | translate }}...</h4>
@@ -191,9 +259,6 @@
               <div class="slideshowSlideInner">
                 <div class="slideshowSlideCaptionWrapper">
                   <div class="slideshowSlideCaption">
-                    <!-- <div class="slideshowSlideCaption__playArea">
-                        <svg-icon key="play"></svg-icon>
-                      </div> -->
                     <div class="slideshowSlideCaption__textArea">
                       &nbsp;
                       <h4>↳{{ 'loading' | translate }}...</h4>
