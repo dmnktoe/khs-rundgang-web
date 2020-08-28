@@ -5,7 +5,7 @@
     [url]="'/projects'"
   ></app-page-title>
 
-  <app-page-banner [image]="project.image"></app-page-banner>
+  <app-page-banner [image]="project?.image"></app-page-banner>
 
   <div class="grid">
     <div
@@ -16,8 +16,10 @@
           <div class="projectsEntry__body">
             <div class="projectsEntry__meta">
               <div class="projectsEntry__date">
-                {{ project?.createdAt | date: 'dd.MM.yyyy' }}<br />
-                {{ project?.timeStart | timeago }}
+                <strong
+                  >{{ project?.timeStart | date: 'dd.MM.yyyy' }} —
+                  {{ project?.timeEnd | date: 'dd.MM.yyyy' }}</strong
+                >
               </div>
               <div class="projectsEntry__title">
                 <h1 [style.color]="hex">↳{{ project?.title }}</h1>

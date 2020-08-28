@@ -23,7 +23,8 @@ header .logo {
   margin-top: 3px;
 }
 
-header svg-icon.svg-icon-menu {
+header svg-icon.svg-icon-menu,
+svg-icon.svg-icon-menuClose {
   width: 15px;
   height: 10px;
 }
@@ -38,7 +39,8 @@ header .logo img {
 }
 
 @media only screen and (min-width: 32rem) {
-  header svg-icon.svg-icon-menu {
+  header svg-icon.svg-icon-menu,
+  svg-icon.svg-icon-menuClose {
     width: 18px;
     height: 12px;
   }
@@ -54,21 +56,24 @@ header .logo img {
     transform: rotate(-5deg);
   }
 
-  header svg-icon.svg-icon-menu {
+  header svg-icon.svg-icon-menu,
+  svg-icon.svg-icon-menuClose {
     width: 19px;
     height: 12px;
   }
 }
 
 @media only screen and (min-width: 64rem) {
-  header svg-icon.svg-icon-menu {
+  header svg-icon.svg-icon-menu,
+  svg-icon.svg-icon-menuClose {
     width: 21px;
     height: 13px;
   }
 }
 
 @media only screen and (min-width: 80rem) {
-  header svg-icon.svg-icon-menu {
+  header svg-icon.svg-icon-menu,
+  svg-icon.svg-icon-menuClose {
     width: 22px;
     height: 14px;
   }
