@@ -11,6 +11,8 @@ export class SlideshowComponent implements OnInit {
   @Input() recordings = '';
   @Input() projects = '';
   @Input() hotRecording = '';
+  @Input() live = '';
+  @Input() nextUp = '';
   @Input() isLoading = false;
 
   defaultImage = './../../../assets/svg/placeholder.svg';
