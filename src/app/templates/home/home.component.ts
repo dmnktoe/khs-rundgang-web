@@ -95,11 +95,7 @@ export class HomeComponent implements OnInit {
                             this.blogPosts = blogPosts;
                             this.apiService
                               .getProjects()
-                              .pipe(
-                                finalize(() => {
-                                  this.isLoading = false;
-                                })
-                              )
+                              .pipe(finalize(() => {}))
                               .subscribe((projects) => {
                                 this.projects = projects;
                                 this.apiService
@@ -108,7 +104,7 @@ export class HomeComponent implements OnInit {
                                   .subscribe((currentShow) => {
                                     if (currentShow !== null) {
                                       this.currentShow = {
-                                        name: currentShow.name,
+                                        title: currentShow.name,
                                         image: currentShow.image_path,
                                         timeStart: new Date(currentShow.starts),
                                         timeEnd: new Date(currentShow.ends),
