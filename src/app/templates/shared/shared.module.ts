@@ -17,6 +17,7 @@ import { SvgIconsModule } from '@ngneat/svg-icon';
 import icons from '../../../assets/svg/svg-icons';
 import { PageBannerComponent } from './page-banner/page-banner.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
       icons,
     }),
     LazyLoadImageModule,
+    TranslateModule,
   ],
   declarations: [
     LoaderComponent,
