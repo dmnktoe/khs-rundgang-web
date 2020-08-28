@@ -106,8 +106,14 @@ export class HomeComponent implements OnInit {
                                       this.currentShow = {
                                         title: currentShow.name,
                                         image: currentShow.image_path,
-                                        timeStart: new Date(currentShow.starts),
-                                        timeEnd: new Date(currentShow.ends),
+                                        timeStart: moment(
+                                          currentShow.starts,
+                                          'YYYY-MM-DD HH:mm:ss'
+                                        ).toDate(),
+                                        timeEnd: moment(
+                                          currentShow.ends,
+                                          'YYYY-MM-DD HH:mm:ss'
+                                        ).toDate(),
                                       };
                                     } else {
                                       this.currentShow = false;

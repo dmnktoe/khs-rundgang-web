@@ -14,14 +14,8 @@
                   <div class="slideshowSlideCaption">
                     <div class="slideshowSlideCaption__textArea">
                       <span class="pulse"></span> {{ 'live' | translate }} on
-                      Radio Rasclat &mdash; {{ live.timeEnd | timeago }} left
-                      <h4>
-                        ↳{{
-                          live?.title?.length > 50
-                            ? (live?.title | slice: 0:50) + '...'
-                            : live?.title
-                        }}
-                      </h4>
+                      Radio Rasclat &mdash; {{ live?.timeEnd | timeago }} left
+                      <h4>↳{{ live?.title }}</h4>
                     </div>
                   </div>
                 </div>
