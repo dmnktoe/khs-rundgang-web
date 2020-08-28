@@ -4,6 +4,7 @@ import { ApiService } from '../../core/services/api.service';
 import _ from 'lodash';
 import moment from 'moment';
 import { Recording } from '@app/core/models/Recording';
+import { marker } from '@biesbjerg/ngx-translate-extract-marker';
 
 @Component({
   selector: 'app-recordings',
@@ -15,18 +16,18 @@ export class RecordingsComponent implements OnInit {
   recordingsSorted: any;
   isLoading = false;
   months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+    marker('January'),
+    marker('February'),
+    marker('March'),
+    marker('April'),
+    marker('May'),
+    marker('June'),
+    marker('July'),
+    marker('August'),
+    marker('September'),
+    marker('October'),
+    marker('November'),
+    marker('December'),
   ];
   years = {
     min: 0,
