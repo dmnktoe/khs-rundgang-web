@@ -60,6 +60,10 @@
 }
 
 @media only screen and (min-width: 48rem) {
+  .showSingle {
+    padding: 0 0 2rem 0;
+  }
+
   .show__info__container {
     .show__title h1 {
       line-height: 40px;
