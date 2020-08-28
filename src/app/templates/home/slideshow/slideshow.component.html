@@ -9,26 +9,24 @@
               [defaultImage]="defaultImage"
               [lazyLoad]="live?.image"
             >
-              <a routerLink="/broadcasts/{{ live?.slug }}">
-                <div class="slideshowSlideInner">
-                  <div class="slideshowSlideCaptionWrapper">
-                    <div class="slideshowSlideCaption">
-                      <div class="slideshowSlideCaption__textArea">
-                        {{ 'live' | translate }} on Radio Rasclat &mdash;
-                        {{ live.timeEnd | timeago }} left
-                        <h4>
-                          ↳{{
-                            live?.title?.length > 50
-                              ? (live?.title | slice: 0:50) + '...'
-                              : live?.title
-                          }}
-                        </h4>
-                      </div>
+              <div class="slideshowSlideInner">
+                <div class="slideshowSlideCaptionWrapper">
+                  <div class="slideshowSlideCaption">
+                    <div class="slideshowSlideCaption__textArea">
+                      {{ 'live' | translate }} on Radio Rasclat &mdash;
+                      {{ live.timeEnd | timeago }} left
+                      <h4>
+                        ↳{{
+                          live?.title?.length > 50
+                            ? (live?.title | slice: 0:50) + '...'
+                            : live?.title
+                        }}
+                      </h4>
                     </div>
                   </div>
-                  <div class="slideIndicator live">LIVE</div>
                 </div>
-              </a>
+                <div class="slideIndicator live">LIVE</div>
+              </div>
             </div>
           </div>
           <div class="swiper-slide" *ngIf="nextUp">
@@ -94,9 +92,7 @@
                   <div class="slideshowSlideCaption">
                     <div class="slideshowSlideCaption__textArea">
                       Stream the KW36 live.<br />
-                      <h4>
-                        ↳Radio Rasclat now live on Twitch!
-                      </h4>
+                      <h4>↳Radio Rasclat now live on Twitch!</h4>
                     </div>
                   </div>
                 </div>
