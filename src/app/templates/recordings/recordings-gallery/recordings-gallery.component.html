@@ -4,7 +4,7 @@
 </div>
 
 <div class="recordingGallery" *ngIf="!isLoading == true">
-  <div class="grid-auto-lg" *ngIf="recordings?.length > 2">
+  <div class="grid-auto-lg">
     <div
       class="recording"
       [hidden]="isLoading"
@@ -60,160 +60,20 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div
-    class="grid-auto-lg"
-    *ngIf="recordings?.length > 1 && recordings?.length < 3"
-  >
     <div
-      class="recording"
+      class="recording placeholder"
       [hidden]="isLoading"
-      *ngFor="let recording of recordings?.slice(0, limit)"
-    >
-      <div class="recording__wrapper">
-        <div class="recording__info__container">
-          <div class="recording__tags">
-            <span
-              class="recording__tags__single"
-              *ngFor="let genre of recording?.genres.slice(0, 3)"
-            >
-              <a
-                routerLink="/search"
-                [queryParams]="{
-                  'refinementList[genres.title][0]': genre.title
-                }"
-                >{{ genre.title }}</a
-              >
-            </span>
-          </div>
-          <div class="recording__dates">
-            <span [hidden]="recording?.views">
-              {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
-              {{ recording?.timeStart | date: 'HH:mm' }}
-            </span>
-            <span [hidden]="!recording?.views">
-              {{ recording?.views }} plays the last 7 days
-            </span>
-          </div>
-          <div class="recording__title">
-            <a routerLink="/broadcasts/{{ recording?.slug }}">
-              <h4>
-                ↳{{
-                  recording?.title.length > 30
-                    ? (recording?.title | slice: 0:30) + '...'
-                    : recording?.title
-                }}
-              </h4>
-            </a>
-          </div>
-        </div>
-        <div class="recording__image__container">
-          <a routerLink="/broadcasts/{{ recording?.slug }}">
-            <figure class="square">
-              <img
-                [defaultImage]="defaultImage"
-                [lazyLoad]="recording?.image"
-                alt="{{ recording?.title }}"
-              />
-            </figure>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="recording placeholder" [hidden]="isLoading">
-      <div class="recording__wrapper">
-        <div class="recording__info__container">
-          <div class="recording__tags">
-            <span class="recording__tags__single"> </span>
-          </div>
-          <div class="recording__dates"></div>
-          <div class="recording__title"></div>
-        </div>
-        <div class="recording__image__container"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="grid-auto-lg" *ngIf="recordings?.length == 1">
+      *ngIf="recordings?.length == 2"
+    ></div>
     <div
-      class="recording"
+      class="recording placeholder"
       [hidden]="isLoading"
-      *ngFor="let recording of recordings?.slice(0, limit)"
-    >
-      <div class="recording__wrapper">
-        <div class="recording__info__container">
-          <div class="recording__tags">
-            <span
-              class="recording__tags__single"
-              *ngFor="let genre of recording?.genres.slice(0, 3)"
-            >
-              <a
-                routerLink="/search"
-                [queryParams]="{
-                  'refinementList[genres.title][0]': genre.title
-                }"
-                >{{ genre.title }}</a
-              >
-            </span>
-          </div>
-          <div class="recording__dates">
-            <span [hidden]="recording?.views">
-              {{ recording?.timeStart | date: 'dd.MM.yyyy' }},
-              {{ recording?.timeStart | date: 'HH:mm' }}
-            </span>
-            <span [hidden]="!recording?.views">
-              {{ recording?.views }} plays the last 7 days
-            </span>
-          </div>
-          <div class="recording__title">
-            <a routerLink="/broadcasts/{{ recording?.slug }}">
-              <h4>
-                ↳{{
-                  recording?.title.length > 30
-                    ? (recording?.title | slice: 0:30) + '...'
-                    : recording?.title
-                }}
-              </h4>
-            </a>
-          </div>
-        </div>
-        <div class="recording__image__container">
-          <a routerLink="/broadcasts/{{ recording?.slug }}">
-            <figure class="square">
-              <img
-                [defaultImage]="defaultImage"
-                [lazyLoad]="recording?.image"
-                alt="{{ recording?.title }}"
-              />
-            </figure>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="recording placeholder" [hidden]="isLoading">
-      <div class="recording__wrapper">
-        <div class="recording__info__container">
-          <div class="recording__tags">
-            <span class="recording__tags__single"> </span>
-          </div>
-          <div class="recording__dates"></div>
-          <div class="recording__title"></div>
-        </div>
-        <div class="recording__image__container"></div>
-      </div>
-    </div>
-    <div class="recording placeholder" [hidden]="isLoading">
-      <div class="recording__wrapper">
-        <div class="recording__info__container">
-          <div class="recording__tags">
-            <span class="recording__tags__single"> </span>
-          </div>
-          <div class="recording__dates"></div>
-          <div class="recording__title"></div>
-        </div>
-        <div class="recording__image__container"></div>
-      </div>
-    </div>
+      *ngIf="recordings?.length == 1"
+    ></div>
+    <div
+      class="recording placeholder"
+      [hidden]="isLoading"
+      *ngIf="recordings?.length == 1"
+    ></div>
   </div>
 </div>
