@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 import { ApiService } from '../../../core/services/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -7,13 +7,14 @@ import Vibrant from 'node-vibrant';
 import { AudioService } from '../../../core/services/audio.service';
 import { StreamState } from '../../../core/interfaces/stream-state';
 import { Palette } from 'node-vibrant/lib/color';
+import mediumZoom from 'medium-zoom';
 
 @Component({
   selector: 'app-recordings-single',
   templateUrl: './recordings-single.component.html',
   styleUrls: ['./recordings-single.component.scss'],
 })
-export class RecordingsSingleComponent implements OnInit {
+export class RecordingsSingleComponent implements OnInit, AfterViewInit {
   recording: any;
   showRecordings: any;
   title: any;
@@ -88,6 +89,13 @@ export class RecordingsSingleComponent implements OnInit {
               }
             });
         });
+    });
+  }
+
+  ngAfterViewInit() {
+    mediumZoom('[data-zoomable]', {
+      margin: 80,
+      background: '',
     });
   }
 

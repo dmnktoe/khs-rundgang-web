@@ -239,3 +239,15 @@ svg-icon {
   color: var(--secondary-color);
   background: var(--secondary-color-light);
 }
+
+/* image zoom */
+
+.medium-zoom-image--opened {
+  z-index: 9999;
+}
+
+.medium-zoom--opened .medium-zoom-overlay {
+  opacity: 0.87 !important;
+  z-index: 9998;
+  background: var(--page-background) !important;
+}
