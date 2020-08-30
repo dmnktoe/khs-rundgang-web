@@ -22,9 +22,16 @@
       />
     </div>
     <div class="scheduleListDay__info__container">
-      <h4>↳{{ entry?.name | safeHtml }}</h4>
-      {{ entry?.starts | dateFormat: 'HH:mm' }} -
-      {{ entry?.ends | dateFormat: 'HH:mm' }}
+      <div class="scheduleListDay__info__container__meta">
+        <h4>↳{{ entry?.name | safeHtml }}</h4>
+        <strong
+          >{{ entry?.starts | dateFormat: 'HH:mm' }} -
+          {{ entry?.ends | dateFormat: 'HH:mm' }}</strong
+        >
+      </div>
+      <div class="scheduleListDay__info__container__description">
+        <p [innerHTML]="entry?.description"></p>
+      </div>
     </div>
   </div>
 </div>

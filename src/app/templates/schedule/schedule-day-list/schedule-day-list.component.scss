@@ -1,69 +1,83 @@
 /* Schedule Day List */
 
 .scheduleList {
-  padding: 1rem 0rem;
+  padding: 1rem 0;
   border-bottom: 1px solid var(--card-border);
 }
 
 .scheduleList_Day {
-  display: block;
-  margin-bottom: 1.8rem;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--card-light-background-hover);
 }
 
 .scheduleList_Day:last-child {
+  border-bottom: none;
   margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .scheduleListDay__image__container {
-  width: 3rem;
-  float: left;
   margin-right: 1rem;
-  display: table;
 }
 
 .scheduleListDay__info__container {
-  display: table;
   height: auto;
 }
 
+.scheduleListDay__info__container__meta {
+  margin-bottom: 1rem;
+}
+
+.scheduleListDay__info__container__meta h4 {
+  margin-bottom: 0.3rem;
+}
+
 .scheduleListDay__image__container img {
-  width: 100%;
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 @media only screen and (min-width: 48rem) {
+  .scheduleList_Day {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
   .scheduleListDay__image__container {
-    width: 3.5rem;
-    float: left;
-    margin-right: 1rem;
+    margin-right: 2rem;
+  }
+
+  .scheduleListDay__image__container img {
+    width: 60px;
+    height: 60px;
   }
 }
 
 @media only screen and (min-width: 64rem) {
   .scheduleList {
-    padding: 2.5rem;
+    padding: 1.5rem 0;
     border-bottom: 1px solid var(--card-border);
   }
 
-  .scheduleListDay__image__container {
-    width: 4rem;
-    float: left;
-    margin-right: 1rem;
+  .scheduleListDay__image__container img {
+    width: 70px;
+    height: 70px;
   }
 }
 
 @media only screen and (min-width: 80rem) {
   .scheduleList {
-    padding: 2rem;
+    padding: 2rem 0;
     border-bottom: 1px solid var(--card-border);
   }
 
   .scheduleList_Day {
-    margin-bottom: 3rem;
-  }
-
-  .scheduleListDay__image__container {
-    width: 5rem;
-    float: left;
-    margin-right: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
   }
 }
