@@ -1,5 +1,15 @@
 # Changelog
 
+## [4.0.3] - 2020-08-30
+
+### New
+
+- Image thumbnails on shows and recordings can now be zoomed to have a better look on the artwork.
+
+### Changes
+
+- Redesigned 'Schedule' page which is now more responsive, shows the date of the day, highlights today's day and gives the more information about the scheduled show via a modal popup.
+
 ## [4.0.2] - 2020-08-29
 
 ### New
@@ -56,6 +66,7 @@ We present Radio Rasclat Web in version four. The entire application has been en
 
 - Responsive UI issues.
 
+[4.0.3]: https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.3
 [4.0.2]: https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.2
 [4.0.1]: https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.1
 [4.0.0]: https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.0
