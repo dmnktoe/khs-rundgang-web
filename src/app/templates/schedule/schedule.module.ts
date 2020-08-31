@@ -8,6 +8,7 @@ import { ScheduleRoutingModule } from './schedule-routing.module';
 import { ScheduleComponent } from './schedule.component';
 import { ScheduleDayListComponent } from './schedule-day-list/schedule-day-list.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { MomentModule } from 'ngx-moment';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     CoreModule,
     SharedModule,
     LazyLoadImageModule,
+    MomentModule,
   ],
   declarations: [ScheduleComponent, ScheduleDayListComponent],
   providers: [Title],

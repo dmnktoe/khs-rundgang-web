@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-schedule-day-list',
@@ -9,9 +10,12 @@ export class ScheduleDayListComponent implements OnInit {
   @Input() schedule = '';
   @Input() isLoading = false;
 
+  currentTime: any;
   defaultImage = './../../../assets/svg/placeholder.svg';
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.currentTime = moment();
+  }
 }
