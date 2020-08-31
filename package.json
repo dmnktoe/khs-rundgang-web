@@ -54,6 +54,7 @@
     "moment": "^2.27.0",
     "ng-lazyload-image": "^9.0.1",
     "ng2-tooltip-directive": "^2.9.22",
+    "ngx-moment": "^5.0.0",
     "ngx-swiper-wrapper": "^9.0.1",
     "ngx-timeago": "^1.0.4",
     "node-vibrant": "^3.1.5",
