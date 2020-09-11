@@ -1,14 +1,22 @@
 # Changelog
 
-## [4.0.3] - 2020-08-30
+## [4.0.3] - 2020-09-11
 
 ### New
 
 - Image thumbnails on shows and recordings can now be zoomed to have a better look on the artwork.
+- Adds icons in the header for our social media pages.
 
 ### Changes
 
 - Redesigned 'Schedule' page which is now more responsive, shows the date of the day, highlights today's day and gives the more information about the scheduled show via a modal popup.
+- Updated translations strings.
+- We updated the info texts on our 'About' page.
+- The `recordings-list.component` (like in 'Search') makes now use of flexbox.
+
+### Bug-Fixes
+
+- Fixes an error where the images on the blog and project page weren't loaded on the first click.
 
 ## [4.0.2] - 2020-08-29
 
