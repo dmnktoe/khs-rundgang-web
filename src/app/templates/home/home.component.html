@@ -1,6 +1,13 @@
 <div class="container">
   <app-page-title [title]="'appTitle' | translate"></app-page-title>
 
+  <button (click)="openModal('custom-modal-2')">Open Modal 2</button>
+
+  <jw-modal id="custom-modal-2">
+    <h1 style="height: 1000px">A Tall Custom Modal!</h1>
+    <button (click)="closeModal('custom-modal-2')">Close</button>
+  </jw-modal>
+
   <app-slideshow
     [isLoading]="isLoading"
     [live]="currentShow"

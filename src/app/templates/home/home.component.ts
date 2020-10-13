@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
-import { ApiService } from '../../core/services/api.service';
+import { ApiService } from '@app/core/services/api.service';
+import { ModalService } from '@app/core/services/modal.service';
 import { finalize } from 'rxjs/operators';
 import moment from 'moment';
 
@@ -54,7 +55,10 @@ export class HomeComponent implements OnInit {
     },
   };
 
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private modalService: ModalService
+  ) {}
 
   ngOnInit() {
     this.isLoading = true;
@@ -159,5 +163,13 @@ export class HomeComponent implements OnInit {
               });
           });
       });
+  }
+
+  openModal(id: string) {
+    this.modalService.open(id);
+  }
+
+  closeModal(id: string) {
+    this.modalService.close(id);
   }
 }
