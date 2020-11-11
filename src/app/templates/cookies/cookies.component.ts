@@ -18,7 +18,6 @@ export class CookiesComponent implements OnInit {
     s.src =
       'https://consent.cookiebot.com/e9dc8e8a-a27e-4198-82ed-f69f7b80cd66/cd.js';
     s.text = ``;
-    console.log(this.document.body);
     this.renderer2.appendChild(this.document.body, s);
   }
 }
