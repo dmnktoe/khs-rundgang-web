@@ -19,6 +19,7 @@ import { PageBannerComponent } from './page-banner/page-banner.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { TranslateModule } from '@ngx-translate/core';
 import { SocialIconsComponent } from './social-icons/social-icons.component';
+import { ScriptHackComponent } from './script-hack/script-hack.component';
 
 @NgModule({
   imports: [
@@ -43,6 +44,7 @@ import { SocialIconsComponent } from './social-icons/social-icons.component';
     DarkModeToggleComponent,
     PageBannerComponent,
     SocialIconsComponent,
+    ScriptHackComponent,
   ],
   exports: [
     LoaderComponent,
@@ -58,6 +60,7 @@ import { SocialIconsComponent } from './social-icons/social-icons.component';
     DarkModeToggleComponent,
     PageBannerComponent,
     SocialIconsComponent,
+    ScriptHackComponent,
   ],
   providers: [ApiService],
 })
