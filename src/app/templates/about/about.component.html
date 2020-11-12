@@ -7,7 +7,7 @@
     <app-text-seperator [text]="'„Wheel up.“'"></app-text-seperator>
     <div class="grid grid-gap-md">
       <div class="col-12">
-        <h2>Radio Rasclat</h2>
+        <h2>{{ 'appTitle' | translate }}</h2>
         <p>&nbsp;</p>
       </div>
       <div class="col-12 col-4@md">
@@ -29,7 +29,7 @@
     </div>
     <div class="grid grid-gap-md">
       <div class="col-12 col-4@md">
-        <h5>Season °1</h5>
+        <h5>{{ 'season' | translate }} °1</h5>
         <p>17.07.2019 — 19.07.2019</p>
       </div>
       <div class="col-12 col-8@md">
@@ -41,7 +41,7 @@
     </div>
     <div class="grid grid-gap-md">
       <div class="col-12 col-4@md">
-        <h5>Season °2</h5>
+        <h5>{{ 'season' | translate }} °2</h5>
         <p>10.01.2020 — 31.05.2020</p>
       </div>
       <div class="col-12 col-8@md">
@@ -53,7 +53,7 @@
     </div>
     <div class="grid grid-gap-md">
       <div class="col-12 col-4@md">
-        <h5>Season °3</h5>
+        <h5>{{ 'season' | translate }} °3</h5>
         <p>01.06.2020 — 31.09.2020</p>
       </div>
       <div class="col-12 col-8@md">
@@ -63,23 +63,22 @@
         <p [innerHTML]="'seasonThreeDescription' | translate"></p>
       </div>
     </div>
-    <app-page-title [title]="'Environmental protection'"></app-page-title>
+    <app-page-title
+      [title]="'environmentalProtection' | translate"
+    ></app-page-title>
     <div class="grid grid-gap-md">
       <div class="col-12 col-4@md">
         <h3 style="color: #38ad48">
-          Wir setzen zu 100% auf erneuerbare Energien.
+          {{ 'renewableEnergies' | translate }}
         </h3>
       </div>
       <div class="col-12 col-8@md">
         <p>
-          In our German data center parks, we at Hetzner Online use hydropower.
-          Our environmental partner is Energiedienst AG, a TÜV certified company
-          that generates green energy from 100 percent carbon dioxide-free and
-          environmentally-friendly hydropower.
+          {{ 'renewableEnergiesDescription' | translate }}
         </p>
       </div>
     </div>
-    <app-page-title [title]="'Thank you!'"></app-page-title>
+    <app-page-title [title]="'thankYou' | translate"></app-page-title>
     <div class="grid grid-gap-md">
       <div class="col-12 col-4@md">
         <h3>Hall of Fame.</h3>
@@ -94,6 +93,19 @@
         </p>
       </div>
     </div>
-    <app-page-title [title]="'Partners'"></app-page-title>
+    <app-page-title [title]="'partners' | translate"></app-page-title>
+    <div class="partnersList">
+      <div class="grid-auto-md grid-auto-xl@md grid-gap-md">
+        <div class="partner">
+          <img src="assets/partners/uni-kassel.svg" />
+        </div>
+        <div class="partner">
+          <img src="assets/partners/kunsthochschule-kassel.svg" />
+        </div>
+        <div class="partner">
+          <img src="assets/partners/feiertag.svg" />
+        </div>
+      </div>
+    </div>
   </div>
 </div>
