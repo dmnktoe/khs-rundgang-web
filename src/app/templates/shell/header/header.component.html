@@ -28,7 +28,9 @@
   <div class="infoBanner">
     <div class="container">
       <div class="grid grid-gap-xs">
-        <div class="col-2"></div>
+        <div class="col-2">
+          {{ now | date: 'HH:mm' }}
+        </div>
         <div class="col-8 text-center">
           <span [innerHTML]="'infoBannerText' | translate"></span>
         </div>
@@ -276,11 +278,6 @@
                   <a (click)="setLanguage('ES')"> 🇪🇸 </a>
                 </div>
               </div>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              {{ now | date: 'HH:mm' }}
             </li>
           </ul>
           <app-social-icons></app-social-icons>
