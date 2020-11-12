@@ -37,6 +37,7 @@ import { HttpCacheInterceptorModule } from '@ngneat/cashew';
 /* Services */
 import { UiStyleToggleService } from '@app/core/services/ui-style-toggle.service';
 import { StorageService } from '@app/core/services/local-storage.service';
+import { CookieService } from 'ngx-cookie-service';
 
 /* Analytics */
 import { Angulartics2Module } from 'angulartics2';
@@ -114,6 +115,7 @@ export class SentryErrorHandler implements ErrorHandler {
   providers: [
     UiStyleToggleService,
     StorageService,
+    CookieService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG,
