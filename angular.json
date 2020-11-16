@@ -44,6 +44,7 @@
                 "scripts": true,
                 "styles": true
               },
+              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
