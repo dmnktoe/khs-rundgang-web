@@ -216,16 +216,24 @@
                 {{ 'changelog' | translate }}
               </a>
             </li>
-            <!-- <li>
+            <li>
               <a
                 href="https://status.radio-rasclat.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {{ 'status' | translate }}
-                <svg-icon key="external"></svg-icon>
+                <span
+                  class="statusCircle"
+                  [ngClass]="{
+                    green: status === 2,
+                    yellow: status === 1,
+                    red: status === 0
+                  }"
+                >
+                </span>
               </a>
-            </li> -->
+            </li>
           </ul>
         </div>
         <div class="col-6 col-3@md">
