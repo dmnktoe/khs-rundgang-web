@@ -244,4 +244,15 @@ export class ApiService {
       )
     );
   }
+
+  getStatus() {
+    return this.httpClient.get('/status').pipe(
+      map((body: any) => body),
+      catchError(() =>
+        of(
+          'Es ist ein Fehler aufgetreten. Der Interpret konnte nicht geladen werden.'
+        )
+      )
+    );
+  }
 }
