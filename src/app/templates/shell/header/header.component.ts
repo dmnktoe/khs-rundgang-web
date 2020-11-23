@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { I18nService } from '@app/core';
+import { ModalService } from '@app/core/services/modal.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   isLanguagePickerVisible = false;
   now: number;
 
-  constructor(private router: Router, private i18nService: I18nService) {
+  constructor(private router: Router, private modalService: ModalService) {
     setInterval(() => {
       this.now = Date.now();
     }, 10);
@@ -32,15 +32,11 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {}
 
-  setLanguage(language: string) {
-    this.i18nService.language = language;
+  openModal(id: string) {
+    this.modalService.open(id);
   }
 
-  get currentLanguage(): string {
-    return this.i18nService.language;
-  }
-
-  get languages(): string[] {
-    return this.i18nService.supportedLanguages;
+  closeModal(id: string) {
+    this.modalService.close(id);
   }
 }
