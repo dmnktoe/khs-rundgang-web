@@ -1,17 +1,6 @@
 <div class="container">
   <app-page-title [title]="'appTitle' | translate"></app-page-title>
 
-  <button (click)="openModal('languageSettings')">
-    {{ 'languageSettings' | translate }}
-  </button>
-
-  <modal id="languageSettings">
-    <h1>{{ 'languageSettings' | translate }}</h1>
-    <button (click)="closeModal('languageSettings')">
-      {{ 'close' | translate }}
-    </button>
-  </modal>
-
   <app-slideshow
     [isLoading]="isLoading"
     [live]="currentShow"
