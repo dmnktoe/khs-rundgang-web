@@ -123,6 +123,15 @@ h6 {
   font-size: 100%;
 }
 
+/* Separator / hr */
+
+hr {
+  border: 0;
+  height: 0;
+  border-bottom: 1px solid var(--primary-color);
+  margin: 1rem 0;
+}
+
 /* Links */
 
 a {
