@@ -8,6 +8,7 @@ import { SharedModule } from '../shared';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SvgIconsModule } from '@ngneat/svg-icon';
 import icons from '../../../assets/svg/svg-icons';
+import { ModalModule } from '@app/templates/shared/modal';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import icons from '../../../assets/svg/svg-icons';
     SvgIconsModule.forRoot({
       icons,
     }),
+    ModalModule,
   ],
   declarations: [HeaderComponent, ShellComponent],
 })

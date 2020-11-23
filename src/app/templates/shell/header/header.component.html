@@ -274,27 +274,22 @@
               </a>
             </li>
             <li>
-              <a (click)="toggleLanguagePicker()">
+              <a (click)="openModal('languageSettings')">
                 {{ 'languageSettings' | translate }}
                 <svg-icon key="dropdown"></svg-icon>
               </a>
-              <div class="languagePicker" *ngIf="isLanguagePickerVisible">
-                <div class="languagePicker__item currentLanguage">
-                  {{ currentLanguage }}
-                </div>
-                <div class="languagePicker__item language">
-                  <a (click)="setLanguage('DE')"> 🇩🇪 </a>
-                </div>
-                <div class="languagePicker__item language">
-                  <a (click)="setLanguage('EN')"> 🇺🇸 </a>
-                </div>
-                <div class="languagePicker__item language">
-                  <a (click)="setLanguage('FR')"> 🇫🇷 </a>
-                </div>
-                <div class="languagePicker__item language">
-                  <a (click)="setLanguage('ES')"> 🇪🇸 </a>
-                </div>
-              </div>
+              <modal id="languageSettings">
+                <h1>{{ 'languageSettings' | translate }}</h1>
+                <hr />
+                <app-language-select></app-language-select>
+                <hr />
+                <a
+                  class="btn btn-secondary"
+                  (click)="closeModal('languageSettings')"
+                >
+                  {{ 'close' | translate }}
+                </a>
+              </modal>
             </li>
           </ul>
           <app-social-icons></app-social-icons>

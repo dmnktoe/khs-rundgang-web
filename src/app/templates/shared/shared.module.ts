@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoaderComponent } from './loader/loader.component';
-import { ApiService } from '../../core/services/api.service';
-import { LimitPipe } from '../../core/pipes/LimitPipe';
-import { ReadingTimePipe } from '../../core/pipes/ReadingTimePipe';
-import { SafeHtmlPipe } from '../../core/pipes/SafeHtmlPipe';
-import { MomentPipe } from '../../core/pipes/MomentPipe';
+import { ApiService } from '@app/core/services/api.service';
+import { LimitPipe } from '@app/core/pipes/LimitPipe';
+import { ReadingTimePipe } from '@app/core/pipes/ReadingTimePipe';
+import { SafeHtmlPipe } from '@app/core/pipes/SafeHtmlPipe';
+import { MomentPipe } from '@app/core/pipes/MomentPipe';
 import { TimeagoModule } from 'ngx-timeago';
 import { PlayerComponent } from './player/player.component';
 import { RouterModule } from '@angular/router';
@@ -19,6 +19,7 @@ import { PageBannerComponent } from './page-banner/page-banner.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { TranslateModule } from '@ngx-translate/core';
 import { SocialIconsComponent } from './social-icons/social-icons.component';
+import { LanguageSelectComponent } from './language-select/language-select.component';
 import { ScriptHackComponent } from './script-hack/script-hack.component';
 
 @NgModule({
@@ -44,6 +45,7 @@ import { ScriptHackComponent } from './script-hack/script-hack.component';
     DarkModeToggleComponent,
     PageBannerComponent,
     SocialIconsComponent,
+    LanguageSelectComponent,
     ScriptHackComponent,
   ],
   exports: [
@@ -60,6 +62,7 @@ import { ScriptHackComponent } from './script-hack/script-hack.component';
     DarkModeToggleComponent,
     PageBannerComponent,
     SocialIconsComponent,
+    LanguageSelectComponent,
     ScriptHackComponent,
   ],
   providers: [ApiService],

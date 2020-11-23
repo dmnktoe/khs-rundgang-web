@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { Title } from '@angular/platform-browser';
 
-import { CoreModule } from '../../core';
+import { CoreModule } from '@app/core';
 import { SharedModule } from '../shared';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { ApiService } from '../../core/services/api.service';
+import { ApiService } from '@app/core/services/api.service';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { RecordingsModule } from '../recordings/recordings.module';
 import { ShowsModule } from '../shows/shows.module';
 import { ScheduleModule } from '../schedule/schedule.module';
+import { ModalModule } from '@app/templates/shared/modal';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { ScheduleModule } from '../schedule/schedule.module';
     RecordingsModule,
     ShowsModule,
     ScheduleModule,
+    ModalModule,
   ],
   declarations: [HomeComponent],
   providers: [ApiService, Title],
