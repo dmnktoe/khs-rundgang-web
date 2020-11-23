@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import { environment } from '@env/environment';
 import { finalize } from 'rxjs/operators';
-import { ApiService } from '../../core/services/api.service';
+import { ApiService } from '@app/core/services/api.service';
 
 @Component({
   selector: 'app-about',

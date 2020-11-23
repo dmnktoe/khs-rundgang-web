@@ -21,6 +21,7 @@ import { ProjectsModule } from './templates/projects/projects.module';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ImprintModule } from './templates/imprint/imprint.module';
 import { PrivacyModule } from './templates/privacy/privacy.module';
+import { CookiesModule } from './templates/cookies/cookies.module';
 import { ChangelogModule } from './templates/changelog/changelog.module';
 import { LicensesModule } from './templates/licenses/licenses.module';
 import { RecordingsModule } from './templates/recordings/recordings.module';
@@ -96,6 +97,7 @@ export class SentryErrorHandler implements ErrorHandler {
     ProjectsModule,
     ImprintModule,
     PrivacyModule,
+    CookiesModule,
     ChangelogModule,
     LicensesModule,
     RecordingsModule,

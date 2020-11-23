@@ -11,7 +11,7 @@
                 min="0"
                 [max]="state?.duration"
                 step="1"
-                style="width: 100%;"
+                style="width: 100%"
                 [value]="state?.currentTrack.currentTime"
                 (input)="onSliderChangeEnd($event)"
                 [disabled]="state?.error"
@@ -48,14 +48,14 @@
             <div *ngIf="state?.currentTrack.currentImage">
               <img
                 src="{{ state?.currentTrack.currentImage }}"
-                style="width: 2.5rem;"
+                style="width: 2.5rem"
                 alt="Radio Rasclat Live"
               />
             </div>
             <div *ngIf="!state?.currentTrack.currentImage">
               <img
                 src="../../../../assets/svg/logo.svg"
-                style="width: 2.5rem;"
+                style="width: 2.5rem"
                 alt="Radio Rasclat Live"
               />
             </div>
