@@ -1,11 +1,15 @@
 <div class="container">
   <app-page-title [title]="'appTitle' | translate"></app-page-title>
 
-  <button (click)="openModal('custom-modal-2')">Open Modal 2</button>
+  <button (click)="openModal('languageSettings')">
+    {{ 'languageSettings' | translate }}
+  </button>
 
-  <modal id="custom-modal-2">
-    <h1>A Tall Custom Modal!</h1>
-    <button (click)="closeModal('custom-modal-2')">Close</button>
+  <modal id="languageSettings">
+    <h1>{{ 'languageSettings' | translate }}</h1>
+    <button (click)="closeModal('languageSettings')">
+      {{ 'close' | translate }}
+    </button>
   </modal>
 
   <app-slideshow
