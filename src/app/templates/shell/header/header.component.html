@@ -264,9 +264,12 @@
                 <hr />
                 <app-language-select></app-language-select>
                 <hr />
-                <button (click)="closeModal('languageSettings')">
+                <a
+                  class="btn btn-secondary"
+                  (click)="closeModal('languageSettings')"
+                >
                   {{ 'close' | translate }}
-                </button>
+                </a>
               </modal>
             </li>
           </ul>
