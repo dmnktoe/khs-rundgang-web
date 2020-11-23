@@ -10,7 +10,7 @@
 import { ModalService } from '@app/core/services/modal.service';
 
 @Component({
-  selector: 'jw-modal',
+  selector: 'modal',
   templateUrl: 'modal.component.html',
   styleUrls: ['modal.component.scss'],
   encapsulation: ViewEncapsulation.None,
@@ -37,7 +37,7 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.element.addEventListener(
       'click',
       (el: { target: { className: string } }) => {
-        if (el.target.className === 'jw-modal') {
+        if (el.target.className === 'modal') {
           this.close();
         }
       }
@@ -56,12 +56,12 @@ export class ModalComponent implements OnInit, OnDestroy {
   // open modal
   open(): void {
     this.element.style.display = 'block';
-    document.body.classList.add('jw-modal-open');
+    document.body.classList.add('modal-open');
   }
 
   // close modal
   close(): void {
     this.element.style.display = 'none';
-    document.body.classList.remove('jw-modal-open');
+    document.body.classList.remove('modal-open');
   }
 }

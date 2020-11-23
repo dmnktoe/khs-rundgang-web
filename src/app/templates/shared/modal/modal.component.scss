@@ -1,23 +1,23 @@
-﻿jw-modal {
+﻿modal {
   display: none;
 
-  .jw-modal {
+  .modal {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 5999;
+    z-index: 9902;
     overflow: auto;
 
-    .jw-modal-body {
+    .modal-body {
       padding: 20px;
       background: #fff;
-      margin: 40px;
+      margin: 5rem;
     }
   }
 
-  .jw-modal-background {
+  .modal-background {
     position: fixed;
     top: 0;
     right: 0;
@@ -25,10 +25,10 @@
     left: 0;
     background-color: #000;
     opacity: 0.75;
-    z-index: 5998;
+    z-index: 9901;
   }
 }
 
-body.jw-modal-open {
+body.modal-open {
   overflow: hidden;
 }
