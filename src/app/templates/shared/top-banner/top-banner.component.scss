@@ -1,8 +1,25 @@
 .top__banner {
   background: #ffe3ac;
-  color: #020c3b;
+  border-bottom: 1px solid var(--card-border);
 }
 
 .top__banner__inner {
   padding: 1rem 0;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top__banner__inner__text {
+  display: inline-flex;
+}
+
+.top__banner__inner__controls {
+  display: flex;
+  align-items: center;
+}
+
+.top__banner__inner__controls_btn {
+  margin: 0 1rem;
 }

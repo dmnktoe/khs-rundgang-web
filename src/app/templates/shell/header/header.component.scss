@@ -4,9 +4,11 @@ header {
   background: var(--card-background);
   border-bottom: 1px solid var(--card-border);
   font-family: "Trash", sans-serif;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   width: 100%;
   z-index: 9998;
+  top: -1px;
 }
 
 header .grid {
@@ -82,10 +84,11 @@ header .logo img {
 /* Navigation */
 
 nav {
-  position: fixed;
+  position: sticky;
+  position: -webkit-sticky;
   width: 100%;
   z-index: 9998;
-  top: 51px;
+  top: 50px;
 }
 
 .infoBanner {
