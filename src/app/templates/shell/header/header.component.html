@@ -126,6 +126,15 @@
           <ul>
             <li>
               <a
+                routerLink="/artists"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
+                {{ 'artists' | translate }}
+              </a>
+            </li>
+            <li>
+              <a
                 routerLink="/blog"
                 routerLinkActive="active"
                 (click)="toggleNav()"

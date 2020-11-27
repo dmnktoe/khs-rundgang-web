@@ -1,0 +1,24 @@
+.artist {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.artist__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.artist__wrapper__name {
+  display: flex;
+}
+
+.artist__wrapper__count {
+  display: flex;
+}
+
+.artistsBackgroundImg {
+  position: fixed;
+  display: block;
+  margin: auto;
+  background: #000;
+}
