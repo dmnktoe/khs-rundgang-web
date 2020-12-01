@@ -1,6 +1,14 @@
 <div class="container">
   <app-page-title [title]="'artists' | translate"></app-page-title>
 
+  <div class="artistsBackgroundImg" *ngIf="backgroundImg">
+    <div class="artistsBackgroundImg__wrapper">
+      <figure class="square">
+        <img [defaultImage]="defaultImage" [lazyLoad]="backgroundImgPath" />
+      </figure>
+    </div>
+  </div>
+
   <div class="artistsList" *ngIf="!isLoading == true">
     <div class="grid">
       <div class="col-12">
@@ -8,9 +16,7 @@
           <a routerLink="/artists/{{ artist?.slug }}">
             <div
               class="artist__wrapper"
-              (mouseover)="
-                changeBackground({ event: $event, currentArtist: artist })
-              "
+              (mouseover)="changeBackground({ currentArtist: artist })"
               (mouseleave)="backgroundImg = false"
             >
               <div class="artist__wrapper__name">
@@ -23,12 +29,6 @@
           </a>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="artistsBackgroundImg" *ngIf="!backgroundImg">
-    <div class="artistsBackgroundImg__wrapper">
-      <img src="{{ backgroundImgPath }}" />
     </div>
   </div>
 </div>
