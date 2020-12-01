@@ -16,13 +16,7 @@ export class ArtistsComponent implements OnInit {
 
   constructor(private apiService: ApiService) {}
 
-  changeBackground({
-    event,
-    currentArtist,
-  }: {
-    event: any;
-    currentArtist: any;
-  }) {
+  changeBackground({ currentArtist }: { currentArtist: any }) {
     this.backgroundImg = true;
     this.backgroundImgPath = currentArtist.image;
   }
