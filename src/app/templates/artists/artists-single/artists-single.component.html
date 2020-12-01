@@ -1,0 +1,42 @@
+<div class="container">
+  <app-page-title
+    [title]="'artists' | translate"
+    [isLink]="true"
+    [url]="'/artists'"
+  ></app-page-title>
+  <div class="artistSingle">
+    <div class="grid grid-gap-md">
+      <div class="col-4@sm">
+        <div class="artist__image__container">
+          <figure class="square">
+            <img
+              [defaultImage]="defaultImage"
+              [lazyLoad]="artist?.image"
+              alt="{{ artist?.title }}"
+              [attr.data-zoomable]="'data-zoomable'"
+            />
+          </figure>
+        </div>
+      </div>
+      <div class="col-8@sm">
+        <div class="artist__info__container">
+          <div class="artist__title">
+            <h1 [style.color]="hex">↳{{ artist?.title }}</h1>
+          </div>
+          <div class="artist__counter" [style.color]="hex">
+            {{ recordings?.length }} {{ 'broadcasts' | translate }}.
+          </div>
+        </div>
+        <div class="artist__description__container">
+          <p [innerHTML]="artist?.description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-text-seperator [text]="'All by ' + artist?.title" [isLink]="false">
+  </app-text-seperator>
+
+  <app-recordings-gallery [recordings]="recordings" [hidden]="isLoading">
+  </app-recordings-gallery>
+</div>

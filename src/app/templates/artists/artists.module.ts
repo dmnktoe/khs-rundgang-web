@@ -4,8 +4,10 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { ArtistsRoutingModule } from './artists-routing.module';
 import { ArtistsComponent } from './artists.component';
+import { ArtistsSingleComponent } from './artists-single/artists-single.component';
 import { SharedModule } from '../shared';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { RecordingsModule } from '@app/templates/recordings/recordings.module';
 
 @NgModule({
   imports: [
@@ -14,7 +16,8 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     ArtistsRoutingModule,
     SharedModule,
     LazyLoadImageModule,
+    RecordingsModule,
   ],
-  declarations: [ArtistsComponent],
+  declarations: [ArtistsComponent, ArtistsSingleComponent],
 })
 export class ArtistsModule {}
