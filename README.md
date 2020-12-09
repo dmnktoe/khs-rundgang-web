@@ -40,8 +40,7 @@ Before you begin we recommend you read about the basic building blocks that asse
 <!-- prettier-ignore -->
 | Branch    | Tests | Code Coverage | Codefactor | Comments                 |
 | --------- | ----- | ------------- | ---------- | ------------------------ |
-| `develop` | <img src="https://travis-ci.com/dmnktoe/radio-rasclat-web.svg?branch=develop"> | [![codecov](https://codecov.io/gh/dmnktoe/radio-rasclat-web/branch/develop/graph/badge.svg)](https://codecov.io/gh/dmnktoe/radio-rasclat-web) | [![CodeFactor](https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/badge/develop)](https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/overview/develop) | Work in progress |
-| `master`  | <img src="https://travis-ci.com/dmnktoe/radio-rasclat-web.svg?branch=master"> | [![codecov](https://codecov.io/gh/dmnktoe/radio-rasclat-web/branch/master/graph/badge.svg)](https://codecov.io/gh/dmnktoe/radio-rasclat-web) | [![CodeFactor](https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/badge/master)](https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/overview/master) | Latest Production Release |
+| `master`  | ![Build](https://github.com/dmnktoe/radio-rasclat-web/workflows/Build/badge.svg) | [![codecov](https://codecov.io/gh/dmnktoe/radio-rasclat-web/branch/master/graph/badge.svg)](https://codecov.io/gh/dmnktoe/radio-rasclat-web) | [![CodeFactor](https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/badge/master)](https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/overview/master) | Latest Production Release |
 
 ### Prerequisites
 
