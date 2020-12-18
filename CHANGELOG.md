@@ -89,8 +89,8 @@ We present Radio Rasclat Web in version four. The entire application has been en
 
 - Responsive UI issues.
 
-[4.0.4]: https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.4
-[4.0.3]: https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.3
-[4.0.2]: https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.2
-[4.0.1]: https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.1
-[4.0.0]: https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.0
+[4.0.4]: https://github.com/RadioRasclat/radio-rasclat-web/releases/tag/4.0.4
+[4.0.3]: https://github.com/RadioRasclat/radio-rasclat-web/releases/tag/4.0.3
+[4.0.2]: https://github.com/RadioRasclat/radio-rasclat-web/releases/tag/4.0.2
+[4.0.1]: https://github.com/RadioRasclat/radio-rasclat-web/releases/tag/4.0.1
+[4.0.0]: https://github.com/RadioRasclat/radio-rasclat-web/releases/tag/4.0.0

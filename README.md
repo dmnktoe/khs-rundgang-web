@@ -3,7 +3,7 @@
 # Radio Rasclat
 
 <p>
-<img src="https://img.shields.io/github/package-json/v/dmnktoe/radio-rasclat-web.svg?color=%237d29cc">
+<img src="https://img.shields.io/github/package-json/v/RadioRasclat/radio-rasclat-web.svg?color=%237d29cc">
 </p>
 
 Radio Rasclat is a non-commercial internet radio station which is going to stream your music to the web, again! It offers you a platform to play & try out. It serves as a place for the exchange, dialogue and cooperation of music. Founded and curated in 2019, the radio returns to the new venue at KMMN 3. Submit your music via e-mail ([office@radio-rasclat.com](mailto:office@radio-rasclat.com)) to get your own show slot or appearance. Or just listen live on [radio-rasclat.com](https://radio-rasclat.com/).
@@ -40,7 +40,7 @@ Before you begin we recommend you read about the basic building blocks that asse
 <!-- prettier-ignore -->
 | Branch    | Tests | Code Coverage | Codefactor | Comments                 |
 | --------- | ----- | ------------- | ---------- | ------------------------ |
-| `master`  | ![Build](https://github.com/dmnktoe/radio-rasclat-web/workflows/Build/badge.svg) | [![codecov](https://codecov.io/gh/dmnktoe/radio-rasclat-web/branch/master/graph/badge.svg)](https://codecov.io/gh/dmnktoe/radio-rasclat-web) | [![CodeFactor](https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/badge/master)](https://www.codefactor.io/repository/github/dmnktoe/radio-rasclat-web/overview/master) | Latest Production Release |
+| `master`  | ![Build](https://github.com/RadioRasclat/radio-rasclat-web/workflows/Build/badge.svg) | [![codecov](https://codecov.io/gh/RadioRasclat/radio-rasclat-web/branch/master/graph/badge.svg)](https://codecov.io/gh/RadioRasclat/radio-rasclat-web) | [![CodeFactor](https://www.codefactor.io/repository/github/RadioRasclat/radio-rasclat-web/badge/master)](https://www.codefactor.io/repository/github/RadioRasclat/radio-rasclat-web/overview/master) | Latest Production Release |
 
 ### Prerequisites
 
@@ -67,7 +67,7 @@ npm install
 
 ### Setup the backend
 
-In order for the application to run completely and properly, you need to download the corresponding backend. The backend is used to load data and content from the database so that it can be displayed in the frontend (this repository). Head over to [Radio Rasclat Server](https://github.com/dmnktoe/radio-rasclat-server) to download and install the backend.
+In order for the application to run completely and properly, you need to download the corresponding backend. The backend is used to load data and content from the database so that it can be displayed in the frontend (this repository). Head over to [Radio Rasclat Server](https://github.com/RadioRasclat/radio-rasclat-server) to download and install the backend.
 
 ### Main Tasks
 
@@ -111,8 +111,8 @@ We do too, wanna [participate](https://www.radio-rasclat.com/about)?
 
 ### Contributors
 
-<a href="https://github.com/dmnktoe/radio-rasclat-web/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=dmnktoe/radio-rasclat-web" />
+<a href="https://github.com/RadioRasclat/radio-rasclat-web/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=RadioRasclat/radio-rasclat-web" />
 </a>
 
 ## 📦 Licences
