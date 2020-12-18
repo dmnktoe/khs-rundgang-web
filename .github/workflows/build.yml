@@ -22,12 +22,3 @@ jobs:
         run: npm test
       - name: Coverage
         uses: codecov/codecov-action@v1
-      - name: Create Sentry release
-        uses: getsentry/action-release@v1
-        env:
-          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-          SENTRY_ORG: radio-rasclat
-          SENTRY_PROJECT: radio-rasclat-web
-        with:
-          environment: production
-          version: ${{ github.sha }}
