@@ -1,0 +1,38 @@
+<div class="container">
+  <app-page-title [title]="'artists' | translate"></app-page-title>
+
+  <div class="artistsBackgroundImg" *ngIf="backgroundImg">
+    <div class="artistsBackgroundImg__wrapper">
+      <figure class="square">
+        <img
+          [defaultImage]="defaultImage"
+          [lazyLoad]="backgroundImgPath"
+          alt="Artist"
+        />
+      </figure>
+    </div>
+  </div>
+
+  <div class="artistsList" *ngIf="!isLoading == true">
+    <div class="grid">
+      <div class="col-12">
+        <div class="artist" [hidden]="isLoading" *ngFor="let artist of artists">
+          <a routerLink="/artists/{{ artist?.slug }}">
+            <div
+              class="artist__wrapper"
+              (mouseover)="changeBackground({ currentArtist: artist })"
+              (mouseleave)="backgroundImg = false"
+            >
+              <div class="artist__wrapper__name">
+                <h4>↳{{ artist?.title }}</h4>
+              </div>
+              <div class="artist__wrapper__count">
+                <h4>({{ artist?.recordings.length }})</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
