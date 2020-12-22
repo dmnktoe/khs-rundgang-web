@@ -4,7 +4,11 @@
   <div class="artistsBackgroundImg" *ngIf="backgroundImg">
     <div class="artistsBackgroundImg__wrapper">
       <figure class="square">
-        <img [defaultImage]="defaultImage" [lazyLoad]="backgroundImgPath" />
+        <img
+          [defaultImage]="defaultImage"
+          [lazyLoad]="backgroundImgPath"
+          alt="Artist"
+        />
       </figure>
     </div>
   </div>
