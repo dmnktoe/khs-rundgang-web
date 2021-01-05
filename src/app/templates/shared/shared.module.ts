@@ -19,6 +19,7 @@ import { PageBannerComponent } from './page-banner/page-banner.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { TranslateModule } from '@ngx-translate/core';
 import { SocialIconsComponent } from './social-icons/social-icons.component';
+import { TopBannerComponent } from './top-banner/top-banner.component';
 import { LanguageSelectComponent } from './language-select/language-select.component';
 import { ScriptHackComponent } from './script-hack/script-hack.component';
 
@@ -45,6 +46,7 @@ import { ScriptHackComponent } from './script-hack/script-hack.component';
     DarkModeToggleComponent,
     PageBannerComponent,
     SocialIconsComponent,
+    TopBannerComponent,
     LanguageSelectComponent,
     ScriptHackComponent,
   ],
@@ -62,6 +64,7 @@ import { ScriptHackComponent } from './script-hack/script-hack.component';
     DarkModeToggleComponent,
     PageBannerComponent,
     SocialIconsComponent,
+    TopBannerComponent,
     LanguageSelectComponent,
     ScriptHackComponent,
   ],

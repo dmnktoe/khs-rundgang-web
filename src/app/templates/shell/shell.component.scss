@@ -1,0 +1,9 @@
+:host {
+  .sticky {
+    position: sticky;
+    position: -webkit-sticky;
+    top: -1px;
+    z-index: 9999;
+    -webkit-transform: translateZ(0);
+  }
+}
