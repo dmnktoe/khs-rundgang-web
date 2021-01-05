@@ -15,12 +15,14 @@ import { SharedModule } from '@app/templates/shared';
 
 /* VIEWS */
 import { AboutModule } from '@app/templates/about/about.module';
+import { ArtistsModule } from '@app/templates/artists/artists.module';
 import { HomeModule } from './templates/home/home.module';
 import { BlogModule } from './templates/blog/blog.module';
 import { ProjectsModule } from './templates/projects/projects.module';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { ImprintModule } from './templates/imprint/imprint.module';
 import { PrivacyModule } from './templates/privacy/privacy.module';
+import { CookiesModule } from './templates/cookies/cookies.module';
 import { ChangelogModule } from './templates/changelog/changelog.module';
 import { LicensesModule } from './templates/licenses/licenses.module';
 import { RecordingsModule } from './templates/recordings/recordings.module';
@@ -93,10 +95,12 @@ export class SentryErrorHandler implements ErrorHandler {
     SharedModule,
     ShellModule,
     HomeModule,
+    ArtistsModule,
     BlogModule,
     ProjectsModule,
     ImprintModule,
     PrivacyModule,
+    CookiesModule,
     ChangelogModule,
     LicensesModule,
     RecordingsModule,

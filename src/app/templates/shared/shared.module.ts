@@ -20,6 +20,8 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { TranslateModule } from '@ngx-translate/core';
 import { SocialIconsComponent } from './social-icons/social-icons.component';
 import { TopBannerComponent } from './top-banner/top-banner.component';
+import { LanguageSelectComponent } from './language-select/language-select.component';
+import { ScriptHackComponent } from './script-hack/script-hack.component';
 
 @NgModule({
   imports: [
@@ -45,6 +47,8 @@ import { TopBannerComponent } from './top-banner/top-banner.component';
     PageBannerComponent,
     SocialIconsComponent,
     TopBannerComponent,
+    LanguageSelectComponent,
+    ScriptHackComponent,
   ],
   exports: [
     LoaderComponent,
@@ -61,6 +65,8 @@ import { TopBannerComponent } from './top-banner/top-banner.component';
     PageBannerComponent,
     SocialIconsComponent,
     TopBannerComponent,
+    LanguageSelectComponent,
+    ScriptHackComponent,
   ],
   providers: [ApiService],
 })

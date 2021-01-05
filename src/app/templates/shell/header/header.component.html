@@ -28,7 +28,9 @@
   <div class="infoBanner">
     <div class="container">
       <div class="grid grid-gap-xs">
-        <div class="col-2"></div>
+        <div class="col-2">
+          {{ now | date: 'HH:mm' }}
+        </div>
         <div class="col-8 text-center">
           <span [innerHTML]="'infoBannerText' | translate"></span>
         </div>
@@ -124,6 +126,15 @@
           <ul>
             <li>
               <a
+                routerLink="/artists"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
+                {{ 'artists' | translate }}
+              </a>
+            </li>
+            <li>
+              <a
                 routerLink="/blog"
                 routerLinkActive="active"
                 (click)="toggleNav()"
@@ -176,7 +187,7 @@
           <ul>
             <li>
               <a
-                href="https://github.com/dmnktoe/radio-rasclat-web"
+                href="https://github.com/RadioRasclat/radio-rasclat-web"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -214,16 +225,24 @@
                 {{ 'changelog' | translate }}
               </a>
             </li>
-            <!-- <li>
+            <li>
               <a
                 href="https://status.radio-rasclat.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {{ 'status' | translate }}
-                <svg-icon key="external"></svg-icon>
+                <span
+                  class="statusCircle"
+                  [ngClass]="{
+                    green: status === 2,
+                    yellow: status === 1,
+                    red: status === 0
+                  }"
+                >
+                </span>
               </a>
-            </li> -->
+            </li>
           </ul>
         </div>
         <div class="col-6 col-3@md">
@@ -247,40 +266,40 @@
                 {{ 'privacy' | translate }}
               </a>
             </li>
-          </ul>
-          <ul>
-            <!-- <li>
-              <a href="#">
-                {{ 'cookiePreferences' | translate }}
-              </a>
-            </li> -->
             <li>
-              <a (click)="toggleLanguagePicker()">
-                {{ 'languageSettings' | translate }}
-                <svg-icon key="dropdown"></svg-icon>
+              <a
+                routerLink="/cookie-policy"
+                routerLinkActive="active"
+                (click)="toggleNav()"
+              >
+                {{ 'cookiePolicy' | translate }}
               </a>
-              <div class="languagePicker" *ngIf="isLanguagePickerVisible">
-                <div class="languagePicker__item currentLanguage">
-                  {{ currentLanguage }}
-                </div>
-                <div class="languagePicker__item language">
-                  <a (click)="setLanguage('DE')"> 🇩🇪 </a>
-                </div>
-                <div class="languagePicker__item language">
-                  <a (click)="setLanguage('EN')"> 🇺🇸 </a>
-                </div>
-                <div class="languagePicker__item language">
-                  <a (click)="setLanguage('FR')"> 🇫🇷 </a>
-                </div>
-                <div class="languagePicker__item language">
-                  <a (click)="setLanguage('ES')"> 🇪🇸 </a>
-                </div>
-              </div>
             </li>
           </ul>
           <ul>
             <li>
-              {{ now | date: 'HH:mm' }}
+              <a href="javascript: Cookiebot.renew()">
+                {{ 'cookiePreferences' | translate }}
+                <svg-icon key="dropdown"></svg-icon>
+              </a>
+            </li>
+            <li>
+              <a (click)="openModal('languageSettings')">
+                {{ 'languageSettings' | translate }}
+                <svg-icon key="dropdown"></svg-icon>
+              </a>
+              <modal id="languageSettings">
+                <h1>{{ 'languageSettings' | translate }}</h1>
+                <hr />
+                <app-language-select></app-language-select>
+                <hr />
+                <a
+                  class="btn btn-secondary"
+                  (click)="closeModal('languageSettings')"
+                >
+                  {{ 'close' | translate }}
+                </a>
+              </modal>
             </li>
           </ul>
           <app-social-icons></app-social-icons>

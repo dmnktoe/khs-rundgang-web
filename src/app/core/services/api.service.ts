@@ -244,4 +244,28 @@ export class ApiService {
       )
     );
   }
+
+  getLanguages() {
+    return this.httpClient
+      .get(environment.serverUrl + '/languages', withCache())
+      .pipe(
+        map((body: any) => body),
+        catchError(() =>
+          of(
+            'Es ist ein Fehler aufgetreten. Die verfügbaren Sprachen konnten nicht geladen werden.'
+          )
+        )
+      );
+  }
+
+  getStatus() {
+    return this.httpClient.get('/status').pipe(
+      map((body: any) => body),
+      catchError(() =>
+        of(
+          'Es ist ein Fehler aufgetreten. Der Interpret konnte nicht geladen werden.'
+        )
+      )
+    );
+  }
 }

@@ -96,7 +96,7 @@ h4,
 h5,
 h6 {
   font-family: "Trash Medium", sans-serif;
-  line-height: 28px;
+  line-height: 35px;
 }
 
 h1 {
@@ -121,6 +121,15 @@ h5 {
 
 h6 {
   font-size: 100%;
+}
+
+/* Separator / hr */
+
+hr {
+  border: 0;
+  height: 0;
+  border-bottom: 1px solid var(--primary-color);
+  margin: 1rem 0;
 }
 
 /* Links */

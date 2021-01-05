@@ -7,8 +7,8 @@ header {
   position: -webkit-sticky;
   position: sticky;
   width: 100%;
-  z-index: 9998;
   top: -1px;
+  z-index: 9900;
 }
 
 header .grid {
@@ -87,8 +87,8 @@ nav {
   position: sticky;
   position: -webkit-sticky;
   width: 100%;
-  z-index: 9998;
   top: 50px;
+  z-index: 9909;
 }
 
 .infoBanner {
@@ -219,4 +219,25 @@ nav {
 
 .languagePicker__item.language a:hover {
   text-decoration: underline;
+}
+
+.statusCircle {
+  background: #000;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 2px;
+
+  &.green {
+    background: #3bd671;
+  }
+
+  &.yellow {
+    background: #f29030;
+  }
+
+  &.red {
+    background: #df484a;
+  }
 }

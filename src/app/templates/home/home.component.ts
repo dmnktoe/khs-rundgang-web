@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
-import { ApiService } from '../../core/services/api.service';
+import { ApiService } from '@app/core/services/api.service';
 import { finalize } from 'rxjs/operators';
 import moment from 'moment';
 

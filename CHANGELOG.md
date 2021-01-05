@@ -1,5 +1,20 @@
 # Changelog
 
+## [4.0.4] - 2020-11-23
+
+### New
+
+- Implements a brand new GDPR / DSGVO compliance cookie management solution including a cookie policy page.
+- Adds a new meta description for search engine crawlers.
+- Adds a system status indicator in navigation section to have a quick look if all components are running.
+- Reusable modal service.
+
+### Changes
+
+- Update meta theme color for installed web apps.
+- Redesigned 'About' page including partner logos.
+- The language selector has been entirely rewritten and now supports over 30+ new languages.
+
 ## [4.0.3] - 2020-09-11
 
 ### New
@@ -74,7 +89,8 @@ We present Radio Rasclat Web in version four. The entire application has been en
 
 - Responsive UI issues.
 
-[4.0.3]: https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.3
-[4.0.2]: https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.2
-[4.0.1]: https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.1
-[4.0.0]: https://github.com/dmnktoe/radio-rasclat-web/releases/tag/4.0.0
+[4.0.4]: https://github.com/RadioRasclat/radio-rasclat-web/releases/tag/4.0.4
+[4.0.3]: https://github.com/RadioRasclat/radio-rasclat-web/releases/tag/4.0.3
+[4.0.2]: https://github.com/RadioRasclat/radio-rasclat-web/releases/tag/4.0.2
+[4.0.1]: https://github.com/RadioRasclat/radio-rasclat-web/releases/tag/4.0.1
+[4.0.0]: https://github.com/RadioRasclat/radio-rasclat-web/releases/tag/4.0.0
