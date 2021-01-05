@@ -24,7 +24,12 @@
             <h1 [style.color]="hex">↳{{ artist?.title }}</h1>
           </div>
           <div class="artist__counter" [style.color]="hex">
-            {{ recordings?.length }} {{ 'broadcasts' | translate }}.
+            <span *ngIf="recordings?.length == 1">
+              {{ recordings?.length }} {{ 'broadcast' | translate }}.
+            </span>
+            <span *ngIf="recordings?.length != 1">
+              {{ recordings?.length }} {{ 'broadcasts' | translate }}.
+            </span>
           </div>
         </div>
         <div class="artist__description__container">
