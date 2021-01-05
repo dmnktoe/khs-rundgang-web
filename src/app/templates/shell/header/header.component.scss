@@ -107,6 +107,15 @@ nav {
   background: var(--card-background);
   border-bottom: 1px solid var(--card-border);
   line-height: 21px;
+  max-height: 50vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.navigation::-webkit-scrollbar {
+  display: none;
 }
 
 .navigation a {
