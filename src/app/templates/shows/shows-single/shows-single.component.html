@@ -24,7 +24,12 @@
             <h1 [style.color]="hex">↳{{ show?.title }}</h1>
           </div>
           <div class="show__counter" [style.color]="hex">
-            {{ recordings?.length }} {{ 'broadcasts' | translate }}.
+            <span *ngIf="recordings?.length == 1">
+              {{ recordings?.length }} {{ 'broadcast' | translate }}.
+            </span>
+            <span *ngIf="recordings?.length != 1">
+              {{ recordings?.length }} {{ 'broadcasts' | translate }}.
+            </span>
           </div>
         </div>
         <div class="show__description__container">
