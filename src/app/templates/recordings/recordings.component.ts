@@ -74,7 +74,7 @@ export class RecordingsComponent implements OnInit {
 
   createRange(min: number, max: number) {
     const items: number[] = [];
-    for (let i = min; i <= max; i++) {
+    for (let i = max; i >= min; i--) {
       items.push(i);
     }
     return items;
