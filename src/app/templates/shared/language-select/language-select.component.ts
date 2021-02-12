@@ -18,7 +18,6 @@ export class LanguageSelectComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.currentLanguage);
     this.isLoading = true;
     this.apiService
       .getLanguages()
