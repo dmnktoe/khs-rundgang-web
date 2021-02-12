@@ -71,6 +71,7 @@ export class SentryErrorHandler implements ErrorHandler {
         'ERR_CONNECTION_REFUSED',
         'Es is',
         'Es ist ein Fehler aufgetreten',
+        'OneSignal',
       ],
     });
   }
