@@ -1,6 +1,9 @@
+@import "~theme/_z-index.scss";
+
 .top__banner {
   background: var(--secondary-color-light);
   border-bottom: 1px solid var(--card-border);
+  z-index: map-get($z-index, top-banner);
 }
 
 .top__banner__inner {

@@ -252,11 +252,11 @@ svg-icon {
 /* image zoom */
 
 .medium-zoom-image--opened {
-  z-index: 9999;
+  z-index: map-get($z-index, image-zoom);
 }
 
 .medium-zoom--opened .medium-zoom-overlay {
   opacity: 0.87 !important;
-  z-index: 9998;
+  z-index: map-get($z-index, image-zoom-overlay);
   background: var(--page-background) !important;
 }

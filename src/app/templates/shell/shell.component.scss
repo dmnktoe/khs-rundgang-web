@@ -1,9 +1,11 @@
+@import "~theme/_z-index.scss";
+
 :host {
   .sticky {
     position: sticky;
     position: -webkit-sticky;
     top: -1px;
-    z-index: 9999;
+    z-index: map-get($z-index, header);
     -webkit-transform: translateZ(0);
   }
 }

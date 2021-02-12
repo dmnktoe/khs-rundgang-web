@@ -1,7 +1,9 @@
+@import "~theme/_z-index.scss";
+
 .artistsList {
-  z-index: 8010;
   display: block;
   position: relative;
+  z-index: map-get($z-index, backdrop-text);
 }
 
 .artist {
@@ -26,7 +28,7 @@
   position: fixed;
   display: block;
   margin: auto;
-  z-index: 8000;
+  z-index: map-get($z-index, backdrop-image);
   top: 0;
   bottom: 0;
   left: 0;

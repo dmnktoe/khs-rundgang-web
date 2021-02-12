@@ -1,8 +1,11 @@
+@import "~theme/_z-index.scss";
+
 #player {
   background: var(--card-light-background);
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: map-get($z-index, player);
 }
 
 .playerWrapper {
