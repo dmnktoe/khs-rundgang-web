@@ -53,8 +53,6 @@ export class ScheduleComponent implements OnInit {
     }
 
     this.thisWeekDays = thisWeekDays;
-    console.log(this.thisWeekDays[6]);
-    console.log(this.todayDate);
   }
 
   createNextWeekDates() {
