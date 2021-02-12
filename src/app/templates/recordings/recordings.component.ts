@@ -43,17 +43,19 @@ export class RecordingsComponent implements OnInit {
       .pipe(finalize(() => {}))
       .subscribe((recordings: Recording[]) => {
         this.recordings = recordings;
-        const newestRecording = _.maxBy(this.recordings, function (
-          recording: Recording
-        ) {
-          return recording.timeStart;
-        });
+        const newestRecording = _.maxBy(
+          this.recordings,
+          function (recording: Recording) {
+            return recording.timeStart;
+          }
+        );
 
-        const oldestRecording = _.minBy(this.recordings, function (
-          recording: Recording
-        ) {
-          return recording.timeStart;
-        });
+        const oldestRecording = _.minBy(
+          this.recordings,
+          function (recording: Recording) {
+            return recording.timeStart;
+          }
+        );
         this.years.max = moment(newestRecording.timeStart, 'YYYY-MM-DD').year();
         this.years.min = moment(oldestRecording.timeStart, 'YYYY-MM-DD').year();
         // turn off loading state
