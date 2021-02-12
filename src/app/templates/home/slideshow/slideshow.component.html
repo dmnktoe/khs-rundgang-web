@@ -23,7 +23,7 @@
               </div>
             </div>
           </div>
-          <div class="swiper-slide toggleable" *ngIf="live">
+          <!-- <div class="swiper-slide toggleable" *ngIf="live">
             <div class="slideshowSlide">
               <div class="slideshowSlideInner">
                 <div class="slideshowSlideCaptionWrapper">
@@ -44,7 +44,7 @@
                 </iframe>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="swiper-slide" *ngIf="nextUp">
             <div
               class="slideshowSlide"
@@ -198,6 +198,20 @@
       <div class="swiper-container" [swiper]="config">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
+            <div class="slideshowSlide loading">
+              <div class="slideshowSlideInner">
+                <div class="slideshowSlideCaptionWrapper">
+                  <div class="slideshowSlideCaption">
+                    <div class="slideshowSlideCaption__textArea">
+                      &nbsp;
+                      <h4>↳{{ 'loading' | translate }}...</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide" *ngIf="hotRecording">
             <div class="slideshowSlide loading">
               <div class="slideshowSlideInner">
                 <div class="slideshowSlideCaptionWrapper">
