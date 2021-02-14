@@ -12,7 +12,32 @@
               <div class="slideshowSlideInner">
                 <div class="slideshowSlideCaptionWrapper">
                   <div class="slideshowSlideCaption">
-                    <div class="slideshowSlideCaption__textArea">
+                    <div class="slideshowSlideCaption__playArea">
+                      <span
+                        (click)="play()"
+                        *ngIf="
+                          !state?.playing ||
+                          state.currentTrack.currentSrc != this.streamUrl
+                        "
+                        class="liveInfo center"
+                      >
+                        <svg-icon key="play"></svg-icon>
+                      </span>
+                      <span
+                        (click)="pause()"
+                        *ngIf="
+                          state?.playing &&
+                          state.currentTrack.currentSrc == this.streamUrl
+                        "
+                        class="liveInfo center"
+                      >
+                        <svg-icon key="pause"></svg-icon>
+                      </span>
+                    </div>
+                    <div
+                      class="slideshowSlideCaption__textArea"
+                      (click)="play()"
+                    >
                       <span class="pulse"></span> {{ 'live' | translate }} on
                       Radio Rasclat &mdash; {{ live?.timeEnd | timeago }} left
                       <h4>↳{{ live?.title }}</h4>
