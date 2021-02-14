@@ -5,6 +5,11 @@
   width: 100%;
 }
 
+.liveInfo__wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .liveInfo__wrapper:hover {
   color: var(--secondary-color);
   cursor: pointer;
