@@ -25,7 +25,7 @@ export class TopBannerComponent {
   }
 
   hideBanner() {
-    this.cookieService.set('banner', 'hidden');
+    this.cookieService.set('banner', 'hidden', 7);
     this.bannerVisible = false;
   }
 }
