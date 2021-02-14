@@ -80,19 +80,24 @@
           </div>
           <div class="recording__artists">
             <span *ngFor="let artist of recording?.artists">
-              <img
-                class="recording__artists__single__image"
-                [defaultImage]="defaultImage"
-                [lazyLoad]="artist?.image"
-                tooltip="{{ artist?.title }}"
+              <a
+                routerLink="/artists/{{ artist?.slug }}"
                 alt="{{ artist?.title }}"
-                [options]="{
-                  placement: 'top',
-                  'hide-delay': 0,
-                  'hide-delay-mobile': 0,
-                  'animation-duration': 0
-                }"
-              />
+              >
+                <img
+                  class="recording__artists__single__image"
+                  [defaultImage]="defaultImage"
+                  [lazyLoad]="artist?.image"
+                  tooltip="{{ artist?.title }}"
+                  alt="{{ artist?.title }}"
+                  [options]="{
+                    placement: 'top',
+                    'hide-delay': 0,
+                    'hide-delay-mobile': 0,
+                    'animation-duration': 0
+                  }"
+                />
+              </a>
             </span>
           </div>
         </div>
