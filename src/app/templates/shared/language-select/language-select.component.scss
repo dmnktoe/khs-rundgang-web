@@ -32,6 +32,11 @@
   opacity: 0.05;
 }
 
+.progressbar:hover ~ .language__single__wrapper {
+  background: var(--card-light-background-hover);
+  cursor: pointer;
+}
+
 .translationProgress {
   font-weight: 200;
 }
