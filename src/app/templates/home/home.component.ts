@@ -83,73 +83,74 @@ export class HomeComponent implements OnInit {
                     this.today = moment().format('dddd');
                     this.schedule =
                       schedule[moment().format('dddd').toLowerCase()];
-                    /* this.apiService
+                    this.apiService
                       .getHotRecordings()
                       .pipe(finalize(() => {}))
                       .subscribe((hotRecordings) => {
-                        this.hotRecordings = hotRecordings; */
-                    this.apiService
-                      .getBlogPosts()
-                      .pipe(finalize(() => {}))
-                      .subscribe((blogPosts) => {
-                        this.blogPosts = blogPosts;
+                        this.hotRecordings = hotRecordings;
                         this.apiService
-                          .getProjects()
+                          .getBlogPosts()
                           .pipe(finalize(() => {}))
-                          .subscribe((projects) => {
-                            this.projects = projects;
+                          .subscribe((blogPosts) => {
+                            this.blogPosts = blogPosts;
                             this.apiService
-                              .getCurrentShow()
+                              .getProjects()
                               .pipe(finalize(() => {}))
-                              .subscribe((currentShow) => {
-                                if (currentShow !== null) {
-                                  this.currentShow = {
-                                    title: currentShow.name,
-                                    image: currentShow.image_path,
-                                    timeStart: moment(
-                                      currentShow.starts,
-                                      'YYYY-MM-DD HH:mm:ss'
-                                    ).toDate(),
-                                    timeEnd: moment(
-                                      currentShow.ends,
-                                      'YYYY-MM-DD HH:mm:ss'
-                                    ).toDate(),
-                                  };
-                                } else {
-                                  this.currentShow = false;
-                                }
+                              .subscribe((projects) => {
+                                this.projects = projects;
                                 this.apiService
-                                  .getNextShow()
+                                  .getCurrentShow()
                                   .pipe(finalize(() => {}))
-                                  .subscribe((nextShow) => {
-                                    if (nextShow.length > 0) {
-                                      const startDate = moment(
-                                        nextShow[0].starts,
-                                        'YYYY-MM-DD HH:mm:ss'
-                                      ).toDate();
-                                      if (
-                                        moment().isBetween(
-                                          moment(startDate).subtract(
-                                            30,
-                                            'minutes'
-                                          ),
-                                          startDate
-                                        )
-                                      ) {
-                                        this.nextShow = {
-                                          title: nextShow[0].name,
-                                          image: nextShow[0].image_path,
-                                          timeStart: moment(
-                                            startDate
-                                          ).fromNow(),
-                                        };
-                                      } else {
-                                        this.nextShow = false;
-                                      }
+                                  .subscribe((currentShow) => {
+                                    if (currentShow !== null) {
+                                      this.currentShow = {
+                                        title: currentShow.name,
+                                        image: currentShow.image_path,
+                                        timeStart: moment(
+                                          currentShow.starts,
+                                          'YYYY-MM-DD HH:mm:ss'
+                                        ).toDate(),
+                                        timeEnd: moment(
+                                          currentShow.ends,
+                                          'YYYY-MM-DD HH:mm:ss'
+                                        ).toDate(),
+                                      };
                                     } else {
-                                      this.nextShow = false;
+                                      this.currentShow = false;
                                     }
-                                    this.isLoading = false;
+                                    this.apiService
+                                      .getNextShow()
+                                      .pipe(finalize(() => {}))
+                                      .subscribe((nextShow) => {
+                                        if (nextShow.length > 0) {
+                                          const startDate = moment(
+                                            nextShow[0].starts,
+                                            'YYYY-MM-DD HH:mm:ss'
+                                          ).toDate();
+                                          if (
+                                            moment().isBetween(
+                                              moment(startDate).subtract(
+                                                30,
+                                                'minutes'
+                                              ),
+                                              startDate
+                                            )
+                                          ) {
+                                            this.nextShow = {
+                                              title: nextShow[0].name,
+                                              image: nextShow[0].image_path,
+                                              timeStart: moment(
+                                                startDate
+                                              ).fromNow(),
+                                            };
+                                          } else {
+                                            this.nextShow = false;
+                                          }
+                                        } else {
+                                          this.nextShow = false;
+                                        }
+                                        this.isLoading = false;
+                                      });
                                   });
                               });
                           });
