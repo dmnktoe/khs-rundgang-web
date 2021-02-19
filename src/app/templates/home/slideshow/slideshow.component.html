@@ -118,30 +118,6 @@
           </div>
           <div
             class="swiper-slide"
-            *ngFor="let project of projects | slice: 0:1; let i = index"
-          >
-            <div
-              class="slideshowSlide"
-              [defaultImage]="defaultImage"
-              [lazyLoad]="project?.image"
-            >
-              <a routerLink="/projects/project/{{ project?.slug }}">
-                <div class="slideshowSlideInner">
-                  <div class="slideshowSlideCaptionWrapper">
-                    <div class="slideshowSlideCaption">
-                      <div class="slideshowSlideCaption__textArea">
-                        {{ 'ourNextEvent' | translate }} &mdash;
-                        {{ project?.timeStart | timeago }}<br />
-                        <h4>↳{{ project?.title }}</h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div
-            class="swiper-slide"
             *ngFor="let recording of recordings | slice: 0:2; let i = index"
           >
             <div
@@ -181,6 +157,30 @@
                         {{ 'fromOurBlog' | translate }} &mdash;
                         {{ blogPost?.createdAt | date: 'dd.MM.yyyy' }}<br />
                         <h4>↳{{ blogPost?.title }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div
+            class="swiper-slide"
+            *ngFor="let project of projects | slice: 0:1; let i = index"
+          >
+            <div
+              class="slideshowSlide"
+              [defaultImage]="defaultImage"
+              [lazyLoad]="project?.image"
+            >
+              <a routerLink="/projects/project/{{ project?.slug }}">
+                <div class="slideshowSlideInner">
+                  <div class="slideshowSlideCaptionWrapper">
+                    <div class="slideshowSlideCaption">
+                      <div class="slideshowSlideCaption__textArea">
+                        {{ 'events' | translate }} &mdash;
+                        {{ project?.timeStart | timeago }}<br />
+                        <h4>↳{{ project?.title }}</h4>
                       </div>
                     </div>
                   </div>
