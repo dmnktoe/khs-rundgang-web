@@ -55,7 +55,7 @@ export class ArtistsSingleComponent implements OnInit, AfterViewInit {
           }
           this.setTitle({ title: this.artist.title });
           Vibrant.from(
-            'https://cors-anywhere.herokuapp.com/' + this.artist.image
+            'https://cors-proxy.radio-rasclat.com/' + this.artist.image
           )
             .getPalette()
             .then((palette) => {

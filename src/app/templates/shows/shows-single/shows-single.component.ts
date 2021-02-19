@@ -54,7 +54,9 @@ export class ShowsSingleComponent implements OnInit, AfterViewInit {
             this.recordings = [];
           }
           this.setTitle({ title: this.show.title });
-          Vibrant.from('https://cors-anywhere.herokuapp.com/' + this.show.image)
+          Vibrant.from(
+            'https://cors-proxy.radio-rasclat.com/' + this.show.image
+          )
             .getPalette()
             .then((palette) => {
               this.hex = palette.Vibrant.hex;

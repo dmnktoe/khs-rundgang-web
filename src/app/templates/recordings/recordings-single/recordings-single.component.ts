@@ -60,7 +60,7 @@ export class RecordingsSingleComponent implements OnInit, AfterViewInit {
           this.recording = recording;
           this.setTitle({ title: this.recording.title });
           Vibrant.from(
-            'https://cors-anywhere.herokuapp.com/' + this.recording.image
+            'https://cors-proxy.radio-rasclat.com/' + this.recording.image
           )
             .getPalette()
             .then((palette) => {

@@ -47,7 +47,7 @@ export class BlogSingleComponent implements OnInit {
           this.blogPost = blogPost;
           this.setTitle({ title: this.blogPost.title });
           Vibrant.from(
-            'https://cors-anywhere.herokuapp.com/' + this.blogPost.image
+            'https://cors-proxy.radio-rasclat.com/' + this.blogPost.image
           )
             .getPalette()
             .then((palette) => {

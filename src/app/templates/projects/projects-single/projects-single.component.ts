@@ -47,7 +47,7 @@ export class ProjectsSingleComponent implements OnInit {
           this.project = project;
           this.setTitle({ title: this.project.title });
           Vibrant.from(
-            'https://cors-anywhere.herokuapp.com/' + this.project.image
+            'https://cors-proxy.radio-rasclat.com/' + this.project.image
           )
             .getPalette()
             .then((palette) => {
