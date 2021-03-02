@@ -34,6 +34,9 @@
             [style.color]="hex"
             [style.backgroundColor]="rgba"
             (click)="play()"
+            angulartics2On="click"
+            angularticsAction="PlayClick"
+            [angularticsCategory]="recording?.slug"
             *ngIf="
               !state?.playing ||
               state.currentTrack.currentSrc != this.recording?.audio
