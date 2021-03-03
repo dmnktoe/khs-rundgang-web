@@ -1,5 +1,32 @@
 # Changelog
 
+## [4.1.0] - 2021-03-03
+
+### New
+
+- Adds a new artists section on our website where you can find the corresponding recordings to their belonging artists.
+- Adds a new top banner, which will be hidden for 7 days after closure, to inform users about new product updates.
+- There are now paragraphs supported in our program flow.
+
+### Changes
+
+- Update translation strings.
+- Move from Travis-CI to Github Actions.
+- Moves the repository to our Radio Rasclat Github organization.
+- Now, the deployment process will only be triggered if a Github release was created.
+- We have changed our primary color to match our iOS app.
+- The livestream can now also be started via the current slide (which represents the livestream).
+
+### Bug-Fixes
+
+- Majority / singular string length fix on artists and shows single.
+- The navigation can now be scrolled on mobile, for a more user-friendly experience.
+- Fixes a bug on our broadcasts page where recent recordings were displayed at the bottom of the page. We have moved them to the top where they belong.
+- Objects such as the player, dialog boxes, pop-ups, and navigation are now neatly placed in a Z-Stack SCSS stack system. Now the different components no longer overlap.
+- Fixes a bug where the whole start page could not be loaded completely from time to time.
+- Overall UI improvements.
+- The most prominent color of an image was applied to the buttons and the title. The function broke, but now works again since requests are now redirected through our own CORS proxy server.
+
 ## [4.0.4] - 2020-11-23
 
 ### New
@@ -89,6 +116,7 @@ We present Radio Rasclat Web in version four. The entire application has been en
 
 - Responsive UI issues.
 
+[4.1.0]: https://github.com/RadioRasclat/radio-rasclat-web/releases/tag/4.1.0
 [4.0.4]: https://github.com/RadioRasclat/radio-rasclat-web/releases/tag/4.0.4
 [4.0.3]: https://github.com/RadioRasclat/radio-rasclat-web/releases/tag/4.0.3
 [4.0.2]: https://github.com/RadioRasclat/radio-rasclat-web/releases/tag/4.0.2
