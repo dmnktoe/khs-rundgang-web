@@ -6,7 +6,7 @@
 
 - Adds a new artists section on our website where you can find the corresponding recordings to their belonging artists.
 - Adds a new top banner, which will be hidden for 7 days after closure, to inform users about new product updates.
-- There are now paragraphs supported in our program flow.
+- There are now paragraphs supported on our schedule page.
 
 ### Changes
 
