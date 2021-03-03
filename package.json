@@ -1,7 +1,7 @@
 {
-  "name": "radio-rasclat",
-  "version": "4.0.4",
-  "private": true,
+  "name": "radio-rasclat-web",
+  "version": "4.1.0",
+  "private": false,
   "scripts": {
     "ng": "ng",
     "build": "npm run env -s && ng build --prod",
