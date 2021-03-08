@@ -52,6 +52,9 @@
 
 .recording__tags {
   margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .recording__tags__single::after {
